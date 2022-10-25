@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="com.nextlabs.policystudio.editor">
+      <editor
+            context="DYNAMIC_ACCESS_CONTROL_POLICY"
+            displayName="Dynamic Access Control Policy"
+            icon=""
+            editorClass="com.nextlabs.policystudio.editor.DynamicAccessControl.DynamicAccessControlPolicyEditor"
+            panelClass="com.bluejungle.destiny.policymanager.editor.PolicyEditorPanel"
+            type="POLICY"
+            default="true">
+      </editor>
+   </extension>
+   <extension
+         point="com.nextlabs.policystudio.creation">
+      <creation
+            class="com.nextlabs.policystudio.editor.DynamicAccessControl.PolicyCreation"
+            context="DYNAMIC_ACCESS_CONTROL_POLICY">
+      </creation>
+   </extension>
+</plugin>

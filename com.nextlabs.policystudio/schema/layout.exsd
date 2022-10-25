@@ -1,0 +1,120 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- Schema file written by PDE -->
+<schema targetNamespace="com.nextlabs.policystudio" xmlns="http://www.w3.org/2001/XMLSchema">
+<annotation>
+      <appInfo>
+         <meta.schema plugin="com.nextlabs.policystudio" id="layout" name="Policy Studio Layout"/>
+      </appInfo>
+      <documentation>
+         This extension point is used to support configurable layout. It provides different tabfolders and tabs. Each tabfolder can hold serveral tabs.
+      </documentation>
+   </annotation>
+
+   <element name="extension">
+      <annotation>
+         <appInfo>
+            <meta.element />
+         </appInfo>
+      </annotation>
+      <complexType>
+         <sequence>
+            <element ref="tabfolder" minOccurs="0" maxOccurs="unbounded"/>
+         </sequence>
+         <attribute name="point" type="string" use="required">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="id" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="name" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+               <appInfo>
+                  <meta.attribute translatable="true"/>
+               </appInfo>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <element name="tabfolder">
+      <annotation>
+         <documentation>
+            A tabfolder that will be used to hold different tabs.
+         </documentation>
+      </annotation>
+      <complexType>
+         <attribute name="name" type="string">
+            <annotation>
+               <documentation>
+                  The display name of tabfolder.
+               </documentation>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <annotation>
+      <appInfo>
+         <meta.section type="since"/>
+      </appInfo>
+      <documentation>
+         [Enter the first release in which this extension point appears.]
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appInfo>
+         <meta.section type="examples"/>
+      </appInfo>
+      <documentation>
+         &lt;tabfolder name=&quot;Universal Components&quot;&gt;
+ &lt;tab name=&quot;Users&quot; class=&quot;com.bluejungle.destiny.policymanager.ui.usergroup.UserListPanel&quot;/&gt;
+ &lt;tab name=&quot;Computers&quot; class=&quot;com.bluejungle.destiny.policymanager.ui.usergroup.DesktopListPanel&quot;/&gt;
+ &lt;tab name=&quot;Applications&quot; class=&quot;com.bluejungle.destiny.policymanager.ui.usergroup.ApplicationListPanel&quot;/&gt;
+ &lt;tab name=&quot;Documents&quot; class=&quot;com.bluejungle.destiny.policymanager.ui.usergroup.ResourceListPanel&quot;/&gt;
+&lt;/tabfolder&gt;
+&lt;tabfolder name=&quot;Action Components&quot;&gt;
+ &lt;tab name=&quot;Actions&quot; class=&quot;com.bluejungle.destiny.policymanager.ui.usergroup.ActionListPanel&quot;/&gt;
+&lt;/tabfolder&gt;
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appInfo>
+         <meta.section type="apiInfo"/>
+      </appInfo>
+      <documentation>
+         Plug-ins that want to extend this extension point must provide layout information in the plugin.xml.
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appInfo>
+         <meta.section type="implementation"/>
+      </appInfo>
+      <documentation>
+         We provide default layout for the policy author.
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appInfo>
+         <meta.section type="copyright"/>
+      </appInfo>
+      <documentation>
+         Copyright 2004-2007 by NextLabs Inc.
+      </documentation>
+   </annotation>
+
+</schema>

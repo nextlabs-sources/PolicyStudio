@@ -1,0 +1,174 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ <title>Managing_Event_Logging</title>
+
+ <meta name="generator" content="Adobe RoboHelp 9" />
+ <meta name="Originator" content="ImportMif" />
+ <meta name="OriginalFile" content="C:\Documents and Settings\mlittle\Desktop\SharePoint\SharePointFM\AdminSPE.fm" />
+ <link rel="stylesheet" href="../../default.css" type="text/css" />
+
+ <link rel="stylesheet" href="..\..\default.css" type="text/css" />
+
+ <script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whlang.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.gbWhTopic)
+{
+	var strUrl = document.location.href;
+	var bc = 0;
+	var n = strUrl.toLowerCase().indexOf("bc-");
+	if(n != -1)
+	{
+		document.location.href = strUrl.substring(0, n);
+		bc = strUrl.substring(n+3);
+	}
+
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Administration\nManaging Event Logging");
+addButton("show",BTN_IMG,"Show TOC and Search","","","","",0,0,"../../whd_show0.gif","../../whd_show2.gif","../../whd_show1.gif");
+addButton("hide",BTN_IMG,"Hide TOC and Search","","","","",0,0,"../../whd_hide0.gif","../../whd_hide2.gif","../../whd_hide1.gif");
+
+	}
+
+	
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../../index.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+//]]></script>
+</head>
+
+<body><script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+//]]></script>
+<table width="100%" cellspacing="0" border="1">
+	<col style="width: 100%;" />
+	<tr style="height: 78px;">
+		<td bgcolor="#003399">&#160;</td>
+	</tr>
+ </table>
+<script type="text/javascript" language="javascript">//<![CDATA[
+document.write("<p  style=\"text-align:right;font-family:Arial;font-size:12pt;font-weight: normal;font-style: normal;text-decoration: none;\">");
+AddMasterBreadcrumbs("../../index.htm", "font-family:Arial;font-size:12pt;font-weight: normal;font-style: normal;text-decoration: none;", "&gt;", "Home", "../Introducing/Welcome.htm");
+document.write("<a style=\"font-family:Arial;font-size:12pt;font-weight: normal;font-style: normal;text-decoration: none;\" href=\"Administration.htm\">Administration<\/a> &gt; Managing Event Logging<\/p>");
+//]]></script>
+ <p style="text-align: right;">&#160;</p>
+
+ <h1><a name="XREF_99541_Examining_Log_Files"></a>Managing Event&nbsp;Logging</h1>
+ <p class="BodyLevel1">All enforcers maintain a set of local log files, which can be useful for troubleshooting or when communicating with NextLabs&#160;technical support. Both kinds of enforcers save their log files at </p>
+ <h5>&lt;<span class="FM_italics" style="font-style : italic; "><i>InstallDir&gt;</i></span>\agentLog</h5>
+ <p class="BodyLevel1">Because of the tamper-resistance features, you must stop any enforcer before you can view or open its log files.</p>
+ <p class="BodyLevel1">Enforcers maintain a log file called <span style="font-style : italic; "><i>Agent0.log.0</i></span>&#160;until the file reaches its specified maximum size, the file is saved as <span style="font-style : italic; "><i>Agent0.log1</i></span>, and current logging continues in the original file name. Every time the file reaches its maximum size it is closed and saved, and the ending integer in all existing files is incremented. That is, the file ending in 0 will always contain the latest information, and the one ending in the highest integer will contain the oldest information.</p>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="AgentLogDir.jpg" style="width : 209.520pt; height : 76.608pt; " id="image4" src="AgentLogDir.jpg" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <h2>Logging Settings</h2>
+ <p class="BodyLevel1">You can configure the limit on the number and size of log files each enforcer maintains by editing the file <span style="font-style : italic; "><i>logging.properties</i></span> in the following directory:</p>
+ <h5>&lt;<span class="FM_italics" style="font-style : italic; "><i>InstallDir&gt;</i></span>\config</h5>
+ <p class="BodyLevel1">The following properties control the number and size of log files maintained by each policy enforcer:</p>
+ 
+<p class="BodyLevel2">1<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span style="font-weight : bold; "><b>java.util.logging.FileHandler.count</b></span>: Specifies the maximum number of log files that can be archived at any given time. When this maximum is reached, the oldest file is discarded so that a new file can be started. Default = 10.</p>
+
+ 
+<p class="BodyLevel2">2<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span style="font-weight : bold; "><b>java.util.logging.FileHandler.limit</b></span>: Specifies the maximum size of each log file, in bytes.When this limit is reached, the current file is archived and a new log file is started. Default = 500K.</p>
+
+ <h2><a name="XREF_98882_Changing"></a>Changing Logging&nbsp;Levels</h2>
+ <p class="BodyLevel1">You can configure enforcers to the following levels of event logging, in order of increasing verbosity:</p>
+ 
+<p class="BodyLevel2">3<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Severe</p>
+
+ 
+<p class="BodyLevel2">4<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Warning</p>
+
+ 
+<p class="BodyLevel2">5<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Info</p>
+
+ 
+<p class="BodyLevel2">6<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Fine</p>
+
+ 
+<p class="BodyLevel2">7<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Finest</p>
+
+ <p class="BodyLevel1">By default, the logging level is set to Severe, but if you wish you can change this individually for each policy enforcer. It is controlled by three parameters in the logging.properties file:</p>
+ 
+<p class="BodyLevel2">8<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>java.util.logging.ConsoleHandler.level</p>
+
+ 
+<p class="BodyLevel2">9<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>com.bluejungle.level</p>
+
+ 
+<p class="BodyLevel2">10<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;</font></span>.level</p>
+
+ <p class="BodyLevel1">You should always set the first two to the same value. The .level parameter represents a constraint on the other two; they cannot operate at a higher verbosity level than is set there. This means that if you increase the verbosity for the other two, you must reset the .level value at least as high for the change to take effect. The figure below shows an example of this file.</p>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="ConfigLog.jpg" style="width : 360.792pt; height : 394.344pt; " id="image5" src="ConfigLog.jpg" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook">Changing Enforcer Logging Levels</p>
+ <h2>Logging Settings in SharePoint</h2>
+ <p class="BodyLevel1">Completely independent from the logging described above, SharePoint administrators can set the logging event level of the Entitlement Manager for SharePoint. This control can be found on the SharePoint Central Administration &gt;&#160;Operations &gt; Diagnostic Logging page, as shown below. When the enforcer is installed, a new Event Throttling category, “Compliant Enterprise,” is added to the drop-down list (<span style="font-weight : bold; color   : #ff0000; "><font color="red" ><b>A</b></font></span>), representing the enforcer installed on this SharePoint server.</p>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="SharePoint_Central_Administration.jpg" style="width : 487.542pt; height : 296.125pt; " id="image6" src="SharePoint_Central_Administration.jpg" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook">Enforcer Logging Levels in SharePoint central Administration</p>
+ <p class="BodyLevel1">By default, logging is disabled for Entitlement Manager for SharePoint, but administrators can selecting one of the five other standard event levels, for both event logging (<span style="font-weight : bold; color   : #ff0000; "><font color="red" ><b>B</b></font></span>) and trace logging (<span style="font-weight : bold; color   : #ff0000; "><font color="red" ><b>C</b></font></span>).</p>
+ <p>&#160;</p>
+<script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+
+highlightSearch();
+//-->
+//]]></script>
+</body>
+</html>

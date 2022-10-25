@@ -1,0 +1,166 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ <title>About_SharePoint_Policies</title>
+
+ <meta name="generator" content="Adobe RoboHelp 9" />
+ <meta name="Originator" content="ImportMif" />
+ <meta name="OriginalFile" content="C:\Documents and Settings\mlittle\Desktop\SharePoint\SharePointFM\UsingSPE.fm" />
+ <link rel="stylesheet" href="../../default.css" type="text/css" />
+
+ <link rel="stylesheet" href="..\..\default.css" type="text/css" />
+
+ <script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whlang.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.gbWhTopic)
+{
+	var strUrl = document.location.href;
+	var bc = 0;
+	var n = strUrl.toLowerCase().indexOf("bc-");
+	if(n != -1)
+	{
+		document.location.href = strUrl.substring(0, n);
+		bc = strUrl.substring(n+3);
+	}
+
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Using the Entitlement Manager for SharePoint\nAbout SharePoint Policies");
+addButton("show",BTN_IMG,"Show TOC and Search","","","","",0,0,"../../whd_show0.gif","../../whd_show2.gif","../../whd_show1.gif");
+addButton("hide",BTN_IMG,"Hide TOC and Search","","","","",0,0,"../../whd_hide0.gif","../../whd_hide2.gif","../../whd_hide1.gif");
+
+	}
+
+	
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../../index.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+//]]></script>
+</head>
+
+<body><script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+//]]></script>
+<table width="100%" cellspacing="0" border="1">
+	<col style="width: 100%;" />
+	<tr style="height: 78px;">
+		<td bgcolor="#003399">&#160;</td>
+	</tr>
+ </table>
+<script type="text/javascript" language="javascript">//<![CDATA[
+document.write("<p  style=\"text-align:right;font-family:Arial;font-size:12pt;font-weight: normal;font-style: normal;text-decoration: none;\">");
+AddMasterBreadcrumbs("../../index.htm", "font-family:Arial;font-size:12pt;font-weight: normal;font-style: normal;text-decoration: none;", "&gt;", "Home", "../Introducing/Welcome.htm");
+document.write("<a style=\"font-family:Arial;font-size:12pt;font-weight: normal;font-style: normal;text-decoration: none;\" href=\"Using_the_Entitlement_Manager_for_SharePoint.htm\">Using the Entitlement Manager for SharePoint<\/a> &gt; About SharePoint Policies<\/p>");
+//]]></script>
+ <p style="text-align: right;">&#160;</p>
+
+ <h1><a name="XREF_85286_About_SharePoint"></a>About SharePoint Policies</h1>
+ <p class="BodyLevel1">As is discussed in the introduction, the Entitlement Manager for SharePoint supports four kinds of policies. Each of these is discussed in more detail below, along with example use cases for each kind of policy:</p>
+ 
+<p class="BodyLevel2">1<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><a href="#XREF_20266_Classification">Classification Policies</a></p>
+
+ 
+<p class="BodyLevel2">2<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><a href="#XREF_66299_Access_Control">Access Control Policies</a></p>
+
+ 
+<p class="BodyLevel2">3<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><a href="#XREF_44126_Data_Protection">Data Protection Policies</a></p>
+
+ 
+<p class="BodyLevel2">4<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><a href="#XREF_69606_Audit_Policies">Audit Policies</a></p>
+
+ <h3><a name="XREF_20266_Classification"></a>Classification Policies</h3>
+ <p class="BodyLevel1">Policies can apply labels to documents as they are uploaded into SharePoint. After documents are classified, Access Control and other policies can reference these tags. Classification can occur automatically (through content analysis for example), or can be user-specified (where a user selects the appropriate tag). Classifications can also be applied to existing files already uploaded to SharePoint, through batch processes that apply classifications to all documents in a designated location at once (based on content analysis, the location where the file resides, document properties, and more). </p>
+ <h4>Example Use Cases</h4>
+ <p style="margin-left : 32.400pt; margin-right : 9.107pt; text-indent : -10.080pt; margin-top  : 0.000pt;">Set up content aware tagging so that whenever a document is uploaded to a SharePoint site that contains the word &quot;ITAR,&quot; an &quot;ITAR&quot; label will be assigned in the &quot;Export Security&quot; column. </p>
+ <p style="margin-right : 18.000pt;">For a target site collection, run a nightly batch process that performs content analysis of all new or updated documents. Documents that include the word &quot;restricted&quot; are tagged &quot;restricted.&quot;</p>
+ <p class="PublisherBook"><span class="Emphasis">Note: </span>For more information on example policies, see <a href="Designing_Classification_Policies.htm#XREF_44709_Designing">Designing Classification Policies</a>.</p>
+ <h3><a name="XREF_66299_Access_Control"></a>Access Control Policies</h3>
+ <p class="BodyLevel1">There are four kinds of Access Control policies: (1) block or allow <span class="Emphasis">access</span>&#160;to content, including the creation of new webparts (2) control access to the ability to change or inherit site settings and permissions, and (3) add view filtering on top of existing access control policies. </p>
+ <h4>(1) Control Access and Creation</h4>
+ <p class="BodyLevel1">For policies that block or allow access to documents, you can define a SharePoint portal as a file location: the various sites, libraries, document lists, etc., are analogous to directories, whose content you want to control in certain ways. Access Control policies either allow access to a portal location or deny it, for either reading or writing purposes, or both. </p>
+ <p class="BodyLevel1">Policy designers can also control the creation of SharePoint webparts (lists, libraries and so on). This functionality provides a solution to one of the most difficult control problems of SharePoint: limiting how individual users can share data resources by opening new lists, to which they have control over access by others. Another common problem is the inefficient use of company resources (for example, where users create sites that no one ever actually uses or that duplicate existing sites), wasting storage space and confusing end users. Policy designers can limit or monitor (see <a href="#XREF_69606_Audit_Policies">Audit Policies</a>&#160;below) the creation of the following kinds of SharePoint structures: Document, Libraries, Announcements, Project Tasks, Form Libraries, Contacts, Issue Tracking, Wiki Page Libraries, Discussion Boards, Surveys, Picture Libraries, Links, Custom Lists, Slide Libraries, Calendars, Custom List in Datasheet Views, Translation Management Libraries, Tasks, Languages and Translators, and Imported Spreadsheets.</p>
+ <h4>(2) View Filtering (Security Trimming)</h4>
+ <p class="BodyLevel1">In addition to allowing or blocking access, the Entitlement Manager can allow or block the <span class="Emphasis">viewing</span>&#160;of content. Security trimming comes in three forms: Webpart trimming controls which webparts display when a user views sites in SharePoint, List Trimming controls which items in a list display, and Search Trimming determines which search results display when a user runs a search within SharePoint.</p>
+ <h4>(3) Control Site Settings Permissions</h4>
+ <p class="BodyLevel1">Another kind of Access Control deals with how SharePoint users access and modify site settings and permissions. For instance, consider the case where a SharePoint Administrator extends site access to users that should be unauthorized, according to company policies. In this case, SharePoint’s discretionary permissioning model can lead to unauthorized access. The solution to this problem lies in policies that grant users permission to access and use site content, but deny access to the administrative settings for that content. These kinds of policies are referred to as SharePoint settings policies. </p>
+ <p class="BodyLevel1">Entitlement Manager for SharePoint policies can also control how permissions and other settings are inherited between sites. For example, your SharePoint portal may have a Customer Sites area, which contains one document library for each of your customers. The customer libraries may inherit their permission levels from the parent area, Customer Sites. However, one customer’s data may be much more sensitive than another’s, and you may not want every user with access to some sensitive customer site (thanks to the parent permissions settings) to be able to change that site’s settings, which might to allow inappropriate users access to it. This kinds of over-permissioning is a common problem caused by SharePoint’s discretionary model. </p>
+ <h4>Example Use Cases</h4>
+ <p style="margin-left : 32.400pt; margin-right : 18.000pt; text-indent : -10.080pt; margin-top  : 0.000pt;">Allow only members of the design team working for Client A to access any documents on Client A’s SharePoint site. The individual users belonging to the authorized design team may change over the project lifecycle, but the control over client data will be maintained.</p>
+ <p class="BodyLevel1" style="margin-left : 32.400pt; margin-right : 18.000pt; text-indent : -10.080pt; margin-top  : 0.000pt;">Prevent any designer from uploading documents to any client’s site that are not tagged as belonging to that client (including those not tagged at all). This prevents exposing one client’s data to another client.</p>
+ <p class="BodyLevel1" style="margin-left : 32.400pt; margin-right : 18.000pt; text-indent : -10.080pt; margin-top  : 0.000pt;">Prevent any user from moving documents from any client-related SharePoint site to any publicly open site, and from downloading to any open file server location.</p>
+ <p class="BodyLevel1" style="margin-left : 32.400pt; margin-right : 18.000pt; text-indent : -10.080pt; margin-top  : 0.000pt;">Prevent users who have regular access to ITAR (export controlled data) from creating new lists. This helps enforce a companion policy that ITAR data only be stored in the appropriate locations.</p>
+ <p class="BodyLevel1" style="margin-left : 32.400pt; margin-right : 18.000pt; text-indent : -10.080pt; margin-top  : 0.000pt;">For classified data, prevent unauthorized users from viewing a team list (or other webpart) that contains data they are not authorized to view. When users conduct searches, search results should also include only documents users are authorized to access. </p>
+ <p class="BodyLevel1" style="margin-left : 32.400pt; margin-right : 18.000pt; text-indent : -10.080pt; margin-top  : 0.000pt;">For all sites that contain ITAR (export controlled) data, block all users except a designated Administrator from modifying Administra&#173;tive settings for sites. This prevents even site owners from extending access to unauthorized users.</p>
+ <p class="PublisherBook"><span class="Emphasis">Note: </span>For more information and example policies, see <a href="Designing_Access_Control_Policies.htm#XREF_52361_Designing_Access">Designing Access Control Policies</a>, <a href="Adding_Security_Trimming_to_Access_Control_Policies.htm#XREF_59707_Adding_Security">Adding Security Trimming to Access Control Policies</a>, and <a href="Designing_Access_Control_Policies.htm#XREF_70279_Access_Control_for">Example Policy: Access Control for SharePoint Administrative Settings</a>.</p>
+ <h3><a name="XREF_44126_Data_Protection"></a>Data Protection Policies</h3>
+ <p class="BodyLevel1">Data Protection policies ensure that data will be persistently protected even after documents are downloaded from the SharePoint server. This occurs through the tagging of data with persistent metatags that can be references by policies enforced by other NextLabs products. Tag on download policies can apply different kinds of tags to documents (depending on how they’re designed), either to reference a specific column, multiple columns, or a user-defined value. </p>
+ <h4>Example Use Case</h4>
+ <p class="BodyLevel1">Set up automatic file tagging whenever a document is downloaded from a Project Team’s SharePoint site, marking that site as its source. This allows other local policies to limit distribution of that document to other Project Team members. &#160;</p>
+ <p class="PublisherBook"><span class="Emphasis">Note: </span>For more information on example policies, see <a href="Designing_Data_Protection_Policies.htm#XREF_57751_Designing_Data">Designing Data Protection Policies</a>.</p>
+ <h3><a name="XREF_69606_Audit_Policies"></a>Audit Policies</h3>
+ <p class="BodyLevel1">It is important that administrators have insight into what end users are doing in SharePoint, including how end users are creating new areas on sites, what resources they are posting there, and what permissions they are changing. Audit policies allow you to log these details, as well as include notification e-mails to administrators in appropriately serious cases. </p>
+ <h4>Example Use Cases</h4>
+ <p style="margin-left : 32.400pt; margin-right : 18.000pt; text-indent : -10.080pt; margin-top  : 0.000pt;">Whenever anyone creates any new site, or a new site within some specified other site, log the event details</p>
+ <p class="BodyLevel1" style="margin-left : 32.400pt; margin-right : 18.000pt; text-indent : -10.080pt; margin-top  : 0.000pt;">Whenever anyone deletes any site, or a new site within some speci&#173;fied other site, log the event details and send a notification e-mail to an administrator</p>
+ <p class="BodyLevel1" style="margin-left : 32.400pt; margin-right : 18.000pt; text-indent : -10.080pt; margin-top  : 0.000pt;">Whenever any user performs any action on the site, log the details (would use ANY action)</p>
+ <p class="BodyLevel1" style="margin-left : 32.400pt; margin-right : 18.000pt; text-indent : -10.080pt; margin-top  : 0.000pt;">Whenever anyone accesses the portal from a host outside the com&#173;pany, log the event details (would use ANY action, and ANY user on a Computer NOT IN the Company location site)</p>
+ <p class="PublisherBook"><span class="Emphasis">Note: </span>With these policies deployed, Administrators could run reports that show all new sites created, all sites deleted, or all site access, each of which can be filtered by department, user, and activity. You can also run lifecycle activity reports, to identify unused or barely used sites.</p>
+ <p class="PublisherBook"><span class="Emphasis">Note: </span>For more information on example policies, see <a href="Designing_Audit_Policies.htm#XREF_21995_Designing_Audit">Designing Audit Policies</a>.</p>
+ <p>&#160;</p>
+<script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+
+highlightSearch();
+//-->
+//]]></script>
+</body>
+</html>

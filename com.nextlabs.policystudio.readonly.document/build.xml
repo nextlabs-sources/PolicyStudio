@@ -1,0 +1,48 @@
+<!--$Id$-->
+<project name="com.nextlabs.policystudio.readonly.document" default="build">
+
+	<property name="nlbuildroot" location=".." />
+	
+	<property file="${nlbuildroot}/scripts/build.properties" />
+	<property file="${nlbuildroot}/scripts/build_common.properties" />
+	<property file="${basedir}/build.properties"/>
+	
+	<import file="${common.build.script.dir}/common_build.xml"/>
+	<import file="${common.build.script.dir}/java_build.xml"/>
+
+  <target name="copy_resource" description="copying resources">
+      <mkdir dir="${build.main.resource.dir}" />
+               
+      <!-- Copy properties files from src tree. -->
+      <copy todir="${build.main.classes.dir}">
+           <fileset dir="${src.main.dir}">
+              <include name="**/*.properties"/>
+           </fileset>
+      </copy>
+   </target> 
+
+  <target name="post_compile" description="Perform any necessary steps required before compile, such as code generation" depends="copy_resource">
+    <mkdir dir="${build.dir}/${policy.studio.plugin.dir}"/>
+     <jar destfile="${build.dir}/${policy.studio.plugin}.jar">
+            <fileset dir="${build.main.classes.dir}" />
+            <fileset dir="${build.main.resource.dir}" >
+              <include name="*.properties"/>
+            </fileset>
+       </jar>
+       <copy file="${build.dir}/${policy.studio.plugin}.jar" todir="${build.dir}/${policy.studio.plugin.dir}" />
+       <copy todir="${build.dir}/${policy.studio.plugin.dir}" overwrite="false">
+            <fileset dir="${basedir}">
+                      <include name= "resources/**"/>
+                      <include name= "config/**"/>
+                      <include name= "META-INF/**"/>
+                      <include name= "plugin.xml"/>
+                      <include name= "icons/**"/>
+             </fileset>
+       </copy> 
+   </target>
+
+  <target name="build" description="Compile source code">
+	<antcall target="java_build.compile" />
+	<antcall target="post_compile" /> 
+  </target>
+</project>

@@ -1,0 +1,14 @@
+; PA_CA.def : Declares the module parameters for the DLL.
+
+LIBRARY      "PA_CA"
+
+EXPORTS
+    ; Explicit exports can go here
+    fnBackupConfigXML @1
+	fnRestoreConfigXML @2
+	fnIsPolicyManagerRunning @3
+	fnBackupConfigXML @4
+	fnRestoreConfigXML @5
+	fnCreateConfigurationFile @6
+	fnValidatePolicyServerLocation @7
+	fnSetupErrorPolicyServerValidation @8

@@ -1,0 +1,391 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ <title>Managing Policies and Components</title>
+
+ <meta name="generator" content="Adobe RoboHelp 9" />
+ <meta name="Originator" content="ImportMif" />
+ <meta name="OriginalFile" content="C:\CC_PSUserGuide_77\PSUserGuideFM\Deploying.fm" />
+ <link rel="stylesheet" href="Deploying.css" type="text/css" />
+
+ <link rel="stylesheet" href="..\..\RHStyleMapping.css" type="text/css" />
+
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whlang.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whtopic.js"></script>
+
+</head>
+
+<body><script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.gbWhTopic)
+{
+	var strUrl = document.location.href;
+	var bc = 0;
+	var n = strUrl.toLowerCase().indexOf("bc-");
+	if(n != -1)
+	{
+		document.location.href = strUrl.substring(0, n);
+		bc = strUrl.substring(n+3);
+	}
+
+	if (window.addTocInfo)
+	{
+	addTocInfo("Deploying Objects\nManaging Policies and Components");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	
+	document.write("<p style=\"text-align:right\"> ");
+AddMasterBreadcrumbs("../../PolicyStudioUserGuideTOC.htm", "", "&gt;", "Policy&nbsp;Studio&nbsp;", "../Welcome/Welcome_to_7_7.htm");
+document.write("<a href=\"Deploying_Objects.htm\">Deploying Objects<\/a> &gt; Managing Policies and Components<\/p>");
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../../PolicyStudioUserGuideTOC.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+
+//-->
+//]]></script>
+ <h1><a name="XREF_91751_Managing_Policies"></a>Managing Policies and Components</h1>
+ <p class="BodyLevel1">Once you have deployed objects, you may still need to manage them in various ways. For example, you may need to adjust how a policy is defined, in order to improve its effectiveness.</p>
+ <p class="BodyLevel1">You can perform the following standard management functions in Policy Author:</p>
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><a href="#XREF_40326_Searching_for"><span class="FM_blue">Searching for Policies or Components</span></a></p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><a href="#XREF_34460_Modifying_a_Policy"><span class="FM_blue">Modifying Policies and Components</span></a></p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><a href="#XREF_37838_Setting_Permissions"><span class="FM_blue">Changing Access&nbsp;Rights</span></a></p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><a href="#XREF_55730_Un_deploying"><span class="FM_blue">Un-deploying Policies and Components</span></a></p>
+
+ <h2><a name="XREF_40326_Searching_for"></a>Searching for Policies or Components</h2>
+ <p class="BodyLevel1">To find a particular object, you can click Policies or Components in the naviga&#173;tion pane, click a category, and scroll through the lists. However, if you have a large number of items to search through, a more efficient way to find what you want is to use the search tool. To use it, type a string of one or more characters in the field, and click the <span class="FM_Bold">Search</span>&#160;button. The tool looks for any objects that begin with the specified character string, and displays them in the pane below. The search is not case-sensitive.</p>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="SearchPA.jpg" style="width : 356.674pt; height : 297.284pt; " id="image13" src="SearchPA.jpg" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook">Using the Search tool in the navigation pane</p>
+ <p class="BodyLevel1">Note that there are two search tools, as shown in the previous figure. The tool above the policy tree searches for policies; the one above the component panels searches for components whose names contain the string. Each component search tool applies only to components of the selected type. In the example shown, the search would apply to User components only.</p>
+ <p class="BodyLevel1">The two tools return somewhat different results. Policy searches display:</p>
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>All policies whose names start with the specified string</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>All policies that contain any component whose name starts with the spec&#173;ified string</p>
+
+ <p class="BodyLevel1">Component searches display:</p>
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>All components whose names start with the specified string</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>All components that contain any other component whose name starts with the specified string</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>All components that are used in any policy whose name starts with the specified string.</p>
+
+ <p class="BodyLevel1">When you finish a search, click the X to the right of the <span class="FM_Bold">Search</span>&#160;button to return to the standard policy tree or component list display.</p>
+ <h3><a name="XREF_38867_Finding_Out_Where"></a>Finding Out Where a Component is Used</h3>
+ <p class="BodyLevel1">From time to time, you may need to find out which policies use a particular pol&#173;icy component. To do this,</p>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">In the component bin, click the panel for the component type, and select the component you are interested in.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">From the Actions menu, select Show Policy Usage. This displays a list showing which policies refer to this policy component. If this command is disabled, it means the selected component is not used in any policy.</p>
+</li>
+ </ol>
+ <h2><a name="XREF_49401_Viewing_or_Setting"></a>Viewing Properties</h2>
+ <p class="BodyLevel1">To view or modify the properties and access permissions of a folder, policy, or policy component, use the Properties dialog box. </p>
+ <p class="BodyLevel1">To view the properties, right-click on the object and select Properties. This opens the Properties window, as shown in the following figure.</p>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="Deploying00005.jpg" style="width : 356.875pt; height : 335.750pt; " id="image14" src="Deploying00005.jpg" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook">The Properties window</p>
+ <p class="BodyLevel1">The Properties window is organized into two tabs, General and Access Control.</p>
+ <p class="BodyLevel1">On the <span style="font-weight : bold; "><b>General</b></span> tab, you can:</p>
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>View information about the folder, policy, or component: name, current status, type (component, policy or folder), and location (if it is a policy).</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Rename the object. If you do not have permission to change the name, or if it is a folder that contains objects, the name cannot be changed.</p>
+
+ <p class="BodyLevel1">On the <span style="font-weight : bold; "><b>Access Control</b></span> tab, you can</p>
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>See who owns the object, and</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>View the object’s currently defined access rights. </p>
+
+ <p class="BodyLevel1">The Owner field is read-only and cannot be changed by anyone; the access rights can be edited by the owner or by any user with <span style="font-style : italic; "><i>Set Access</i></span>&#160;rights for that object. For a detailed discussion of access control feature, see <a href="#XREF_37838_Setting_Permissions"><span class="FM_blue">Changing Access&nbsp;Rights</span></a>.</p>
+ <h2><a name="XREF_19078_Comparing_to_the"></a>Comparing to the Deployed Version</h2>
+ <p class="BodyLevel1">When you are editing an object that has already been deployed, you might want to see this deployed version that is currently in live use in your Control Center&#160;system, so that you can compare it to the changes you are making.</p>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Use the navigation pane to locate the object.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">From the Actions menu, select Show Deployed Version. This displays a screen showing a non-editable view of the currently deployed version of the object definition, as well as other versions currently pending deploy&#173;ment, if any. As long as this screen is displayed, you cannot continue edit&#173;ing.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">To continue editing the current object, close the Deployed Version screen.</p>
+</li>
+ </ol>
+ <h2><a name="XREF_34460_Modifying_a_Policy"></a>Modifying Policies and Components</h2>
+ <p class="BodyLevel1">As company conditions change over time, you might want to change an existing object. For example, if you have defined a policy that allows only Human Resources personnel to view offer letters, and the company CEO expresses an interest in viewing such letters, you would need to modify the policy to include the CEO.</p>
+ <p class="BodyLevel1">To modify an object,</p>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Display the object in the editing pane.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">If the object has already been submitted for deployment, the editing con&#173;trols are disabled. If you still want to modify the component, click <span class="FM_Bold">Modify</span>; this removes the object from the deployment queue so that you can edit it.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Make the desired changes:</p>
+</li>
+  
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Drag and drop new items into the editing areas, add new lines to the defi&#173;nition, or make any other desired changes.</p>
+
+  
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>If a line in the definition has not yet been filled in, you see only the line label. To add an entry, click the plus icon.</p>
+
+  
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>To remove an entry, click the minus icon. </p>
+
+  <p class="BodyLevel1"></p>
+  <div align="center"><img alt="ModifyComponent.jpg" style="width : 361.500pt; height : 195.274pt; " id="image15" src="ModifyComponent.jpg" />
+  </div>
+  <p class="BodyLevel1">&nbsp;</p>
+  <p class="TitleBook">Modifying an object</p>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">While you are working, you might want to see the object version(s) cur&#173;rently in use, so you can compare your changes to what is already in use. To do that, select <span class="FM_Bold">Actions</span>&#160;&gt; <span class="FM_Bold">Version History</span>.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">When you are ready to publish the changed object, you can deploy it as you wish.</p>
+</li>
+ </ol>
+ <h2><a name="XREF_58298_Renaming_an_Object"></a>Renaming an Object</h2>
+ <p class="BodyLevel1">To assign a different name to an existing object, right-click the object in the policy tree or the component bin, and select <span class="FM_Bold">Properties</span>&#160;to open the Properties window. Edit the name in the name field, and save your changes.</p>
+ <p class="BodyLevel1">If the name field is disabled (greyed-out), that means you do not have sufficient privileges to rename the object.</p>
+ <h2><a name="XREF_37838_Setting_Permissions"></a>Changing Access&nbsp;Rights</h2>
+ <p class="BodyLevel1">In Control Center, access permissions are set from the outside-in perspective of an object, that is, “Which users or groups have what kind of permissions for accessing and using me?” This is distinct from an alternative user perspective: that is, for each user, “What kinds of objects do I have permission to use, and how?” This is why there is no need to define permission levels for user compo&#173;nents as you define them.</p>
+ <p class="BodyLevel1">As we mentioned earlier, you can right-click any object to view its Properties window. One of the tabs in this window, <span class="FM_Bold">Access Control</span>, displays the currently set access rights for that object. Access rights govern how specific users or groups can do things like read, deploy or delete the object. (This is what we mean by an “outside-in” perspective.) </p>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="AccessRights.jpg" style="width : 260.650pt; height : 285.996pt; " id="image16" src="AccessRights.jpg" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook">The Access Control tab of the Properties window</p>
+ <p class="BodyLevel1">Users with Set Access permission can use this tab to redefine these rights, including changing the rights of an existing user or group, and also granting access rights to additional users or groups. The settings you make in this tab will override the default access control settings.</p>
+ <p class="BodyLevel1">You can do the following on this tab:</p>
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Check or uncheck permissions for an individual user or group</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Click the <span class="FM_Bold">Add</span> button to add a new user or group, and set permissions for it</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Click the <span class="FM_Bold">Remove</span>&#160;button to delete a user’s or group’s permission from this object. (This is the same as unchecking all permissions, except that it is harder to undo.)</p>
+
+ <p class="BodyLevel1">Be sure to click the <span class="FM_Bold">Save</span>&#160;button when you are finished, to save your changes. The following table describes the available permissions.</p>
+<table width="100%">
+ <tr>
+ <td>
+ <table style="border-spacing: 0; padding-left: 4.00pt; padding-top: 4.00pt; padding-right: 4.00pt; padding-bottom: 3.00pt;float: aligncenter; width: 359.49pt;" cellspacing="0" align="center">
+  <tr style=" height : 16.00pt;background : #1f8c4a;">
+  <th style="width : 76.110pt; background : #1f8c4a;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Permission</p>
+</th>
+  <th style="width : 283.375pt; background : #1f8c4a;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Description</p>
+</th>
+</tr>
+  <tr style=" height : 15.00pt;">
+  <td style="width : 76.110pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">Set Access</p>
+</td>
+  <td style="width : 283.375pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Users can make changes in the Access Control tab.</p>
+</td>
+</tr>
+  <tr style=" height : 34.00pt;">
+  <td style="width : 76.110pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">Write</p>
+</td>
+  <td style="width : 283.375pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">For policies and components: Users can edit the object, including setting deployment targets. </p>
+  <p class="CellBody">For folders: Users can create policies or subfolders in the folder.</p>
+</td>
+</tr>
+  <tr style=" height : 15.00pt;">
+  <td style="width : 76.110pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">Submit</p>
+</td>
+  <td style="width : 283.375pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Users can submit for deployment or deactivation.</p>
+</td>
+</tr>
+  <tr style=" height : 66.00pt;">
+  <td style="width : 76.110pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">Read</p>
+</td>
+  <td style="width : 283.375pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">For policies and components: Users can view the object name in the navigation pane, and can view but not modify the definition in the editing pane. </p>
+  <p class="CellBody">For folders: Users can read the contents of the folder. Note that if policies inside a folder have ACLs that allow them to be read, they will be visible if a filter result returns those policies, even if the containing folder does not allow read access.</p>
+</td>
+</tr>
+  <tr style=" height : 15.00pt;">
+  <td style="width : 76.110pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">Deploy</p>
+</td>
+  <td style="width : 283.375pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Users can click the Deploy button.</p>
+</td>
+</tr>
+  <tr style=" height : 15.00pt;">
+  <td style="width : 76.110pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">Delete</p>
+</td>
+  <td style="width : 283.375pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Users can delete the object.</p>
+</td>
+</tr>
+ </table>
+</td></tr>
+</table>
+ <p class="BodyLevel1"></p>
+ <h3>About Default Settings</h3>
+ <p class="BodyLevel1">The settings you make in this tab override the default access control settings that were granted when the object was first created. By default, whenever you create a new policy or component in Policy Author, users and groups are assigned access rights to it based on their roles as defined in Administrator—spe&#173;cifically, on which boxes are checked in the Policy Author Editing Privileges, in the Roles pane of the Users and Roles tab. If a user belongs to more than one group, his access rights will be determined by whichever group is specified in the Default Access Control Group setting; this is also set in Administrator, in the Users pane of the Users and Roles tab.</p>
+ <h2><a name="XREF_55730_Un_deploying"></a>Un-deploying Policies and Components</h2>
+ <p class="BodyLevel1">There are two procedures for <a name="XREF_un_deploying_policies"></a>un-deploying policies and components once they have been deployed, depending on the state they are in. Those that have been deployed on a schedule but are still waiting for the appointed time, are in a scheduled state, and may be cancelled. Those that have been deployed immedi&#173;ately, or whose scheduled deployment time has already passed, are in an active state, and must be deactivated.</p>
+ <p class="BodyLevel1">If you want to delete a deployed policy or component, you must first un-deploy it one way or the other.</p>
+ <h3><a name="XREF_67501_Cancelling"></a>Cancelling</h3>
+ <p class="BodyLevel1">If a package of policies and/or components has been scheduled for deployment but is still awaiting the scheduled time, you can cancel it if you wish. You may want to do this if you change your mind about deploying a new version of a pol&#173;icy or policy component, for example, or if you clicked “Deploy” by mistake. To do this,</p>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Select <span class="FM_Bold">Tools</span>&#160;&gt; <span class="FM_Bold">Deployment History</span> to open the Deployment History win&#173;dow. </p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">In this list, select the deployment package you want to cancel. If you are not sure which package to choose, you can double-click on any line to see a detailed list of the contents of the deployment package.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Click <span class="FM_Bold">Cancel Selected Deployment</span>. A dialog box prompts you to confirm the cancellation. This dialog box shows a list of the policies and compo&#173;nents in the deployment package. You can only cancel them as a group, not individually.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Confirm the cancellation by clicking <span class="FM_Bold">Cancel This Deployment</span>.</p>
+</li>
+ </ol>
+ <h3><a name="XREF_10506_Deactivating"></a>Deactivating</h3>
+ <p class="BodyLevel1">When you <span class="FM_italics" style="font-style : italic; "><i>deactivate</i></span>&#160;an object, it is removed from deployment and is no longer in active use, but you can always deploy it again later. You can only deactivate an object if it is not in use (that is, if it is not referenced in any currently deployed policy). If you deactivate a top-level policy, all subpolicies are also deactivated.</p>
+ <p class="BodyLevel1">You might want to deactivate:</p>
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>A policy component that was never used in any policy.</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>A policy component that represents a concept that is no longer useful in your company; for example, a User Group component that represents the employees in a division that has been sold.</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>A policy that is no longer useful—for example, one covering documents that were confidential during project development, but have been made public since the project finished.</p>
+
+ <p class="BodyLevel1">If the policy is already actively deployed—that is, was deployed either immedi&#173;ately or on a schedule whose time has passed—you use the deactivate command to un-deploy it. To do this,</p>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Select the policy or component that you want to deactivate. You can select multiple objects.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Right-click and select <span class="FM_Bold">Deactivate</span>, or select <span class="FM_Bold">Actions</span>&#160;&gt; <span class="FM_Bold">Deactivate</span>. This marks the object for deactivation. If you are deactivating a component that is in use by any existing policies or other policy components, you are not allowed to proceed.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Click the <span class="FM_Bold">Deploy</span>&#160;button to distribute the new deactivated state of this policy out to all enforcers where it is currently active.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Once a policy is deactivated, you can delete it by simply selecting it and clicking the <span class="FM_Bold">Delete</span> button.</p>
+</li>
+ </ol>
+ <p class="BodyLevel1">Note the following important points about deactivating policies:</p>
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>When you deactivate a policy, it is removed from all enforcers in the net&#173;work where it was deployed. Before you do this to any policy, be sure you understand what it is doing, and where.</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>The deactivation can only be communicated to Desktop Enforcers if they are connected to the network. Enforcers on any laptops that are not con&#173;nected will continue enforcing the policy until they reconnect and have their policy profiles updated.</p>
+
+ <h2><a name="XREF_66065_Deleting_an_Object"></a>Deleting an Object</h2>
+ <p class="BodyLevel1">After you cancel or deactivate a policy or component, it remains in Policy Author’s policy tree pane, in case you want to redeploy it in future. If you are sure you will not want to redeploy an entity, you can delete it permanently by selecting it and clicking <span class="FM_Bold">Delete</span>.</p>
+ <p class="BodyLevel1">When you <span class="FM_italics" style="font-style : italic; "><i>delete</i></span>&#160;an object, its definition is no longer displayed in Policy Studio. You can only delete an object if it was never deployed or it has already been deactivated.</p>
+ <p class="BodyLevel1">To delete an object:</p>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Display the object using one of the following techniques:</p>
+</li>
+  
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>If you are already working with multiple objects in the editing pane, a row of tabs appears at the top with the names of the objects. Look at the tab labels to see whether the object you want is already there. If so, click the tab.</p>
+
+  
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>In the navigation tree, locate the object you want to modify. Scroll through the lists or use the Search tool. When you see the name you want, click it.</p>
+
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">The details about the selected object appear in the right portion of the window.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Select <span class="FM_Bold">Edit</span>&#160;&gt; <span class="FM_Bold">Delete</span>.</p>
+</li>
+ </ol>
+ <p class="PublisherBook"><span class="FM_Emphasis">Note: </span>This command is available only if the object was never deployed (in draft state) or has been deactivated. If it is greyed out in the menu, the object is still active—use the Deactivate command and then deploy the object, and the command will become available.</p>
+<script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+
+
+highlightSearch();
+//-->
+//]]></script>
+</body>
+</html>

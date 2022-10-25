@@ -1,0 +1,131 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ <title>Redesigning 6.x Policies</title>
+
+ <meta name="generator" content="Adobe RoboHelp 9" />
+ <meta name="Originator" content="ImportMif" />
+ <meta name="OriginalFile" content="C:\CC_PSUserGuide_77\PSUserGuideFM\Policy_Redesign.fm" />
+ <link rel="stylesheet" href="Policy_Redesign.css" type="text/css" />
+
+ <link rel="stylesheet" href="..\..\RHStyleMapping.css" type="text/css" />
+
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whlang.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whtopic.js"></script>
+
+</head>
+
+<body><script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.gbWhTopic)
+{
+	var strUrl = document.location.href;
+	var bc = 0;
+	var n = strUrl.toLowerCase().indexOf("bc-");
+	if(n != -1)
+	{
+		document.location.href = strUrl.substring(0, n);
+		bc = strUrl.substring(n+3);
+	}
+
+	if (window.addTocInfo)
+	{
+	addTocInfo("Migrating 6.x Policies\nRedesigning 6.x Policies");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	
+	document.write("<p style=\"text-align:right\"> ");
+AddMasterBreadcrumbs("../../PolicyStudioUserGuideTOC.htm", "", "&gt;", "Policy&nbsp;Studio&nbsp;", "../Welcome/Welcome_to_7_7.htm");
+document.write("<a href=\"Migrating_6_x_Policies.htm\">Migrating 6.x Policies<\/a> &gt; Redesigning 6.x Policies<\/p>");
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../../PolicyStudioUserGuideTOC.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+
+//-->
+//]]></script>
+ <h1><a name="XREF_21286_Redesigning_6_x"></a>Redesigning 6.x Policies<span style="font-family:Times New Roman; font-size:7.0pt"><font size="1" style="font-size:7pt;">&nbsp;&nbsp;&nbsp;</font></span></h1>
+ <p class="BodyLevel1">As mentioned earlier, you must recreate DAC policies. It is not mandatory, how&#173;ever, to modify other types of policies created in earlier versions of Policy Stu&#173;dio. The non-DAC policies will continue to run as designed. You should, however, redesign your existing policies if you plan to add new policies or modify existing policies.</p>
+ <h2>Redesigning DAC Policies</h2>
+ <p class="BodyLevel1">In earlier versions, a folder in the policy tree was equivalent to a Central Access Policy (CAP) in Active Directory (AD). All policies had to be stored in a folder, and each policy was converted to a Central Access Rule (CAR) in AD.</p>
+ <p class="BodyLevel1">In version 7.0 and later, all policies must still be stored in a folder. However, the folder is no longer converted to a CAP in AD; it is simply a container in Policy Studio. A parent policy replaces the previous function of the folder, and is con&#173;verted to a CAP. The subpolicies within the parent policy are converted to CARs. </p>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="DacPolicyTree.jpg" style="width : 357.661pt; height : 193.499pt; " id="image0" src="DacPolicyTree.jpg" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook">DAC policy structure in policy tree in 7.0 and later</p>
+ <p class="BodyLevel1">To recreate DAC policies, create a new policy (a CAP) within a selected folder, then create subpolicies (CARs) within that policy. The following figure shows a parent policy, Access to Sensitive Documents, in the editing pane. The policy contains two subpolicies.</p>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="DacPolicy.png" style="width : 362.249pt; height : 229.125pt; " id="image1" src="DacPolicy.png" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook">DAC Policy in the editing pane</p>
+ <p class="BodyLevel1">For details about creating and configuring DAC policies, see <a href="../Policies/Dynamic_Access_Control_Policies.htm#XREF_64696_Writing_Dynamic"><span class="FM_blue">Writing Dynamic Access Control Policies</span></a>.</p>
+ <h2>Redesigning Other Types of Policies</h2>
+ <p class="BodyLevel1">Because the new concepts change how you design and structure policies, it is best to review, redesign and recreate <span class="FM_Emphasis">all</span>&#160;your policies, rather than modify each policy individually. Although Deny policies maintain the same behavior, the over&#173;all behavior of a set of policies changes, and most likely produces wrong or unin&#173;tended enforcement results, if you mix Deny, Allow only (old), and Allow (new) policies.</p>
+ <p class="BodyLevel1">Redesigning 6.x policies also enables you to take advantage of the new subpolicy feature to break down complex policies into modular pieces of logic that are easier to read and extend. The following shows an example of redesigning 6.x policies in 7.0 and later.</p>
+ <p class="BodyLevel1"><span style="font-weight : bold; "><b>6.x example</b></span>: Two policies are deployed together. The first, an Allow Only pol&#173;icy, permits only members of the HR team access to access HR data only through Excel and only on company PCs. The second policy, a Deny policy, prevents those same users from distributing HR data on weekends.</p>
+ <h5>Allow Only<br />For HR Data<br />On Access <br />By Users in HR Team<br />Using Excel<br />Using Company PCs</h5>
+ <h5>Deny<br />For HR Data<br />On Distribute<br />By Users in HR Team<br />When day is Saturday or Sunday</h5>
+ <p class="BodyLevel1"><span style="font-weight : bold; "><b>7.0 and later version</b></span>: The top-level Deny policy specifies a general rule that restricts access to HR data. The first subpolicy, HR-Team, specifies an exception to that rule, allowing members of the HR team to access HR data if using Excel and a company PC. The second subpolicy, Working-On-A-Weekend, specifies an exception to the second rule, forbidding the distribution of HR data on week&#173;ends.</p>
+ <h5>Deny<br />For HR Data<br />On Access<br />Exception (subpolicy) HR-Team</h5>
+ <h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Subpolicy: HR-Team<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Allow<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;By Users in HR Team<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Using Excel<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Using Company PCs<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Exception (subpolicy) Working-On-A-Weekend</h5>
+ <h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Subpolicy: Working-On-A-Weekend<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Deny<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;On Distribute<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;When day is Saturday or Sunday</h5>
+ <p class="BodyLevel1">&nbsp;</p>
+<script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+
+
+highlightSearch();
+//-->
+//]]></script>
+</body>
+</html>

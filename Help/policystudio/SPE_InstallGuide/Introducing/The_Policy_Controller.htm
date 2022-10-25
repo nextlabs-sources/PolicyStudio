@@ -1,0 +1,176 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ <title>The_Policy_Controller</title>
+
+ <meta name="generator" content="Adobe RoboHelp 9" />
+ <meta name="Originator" content="ImportMif" />
+ <meta name="OriginalFile" content="C:\Documents and Settings\mlittle\Desktop\SharePoint\SharePointFM\Introducing.fm" />
+ <link rel="stylesheet" href="../../default.css" type="text/css" />
+
+ <link rel="stylesheet" href="..\..\default.css" type="text/css" />
+
+ <script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whlang.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.gbWhTopic)
+{
+	var strUrl = document.location.href;
+	var bc = 0;
+	var n = strUrl.toLowerCase().indexOf("bc-");
+	if(n != -1)
+	{
+		document.location.href = strUrl.substring(0, n);
+		bc = strUrl.substring(n+3);
+	}
+
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Introduction\nThe Policy Controller");
+addButton("show",BTN_IMG,"Show TOC and Search","","","","",0,0,"../../whd_show0.gif","../../whd_show2.gif","../../whd_show1.gif");
+addButton("hide",BTN_IMG,"Hide TOC and Search","","","","",0,0,"../../whd_hide0.gif","../../whd_hide2.gif","../../whd_hide1.gif");
+
+	}
+
+	
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../../index.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+//]]></script>
+</head>
+
+<body><script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+//]]></script>
+<table width="100%" cellspacing="0" border="1">
+	<col style="width: 100%;" />
+	<tr style="height: 78px;">
+		<td bgcolor="#003399">&#160;</td>
+	</tr>
+ </table>
+<script type="text/javascript" language="javascript">//<![CDATA[
+document.write("<p  style=\"text-align:right;font-family:Arial;font-size:12pt;font-weight: normal;font-style: normal;text-decoration: none;\">");
+AddMasterBreadcrumbs("../../index.htm", "font-family:Arial;font-size:12pt;font-weight: normal;font-style: normal;text-decoration: none;", "&gt;", "Home", "Welcome.htm");
+document.write("<a style=\"font-family:Arial;font-size:12pt;font-weight: normal;font-style: normal;text-decoration: none;\" href=\"Welcome.htm\">Introduction<\/a> &gt; The Policy Controller<\/p>");
+//]]></script>
+ <p style="text-align: right;">&#160;</p>
+
+ <h1><a name="XREF_71000_The_Policy"></a>The Policy Controller</h1>
+ <p class="BodyLevel1">This section describes the basic functions performed by the Policy Controller, and provides a general overview of the logical architecture that underlies these functions.</p>
+ <h2>Functions</h2>
+ <p class="BodyLevel1">The functions that the Policy Controller provides to all Entitlement Managers can be grouped into these categories:</p>
+ 
+<p class="BodyLevel2">1<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Policy Enforcement</p>
+
+ 
+<p class="BodyLevel2">2<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Monitoring and Auditing</p>
+
+ <h3>Policy Enforcement</h3>
+ <p class="BodyLevel1">Each policy <span style="font-style : italic; "><i>adapter</i></span>&#160;you install provides a specialized policy enforcement point (PEP), monitoring all end-user or system events to determine whether they need to be checked for conformity to information control policies. The PEP is implemented in as a set of libraries that interface directly with (known as <span style="font-style : italic; "><i>hooking into</i></span>) the application or system that is being monitored.</p>
+ <p class="BodyLevel1">Whenever the PEP detects an event that may be covered by a currently deployed policy, it sends a request to the Policy Controller which, as we mentioned earlier, acts as the policy decision point (PDP). The Policy Controller applies all context information to the events, and makes decisions on what policy applies and how. It then relays the effects of any relevant policy back to the PEP, which contains system-specific logic to apply the enforcement.</p>
+ <p class="BodyLevel1">The PEP then instructs the application or file system to respond to the user’s action as the policy requires—either allow or deny. If the policy evaluation results in the action being denied, the Policy Controller returns a message indicating that access is denied or that the requested action cannot be performed. These may take the form of standard system errors, or the customized text balloon that was defined with the policy being enforced, or both. Depending on the policy, it may also be accompanied by an obligation being triggered.</p>
+ <h3>Monitoring and Auditing</h3>
+ <p class="BodyLevel1">Every Policy Controller performs continuous monitoring of how users are accessing documents on that host, so that even if it never blocks any actions by policy subjects, it is still providing a valuable service of capturing who is using what information, how, and when.</p>
+ <p class="BodyLevel1">To do this, a component called the Activity Recorder receives its settings from the Entitlement Manager configuration profile, which indicates what actions should be audited on the current system. Any event that matches the Activity Journal’s settings is captured by the Activity Recorder and written to the local audit log. (For details on managing log files, see <a href="../AdminSPE/Managing_Event_Logging.htm#XREF_99541_Examining_Log_Files">Managing Event Logging</a>.) Periodically, as determined by the configuration profile, this log information is passed to the Control Center and stored in the Activity Journal.</p>
+ <p class="BodyLevel1">All Policy Controllers automatically log activity at a minimum level. At this level, attempts to stop or start the Entitlement Manager or tamper with Entitlement Manager-managed files (binaries, config files, policy bundles, or logs) are logged.</p>
+ <h2>Logical Architecture</h2>
+ <p class="BodyLevel1">The functional components of the Policy Controller include the following:</p>
+ 
+<p class="BodyLevel2">3<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>The <span style="font-weight : bold; "><b>Policy Evaluation Engine</b></span>&#160;evaluates whether or not every user action is covered by any of the policies currently cached at that enforcement point. It bases this on multiple criteria such as who the user is, what host he is using, how he is connected to the network, what action is being attempted, and on what resource; the date, the time, and so on. It does this in real time, and operates continuously whether the host is connected to the network or not. </p>
+
+ 
+<p class="BodyLevel2">4<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>The <span style="font-weight : bold; "><b>Context Manager</b></span> keeps constant track of the environmental con&#173;text of all events, and provides it to the Policy Engine and Policy Adapter. The context includes user identity, computer host name, net&#173;work connection type, and date and time.</p>
+
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="Introducing00007.jpg" style="width : 369.360pt; height : 393.912pt; " id="image1" src="Introducing00007.jpg" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook">Detailed Logical Architecture</p>
+ 
+<p class="BodyLevel2">5<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>For any policy that evaluates to True, the <span style="font-weight : bold; "><b>Obligation Manager</b></span>&#160;initiates an obligation by sending a request to a policy adapter’s obligation ser&#173;vices or executing a built-in obligations. It contains three sub-compo&#173;nents:</p>
+
+ 
+<p class="BodyLevel3">1<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span style="font-style : italic; "><i>Policy Logger</i></span> - Collects and logs all activity details and policy deci&#173;sion results.</p>
+
+ 
+<p class="BodyLevel3">2<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span style="font-style : italic; "><i>Messaging Services</i></span>&#160;- Sends message to recipients or targets listed in a policy.</p>
+
+ 
+<p class="BodyLevel3">3<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span style="font-style : italic; "><i>Application Extender</i></span> - Launches an application or custom execut&#173;able that performs some custom obligation.</p>
+
+ <p class="PublisherBook"><span class="Emphasis">Note: </span>Although it is logically a part of the Policy Controller, the Obligation Manager runs as a separate process, visible in the Processes tab in Win&#173;dows Task Manager.</p>
+ 
+<p class="BodyLevel2">6<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>The <span style="font-weight : bold; "><b>Controller Manager</b></span> records non-policy activities, updates the con&#173;figuration, and secures the controller. Components include:</p>
+
+ 
+<p class="BodyLevel3">4<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span style="font-style : italic; "><i>Activity Recorder</i></span>&#160;- Records activities tracked by the policy adapter in real time.</p>
+
+ 
+<p class="BodyLevel3">5<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span style="font-style : italic; "><i>Configuration Manager</i></span>&#160;- Applies profile and system configuration changes, in real time.</p>
+
+ 
+<p class="BodyLevel3">6<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span style="font-style : italic; "><i>Policy Authentication</i></span>&#160;- Authenticates the policy set from the Policy Server and encrypts it on the local file system.</p>
+
+ 
+<p class="BodyLevel3">7<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span style="font-style : italic; "><i>Tamper Resistance Module</i></span> - Protects all Entitlement Manager pro&#173;cesses, installed files, and registry settings, from tampering by users or other processes, and governs the automatic start-up and restart features.</p>
+
+ 
+<p class="BodyLevel2">7<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>The <span style="font-weight : bold; "><b>ICENet Client</b></span>&#160;provides the interface for all communication with the Policy Server. It is used for deploying new or changed policies, periodi&#173;cally sending activity logs from each control point, and providing con&#173;troller health status.</p>
+
+ <p>&#160;</p>
+<script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+
+highlightSearch();
+//-->
+//]]></script>
+</body>
+</html>

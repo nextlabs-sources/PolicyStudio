@@ -1,0 +1,43 @@
+<!--$Id$-->
+<project name="com.nextlabs.policystudio.depedencies" default="build">
+
+	<property name="nlbuildroot" location=".." />
+	
+	<property file="${nlbuildroot}/scripts/build.properties" />
+	<property file="${nlbuildroot}/scripts/build_common.properties" />
+	<property file="${basedir}/build.properties"/>
+	
+	<property name="assembly_dir" location="${build.dir}/main" />
+	<property name="assembly_bin32_dir" location="${assembly_dir}/release_win_x86" />
+	<property name="assembly_bin64_dir" location="${assembly_dir}/release_win_x64" />
+
+	<import file="${common.build.script.dir}/common_build.xml"/>
+	<import file="${common.build.script.dir}/java_build.xml"/>
+
+
+  <target name="pre_compile" description="Perform any necessary steps required before compile, such as code generation" depends="download_dependencies" />
+
+  <target name="build" description="Compile source code" depends="pre_compile">
+       <mkdir dir="${build.dir}/${policy.studio.depend.plugin.dir}"/>
+       <mkdir dir="${build.dir}/${policy.studio.depend.plugin.dir}/META-INF" />
+       <copy todir="${build.dir}/${policy.studio.depend.plugin.dir}">
+              <fileset dir="${build.dependencies.dir}/main/jlib">
+                    <exclude name="org.eclipse*"/>
+                    <exclude name="com.ibm*"/>
+              </fileset>
+       </copy>
+
+	  <mkdir dir="${assembly_bin32_dir}" />
+	  <mkdir dir="${assembly_bin64_dir}" />
+	  <copy todir="${assembly_bin32_dir}">
+		  <fileset dir="${xlib_bin32_dir}" />
+	  </copy>
+	  <copy todir="${assembly_bin64_dir}">
+		  <fileset dir="${xlib_bin64_dir}" />
+	  </copy>
+
+	  <copy file="${basedir}/META-INF/MANIFEST.MF" todir="${build.dir}/${policy.studio.depend.plugin.dir}/META-INF" />
+
+<copy file = "${build.dir}/version.jar" todir="${build.dir}/${policy.studio.depend.plugin.dir}" overwrite="false"/>
+  </target>
+</project>

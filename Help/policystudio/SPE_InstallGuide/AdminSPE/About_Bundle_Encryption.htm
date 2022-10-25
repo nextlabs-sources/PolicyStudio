@@ -1,0 +1,153 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ <title>About_Bundle_Encryption</title>
+
+ <meta name="generator" content="Adobe RoboHelp 9" />
+ <meta name="Originator" content="ImportMif" />
+ <meta name="OriginalFile" content="C:\Documents and Settings\mlittle\Desktop\SharePoint\SharePointFM\AdminSPE.fm" />
+ <link rel="stylesheet" href="../../default.css" type="text/css" />
+
+ <link rel="stylesheet" href="..\..\default.css" type="text/css" />
+
+ <script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whlang.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.gbWhTopic)
+{
+	var strUrl = document.location.href;
+	var bc = 0;
+	var n = strUrl.toLowerCase().indexOf("bc-");
+	if(n != -1)
+	{
+		document.location.href = strUrl.substring(0, n);
+		bc = strUrl.substring(n+3);
+	}
+
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Administration\nAbout Bundle Encryption");
+addButton("show",BTN_IMG,"Show TOC and Search","","","","",0,0,"../../whd_show0.gif","../../whd_show2.gif","../../whd_show1.gif");
+addButton("hide",BTN_IMG,"Hide TOC and Search","","","","",0,0,"../../whd_hide0.gif","../../whd_hide2.gif","../../whd_hide1.gif");
+
+	}
+
+	
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../../index.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+//]]></script>
+</head>
+
+<body><script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+//]]></script>
+<table width="100%" cellspacing="0" border="1">
+	<col style="width: 100%;" />
+	<tr style="height: 78px;">
+		<td bgcolor="#003399">&#160;</td>
+	</tr>
+ </table>
+<script type="text/javascript" language="javascript">//<![CDATA[
+document.write("<p  style=\"text-align:right;font-family:Arial;font-size:12pt;font-weight: normal;font-style: normal;text-decoration: none;\">");
+AddMasterBreadcrumbs("../../index.htm", "font-family:Arial;font-size:12pt;font-weight: normal;font-style: normal;text-decoration: none;", "&gt;", "Home", "../Introducing/Welcome.htm");
+document.write("<a style=\"font-family:Arial;font-size:12pt;font-weight: normal;font-style: normal;text-decoration: none;\" href=\"Administration.htm\">Administration<\/a> &gt; About Bundle Encryption<\/p>");
+//]]></script>
+ <p style="text-align: right;">&#160;</p>
+
+ <h1><a name="XREF_33482_About_Bundle"></a>About Bundle Encryption</h1>
+ <p class="BodyLevel1">The Policy Server continuously updates Entitlement Managers and enforcers, of all kinds, with any newly-defined or modified policies relevant to them. Each Entitlement Manager periodically sends a heartbeat message to the ICENet Server, which then checks whether any new or changed policies are in queue to be sent to that Entitlement Manager. If there are, it sends them, in the form of a file called <span style="font-style : italic; "><i>bundle.bin</i></span>; this file is referred to as a <span style="font-style : italic; "><i>policy bundle</i></span>. Each Entitlement Manager only retains one bundle at a time, which contains its most recent enforcement instructions. If the Policy Server sends another bundle with updated instructions—additional new policies to enforce, for example—that will overwrite the previous bundle.</p>
+ <p class="BodyLevel1">All policy bundles sent from the Policy Server to the Entitlement Manager or enforcers are encrypted using standard SSL protocols. When they arrive at the enforcer, the enforcer authenticates them with digital certificates to ensure that they were indeed created by the Policy Server, and that they have not been modified by any other processes. This protects against the possibility of anyone deploying spoof policies designed to open security holes in your enterprise.</p>
+ <h2>Authentication Failure</h2>
+ <p class="BodyLevel1">Whenever a bundle file arrives at an enforcer client and cannot be authenticated, a Level 3 document activity event is written to the Windows Event Log:</p>
+ <h5>policy bundle authentication failed</h5>
+ <p class="BodyLevel1">This event will also be displayed by Reporter, if your query includes Level 3 events. The most likely cause of such failure is that the file is corrupted in some way; in such cases you should examine the file contents. </p>
+ <p class="BodyLevel1">Bundle files are encrypted, but administrators can decrypt them for troubleshooting purposes. For this purpose, a special utility called <span style="font-style : italic; "><i>Decrypt.exe</i></span>&#160;is available in the public_bin directory of each host where an enforcer is installed. To use this utility,</p>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Stop the enforcer on the host where the encrypted bundle file is located. You cannot decrypt any bundles while the enforcer is running.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1"><span style="font-size  : 11.0pt; "><font size="3" style="font-size:11pt;">From a command line window, </font></span>run the utility, supplying the arguments shown below. </p>
+</li>
+  <h5>decrypt -b &lt;path\file&gt;&#160;-f &lt;OutputFile.txt&gt; -e <span class="FM_codeItalics">&lt;InstallPath&gt;</span></h5>
+  <p class="BodyLevel1">In this command,</p>
+  
+<p class="BodyLevel2">1<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span style="font-weight : bold; "><b>-b</b></span>&#160;is the complete path and name of the encrypted bundle file. By default, the path is C:\Program Files\NextLabs\Desktop Enforcer. The file name will always be <span style="font-style : italic; "><i>bundle.bin</i></span>. This argument is not mandatory; if it is not present, the enforcer will assume the default path and file name.</p>
+
+  
+<p class="BodyLevel2">2<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span style="font-weight : bold; "><b>-f</b></span>&#160;is the name of the output (decrypted) file. This argument is also not mandatory; if it is not present, the utility will call the output file<span style="font-style : italic; "><i>&#160;bun&#173;dle.out</i></span>, and place it in the same path as <span style="font-style : italic; "><i>bundle.bin</i></span>.</p>
+
+  
+<p class="BodyLevel2">3<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span style="font-weight : bold; "><b>-e</b></span>&#160;is the actual installation directory for the enforcer, which the utility needs in order to load the security keys from the keystore on the file system. If the enforcer is installed in this default path (C:\Program Files\NextLabs\Desktop Enforcer), and the Decrypt utility is running from its default path, this argument is not needed.</p>
+
+  <p class="BodyLevel1">Here is an example:</p>
+  <h5>decrypt –b “C:\Program Files\Info Security\Compliant Enterprise\Windows Desktop Enforcer\bundle.bin” –f bundle.txt –e “C:\Program Files\Info Security\Compliant Enterprise\Windows Desktop Enforcer”</h5>
+  <p class="BodyLevel1">Note that none of the arguments are required if you are using default values for install paths and file names; and so in most cases you can just use the command </p>
+  <h5>decrypt</h5>
+  <p class="BodyLevel1">If the Decrypt utility has been moved to a non-default location, the -e argument will be required, but not the other two.</p>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">When the utility starts, it prompts you for the standard utility password, which is the same as the password required to stop the enforcer.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">After the utility runs, the output text file will be available for analysis.</p>
+</li>
+ </ol>
+ <p class="BodyLevel1">You can use the command <span style="font-style : italic; "><i>decrypt -h</i></span>&#160;to display a help screen with information on using the decrypt utility.</p>
+ <p>&#160;</p>
+<script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+
+highlightSearch();
+//-->
+//]]></script>
+</body>
+</html>

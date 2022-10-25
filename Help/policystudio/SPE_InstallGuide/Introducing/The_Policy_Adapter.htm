@@ -1,0 +1,133 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ <title>The_Policy_Adapter</title>
+
+ <meta name="generator" content="Adobe RoboHelp 9" />
+ <meta name="Originator" content="ImportMif" />
+ <meta name="OriginalFile" content="C:\Documents and Settings\mlittle\Desktop\SharePoint\SharePointFM\Introducing.fm" />
+ <link rel="stylesheet" href="../../default.css" type="text/css" />
+
+ <link rel="stylesheet" href="..\..\default.css" type="text/css" />
+
+ <script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whlang.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.gbWhTopic)
+{
+	var strUrl = document.location.href;
+	var bc = 0;
+	var n = strUrl.toLowerCase().indexOf("bc-");
+	if(n != -1)
+	{
+		document.location.href = strUrl.substring(0, n);
+		bc = strUrl.substring(n+3);
+	}
+
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Introduction\nThe Policy Adapter");
+addButton("show",BTN_IMG,"Show TOC and Search","","","","",0,0,"../../whd_show0.gif","../../whd_show2.gif","../../whd_show1.gif");
+addButton("hide",BTN_IMG,"Hide TOC and Search","","","","",0,0,"../../whd_hide0.gif","../../whd_hide2.gif","../../whd_hide1.gif");
+
+	}
+
+	
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../../index.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+//]]></script>
+</head>
+
+<body><script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+//]]></script>
+<table width="100%" cellspacing="0" border="1">
+	<col style="width: 100%;" />
+	<tr style="height: 78px;">
+		<td bgcolor="#003399">&#160;</td>
+	</tr>
+ </table>
+<script type="text/javascript" language="javascript">//<![CDATA[
+document.write("<p  style=\"text-align:right;font-family:Arial;font-size:12pt;font-weight: normal;font-style: normal;text-decoration: none;\">");
+AddMasterBreadcrumbs("../../index.htm", "font-family:Arial;font-size:12pt;font-weight: normal;font-style: normal;text-decoration: none;", "&gt;", "Home", "Welcome.htm");
+document.write("<a style=\"font-family:Arial;font-size:12pt;font-weight: normal;font-style: normal;text-decoration: none;\" href=\"Welcome.htm\">Introduction<\/a> &gt; The Policy Adapter<\/p>");
+//]]></script>
+ <p style="text-align: right;">&#160;</p>
+
+ <h1><a name="XREF_61343_Logical"></a>The Policy Adapter</h1>
+ <p class="BodyLevel1">The SharePoint Policy Adapter tightly integrates with the Microsoft SharePoint event and object model to monitor application activities and enforce policy decisions for information controls. It consists of the following logical parts:</p>
+ 
+<p class="BodyLevel2">1<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>The <span style="font-weight : bold; "><b>Protocol Monitor</b></span> monitors HTTP requests with ASP.Net’s HTTP Mod&#173;ule and blocks requests according to policy decisions. It provides one of the Entitlement Manager’s two PEPs.</p>
+
+ 
+<p class="BodyLevel2">2<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>The <span style="font-weight : bold; "><b>Application Monitor</b></span>&#160;monitors SharePoint events by integrating with SharePoint application, and blocks event execution according to policy decisions. It provides the system’s other PEP.</p>
+
+ 
+<p class="BodyLevel2">3<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>The <span style="font-weight : bold; "><b>Context Manager</b></span> retrieves SharePoint object properties and pro&#173;vides application context for monitored events.</p>
+
+ 
+<p class="BodyLevel2">4<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>The <span style="font-weight : bold; "><b>Notification Manager</b></span>&#160;triggers SharePoint to display an educational message to inform a user of policy and procedures, or block the user event and inform the user about the violation.</p>
+
+ 
+<p class="BodyLevel2">5<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>The <span style="font-weight : bold; "><b>Policy Controller Client</b></span>&#160;sends policy decision requests to the Policy Controller, along with event details and application context.</p>
+
+ <p class="BodyLevel1">Note that the first four components—all but the Policy Controller Client—work together as the Entitlement Manager’s Policy Enforcement Point, or PEP.</p>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p>&#160;</p>
+<script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+
+highlightSearch();
+//-->
+//]]></script>
+</body>
+</html>

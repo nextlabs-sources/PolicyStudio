@@ -1,0 +1,467 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ <title>Configuring_Security_Trimming</title>
+
+ <meta name="generator" content="Adobe RoboHelp 9" />
+ <meta name="Originator" content="ImportMif" />
+ <meta name="OriginalFile" content="C:\Documents and Settings\mlittle\Desktop\SharePoint\SharePointFM\ConfiguringSPE.fm" />
+ <link rel="stylesheet" href="../../default.css" type="text/css" />
+
+ <link rel="stylesheet" href="..\..\default.css" type="text/css" />
+
+ <script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whlang.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.gbWhTopic)
+{
+	var strUrl = document.location.href;
+	var bc = 0;
+	var n = strUrl.toLowerCase().indexOf("bc-");
+	if(n != -1)
+	{
+		document.location.href = strUrl.substring(0, n);
+		bc = strUrl.substring(n+3);
+	}
+
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Configuring the Entitlement Manager for SharePoint\nConfiguring Security Trimming");
+addButton("show",BTN_IMG,"Show TOC and Search","","","","",0,0,"../../whd_show0.gif","../../whd_show2.gif","../../whd_show1.gif");
+addButton("hide",BTN_IMG,"Hide TOC and Search","","","","",0,0,"../../whd_hide0.gif","../../whd_hide2.gif","../../whd_hide1.gif");
+
+	}
+
+	
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../../index.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+//]]></script>
+</head>
+
+<body><script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+//]]></script>
+<table width="100%" cellspacing="0" border="1">
+	<col style="width: 100%;" />
+	<tr style="height: 78px;">
+		<td bgcolor="#003399">&#160;</td>
+	</tr>
+ </table>
+<script type="text/javascript" language="javascript">//<![CDATA[
+document.write("<p  style=\"text-align:right;font-family:Arial;font-size:12pt;font-weight: normal;font-style: normal;text-decoration: none;\">");
+AddMasterBreadcrumbs("../../index.htm", "font-family:Arial;font-size:12pt;font-weight: normal;font-style: normal;text-decoration: none;", "&gt;", "Home", "../Introducing/Welcome.htm");
+document.write("<a style=\"font-family:Arial;font-size:12pt;font-weight: normal;font-style: normal;text-decoration: none;\" href=\"Configuring_the_Entitlement_Manager_for_SharePoint.htm\">Configuring the Entitlement Manager for SharePoint<\/a> &gt; Configuring Security Trimming<\/p>");
+//]]></script>
+ <p style="text-align: right;">&#160;</p>
+
+ <h1>Configuring <a name="XREF_49640_Security_Trimming"></a>Security Trimming</h1>
+ <p class="BodyLevel1"><span style="font-style : italic; "><i>Security trimming</i></span>&#160;refers to the Entitlement Manager for SharePoint’s ability to block the display of any content the current user does not have access to, according to some currently deployed policy. When this feature is enabled, any user who is blocked from using certain documents posted on SharePoint not only cannot download or open them, but also cannot even see that they are posted. </p>
+ <p class="BodyLevel1">Depending on how the system is configured, this can be applied at various levels: to&#160;whole webparts (sites, lists, libraries, calendars, wikis, tabs, etc.), to individual items in lists, and even to individual items returned by the site search tool.&#160;</p>
+ <p class="BodyLevel1">The required software components are automatically installed on each SharePoint server where an enforcer is installed. However, these features are disabled until an administrator manually turns them on. The reason it is designed to be explicitly enabled by an administrator is that it works by adding a special control to every master page in the site collection. Some SharePoint administrators may consider this an unacceptably intrusive option. In such cases, they have the option of leaving it turned off.</p>
+ <p class="BodyLevel1">The different kinds of trimming are enabled individually. This section describes how to enable and disable:</p>
+ 
+<p class="BodyLevel2">1<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><a href="../UsingSPE/Adding_Security_Trimming_to_Access_Control_Policies.htm#XREF_82336_Webpart_Trimming">Webpart Trimming</a></p>
+
+ 
+<p class="BodyLevel2">2<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><a href="../UsingSPE/Adding_Security_Trimming_to_Access_Control_Policies.htm#XREF_39028_List_Trimming">List Trimming</a></p>
+
+ 
+<p class="BodyLevel2">3<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><a href="../UsingSPE/Adding_Security_Trimming_to_Access_Control_Policies.htm#XREF_30212_Search_Result">Search Result Trimming</a></p>
+
+ <p class="PublisherBook"><span class="Emphasis">Note: </span>After these forms of trimming are configured, Policy Designers must create Portal Resource Components that target the site collections and/or webparts you want trimmed. For examples, see<span style="color   : #ff0000; "><font color="red" >&#160;</font></span><a href="../UsingSPE/Adding_Security_Trimming_to_Access_Control_Policies.htm#XREF_60798_Create_Portal">Creating Portal Components for Security Trimming</a><span style="color   : #ff0000; "><font color="red" >.</font></span></p>
+ <h2><a name="XREF_82336_Webpart_Trimming"></a>Webpart Trimming</h2>
+ <p class="BodyLevel1">Webpart trimming allows policy designers to expose individual webparts to specified users as appropriate, while hiding web parts from users who are not authorized to use them. In SharePoint terminology, web parts include tables, lists, document libraries, directories, calendars, filters, and many other tools such as dashboards and search fields.</p>
+ <p class="PublisherBook"><span class="Emphasis">Note: </span>This feature is supported by all Entitlement Manager for SharePoint release 5.5&#160;and higher. </p>
+ <p class="BodyLevel1">Webpart trimming is either enabled or disabled for an entire site collection, and when enabled will work the same way for all component structures of that site collection (sites, pages, lists, etc.). It can be turned on or off at any time. When it is disabled, policies that rely on webpart-level granularity will not work properly.</p>
+ <p class="BodyLevel1">You can enable webpart trimming in two ways: directly in SharePoint’s administrator pages, or using a special utility called Entitlement Manager for SharePoint&#160;Administrator. </p>
+ <h3><a name="XREF_48657_Configuring_List"></a>Configuring Webpart and List Trimming for a Whole Site Collection </h3>
+ <p class="BodyLevel1">This section describes how to enable Webpart and List Trimming for a whole site collection. Both Webpart and List Trimming are enabled on the same administrative settings page within SharePoint. Unlike Webpart trimming, List trimming can be enabled either globally, for the whole site collection, or individually, for only those lists where it is needed. The procedure for enabling List trimming for individual lists is described in <a href="#XREF_36587_Configuring_List">Configuring List Trimming (Individual Lists)</a>.</p>
+ <p class="BodyLevel1">To enable Webpart or List Trimming globally,</p>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Go to the home page of the SharePoint site collection and click on Site Actions &gt;&#160;Site Settings &gt; Modify All Site Settings, to open the Site Settings page. Only site owners, with administrative permission, can access these controls.</p>
+</li>
+  <p class="BodyLevel1"></p>
+  <div align="center"><img alt="SPSiteSettingsMenu.jpg" style="width : 362.812pt; height : 280.878pt; " id="image9" src="SPSiteSettingsMenu.jpg" />
+  </div>
+  <p class="BodyLevel1">&nbsp;</p>
+  <p class="TitleBook">SharePoint Site Settings</p>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">On the Site Settings page, under Site Collection Administration (the right-most column), select SharePoint Security Trimming, as shown at right. This opens the Security Trimming Settings page.</p>
+</li>
+  <p class="BodyLevel1"></p>
+  <div align="center"><img alt="SiteCollAdmin.jpg" style="width : 166.536pt; height : 279.580pt; " id="image10" src="SiteCollAdmin.jpg" />
+  </div>
+  <p class="BodyLevel1">&nbsp;</p>
+  <p class="TitleBook">Site Collection Administrative Settings</p>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">On the Security Trimming Settings page, click on appropriate radio button to enable Webpart Trimming and/or List Trimming.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Click the OK button to save your changes.</p>
+</li>
+ </ol>
+ <p class="PublisherBook"><span class="Emphasis">Note: </span>You can use this same control to disable these features.</p>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="SecTrimmingSettings.jpg" style="width : 486.670pt; height : 153.618pt; " id="image11" src="SecTrimmingSettings.jpg" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook">Enabling Security Trimming </p>
+ <h3>Enabling Webpart Trimming using SharePoint Adminstrator</h3>
+ <p class="BodyLevel1">In addition to enabling and disabling Webpart trimming from within SharePoint, you can use the Entitlement Manager for SharePoint&#160;Administrator to enable Webpart trimming. Follow these steps,</p>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Open a Windows command prompt window on the SharePoint Server host.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Set the environmental variable to give the path for the administrator util&#173;ity:</p>
+</li>
+  <h5>C:\Program Files\NextLabs\SharePoint Enforcer\bin</h5>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Type the command:</p>
+</li>
+ </ol>
+ <h5>ce_spadmin -o securitytrimming -enable -url &lt;URL&gt;</h5>
+ <p class="Title">where &lt;URL&gt; is the fully qualified URL for the site collection, e.g. <span style="font-style : italic; "><i>http:\\sharepoint.cyberdyne.com</i></span>. This element is optional; if it is not specified, the command applies to <span style="font-style : italic; "><i>all</i></span>&#160;SharePoint site collections defined on the server or server farm.</p>
+ <h3>Disabling Webpart Trimming using SharePoint Adminstrator</h3>
+ <p class="BodyLevel1">Once this feature has been enabled, you can use the same utility to disable it. To do this, set the same environmental variable and use the command:</p>
+ <p class="BodyLevel1" style="margin-top  : 5.000pt; margin-bottom : 9.000pt; font-family : Courier New; font-size  : 9.0pt;">ce_spadmin -o securitytriming -disable -url &lt;URL&gt;</p>
+ <h2><a name="XREF_12563_Using_Webpart"></a><a name="XREF_39028_List_Trimming"></a>List Trimming</h2>
+ <p class="BodyLevel1">A second type of Security trimming, known as List Trimming,&#160;resembles Webpart trimming but it works at an even more granular level than Webparts. It lets you design policies that hide individual items in lists from users who are not authorized to use the resources they are linked to. </p>
+ <p class="BodyLevel1">For example, your site might have a document library containing project design documents, some of which are highly sensitive and others less so. Because you want all users to have read access to the less sensitive documents, you cannot use policies based on webpart trimming here. However, you can use list trimming policies to expose the individual links to more sensitive documents only to authorized users—the Advanced Projects team, for example—while hiding them from all users not on that team.</p>
+ <p class="BodyLevel1">Also like webpart trimming, list trimming can be&#160;enabled or disabled for a&#160;whole site collection, and when enabled will work the same way for all component structures (sites, pages, lists, etc.) of that site collection. For more information on this procedure, see <a href="#XREF_48657_Configuring_List">Configuring Webpart and List Trimming for a Whole Site Collection </a>. It can be turned on or off at any time. When it is disabled, any policies that rely on link-level granularity will not work properly.</p>
+ <h3><a name="XREF_36587_Configuring_List"></a>Configuring List Trimming (Individual Lists)</h3>
+ <p class="BodyLevel1">As an alternative to activating list trimming globally, you can activate it for individual lists only. (This approach will give more efficient performance, as compared to global list trimming.) To do this, navigate to the list and perform the following procedure. In this example, we enable trimming for a list called “Tasks.”</p>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">From the list under the Settings tab (this tab is only displayed for users with Administrator access), select List Settings. This opens the Customize [ListName] page.</p>
+</li>
+  <p class="BodyLevel1"></p>
+  <div align="center"><img alt="ListTrim1.jpg" style="width : 486.670pt; height : 138.439pt; " id="image12" src="ListTrim1.jpg" />
+  </div>
+  <p class="BodyLevel1">&nbsp;</p>
+  <p class="TitleBook">Opening Customize List Page</p>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">On the Customize [ListName] page, under the Permissions and Manage&#173;ment menu, select SharePoint List Trimming. This opens the Compliant Enterprise List Trimming Settings page.</p>
+</li>
+  <p class="BodyLevel1"></p>
+  <div align="center"><img alt="ListTrim2.jpg" style="width : 486.670pt; height : 202.815pt; " id="image13" src="ListTrim2.jpg" />
+  </div>
+  <p class="BodyLevel1">&nbsp;</p>
+  <p class="TitleBook">Enabling List Trimming</p>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">On this page, click the Activate List Trimming checkbox, then the OK but&#173;ton to save your change. (Note that if this checkbox displays as read-only, it means that list trimming is already enabled globally for this site collec&#173;tion.)</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Click the OK button to save your change.</p>
+</li>
+ </ol>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="ListTrimmingActivate.jpg" style="width : 486.670pt; height : 113.190pt; " id="image14" src="ListTrimmingActivate.jpg" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook">Activating List Trimming</p>
+ <h2><a name="XREF_30212_Search_Result"></a>Search Result Trimming</h2>
+ <p class="BodyLevel1">The third type of trimming applies to the results of searches conducted within SharePoint portals. Search Result Trimming allows you to limit the display of search results to only those webparts or documents (i.e., list items) which the search user is authorized to view. For example, suppose a user searches a site collection for the string “Cyberdyne Corp.” If some policy blocks that user from viewing, opening,&#160;or using documents belonging to or associated with Cyberdyne Corp, then all search results involving Cyberdyne documents that appear in the search results will be trimmed—that is, not displayed to that specific user.</p>
+ <p class="BodyLevel1">Search result trimming is closely integrated with SharePoint’s crawl rule mechanism. The procedures for configuring it are&#160;slightly different in SharePoint Server 2007 and 2010, so they are discussed in separate sections below.</p>
+ <h3>About SharePoint Crawl Rules</h3>
+ <p class="BodyLevel1">Internal administrative tools in SharePoint allow you to define <span style="font-style : italic; "><i>crawl rules,</i></span>&#160;which are essentially filters that control what paths will be included or excluded from content searches initiated by SharePoint end users. It is helpful to think of these rules as a primary filter for search results, while the search result-related policies you define in Compliant Enterprise&#160;provide a secondary, more granular filter.</p>
+ <p class="BodyLevel1">In practice, this means that any existing crawl rules will block users from searching on entire sites or some branches of sites, based on designated starting point URLs. Content on site locations already blocked by crawl rules <span style="font-style : italic; "><i>will not </i></span>be exposed to users regardless of whether they are allowed or blocked by Compliant Enterprise&#160;policies, since they are already blocked by crawl rules, and these have a higher priority. For site locations <span style="font-style : italic; "><i>not</i></span>&#160;blocked by crawl rules, Compliant Enterprise&#160;policies will then be applied to users (in a much finer and more context-aware way), to display or hide specific search results pointing to those locations. In short, Compliant Enterprise&#160;policies are only enforced on site locations that are not already restricted by crawl rules.</p>
+ <p class="BodyLevel1">Note that you can define crawl rules to cover both SharePoint server and file server shares, which means that you can set up search result trimming to cover searches of both SharePoint sites and file shares.</p>
+ <h3><a name="XREF_45104_SharePoint_Ser"></a>Configuring Search Result Trimming: SharePoint Server 2007</h3>
+ <p class="BodyLevel1">Search Result Trimming is disabled by default. To enable and configure Search Result Trimming, perform the following procedure on the SharePoint server. </p>
+ <p class="PublisherBook"><span class="Emphasis">Note: </span>These procedures vary slightly, depending on whether you are using SharePoint Server 2007 or 2010. For SharePoint 2010 instructions, see <a href="#XREF_40946_SharePoint_Ser">Configuring Search Result Trimming: SharePoint 2010</a>.</p>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Turn on the SharePoint search service. As with all Windows services, you do this in Control Panel &gt;&#160;Administrative Tools &gt; Services. The service is listed as <span style="font-style : italic; "><i>Windows SharePoint Services Search</i></span>.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">For each site in the SharePoint site collection, make sure that there is a crawl rule defined, with the following settings:</p>
+</li>
+  
+<p class="BodyLevel3">1<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span style="font-weight : bold; "><b>Path</b></span>: The URL must be root address for the site</p>
+
+  
+<p class="BodyLevel3">2<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span style="font-weight : bold; "><b>Crawl Configuration</b></span>: <span style="font-style : italic; "><i>Include all items . . </i></span>. must be selected</p>
+
+  
+<p class="BodyLevel3">3<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span style="font-weight : bold; "><b>Specify Authentication</b></span>: <span style="font-style : italic; "><i>Use the default</i></span> &#160;. . . must be selected</p>
+
+  <p class="Title">It is possible that these have already been defined by your SharePoint administrator; if they have not, you must define them in order to use the search result trimming feature. </p>
+  <p class="Title">To define crawl rules in SharePoint Server 2007,</p>
+  
+<p class="BodyLevel3">4<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Open SharePoint Central Administration.</p>
+
+  
+<p class="BodyLevel3">5<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>On the Home tab, under the Shared Services Administration menu on the left side of the page, select SharedServices1 to display the Configure Search Settings page, as shown in the figure below. </p>
+
+  
+<p class="BodyLevel3">6<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Click on whatever value is displayed for the Content Sources field, as shown in the figure below. This displays the Manage Content Sources page, with a table showing all content sources.</p>
+
+  <p class="BodyLevel1"></p>
+  <div align="center"><img alt="SearchSettings1.jpg" style="width : 486.670pt; height : 242.315pt; " id="image15" src="SearchSettings1.jpg" />
+  </div>
+  <p class="BodyLevel1">&nbsp;</p>
+  <p class="TitleBook">Configuring Search Settings</p>
+  
+<p class="BodyLevel3">7<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>On the Manage Content Sources page, click on the <span style="font-style : italic; "><i>Local Office SharePoint Server Sites</i></span>&#160;source to open it for editing. </p>
+
+  <p class="BodyLevel1"></p>
+  <div align="center"><img alt="SearchSettings2.jpg" style="width : 486.670pt; height : 200.761pt; " id="image16" src="SearchSettings2.jpg" />
+  </div>
+  <p class="BodyLevel1">&nbsp;</p>
+  <p class="TitleBook">Managing Content Sources</p>
+  
+<p class="BodyLevel3">8<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>On the Edit Content Source page, copy down the contents of the Start Addresses field. This is the list of URLs representing the start address for all sites defined in the site collection; you will need them for defining your crawl rules. Note, however, that you can only use the URLs that represent site roots; any start addresses listed here that are lower than the root level, cannot be used for search result trimming.</p>
+
+  <p class="BodyLevel1"></p>
+  <div align="center"><img alt="SearchSettings3.jpg" style="width : 486.670pt; height : 208.351pt; " id="image17" src="SearchSettings3.jpg" />
+  </div>
+  <p class="BodyLevel1">&nbsp;</p>
+  <p class="TitleBook">Edit Content Source Page</p>
+  
+<p class="BodyLevel3">9<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>After you have entered the content sources, click OK. </p>
+
+  
+<p class="BodyLevel3">10<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;</font></span>Next you must define one crawl rule for each of the sites defined in the site collection. First, click the <span class="Bold">Crawl Rules</span> link.</p>
+
+  
+<p class="BodyLevel3">11<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;</font></span>In the Crawl Rules window, define the first rule (if they have not already been defined by your SharePoint administrator). These rules must use the following settings:<br /><span style="font-weight : bold; "><b><br />Path</b></span>: The URL must be root address for the site<br /><span style="font-weight : bold; "><b><br />Crawl Configuration</b></span>: Select <span style="font-weight : bold; "><b>“</b></span>Include all items<span style="font-style : italic; "><i>&#160;. . </i></span>. <span style="font-weight : bold; "><b>”<br /><br />Specify Authentication</b></span>: Select <span style="font-weight : bold; "><b>“</b></span>Use the default &#160;. . . <span style="font-weight : bold; "><b>”</b></span>&#160;</p>
+
+  
+<p class="BodyLevel3">12<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;</font></span>Click the OK button to save the definition of each rule. An example is shown below.</p>
+
+  <p class="BodyLevel1"></p>
+  <div align="center"><img alt="ListTrim4.jpg" style="width : 486.670pt; height : 393.977pt; " id="image18" src="ListTrim4.jpg" />
+  </div>
+  <p class="BodyLevel1">&nbsp;</p>
+  <p class="TitleBook"><a name="XREF_28161_Adding_Crawl_Rules"></a>Adding Crawl Rules</p>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1"><a name="XREF_93444_3_Once_the_crawl"></a>Once the crawl rules have been defined, go back to the Manage Content Sources page and start a Full Crawl for the SharePoint server.</p>
+</li>
+  <p class="BodyLevel1"></p>
+  <div align="center"><img alt="StartCrawl.jpg" style="width : 486.670pt; height : 277.227pt; " id="image19" src="StartCrawl.jpg" />
+  </div>
+  <p class="BodyLevel1">&nbsp;</p>
+  <p class="TitleBook">Starting Full Crawl</p>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Wait for the crawl to finish. You check this through the Status column in the Manage Content Sources window, as shown in the figure above. When the crawl starts, the status displays “Crawling Full;” when it finishes, it changes back to “Idle.” If the site is large, this may take several minutes to finish.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Once the crawl is finished, you must enable the search result trimming feature through the CLI-based Entitlement Manager Administrator utility. To do this, </p>
+</li>
+  
+<p class="BodyLevel3">13<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;</font></span>Open a Windows command prompt window on the SharePoint Server host.</p>
+
+  
+<p class="BodyLevel3">14<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;</font></span>Set the environmental variable to give the path for the administra&#173;tor utility: </p>
+
+  <h5>C:\Program Files\NextLabs\SharePoint Enforcer\bin</h5>
+  
+<p class="BodyLevel3">15<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;</font></span>Type the command:</p>
+
+  <h5>ce_spadmin.exe -o searchresulttrimming -ssa &lt;Search Service Application&gt; -install</h5>
+  <p class="Title">Where<span class="GreyBold">&#160;Search Service Application </span>refers to the application name defined at Central Administration &gt;&#160;Application Management &gt; Manage this Farm’s Shared Services. In the figure below, this is &quot;SharedServices1,&quot; but this can change depending on your SharePoint configuration.</p>
+  <p class="BodyLevel1"></p>
+  <div align="center"><img alt="2007_ssa.jpg" style="width : 707.250pt; height : 230.856pt; " id="image20" src="2007_ssa.jpg" />
+  </div>
+  <p class="BodyLevel1">&nbsp;</p>
+  <p class="TitleBook">Locating the Search Service Application Name</p>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Clear the contents from the security trimming cache. To do this, you use the SPE Administrator utility:</p>
+</li>
+  
+<p class="BodyLevel3">16<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;</font></span>Open a command line window</p>
+
+  
+<p class="BodyLevel3">17<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;</font></span>Navigate to C:\Program Files\NextLabs\SharePoint Enforcer\bin</p>
+
+  
+<p class="BodyLevel3">18<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;</font></span>Type the command:</p>
+
+  <h5>CE_SPAdmin.exe -o securitytrimming -clearcache</h5>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Run the Full Crawl a second time, as described in Step <a href="../UsingSPE/Adding_Security_Trimming_to_Access_Control_Policies.htm#XREF_93444_3_Once_the_crawl">3</a>, and let it run until the status turns to Idle.</p>
+</li>
+ </ol>
+ <h4>Ongoing Maintenance</h4>
+ <p class="BodyLevel1">Whenever you change or add new contents in SharePoint, you may need to crawl the Content Source again. To simplify this, you may configure the server to perform Incremental Crawls, by selecting that option from the drop-down menu on the Manage Content Sources page. You then define the incremental crawl time interval as shown below:</p>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="IncremCrawl.jpg" style="width : 486.670pt; height : 127.352pt; " id="image21" src="IncremCrawl.jpg" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook">Incremental Crawl Settings</p>
+ <h3><a name="XREF_40946_SharePoint_Ser"></a>Configuring Search Result Trimming: SharePoint 2010</h3>
+ <p class="BodyLevel1">Search Result Trimming is disabled by default. To enable and configure Search Result Trimming, perform the following procedure on the SharePoint server. </p>
+ <p class="PublisherBook"><span class="Emphasis">Note: </span>These procedures vary slightly, depending on whether you are using SharePoint Server 2007 or 2010. For instructions for SharePoint 2007, see <a href="#XREF_45104_SharePoint_Ser">Configuring Search Result Trimming: SharePoint Server 2007</a>.</p>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Turn on the SharePoint search service. As with all Windows services, you do this in Control Panel &gt;&#160;Administrative Tools &gt; Services. The service is listed as <span style="font-style : italic; "><i>SharePoint Service Search 14</i></span>.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">For each site in the SharePoint site collection, make sure that there is a crawl rule defined, with the following settings:</p>
+</li>
+  
+<p class="BodyLevel3">19<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;</font></span><span style="font-weight : bold; "><b>Path</b></span>: The URL must be root address for the site</p>
+
+  
+<p class="BodyLevel3">20<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;</font></span><span style="font-weight : bold; "><b>Crawl Configuration</b></span>: <span style="font-style : italic; "><i>Include all items . . </i></span>. must be selected</p>
+
+  
+<p class="BodyLevel3">21<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;</font></span><span style="font-weight : bold; "><b>Specify Authentication</b></span>: <span style="font-style : italic; "><i>Use the default</i></span> &#160;. . . must be selected</p>
+
+  <p class="Title">It is possible that these have already been defined by your SharePoint administrator; if they have not, you must define them in order to use the search result trimming feature. </p>
+  <p class="Title">To define crawl rules in SharePoint 2010,</p>
+  
+<p class="BodyLevel3">22<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;</font></span>Open SharePoint Central Administration.</p>
+
+  
+<p class="BodyLevel3">23<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;</font></span>On the Home tab, select General Application Settings &gt; Farm Search Administration &gt; Search Service Applications. The Search Adminis&#173;tration page displays, as shown below. </p>
+
+  <p class="BodyLevel1"></p>
+  <div align="center"><img alt="2010_SearchAdministration.jpg" style="width : 787.499pt; height : 345.748pt; " id="image22" src="2010_SearchAdministration.jpg" />
+  </div>
+  <p class="BodyLevel1">&nbsp;</p>
+  <p class="TitleBook">Search Administration Page</p>
+  
+<p class="BodyLevel3">24<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;</font></span>In the menu on the left of the window, click <span class="Bold">Content Sources</span>. The Manage Content Sources window displays. </p>
+
+  
+<p class="BodyLevel3">25<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;</font></span>Click <span class="Bold">Local SharePoint</span> sites. The Add Content Source window dis&#173;plays, as shown below.</p>
+
+  <p class="BodyLevel1"></p>
+  <div align="center"><img alt="2010_newcontent.jpg" style="width : 785.249pt; height : 249.302pt; " id="image23" src="2010_newcontent.jpg" />
+  </div>
+  <p class="BodyLevel1">&nbsp;</p>
+  <p class="TitleBook">Adding New Content Sources to Local SharePoint Sites</p>
+  
+<p class="BodyLevel3">26<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;</font></span>In the <span class="Bold">Start Addresses </span>field, list all the URLs representing the start address for all sites defined in the site collection; you will need them for defining your crawl rules. Note, however, that you can only use the URLs that represent site roots; any start addresses listed here that are lower than the root level, cannot be used for search result trimming.</p>
+
+  
+<p class="BodyLevel3">27<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;</font></span>Define one crawl rule for each of the sites defined in the site collec&#173;tion. To do this, select <span class="Bold">Crawl Rules </span>from the menu on the left of the window.</p>
+
+  
+<p class="BodyLevel3">28<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;</font></span>In the Crawl Rules window, define one rule for each site root URL in your site collection (if they have not already been defined by your SharePoint administrator). These rules must use the following set&#173;tings:<br /><span style="font-weight : bold; "><b><br />Path</b></span>: The URL must be root address for the site<br /><span style="font-weight : bold; "><b><br />Crawl Configuration</b></span>: Select <span style="font-weight : bold; "><b>“</b></span>Include all items<span style="font-style : italic; "><i>&#160;. . </i></span>. <span style="font-weight : bold; "><b>”<br /><br />Specify Authentication</b></span>: Select <span style="font-weight : bold; "><b>“</b></span>Use the default &#160;. . . <span style="font-weight : bold; "><b>”</b></span>&#160;</p>
+
+  
+<p class="BodyLevel3">29<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;</font></span>Click <span class="Bold">OK</span>&#160;to save the definition of each rule. An example is shown below.</p>
+
+  <p class="BodyLevel1"></p>
+  <div align="center"><img alt="2010_crawlrules2.jpg" style="width : 786.749pt; height : 311.142pt; " id="image24" src="2010_crawlrules2.jpg" />
+  </div>
+  <p class="BodyLevel1">&nbsp;</p>
+  <p class="TitleBook">Defining Crawl Rules</p>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Once the crawl rules have been defined, go back to the Manage Content Sources page, right-click Local SharePoint sites, and start a <span class="Bold">Full Crawl </span>for the SharePoint server.</p>
+</li>
+  <p class="BodyLevel1"></p>
+  <div align="center"><img alt="2010_startfullcrawl.jpg" style="width : 788.250pt; height : 312.302pt; " id="image25" src="2010_startfullcrawl.jpg" />
+  </div>
+  <p class="BodyLevel1">&nbsp;</p>
+  <p class="TitleBook">Starting a Full Crawl</p>
+  <p class="Title">Wait for the crawl to finish. You check this through the Status column in the Manage Content Sources window, as shown above. When the crawl starts, the status displays “Crawling Full;” when it finishes, it changes back to “Idle.” If the site is large, this may take several minutes to finish.</p>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Once the crawl is finished, you must enable the search result trimming feature through the CLI-based Entitlement Manager Administrator utility. To do this, </p>
+</li>
+  
+<p class="BodyLevel3">30<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;</font></span>Open a Windows command prompt window on the SharePoint Server host.</p>
+
+  
+<p class="BodyLevel3">31<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;</font></span>Set the environmental variable to give the path for the administra&#173;tor utility: </p>
+
+  <h5>C:\Program Files\NextLabs\SharePoint Enforcer\bin</h5>
+  
+<p class="BodyLevel3">32<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;</font></span>Type the command:</p>
+
+  <h5>ce_spadmin.exe -o searchresulttrimming -ssa &lt;Search Service Application&gt; -install</h5>
+  <p class="Title">Where<span class="GreyBold">&#160;Search Service Application </span>refers to the application name defined at <span class="Bold">Central Application Settings &gt;&#160;Farm Search Administration &gt; Search Service Applications</span>. In the figure below, this is &quot;Search Service Application,&quot; but this can change depending on your SharePoint configura&#173;tion.</p>
+  <p class="BodyLevel1"></p>
+  <div align="center"><img alt="2010_ssa.jpg" style="width : 728.999pt; height : 258.855pt; " id="image26" src="2010_ssa.jpg" />
+  </div>
+  <p class="BodyLevel1">&nbsp;</p>
+  <p class="TitleBook">Locating the Search Service Application Name</p>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Clear the contents from the security trimming cache. To do this, you use the SPE Administrator utility:</p>
+</li>
+  
+<p class="BodyLevel3">33<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;</font></span>Open a command line window</p>
+
+  
+<p class="BodyLevel3">34<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;</font></span>Navigate to C:\Program Files\NextLabs\SharePoint&#160;Enforcer\bin</p>
+
+  
+<p class="BodyLevel3">35<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;</font></span>Type the command:</p>
+
+  <h5>CE_SPAdmin.exe -o securitytrimming -clearcache</h5>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Run the Full Crawl a second time, as described in Step <a href="../UsingSPE/Adding_Security_Trimming_to_Access_Control_Policies.htm#XREF_93444_3_Once_the_crawl">3</a>, and let it run until the status turns to Idle.</p>
+</li>
+ </ol>
+ <h3>Ongoing Maintenance</h3>
+ <p class="BodyLevel1">Whenever you change or add new contents in SharePoint, you may need to crawl the Content Source again. To simplify this, you may configure the server to perform Incremental Crawls. You can select this option from the drop down menu on the Manage Content Sources page. Then, define the incremental crawl time interval, as shown below.</p>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="2010_incrementalcrawl.jpg" style="width : 651.749pt; height : 105.428pt; " id="image27" src="2010_incrementalcrawl.jpg" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook">Incremental Crawl Settings</p>
+ <h3>Uninstalling Search Result Trimming (SharePoint 2007 and 2010)</h3>
+ <p class="BodyLevel1">If you are using search result trimming and need to uninstall your Entitlement Manager for SharePoints for an upgrade, you must manually disable search result trimming before you perform the uninstall. To do this, use the Entitlement Manager for Administrator utility and run the following command:</p>
+ <h5>ce_spadmin -o searchresulttrimming -uninstall</h5>
+ <p>&#160;</p>
+<script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+
+highlightSearch();
+//-->
+//]]></script>
+</body>
+</html>

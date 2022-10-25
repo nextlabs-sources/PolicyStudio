@@ -1,0 +1,329 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ <title>Policy_Design_Basics</title>
+
+ <meta name="generator" content="Adobe RoboHelp 9" />
+ <meta name="Originator" content="ImportMif" />
+ <meta name="OriginalFile" content="C:\Documents and Settings\mlittle\Desktop\SharePoint\SharePointFM\UsingSPE.fm" />
+ <link rel="stylesheet" href="../../default.css" type="text/css" />
+
+ <link rel="stylesheet" href="..\..\default.css" type="text/css" />
+
+ <script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whlang.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.gbWhTopic)
+{
+	var strUrl = document.location.href;
+	var bc = 0;
+	var n = strUrl.toLowerCase().indexOf("bc-");
+	if(n != -1)
+	{
+		document.location.href = strUrl.substring(0, n);
+		bc = strUrl.substring(n+3);
+	}
+
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Using the Entitlement Manager for SharePoint\nPolicy Design Basics");
+addButton("show",BTN_IMG,"Show TOC and Search","","","","",0,0,"../../whd_show0.gif","../../whd_show2.gif","../../whd_show1.gif");
+addButton("hide",BTN_IMG,"Hide TOC and Search","","","","",0,0,"../../whd_hide0.gif","../../whd_hide2.gif","../../whd_hide1.gif");
+
+	}
+
+	
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../../index.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+//]]></script>
+</head>
+
+<body><script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+//]]></script>
+<table width="100%" cellspacing="0" border="1">
+	<col style="width: 100%;" />
+	<tr style="height: 78px;">
+		<td bgcolor="#003399">&#160;</td>
+	</tr>
+ </table>
+<script type="text/javascript" language="javascript">//<![CDATA[
+document.write("<p  style=\"text-align:right;font-family:Arial;font-size:12pt;font-weight: normal;font-style: normal;text-decoration: none;\">");
+AddMasterBreadcrumbs("../../index.htm", "font-family:Arial;font-size:12pt;font-weight: normal;font-style: normal;text-decoration: none;", "&gt;", "Home", "../Introducing/Welcome.htm");
+document.write("<a style=\"font-family:Arial;font-size:12pt;font-weight: normal;font-style: normal;text-decoration: none;\" href=\"Using_the_Entitlement_Manager_for_SharePoint.htm\">Using the Entitlement Manager for SharePoint<\/a> &gt; Policy Design Basics<\/p>");
+//]]></script>
+ <p style="text-align: right;">&#160;</p>
+
+ <h1><a name="XREF_95053_Policy_Design"></a>Policy Design Basics</h1>
+ <p class="BodyLevel1">This section provides an overview of Policy Design basics that apply to all types of SharePoint policies, including the following topics:</p>
+ 
+<p class="BodyLevel2">1<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><a href="#XREF_43123_What_Actions_Can">What Actions Can Be Enforced?</a></p>
+
+ 
+<p class="BodyLevel2">2<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><a href="#XREF_87581_How_Can_Resources">How Can Resources Be Targeted?</a></p>
+
+ 
+<p class="BodyLevel2">3<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><a href="#XREF_96775_Using_SharePoint">Using SharePoint User Groups</a></p>
+
+ <p class="BodyLevel1">This user guide does not describe every possible kind of policy</p>
+ <h2><a name="XREF_43123_What_Actions_Can"></a>What Actions Can Be Enforced?</h2>
+ <p class="BodyLevel1">Like all Entitlement Managers, the Entitlement Manager for SharePoint&#160;can enforce against a finite set of user actions. Certain actions can only be used in policies of a specific type. This is described in the following table. </p>
+ <table width="100%">
+  <tr>
+  <td>
+ <table style="border-spacing: 0; padding-left: 4.00pt; padding-top: 4.00pt; padding-right: 4.00pt; padding-bottom: 3.00pt;float: aligncenter;margin-bottom: 24.00pt; width: 486.00pt;" cellspacing="0" align="center">
+  <caption align="center">
+  </caption>
+  <tr style=" height : 16.00pt;background : #0b3999;">
+  <th style="width : 99.863pt; background : #0b3999;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellHeading">Basic Action</p>
+</th>
+  <th style="width : 219.698pt; background : #0b3999;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellHeading">Description</p>
+</th>
+  <th style="width : 166.440pt; background : #0b3999;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellHeading">For Use in Policy Types</p>
+</th>
+</tr>
+  <tr style=" height : 15.00pt;">
+  <td style="width : 99.863pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="FM_CellBodyBold">Attach to Item</p>
+</td>
+  <td style="width : 219.698pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Attach a document to an item in a portal list.</p>
+</td>
+  <td style="width : 166.440pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Access Control, Audit</p>
+</td>
+</tr>
+  <tr style=" height : 126.00pt;">
+  <td style="width : 99.863pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="FM_CellBodyBold">Create/Edit</p>
+</td>
+  <td style="width : 219.698pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Create a new file or item, rename, or change the contents of an existing one. Specific actions include:</p>
+  <ul type="disc" style="">
+   <li style="">
+   <p class="CellBody">Create a new document</p>
+</li>
+   <li style="">
+   <p class="CellBody">Edit the content of an existing document</p>
+</li>
+   <li style="">
+   <p class="CellBody">Overwrite an existing document by any means: copying a file with the same name from another location, renaming another file, using the Save As or Export com&#173;mand in another file, etc.</p>
+</li>
+   <li style="">
+   <p class="CellBody">Create a portal site, page, list, library, library item, or column</p>
+</li>
+   <li style="">
+   <p class="CellBody">Edit a portal site, page, list, library, library item, col&#173;umn, or site property by any means (in datasheet, in spreadsheet, etc.)</p>
+</li>
+  </ul></td>
+  <td style="width : 166.440pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Access Control, Audit</p>
+</td>
+</tr>
+  <tr style=" height : 45.00pt;">
+  <td style="width : 99.863pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="FM_CellBodyBold">Delete</p>
+</td>
+  <td style="width : 219.698pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Permanently remove a file or portal item from storage. Specific actions include:</p>
+  <ul type="disc" style="">
+   <li style="">
+   <p class="CellBody">Delete a file</p>
+</li>
+   <li style="">
+   <p class="CellBody">Delete a site, workspace, structure, list, or library item</p>
+</li>
+  </ul></td>
+  <td style="width : 166.440pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Access Control, Audit</p>
+</td>
+</tr>
+  <tr style=" height : 31.00pt;">
+  <td style="width : 99.863pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="FM_CellBodyBold">Download</p>
+</td>
+  <td style="width : 219.698pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Download a file from a SharePoint site. This is a special action, meaning it must be configured before it is available for use (see <a href="../ConfiguringSPE/Configuring_the_SharePoint_Policy_Model.htm#XREF_80665_Configuring">Configuring Special Actions</a>).</p>
+</td>
+  <td style="width : 166.440pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Access Control, Audit</p>
+</td>
+</tr>
+  <tr style=" height : 45.00pt;">
+  <td style="width : 99.863pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="FM_CellBodyBold">Export</p>
+</td>
+  <td style="width : 219.698pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Export a portal item. (This is a portal-specific basic action.) This action covers two particular cases:</p>
+  <ul type="disc" style="">
+   <li style="">
+   <p class="CellBody">Export list to datasheet</p>
+</li>
+   <li style="">
+   <p class="CellBody">Export library to spreadsheet</p>
+</li>
+  </ul></td>
+  <td style="width : 166.440pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Access Control, Audit</p>
+</td>
+</tr>
+  <tr style=" height : 53.00pt;">
+  <td style="width : 99.863pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="FM_CellBodyBold">Move</p>
+</td>
+  <td style="width : 219.698pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Delete a file from its current storage location and place it in a different location. Specific actions include:</p>
+  <ul type="disc" style="">
+   <li style="">
+   <p class="CellBody">Move a file, within the file system</p>
+</li>
+   <li style="">
+   <p class="CellBody">Move a site, workspace, structure, list, or library item, within the portal server</p>
+</li>
+  </ul></td>
+  <td style="width : 166.440pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Access Control, Audit</p>
+</td>
+</tr>
+  <tr style=" height : 75.00pt;">
+  <td style="width : 99.863pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="FM_CellBodyBold">Open</p>
+</td>
+  <td style="width : 219.698pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Open a file or portal item for viewing. Specific actions include:</p>
+  <ul type="disc" style="">
+   <li style="">
+   <p class="CellBody">Open a file</p>
+</li>
+   <li style="">
+   <p class="CellBody">Access a site, workspace, structure, list, or library item on a portal</p>
+</li>
+   <li style="">
+   <p class="CellBody">Download an item from a portal</p>
+</li>
+   <li style="">
+   <p class="CellBody">Upload an item to a portal</p>
+</li>
+  </ul></td>
+  <td style="width : 166.440pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Access Control, Data Protection, Audit</p>
+</td>
+</tr>
+  <tr style=" height : 31.00pt;">
+  <td style="width : 99.863pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="FM_CellBodyBold">Upload</p>
+</td>
+  <td style="width : 219.698pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Upload a file to a SharePoint site. This is a special action, meaning it must be configured before it is available for use (see <a href="../ConfiguringSPE/Configuring_the_SharePoint_Policy_Model.htm#XREF_80665_Configuring">Configuring Special Actions</a>).</p>
+</td>
+  <td style="width : 166.440pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Access Control, Classification, Audit</p>
+</td>
+</tr>
+ </table>
+</td></tr>
+ </table>
+ <p class="BodyLevel1"></p>
+ <h2><a name="XREF_87581_How_Can_Resources"></a>How Can Resources Be Targeted?</h2>
+ <p class="BodyLevel1">The Entitlement Manager for SharePoint allows designers to define resources in highly flexible ways. This section introduces you to portal components and describes different ways you can target resources when you design portal components.</p>
+ <h3>About Portal Components</h3>
+ <p class="BodyLevel1">In all SharePoint-related policies, the resource component will be a Portal Content type, rather than Document type. When you create a new Portal Content component, you have two areas where you can define it: the members field and the Properties field. Both start out empty in a newly created component, as shown in the following figure.</p>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="SP_CompNew1.jpg" style="width : 362.375pt; height : 137.875pt; " id="image0" src="SP_CompNew1.jpg" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook">Newly Created SharePoint Component</p>
+ <p class="BodyLevel1">In defining a portal component, there are the following basic components. These can be used independently, or in combination, as described below.</p>
+ <h3>Defined by Portal Location</h3>
+ <p class="BodyLevel1">If the component refers simply to some to location on the SharePoint Server—for example in the Design Documents Library on your company’s Engineering site—then the portal resource should be defined as the URL to the SharePoint location, in the Members, Portals In (or Not In) field, as shown in the figure below.</p>
+ <p class="BodyLevel1">&#160;</p>
+ <div align="center"><img alt="SP_CompNew2.jpg" style="width : 448.560pt; height : 133.992pt; " id="image1" src="SP_CompNew2.jpg" />
+ </div>
+ <p class="BodyLevel1"></p>
+ <p class="TitleBook">SharePoint Component Defined by Location Path Only</p>
+ <p class="BodyLevel1">You can type the URL directly in the Members field, or you can open your browser, navigate to the SharePoint resource you want to control, copy the URL from your browser’s address field and paste it into the Members field of the policy.</p>
+ <h3>Defined by Properties</h3>
+ <p class="BodyLevel1">A component can also be designed to represent some specific class of documents regardless of where they are stored on the SharePoint server. In this case, do not supply a location in the Members field, but select one or more specified properties under the With Properties field, as shown in the figure below. </p>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="SP_CompNew2a.jpg" style="width : 486.750pt; height : 137.964pt; " id="image2" src="SP_CompNew2a.jpg" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook">Component Defined by Document Property Only</p>
+ <p class="BodyLevel1">Note there are limitations on what kinds of properties are available, depending on what kind of SharePoint content or structures your component represents. Existing document resources stored on SharePoint can make full use of the properties those resources possess. Components representing site structures <br />(i.e., web parts) also can be defined by a wide range of properties, so long as they are to be used in policies that control access to already defined web parts. However, in defining components representing lists or libraries that will be used in policies that block their creation, <span style="font-style : italic; "><i>only</i></span>&#160;the properties Type and Sub-type may be used. </p>
+ <h3>Defined by Content</h3>
+ <p class="BodyLevel1">You can create content aware policies using the With Content drop down menus. Content analysis can either scan content itself (as in the example below) or look for content types (credit card or social security numbers, etc.) </p>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="withcontentcomponent.jpg" style="width : 659.232pt; height : 166.104pt; " id="image3" src="withcontentcomponent.jpg" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook">Component Defined by Content Only</p>
+ <h4>Combining Locations, Properties, and/or Content</h4>
+ <p class="BodyLevel1">Keep in mind that you can design portal components by combining locations, property, and content, to target resources in highly granular ways. If you want to define the component as all documents in a specified SharePoint server location that have some property or tag, for example, you can specify both a Member location and a Property, as shown in the figure below.</p>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="SP_CompNew3.jpg" style="width : 486.000pt; height : 133.704pt; " id="image4" src="SP_CompNew3.jpg" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook">SharePoint Component Defined by Path and Document Property</p>
+ <h2><a name="XREF_96775_Using_SharePoint"></a>Using SharePoint User Groups</h2>
+ <p class="BodyLevel1">For the user component in SharePoint policies, you have the option of using SharePoint groups, as long as you have enrolled them into your Policy Server dictionary. (For more on this, see the <span style="font-style : italic; color   : #0000ff; "><font color="blue" ><i>Administrator’s Guide</i></font></span>.) SharePoint groups are those defined in SharePoint to govern access to various areas of the portal, as opposed to the groups defined in Active Directory for the Windows network in general. As a rule, it is more reliable to use SharePoint groups rather than AD groups in policies that are aimed at SharePoint resources.</p>
+ <p>&#160;</p>
+<script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+
+highlightSearch();
+//-->
+//]]></script>
+</body>
+</html>

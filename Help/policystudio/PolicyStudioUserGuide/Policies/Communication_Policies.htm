@@ -1,0 +1,153 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ <title>Communication Policies</title>
+
+ <meta name="generator" content="Adobe RoboHelp 9" />
+ <meta name="Originator" content="ImportMif" />
+ <meta name="OriginalFile" content="C:\CC_PSUserGuide_77\PSUserGuideFM\Policies.fm" />
+ <link rel="stylesheet" href="Policies.css" type="text/css" />
+
+ <link rel="stylesheet" href="..\..\RHStyleMapping.css" type="text/css" />
+
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whlang.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whtopic.js"></script>
+
+</head>
+
+<body><script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.gbWhTopic)
+{
+	var strUrl = document.location.href;
+	var bc = 0;
+	var n = strUrl.toLowerCase().indexOf("bc-");
+	if(n != -1)
+	{
+		document.location.href = strUrl.substring(0, n);
+		bc = strUrl.substring(n+3);
+	}
+
+	if (window.addTocInfo)
+	{
+	addTocInfo("Constructing Policies\nCommunication Policies");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	
+	document.write("<p style=\"text-align:right\"> ");
+AddMasterBreadcrumbs("../../PolicyStudioUserGuideTOC.htm", "", "&gt;", "Policy&nbsp;Studio&nbsp;", "../Welcome/Welcome_to_7_7.htm");
+document.write("<a href=\"Constructing_Policies.htm\">Constructing Policies<\/a> &gt; Communication Policies<\/p>");
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../../PolicyStudioUserGuideTOC.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+
+//-->
+//]]></script>
+ <h1><a name="XREF_98220_Communication"></a>Communication Policies</h1>
+ <p class="BodyLevel1">The discussion throughout this chapter reflects the most common policy type, Document policies. (You designate the policy type when you first create a new policy, on the same screen where you assign a name.) Another type, Communi&#173;cation policies, has several special features that are related to their ability to control e-mail attachments, instant messages, or other communications based on the recipients’ individual address or domain, as well as on any other available user property. Specifically, they have two special fields in the Policy Author edi&#173;tor, and also have an extended set of custom obligations.</p>
+ <p class="BodyLevel1">The following is a brief overview of communication policies. For more detailed discussion of how you can take advantage of their special features, refer to the policy design guide for whichever product you are installing. </p>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="CommPolicy.jpg" style="width : 340.928pt; height : 533.907pt; " id="image17" src="CommPolicy.jpg" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook">Communication Policies: Special Features</p>
+ <h2>Special Fields</h2>
+ <p class="BodyLevel1">There are two special fields that are available only in communication policies: <span class="FM_Emphasis">And Recipients</span>, and <span class="FM_Emphasis">With Message or Attachment</span><span style="font-style : italic; "><i>.</i></span>&#160;The Using Channel field is just a different label for the Action component; it will always be one of the communication actions.</p>
+ <h3><a name="XREF_24455_ToUsers_Field"></a>The <span class="FM_Emphasis">And Recipient</span> Field</h3>
+ <p class="BodyLevel1">This field lets you specify one or more specific recipients of communications to which this policy will apply. Recipients are represented as User components; you can drag defined User components into this field, or you can type contents directly. If you leave this field blank, the policy will apply to all recipients, so if it is a Deny policy it will block users from sending the specified communications to <span class="FM_Emphasis">any</span> user.</p>
+ <p class="BodyLevel1">In order to support this feature, User components have two special properties, E-mail Address and Domain. You can use them to define a user component based individual e-mail address or domain, just as you might use other properties like Location or Job Title. This is useful for creating user components representing, for example, an e-mail blacklist (or whitelist), which you then use as the And Recipient field of your communication policy.</p>
+ <p class="BodyLevel1">Note that you can use wildcards in defining e-mail addresses as user properties, but not with domains. When defining users based on domains, you must supply one or more whole domain strings.</p>
+ <h3>The <span style="font-style : italic; "><i><a name="XREF_97887_With_Attachments"></a></i></span><span class="FM_Emphasis">With Message or Attachment</span>&#160;Field</h3>
+ <p class="BodyLevel1">Two of the communication-related basic actions, E-Mail and Instant Message, are somewhat special in that they can be used in two distinct kinds of policies: those that control attaching specified documents to e-mails or IMs, and those that control sending e-mail or instant messages at all.</p>
+ <p class="BodyLevel1">If you create a policy based on either of these actions and do not specify any document components in the With Message or Attachment field, then the policy applies to sending <span style="font-style : italic; "><i>any</i></span>&#160;e-mail or IM, with or without an attachment. That is, the policy will focus on communication per se, rather than sending some specific class of data. For example, it might block certain users from sending any e-mail messages to any user at a specified domain, regardless of whether the messages have attachments.</p>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="WithAttachments.png" style="width : 360.792pt; height : 122.250pt; " id="image18" src="WithAttachments.png" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook">The <span style="font-style : normal; ">With Message or Attachment</span> Field</p>
+ <p class="BodyLevel1">By contrast, if a policy based on one of these actions <span style="font-style : italic; "><i>does</i></span> specify a With Mes&#173;sage or Attachment component, then it is enforced <span style="font-style : italic; "><i>only</i></span>&#160;when that user tries to send an e-mail or IM to that recipient, with the specified kind of file attached to it. If it has some other file attached, or no attachment at all, then the policy will not apply to the e-mail or IM action. This means that, for example, a policy that prevents Sales staff from sending unapproved price lists to any customers, would still allow them to send approved price lists without restriction.</p>
+ <h2><a name="XREF_50500_Special_Obligations"></a>Special Obligations</h2>
+ <p class="BodyLevel1">Two special pre-defined obligations are available in Communication policies:</p>
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span style="font-weight : bold; "><b>Disclaimer</b></span>: When users initiate a chat session via Office Communicator, this obligation automatically attaches a configurable message (for exam&#173;ple, a confidentiality warning) at the end of the first message in the ses&#173;sion.</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span style="font-weight : bold; "><b>Participant Limit</b></span>: This obligation counts the persons participating in a communication session, and warns the end user whenever the number is greater than some specified limit. When a user initiates a communication session—chat, call, or web meeting—that includes too many participants, this obligation displays a modal Windows message. This gives the user the choice between canceling the session, or continuing. It is valid only with the following actions:</p>
+
+ 
+<p class="BodyLevel3"><span style="font-family:'Courier New'">o</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Send IM</p>
+
+ 
+<p class="BodyLevel3"><span style="font-family:'Courier New'">o</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Send File (attached to IM)</p>
+
+ 
+<p class="BodyLevel3"><span style="font-family:'Courier New'">o</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Voice Call</p>
+
+ 
+<p class="BodyLevel3"><span style="font-family:'Courier New'">o</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Video Call</p>
+
+ 
+<p class="BodyLevel3"><span style="font-family:'Courier New'">o</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Paste (from IM into another application)</p>
+
+ 
+<p class="BodyLevel3"><span style="font-family:'Courier New'">o</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Meet (initiate meeting via Live Meeting)</p>
+
+ <p class="BodyLevel1">Because these obligations are enforced by the Office Communicator Enforcer, they are only available to Enterprise Data Protection&#160;users. For details about using them, refer to the policy design guide for that product,<span style="font-style : italic; color   : #0000ff; "><font color="blue" ><i>&#160;</i></font></span><span class="FM_Emphasis">Designing End&#173;point Protection Policies</span>.</p>
+ <script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+
+
+highlightSearch();
+//-->
+//]]></script>
+</body>
+</html>

@@ -1,0 +1,227 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ <title>Importing and Exporting Policies</title>
+
+ <meta name="generator" content="Adobe RoboHelp 9" />
+ <meta name="Originator" content="ImportMif" />
+ <meta name="OriginalFile" content="C:\CC_PSUserGuide_77\PSUserGuideFM\PolicyManager.fm" />
+ <link rel="stylesheet" href="PolicyManager.css" type="text/css" />
+
+ <link rel="stylesheet" href="..\..\RHStyleMapping.css" type="text/css" />
+
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whlang.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whtopic.js"></script>
+
+</head>
+
+<body><script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.gbWhTopic)
+{
+	var strUrl = document.location.href;
+	var bc = 0;
+	var n = strUrl.toLowerCase().indexOf("bc-");
+	if(n != -1)
+	{
+		document.location.href = strUrl.substring(0, n);
+		bc = strUrl.substring(n+3);
+	}
+
+	if (window.addTocInfo)
+	{
+	addTocInfo("Policy Manager\nImporting and Exporting Policies");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	
+	document.write("<p style=\"text-align:right\"> ");
+AddMasterBreadcrumbs("../../PolicyStudioUserGuideTOC.htm", "", "&gt;", "Policy&nbsp;Studio&nbsp;", "../Welcome/Welcome_to_7_7.htm");
+document.write("<a href=\"Introducing_Policy_Manager.htm\">Policy Manager<\/a> &gt; Importing and Exporting Policies<\/p>");
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../../PolicyStudioUserGuideTOC.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+
+//-->
+//]]></script>
+ <h1><a name="XREF_90445_Importing_and"></a>Importing and Exporting Policies</h1>
+ <p class="BodyLevel1">Policy Manager provides a mechanism for importing and exporting policies and components, which lets you share policy objects you have defined in one instance of Policy Studio with other instances. This feature is very handy in col&#173;laborative environments, for example, where policy construction responsibilities are distributed among several policy designers. It is also useful for transferring policies and components from an isolated development and test environment into your live production environment.</p>
+ <p class="BodyLevel1">The mechanism works by saving defined objects from one Policy Studio database either in Active Control Policy Language (ACPL) or eXtensible Access Control Markup Language (XACML), depending on which kind of export you select. Once exported, ACPL files can be re-imported, or imported into another Policy Studio. &#160;XACML files can be imported into other XACML-compliant Policy Management Systems.</p>
+ <h2><a name="XREF_43891_Importing_Objects"></a>Exporting Objects</h2>
+ <p class="BodyLevel1">With designated objects selected (for example, in the Policy tree), click on the Export icon to export policy objects. If you are exporting folders, select them in the tree and click the Export icon above the tree. If you are exporting individual policies, select one or more (use Shift + click or Alt + click to select more than one), then click the Export icon in the upper right of the Object Grid window.</p>
+ <p class="BodyLevel1">Clicking on this icon launches the Exporting Policies window, which prompts you for the name and location you want to assign to the exported file. Once created, XML files can be imported into other instances of Policy Studio using the Import command or with the import.bat utility (see the<span style="font-style : italic; "><i>&#160;</i></span>Control Center<span style="font-style : italic; color   : #0000ff; "><font color="blue" ><i>&#160;</i></font></span><span class="FM_Emphasis">Administrator’s Guide</span>).</p>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="ExportWindow.png" style="width : 353.249pt; height : 212.749pt; " id="image7" src="ExportWindow.png" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook"><a name="XREF_82379_The_Export_Window"></a>The Export window</p>
+ <p class="BodyLevel1">The export tool works somewhat differently depending on what kind of item is currently selected. These differences are explained in the following table.</p>
+<table width="100%">
+ <tr>
+ <td>
+ <table style="border-spacing: 0; padding-left: 4.00pt; padding-top: 4.00pt; padding-right: 4.00pt; padding-bottom: 3.00pt;float: aligncenter;margin-bottom: 24.00pt; width: 359.55pt;" cellspacing="0" align="center">
+  <caption align="center">
+  </caption>
+  <tr style=" height : 16.00pt;background : #1f8c4a;">
+  <th style="width : 82.950pt; background : #1f8c4a;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Selected Item</p>
+</th>
+  <th style="width : 172.550pt; background : #1f8c4a;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Export Behavior</p>
+</th>
+  <th style="width : 104.050pt; background : #1f8c4a;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Available Controls</p>
+</th>
+</tr>
+  <tr style=" height : 31.00pt;">
+  <td style="width : 82.950pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Root level in Policy Tree</p>
+</td>
+  <td style="width : 172.550pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">All policies defined in all subfolders of the tree will be exported, with all their required components.</p>
+</td>
+  <td style="width : 104.050pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">File name and location only.</p>
+</td>
+</tr>
+  <tr style=" height : 39.00pt;">
+  <td style="width : 82.950pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Any folder in Policy Tree</p>
+</td>
+  <td style="width : 172.550pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">The policies defined in that folder of the tree will be exported, with all their required components. May or may not include policies in subfolders.</p>
+</td>
+  <td style="width : 104.050pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">User may specify with or without subfolders, as shown in <a href="#XREF_82379_The_Export_Window"><span class="FM_blue">The Export window</span></a> above.</p>
+</td>
+</tr>
+  <tr style=" height : 39.00pt;">
+  <td style="width : 82.950pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Any folder in Object Grid pane</p>
+</td>
+  <td style="width : 172.550pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">The policies defined in that folder of the tree will be exported, with all their required components. May or may not include policies in subfolders.</p>
+</td>
+  <td style="width : 104.050pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">User may specify with or without subfolders, as shown in <a href="#XREF_82379_The_Export_Window"><span class="FM_blue">The Export window</span></a> above.</p>
+</td>
+</tr>
+  <tr style=" height : 23.00pt;">
+  <td style="width : 82.950pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Individual Policies in Object Grid</p>
+</td>
+  <td style="width : 172.550pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Only the selected policies will be exported, along with all their required components.</p>
+</td>
+  <td style="width : 104.050pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">File name and location only.</p>
+</td>
+</tr>
+  <tr style=" height : 31.00pt;">
+  <td style="width : 82.950pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Components in Object Grid</p>
+</td>
+  <td style="width : 172.550pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">No export is supported for components separately—they may only be exported only together with parent policies.</p>
+</td>
+  <td style="width : 104.050pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">n/a</p>
+</td>
+</tr>
+ </table>
+</td></tr>
+</table>
+ <p class="BodyLevel1"></p>
+ <h2><a name="XREF_71115_Importing_Objects"></a>Importing Objects</h2>
+ <p class="BodyLevel1">To import policies and their required components into your Policy Studio, select <span class="FM_Bold">File</span>&#160;&gt; <span class="FM_Bold">Import</span>. This command launches the Importing Policies window, which prompts you for the path and name of the file describing the objects you want to add to your object tree. You must specify this in the Import File Name field, or use the Browse button to browse for it.&#160;Note that only ACPL files (in .xml for&#173;mat) can be imported into Policy Studio.</p>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="ImportWindow.png" style="width : 406.499pt; height : 245.875pt; " id="image8" src="ImportWindow.png" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook">The Import window</p>
+ <p class="BodyLevel1">These importable XML files can be created either directly from Policy Manager (see <a href="#XREF_43891_Importing_Objects"><span class="FM_blue">Exporting Objects</span></a>), or using the export.bat utility (see the Control Center<span style="font-style : italic; color   : #0000ff; "><font color="blue" ><i>&#160;</i></font></span><span class="FM_Emphasis">Administrator’s Guide</span>).</p>
+ <h3>Conflict Handling Options</h3>
+ <p class="BodyLevel1">When you import policies into Policy Studio, it is possible that there may already be existing policies or components with the same name. The import tool has four ways of handling this kind of name conflict, and you can choose the one you prefer by selecting its corresponding radio button in the Importing Policies win&#173;dow as shown in the previous figure.</p>
+ <p class="BodyLevel1">These include:</p>
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Resolve all name data conflicts by <span style="font-weight : bold; "><b>Overwriting</b></span>&#160;the existing objects on the server with the data imported from the source file. The import-overwrite operation modifies existing policies and components on the server; there&#173;fore, this operation requires that you have the same ability to modify pol&#173;icies in Policy Studio. Specifically, the following conditions must be met:</p>
+
+ 
+<p class="BodyLevel3"><span style="font-family:'Courier New'">o</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>You must have access control permissions to access, read, and mod&#173;ify the policies and their components.</p>
+
+ 
+<p class="BodyLevel3"><span style="font-family:'Courier New'">o</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>If a policy being imported has a different hierarchical structure from an existing policy, the overwrite operation attempts to delete any subpolicy in the existing policy that is not in the policy being imported. To delete a subpolicy, you must have delete permissions, and the subpolicy must be in draft or inactive state, and not sched&#173;uled for future deployment, that is, the subpolicy must be in a state in which it can be deleted. The following shows an example of the requirements for importing and overwriting policies.</p>
+
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="Policy_Icon.jpg" style="width : 354.375pt; height : 160.875pt; " id="image9" src="Policy_Icon.jpg" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Resolve all data conflicts by adding the imported data to the server, with a new name generated by <span style="font-weight : bold; "><b>Adding a Suffix</b></span>. You can specify the string you wish to use as a suffix; a date/time stamp is the default string, as shown.</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Resolve all data conflicts by keeping the existing policies and components on the server, and ignoring the imported data.</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>In the event of any data conflict, cancel the import operation: do not change any of the currently defined objects, or import any new ones from the file.</p>
+
+ <h4>About Shallow Import</h4>
+ <p class="BodyLevel1">The shallow import feature lets you perform a special kind of import: for any components or policies that are defined with reference to specific user or group names or to network hosts or paths, those references will be removed before importing. Only aspects of the definitions that do not tie the definitions to the physical environment—such as LDIF metadata and file or user properties—are included in the import. The original policy tree folder structure, and nested component structures (components whose definitions contain other compo&#173;nents) are also preserved.</p>
+ <p class="BodyLevel1">To perform this kind of import, check the <span class="FM_Bold">Shallow Import</span> check box.</p>
+ <script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+
+
+highlightSearch();
+//-->
+//]]></script>
+</body>
+</html>

@@ -1,0 +1,1382 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ <title>Defining Object Components</title>
+
+ <meta name="generator" content="Adobe RoboHelp 9" />
+ <meta name="Originator" content="ImportMif" />
+ <meta name="OriginalFile" content="C:\CC_PSUserGuide_77\PSUserGuideFM\Components.fm" />
+ <link rel="stylesheet" href="Components.css" type="text/css" />
+
+ <link rel="stylesheet" href="..\..\RHStyleMapping.css" type="text/css" />
+
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whlang.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whtopic.js"></script>
+
+</head>
+
+<body><script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.gbWhTopic)
+{
+	var strUrl = document.location.href;
+	var bc = 0;
+	var n = strUrl.toLowerCase().indexOf("bc-");
+	if(n != -1)
+	{
+		document.location.href = strUrl.substring(0, n);
+		bc = strUrl.substring(n+3);
+	}
+
+	if (window.addTocInfo)
+	{
+	addTocInfo("Defining Components\nDefining Object Components");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	
+	document.write("<p style=\"text-align:right\"> ");
+AddMasterBreadcrumbs("../../PolicyStudioUserGuideTOC.htm", "", "&gt;", "Policy&nbsp;Studio&nbsp;", "../Welcome/Welcome_to_7_7.htm");
+document.write("<a href=\"Defining_Components.htm\">Defining Components<\/a> &gt; Defining Object Components<\/p>");
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../../PolicyStudioUserGuideTOC.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+
+//-->
+//]]></script>
+ <h1><a name="XREF_56281_Defining_an_Object"></a>Defining Object Components</h1>
+ <p class="BodyLevel1">Regardless of which type of object component you want to define, the proce&#173;dure is basically similar. For this reason, we’ll describe in a general way the common procedure shared by all six types, then examine the particulars of each type in more detail. Again, since action components are quite different, we will treat them as a separate topic.</p>
+ <p class="BodyLevel1">The discussion of object components is divided into the following topics:</p>
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><a href="#XREF_40002_Common_Procedure"><span class="FM_blue">Common Procedure</span></a></p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><a href="#XREF_67685_Defining_Document"><span class="FM_blue">Defining Document Components</span></a></p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><a href="#XREF_58190_Defining_User"><span class="FM_blue">Defining User Components</span></a></p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><a href="#XREF_94560_Defining_Computer"><span class="FM_blue">Defining Computer Components</span></a></p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><a href="#XREF_69930_Defining"><span class="FM_blue">Defining Application Components</span></a></p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><a href="#XREF_93178_Defining_Portal"><span class="FM_blue">Defining Portal Components</span></a></p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><a href="#XREF_10041_Defining_HPE_Site"><span class="FM_blue">Defining Server Components</span></a></p>
+
+ <h2><a name="XREF_40002_Common_Procedure"></a>Common Procedure</h2>
+ <p class="BodyLevel1">To define any type of object component:</p>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Expand the appropriate panel to display existing components of that type. For Subjects, click on the tab you want: Users, Computers or Applications.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Click the New button.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Type a name for the component, and click OK. Names cannot be longer than 128 characters, and cannot include the reserved characters <span style="font-style : italic; "><i>$, /, ?, \, &amp;, or *.</i></span> This opens the new component in the editing pane.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">In the Description field, provide a description of this component. Although this is not technically required, it is helpful to make this as descriptive as possible. It is also useful for recording the reasons for later changes to the definition of this component, if any.</p>
+</li>
+ </ol>
+ <h3>About Membership and Properties</h3>
+ <p class="BodyLevel1">Besides a name and description, all object components are defined by one or more <span style="font-style : italic; "><i>memberships</i></span>, and one or more <span style="font-style : italic; "><i>properties</i></span>. This is one of the characteris&#173;tics that distinguish them from action components, which have neither member&#173;ship nor properties.</p>
+ <p class="BodyLevel1">Membership identifies a superset or parent class of entities, of which this com&#173;ponent is a subset. Properties are the metadata filters that define the subset. Thus: Component N = All members of parent class X that have properties A, B, and C. For example, a user component called Boston Staff = all members of par&#173;ent class “All Employees” whose Status is “Current” and Location is “Boston.”</p>
+ <p class="BodyLevel1">This is the most basic and common model for defining objects: to use the pre&#173;defined “All [whatever]” parent component for the membership, and then spec&#173;ify one or more properties to narrow down the definition.</p>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="BostonStaff.jpg" style="width : 349.583pt; height : 163.608pt; " id="image0" src="BostonStaff.jpg" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook">The component editing pane</p>
+ <h3>Defining Membership</h3>
+ <p class="BodyLevel1">The membership of a component will depend on what type of object it is. As a rule, it can be either an individual entity of the appropriate type (for example, an LDAP user group, for a user component), which you can either type in the field or select using the Lookup button; or an already defined component, which you can drag over from the component bin.</p>
+ <p class="BodyLevel1">For the latter case, you will most often use one of the predefined “All” compo&#173;nents: All Users, All Computers, and so on. If you like, however, you can also select a component that has already been defined, and further narrow it based on other properties.</p>
+ <p class="BodyLevel1">If you do not define any membership for a component but only assign a property, the effect is the same as one of the “All” components; e.g., “All users with Location = Boston.”</p>
+ <p class="BodyLevel1">The following figure describes the four Membership controls. </p>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="ComponentEd1.jpg" style="width : 361.156pt; height : 124.500pt; " id="image1" src="ComponentEd1.jpg" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook">Object component properties: Membership controls</p>
+ <p class="BodyLevel1">To define a component’s membership,</p>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">In the Operator field, choose one of the available <span class="FM_italics">operators</span>:</p>
+</li>
+  
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span style="font-weight : bold; "><b>In</b></span>: The component represents a subset of the parent class or classes spec&#173;ified here.</p>
+
+  
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span style="font-weight : bold; "><b>Not in</b></span>: The component represents entities outside the parent class or classes specified here.</p>
+
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">To define the parent class, you have several alternatives:</p>
+</li>
+  
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Drag an existing component from the component bin on the left and drop it into this field. This parent component must be of the same type as the new component you are defining.</p>
+
+  
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Type the name of an existing component.</p>
+
+  
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Click the Lookup button to display all existing Information Network Direc&#173;tory entities, and choose one or more from that list. (See <a href="#XREF_17177_Using_the_Lookup">&quot;Using the Lookup Feature&quot;</a> below.)</p>
+
+  
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Type the name of an Information Network Directory entity. Note that if you manually type your membership criteria in this field, you must con&#173;form to the syntax requirements, as described below under <a href="#XREF_83608_Member">&quot;Membership Specification Syntax&quot;</a>.</p>
+
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">You have the option of leaving the Members field blank. If you do that, the membership will be All or Any—in our example, All Users.</p>
+</li>
+ </ol>
+ <h3>Multiple Memberships</h3>
+ <p class="BodyLevel1">You can specify as many memberships as you like for each component. To define multiple OR memberships, drag more than one already defined component into the Membership field, or click the New Component line and type additional memberships into the open editing field. You do this to make the component’s membership broader or more flexible; it represents a logical OR expression: “Employees <span style="font-style : italic; "><i>or</i></span> Contractors with the properties ...”</p>
+ <p class="BodyLevel1">To add multiple AND/BUT memberships, click the <img alt="plus.jpg" style="width : 17.402pt; height : 11.441pt; margin-bottom : -3.705pt; " id="image2" src="plus.jpg" />&#160;icon to add a new field. You do this to make the component’s membership more restrictive—for exam&#173;ple, a group of users who are both interns and foreign nationals: “In Interns” <span style="font-style : italic; "><i>and</i></span>&#160;“In Foreign Persons.” (A BUT expression is the same, but with a Not In operator—“In HR” <span style="font-style : italic; "><i>but</i></span>&#160;“Not In Contractors”.) You can add as many membership condition fields to a component as you like; just remember that they are logical ANDs or BUTs—they will all have to hold true.</p>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="Components00007.jpg" style="width : 486.202pt; height : 133.593pt; " id="image3" src="Components00007.jpg" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook">Multiple Memberships in Object Components</p>
+ <h3><a name="XREF_17177_Using_the_Lookup"></a>Using the Lookup Feature</h3>
+ <p class="BodyLevel1">If you click the Lookup button, a dialog box pops up, allowing you to choose users, computers, applications, or documents, depending on which type of com&#173;ponent you are defining. (For an example, see <a href="#XREF_45882_Using_the_Add"><span class="FM_blue">Using the Add Members Lookup tool</span></a>.) Items in the Users and Computers lists are imported from Active Direc&#173;tory; the icon next to each item identifies its source. For Document compo&#173;nents, the lookup dialog contains a clickable folder and directory viewer that works like a standard browsing window. For Applications, the lookup window lists all applications that have been enrolled.</p>
+ <p class="PublisherBook"><span class="FM_Emphasis">Note: </span>For portal contents, the lookup feature supports only SharePoint por&#173;tals. For other types, you must type the portal elements you want to add.</p>
+ <h3><a name="XREF_83608_Member"></a>Membership Specification Syntax</h3>
+ <p class="BodyLevel1">Rather than use the lookup feature, you can manually type the membership for a component. When you do this, you are actually typing the name of a compo&#173;nent. If no such component has been defined yet, Policy Author asks if you want to create it now. If you click Yes, a new component by that name will be cre&#173;ated, but it is as yet undefined. (This is identical to the way you can create new components on the fly inside policies, which we will discuss in the following chapter.)</p>
+ <h3>Object Component Properties</h3>
+ <p class="BodyLevel1"><a name="XREF_79695_8_In_With"></a>You use the Properties controls to specify the criteria that define the component as a subset of its parent class. Properties may be thought of as one or more fil&#173;ters that operate on the metadata or other characteristics of the parent class. Specifically, you select a property from the list in the combo-box, type in a spe&#173;cific value for it, and combine them with an appropriate<span style="font-style : italic; "><i>&#160;</i></span>operator:</p>
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>String properties: <span style="font-style : italic; "><i>is</i></span> or<span style="font-style : italic; "><i>&#160;Is not </i></span></p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Date properties: <span style="font-style : italic; "><i>on</i></span><span class="FM_Emphasis">&#160;or </span><span style="font-style : italic; "><i>after</i></span> or<span style="font-style : italic; "><i>&#160;before </i></span></p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Number properties: <span style="font-style : italic; "><i>“=”, “&gt;”, “&gt;=”, “&lt;”, “&lt;=”, </i></span>or “!=”<span style="font-style : italic; "><i>&#160;</i></span></p>
+
+ <p class="BodyLevel1">The available properties differ depending on which kind of component you are defining. For example, for a User component, you might specify <span style="font-style : italic; "><i>Job Title Is Vice President</i></span>; for a Computer component you might select <span style="font-style : italic; "><i>Site Is Not Boston</i></span>. Spe&#173;cific properties for each component type are described later in this chapter.</p>
+ <p class="BodyLevel1">Different types of object components have different default properties, but for Users and Computers, the list can be customized to include any properties defined in your Active Directory. If your administrator imports additional Active Directory attributes, these attributes appear in the Property Name drop-down list.</p>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="PropertiesComponent.jpg" style="width : 360.792pt; height : 150.260pt; " id="image4" src="PropertiesComponent.jpg" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook">Object component: Defining properties</p>
+ <h3>Available Properties</h3>
+ <p class="BodyLevel1">As mentioned earlier, the properties available in the drop-down list for any object component depend on the component type. For all component types, these lists include a set of default properties, which are always available because of Windows standards. The default properties for each type of object component are listed in their respective sections, later in this chapter.</p>
+ <p class="BodyLevel1">In addition, there may be one or more custom properties available as well, if any have been defined by your system administrator. What these are depend on the component type. For example, for document components, the properties list may include custom document tags, such as “Internal Use Only” or “Extremely Sensitive,” which are useful for identifying documents for policy enforcement purposes. </p>
+ <h3>Defining Properties</h3>
+ <p class="BodyLevel1">To define an object component’s properties:</p>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Select the property name from the combo-box. This list displays all default properties as well as any custom ones that may have been added.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Select an operator from the list in the combo-box. These operators vary depending on what type of component you are defining. </p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Type the value to be compared to the current property value. If the expression is true for a particular person, file, etc., then the policy is enforced. Note that you must have some knowledge of the actual values defined in your LDAP source, since you type a value rather than look up a value.</p>
+</li>
+  <p class="PublisherBook"><span class="FM_Emphasis">Note: </span>All property values are treated as case-insensitive.</p>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">To verify that the definition you created reflects the items you intended, you can use the Preview command in the Window menu to display the Pre&#173;view pane, then click the Go button. The Preview pane displays all of the individual entities that would be included in the component as it is pres&#173;ently defined. </p>
+</li>
+ </ol>
+ <p class="Title">This feature is useful for testing or debugging components. If the list con&#173;tains entities you did not expect or intend to include in the component you are defining, or does not contain entities you wanted to include, you know there is a problem with the definition of the component, and you can correct it before deployment.</p>
+ <p class="PublisherBook"><span class="FM_Emphasis">Note: </span>The Preview feature is only available for the object component types—not for action components, or for policies.</p>
+ <h2><a name="XREF_67685_Defining_Document"></a>Defining Document Components</h2>
+ <p class="BodyLevel1">Document-type components share all of the generic object component charac&#173;teristics discussed above. In addition, they have some special qualities as well, and they can be expanded to include custom attributes depending on your requirements.</p>
+ <p class="BodyLevel1">Note that <span style="font-style : italic; "><i>document components</i></span> refers specifically to Windows or Linux file sys&#173;tem documents. Documents stored on SharePoint or other collaboration portals are defined in a special way, as portal content components (see <a href="#XREF_93178_Defining_Portal"><span class="FM_blue">Defining Portal Components</span></a>).</p>
+ <p class="BodyLevel1">Note also that all policies that are enforced by the Removable Device Enforcer rely on document components that are defined in a special way. (This enforcer is available only with the Enterprise Data Protection&#160;product. For details, refer to that product’s design guide, <span style="font-style : italic; "><i>Designing Endpoint Protection Policies</i></span>.)</p>
+ <h3><a name="XREF_92585_Memberships"></a>Document Components: Membership</h3>
+ <p class="BodyLevel1">To work with Document components, expand the Resources component bin, and click on the Documents tab. Click the New button to create a new Document component.</p>
+ <p class="BodyLevel1">You define the membership of a document component in any of the following ways:</p>
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>An existing document component, either dragged from the component bin or typed directly in the membership field</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span style="font-weight : bold; "><b>A document name and/or path </b></span>typed directly in the membership field</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span style="font-weight : bold; "><b>A network path</b></span>&#160;selected from the list displayed by the Lookup button, to the right of the Membership field</p>
+
+ <p class="BodyLevel1">You can use wildcard characters in the file name or the path. The following table lists and describes all the supported wildcards. Note that these wildcards are also available for use in Portal components.</p>
+<table width="100%">
+ <tr>
+ <td>
+ <table style="border-spacing: 0; padding-left: 4.00pt; padding-top: 4.00pt; padding-right: 4.00pt; padding-bottom: 3.00pt;float: aligncenter;margin-bottom: 24.00pt; width: 309.75pt;" cellspacing="0" align="center">
+  <caption align="center">
+  </caption>
+  <tr style=" height : 25.00pt;background : #1f8c4a;">
+  <th style="width : 55.125pt; background : #1f8c4a;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Wildcard Character</p>
+</th>
+  <th style="width : 254.626pt; background : #1f8c4a;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Description</p>
+</th>
+</tr>
+  <tr style=" height : 15.00pt;">
+  <td style="width : 55.125pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">* </p>
+</td>
+  <td style="width : 254.626pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Matches zero or more characters, <span class="FM_italics" style="font-style : italic; "><i>not</i></span> including the folder separator</p>
+</td>
+</tr>
+  <tr style=" height : 15.00pt;">
+  <td style="width : 55.125pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="text-align  : center; font-weight : bold; font-size  : 8.0pt;">** </p>
+</td>
+  <td style="width : 254.626pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Matches zero or more characters, including the folder separator</p>
+</td>
+</tr>
+  <tr style=" height : 15.00pt;">
+  <td style="width : 55.125pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="text-align  : center; font-weight : bold; font-size  : 8.0pt;">d</p>
+</td>
+  <td style="width : 254.626pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Matches any single-digit numeral, 0-9</p>
+</td>
+</tr>
+  <tr style=" height : 15.00pt;">
+  <td style="width : 55.125pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="text-align  : center; font-weight : bold; font-size  : 8.0pt;">D</p>
+</td>
+  <td style="width : 254.626pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Matches any numeral, one or more digits</p>
+</td>
+</tr>
+  <tr style=" height : 15.00pt;">
+  <td style="width : 55.125pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="text-align  : center; font-weight : bold; font-size  : 8.0pt;">a</p>
+</td>
+  <td style="width : 254.626pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Matches any single letter, either upper or lower case</p>
+</td>
+</tr>
+  <tr style=" height : 15.00pt;">
+  <td style="width : 55.125pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="text-align  : center; font-weight : bold; font-size  : 8.0pt;">A</p>
+</td>
+  <td style="width : 254.626pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Matches one or more letters, either upper or lower case</p>
+</td>
+</tr>
+  <tr style=" height : 23.00pt;">
+  <td style="width : 55.125pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="text-align  : center; font-weight : bold; font-size  : 8.0pt;">c</p>
+</td>
+  <td style="width : 254.626pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Matches any single alphanumeric character or special character, such as %, &amp;, _, etc., <span style="font-style : italic; "><i>except for</i></span> backslashes, which are reserved</p>
+</td>
+</tr>
+  <tr style=" height : 23.00pt;">
+  <td style="width : 55.125pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="text-align  : center; font-weight : bold; font-size  : 8.0pt;">C</p>
+</td>
+  <td style="width : 254.626pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Matches one or more alphanumeric characters or special characters, such as %, &amp;, _, etc., <span style="font-style : italic; "><i>except for</i></span> backslashes, which are reserved</p>
+</td>
+</tr>
+  <tr style=" height : 15.00pt;">
+  <td style="width : 55.125pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="text-align  : center; font-weight : bold; font-size  : 8.0pt;">s</p>
+</td>
+  <td style="width : 254.626pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Matches a single space</p>
+</td>
+</tr>
+  <tr style=" height : 15.00pt;">
+  <td style="width : 55.125pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="text-align  : center; font-weight : bold; font-size  : 8.0pt;">S</p>
+</td>
+  <td style="width : 254.626pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Matches one or more spaces</p>
+</td>
+</tr>
+ </table>
+</td></tr>
+</table>
+ <p class="BodyLevel1"></p>
+ <p class="BodyLevel1">With the exception of the standard * and **, all wildcards consist of a letter pre&#173;ceded by an escape character. Two&#160;escape characters are supported, a question mark and an exclamation point:</p>
+ <p class="BodyLevel1"><span style="font-weight : bold; "><b>?&lt;wildcard&gt;</b></span>&#160;means Matches the wildcard. It is useful in all kinds of general matching policies to existing files.</p>
+ <p class="BodyLevel1"><span style="font-weight : bold; "><b>!&lt;wildcard&gt;</b></span> means Does Not Match the wildcard. Beyond general matching pur&#173;poses, it can be useful in enforcing that names of newly-created files conform to required conventions.</p>
+ <p class="BodyLevel1">You can also use the escape characters for themselves. That is, if you need to specify a file name that contains a literal question mark, you can represent it as “??”. Similarly, for a literal exclamation point, use “!!”.</p>
+ <p class="BodyLevel1">Different letters represent different kinds of characters, and each has two ver&#173;sions: lower-case stands for a single character of a certain type, and uppercase stands for one or more of those characters. This wildcard convention enables you to define wildcard-based document components with a great deal of preci&#173;sion. The following are some examples:</p>
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span class="FM_screencode" style="font-weight : bold; "><b>c:\Program files\*</b></span><span class="FM_screencode">&#160;</span>matches any file in the c:\Program files\ folder.</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span class="FM_screencode" style="font-weight : bold; "><b>c:\Program files\**</b></span><span class="FM_screencode">&#160;</span>matches any file in the c:\Program files\ folder or any of its subfolders.</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span class="FM_screencode" style="font-weight : bold; "><b>**.txt</b></span><span class="FM_screencode">&#160;</span>matches any local file with a .txt extension, regardless of its place in the directory tree.</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span class="FM_screencode" style="font-weight : bold; "><b>**\secret*</b></span><span class="FM_screencode">&#160;</span>matches any local file with a name that starts with “secret”</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span class="FM_screencode" style="font-weight : bold; "><b>**secret*</b></span><span class="FM_screencode">&#160;</span>matches any local file with a name that contains the word “secret” anywhere. A more natural way to write the same thing is **\*secret*, but the two expressions are equivalent.</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span class="FM_screencode" style="font-weight : bold; "><b>**\Q?drevenue.doc</b></span><span class="FM_screencode">&#160;</span>matches any local file with a name that starts with “Q”, ends with “revenue.doc”, and has exactly one single-digit number in between. For example, \\documents\accounting\Q2revenue.doc would match, while \\documents\accounting\Q4-98revenue.doc would not match.</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span style="font-weight : bold; "><b>**\?d?d?d*?d?d*?d?d?d/d*.*</b></span>&#160;matches any file that has a social security number anywhere in its name, either with hyphens or without.</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span style="font-weight : bold; "><b>?c?c?c.*</b></span>&#160;matches any file with name containing exactly three characters of any kind, in either upper or lower case.</p>
+
+ <p class="BodyLevel1">Lastly, it is important to note that these special wildcards are available only for document and portal components—not for any other uses in Control Center, such as specifying e-mail addresses or domains, defining subject components, or fil&#173;tering queries in Reporter.</p>
+ <h3><a name="XREF_17287_Special_Keywords"></a>Special Keywords</h3>
+ <p class="BodyLevel1">For document components, two special keywords are available to help with commonly used components: [MyDocument] and [MyDesktop]. You can use these keywords as a part of the path you type in the membership field, as shown in the following figure. Be sure to include the square brackets, but do not include any spaces. Note that the keywords are not case sensitive.</p>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="DocKeyword.png" style="width : 349.624pt; height : 94.500pt; " id="image5" src="DocKeyword.png" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook">Special document keywords</p>
+ <p class="BodyLevel1">The following table provides descriptions of these keywords and how to use them.</p>
+<table width="100%">
+ <tr>
+ <td>
+ <table style="border-spacing: 0; padding-left: 4.00pt; padding-top: 4.00pt; padding-right: 4.00pt; padding-bottom: 3.00pt;float: aligncenter;margin-bottom: 24.00pt; width: 360.00pt;" cellspacing="0" align="center">
+  <caption align="center">
+  </caption>
+  <tr style=" height : 16.00pt;background : #1f8c4a;">
+  <th style="width : 76.074pt; background : #1f8c4a;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Keyword</p>
+</th>
+  <th style="width : 283.926pt; background : #1f8c4a;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Description</p>
+</th>
+</tr>
+  <tr style=" height : 88.00pt;">
+  <td style="width : 76.074pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">[MyDocuments]</p>
+</td>
+  <td style="width : 283.926pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Creates a component representing the user’s MyDocuments folder, wherever it happens to be physically mapped. You can specify subdirectories within My Documents, and/or specify document names using wildcard characters. For example:</p>
+  <p class="CellBody">•<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;</font></span>[MyDocuments]\** = All documents in the user’s My Documents folder</p>
+  <p class="CellBody">•<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;</font></span>[MyDocuments]\Q4Sales\*.xls = All Excel spreadsheets in the Q4 Sales sub&#173;directory of My Documents</p>
+  <p class="CellBody">As a rule you will want to specify subdirectories, rather than have policies that control all files in users’ MyDocuments folder.</p>
+</td>
+</tr>
+  <tr style=" height : 31.00pt;">
+  <td style="width : 76.074pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">[MyDesktop]</p>
+</td>
+  <td style="width : 283.926pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Creates a component representing the user’s MyDesktop folder, wherever it happens to be physically mapped. Also can be used with subfolder paths and wildcard characters.</p>
+</td>
+</tr>
+ </table>
+</td></tr>
+</table>
+ <p class="BodyLevel1">&#160;</p>
+ <h3><a name="XREF_51154_Removable_Media"></a>Removable Media</h3>
+ <p class="BodyLevel1">The Documents component bin contains a predefined document component that has a special use: Removable Media. You can drag this component into policies to represent all peripheral devices such as USB flash drives, iPhones and iPods, and CD/DVD burners—any device that appears as a separate drive in the My Computer tree in Windows Explorer. You can also use it together with subfolder paths and wildcard characters.</p>
+ <p class="BodyLevel1">This component is useful only in policies that treat all removable media devices the same (Document policies). If you need policies that distinguish among dif&#173;ferent kinds of removable media—for example, for a policy that allows people to use company-issued USB flash drives but blocks the use of all other devices—you should define them in the Devices component bin, which can be recognized by the Removable Device Enforcer. </p>
+ <h3>Document Components: Default Properties </h3>
+ <p class="BodyLevel1">Document components are special in that they have two sets of properties: the standard With Properties field, and the With Content properties. The former can be used in all kinds of components; the latter are exclusively for use in defining content-based components.</p>
+ <p class="BodyLevel1">The following figure shows these two sets of properties in Policy Author’s com&#173;ponent editor.</p>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="ContainsContentProperty.jpg" style="width : 483.988pt; height : 240.359pt; " id="image6" src="ContainsContentProperty.jpg" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook">Document component properties</p>
+ <p class="BodyLevel1">The following table describes the default properties of document components. As with other object components, you can define additional custom properties. For more details, refer to the Control Center<span style="font-style : italic; color   : #0000ff; "><font color="blue" ><i>&#160;</i></font></span><span class="FM_Emphasis">Administrator’s Guide</span>.</p>
+<table width="100%">
+ <tr>
+ <td>
+ <table style="border-spacing: 0; padding-left: 4.00pt; padding-top: 4.00pt; padding-right: 4.00pt; padding-bottom: 3.00pt;float: aligncenter;margin-bottom: 24.00pt; width: 360.98pt;" cellspacing="0" align="center">
+  <caption align="center">
+  </caption>
+  <tr style=" height : 25.00pt;background : #1f8c4a;">
+  <th style="width : 52.985pt; background : #1f8c4a;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Property</p>
+</th>
+  <th style="width : 253.376pt; background : #1f8c4a;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Description</p>
+</th>
+  <th style="width : 54.624pt; background : #1f8c4a;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Valid Operators</p>
+</th>
+</tr>
+  <tr style=" height : 15.00pt;">
+  <td colspan="3" style="width : 360.985pt; background : #ffffff;border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">Standard&#160;With Properties Field</p>
+</td>
+</tr>
+  <tr style=" height : 23.00pt;">
+  <td style="width : 52.985pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="BodyLevel1" style="font-weight : bold; font-size  : 8.0pt;">Access Date</p>
+</td>
+  <td style="width : 253.376pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">The date and time the document was last opened.</p>
+</td>
+  <td style="width : 54.624pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">on or after, before</p>
+</td>
+</tr>
+  <tr style=" height : 31.00pt;">
+  <td style="width : 52.985pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">Created Date</p>
+</td>
+  <td style="width : 253.376pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">The date and time the document was created (if a document is a copy of another document, this property refers to the date and time the copy was created). </p>
+</td>
+  <td style="width : 54.624pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">on or after, before</p>
+</td>
+</tr>
+  <tr style=" height : 74.00pt;">
+  <td style="width : 52.985pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">Directory</p>
+</td>
+  <td style="width : 253.376pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">The name of the directory where the document is located. Directory names are not case sensitive. </p>
+  <p class="CellBody">The directory attribute cannot target an absolute (full) path to a location. In other words, the value &quot;protected _directory&quot; is valid for targeting the location &quot;//server/files/protected_directory.&quot; Similarly, the value &quot;files/protected_directory&quot; is also valid. However, the full path &quot;//server/files/protected_directory&quot; is not valid.</p>
+</td>
+  <td style="width : 54.624pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">is, is not</p>
+</td>
+</tr>
+  <tr style=" height : 66.00pt;">
+  <td style="width : 52.985pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">Full Name</p>
+</td>
+  <td style="width : 253.376pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">The name of the document, without the directory path but including the extension. For example, the name of “\\docstore\alldocs\financial\Q1results.xls” is <span style="font-style : italic; "><i>Q1results.xls</i></span>. This value is not case-sensitive.</p>
+  <p class="CellBody">You can use wildcard characters, both in the name and to express extensions. For example, Q1results.xls would be covered by a component with full name <span style="font-style : italic; "><i>Q1results*</i></span>&#160;or <span style="font-style : italic; "><i>Q?dresults.*</i></span></p>
+</td>
+  <td style="width : 54.624pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">is, is not</p>
+</td>
+</tr>
+  <tr style=" height : 31.00pt;">
+  <td style="width : 52.985pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">Include Only Directories</p>
+</td>
+  <td style="width : 253.376pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">This is a special property that allows you to control how any policies with this component will handle directories. Valid values are Yes and No. For details, see <a href="#XREF_68154_Property"><span class="FM_blue">About the Include Only Directories Property</span></a>.</p>
+</td>
+  <td style="width : 54.624pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">n/a</p>
+</td>
+</tr>
+  <tr style=" height : 39.00pt;">
+  <td style="width : 52.985pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">Modified Date</p>
+</td>
+  <td style="width : 253.376pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">The date and time the document was last modified. Note that this includes modification of metadata as well as file content. For example, if you attach a custom property to a file, this date will be refreshed.</p>
+</td>
+  <td style="width : 54.624pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">on or after, before</p>
+</td>
+</tr>
+  <tr style=" height : 23.00pt;">
+  <td style="width : 52.985pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">Owner</p>
+</td>
+  <td style="width : 253.376pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">The owner of this file. Note that wildcard characters are not supported by this property.</p>
+</td>
+  <td style="width : 54.624pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">is, is not</p>
+</td>
+</tr>
+  <tr style=" height : 23.00pt;">
+  <td style="width : 52.985pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">Owner User Component</p>
+</td>
+  <td style="width : 253.376pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">User component that contains the owner of this file.</p>
+</td>
+  <td style="width : 54.624pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">is, is not</p>
+</td>
+</tr>
+  <tr style=" height : 23.00pt;">
+  <td style="width : 52.985pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">Size</p>
+</td>
+  <td style="width : 253.376pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">The size of the document, expressed in bytes. </p>
+</td>
+  <td style="width : 54.624pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">&#160;=, !=, &gt;, &gt;=, &lt;, &lt;=.</p>
+</td>
+</tr>
+  <tr style=" height : 66.00pt;">
+  <td style="width : 52.985pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">Type</p>
+</td>
+  <td style="width : 253.376pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">The type of the document (i.e., its extension). This value is not case-sensitive, and you do not need to include the dot character. For example, for the file &#160;“\\docstore\alldocs\financial\Q1results.xls”, the type is <span style="font-style : italic; "><i>xls </i></span>or <span style="font-style : italic; "><i>XLS.</i></span></p>
+  <p class="CellBody">Note that for any component where you specified the Full Name property, you do not need to specify a Type, since the full name must contain an extension.</p>
+</td>
+  <td style="width : 54.624pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">is, is not</p>
+</td>
+</tr>
+  <tr style=" height : 15.00pt;">
+  <td colspan="3" style="width : 360.985pt; background : #ffffff;border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">With Content Properties Field</p>
+</td>
+</tr>
+  <tr style=" height : 58.00pt;">
+  <td style="width : 52.985pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="BodyLevel1" style="font-weight : bold; font-size  : 8.0pt;">Content Type</p>
+</td>
+  <td style="width : 253.376pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Restricts the content type of this component to either <span style="font-style : italic; "><i>E-Mail Subject</i></span>&#160;or <span style="font-style : italic; "><i>E-Mail Body. </i></span>If no value is set, the component covers all content types: document, e-mail body, e-mail subject, or clipboard content.</p>
+  <p class="CellBody">This property can be used only in content analysis policies (see below).</p>
+</td>
+  <td style="width : 54.624pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">n/a</p>
+</td>
+</tr>
+  <tr style=" height : 50.00pt;">
+  <td style="width : 52.985pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">Contains Content</p>
+</td>
+  <td style="width : 253.376pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Filters for specific kinds of content strings: credit card numbers, SSNs, mailing addresses, e-mail addresses, etc. Requires a value for the additional Match Count field.</p>
+  <p class="CellBody">This property can be used only in content analysis policies (see below).</p>
+</td>
+  <td style="width : 54.624pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">n/a</p>
+</td>
+</tr>
+ </table>
+</td></tr>
+</table>
+ <p class="BodyLevel1">&#160;</p>
+ <h4>About Content Analysis Policies</h4>
+ <p class="BodyLevel1">The last two properties listed in the table are used only in the context of Control Center’s content analysis feature. This feature lets you define policies that depend on the presence or absence of certain specified text content within doc&#173;uments, e-mail subject line, or e-mail body. For example, you could define a component that represents any document containing more than five credit card numbers, say, or even a single instance of the keyword phrase <span style="font-style : italic; "><i>Confidential Internal Data.</i></span>&#160;You could then use this component in a policy that blocks any user from copying such documents onto any public server.</p>
+ <p class="BodyLevel1">Content analysis policies can also invoke a special obligation that automatically redacts some specified content when it is discovered—that is, replaces the con&#173;tent with a string of Xs—but allows the action to proceed in redacted form. For example, a policy might check all outgoing e-mails for account numbers, and redact them before sending the messages.</p>
+ <p class="BodyLevel1">The Match Count attribute of the Contains Content property specifies the mini&#173;mum number of instances a specified content string must be present in the doc&#173;ument or e-mail, before the component (and thus the policy) applies.</p>
+ <p class="BodyLevel1">For a detailed discussion of how you can use the content analysis feature in pol&#173;icies, refer to the <span style="color   : #0000ff; "><font color="blue" >Policy Design Guide</font></span>.</p>
+ <h4><a name="XREF_68154_Property"></a>About the Include Only Directories Property</h4>
+ <p class="BodyLevel1">Document components have a special property, <span style="font-style : italic; "><i>Include Only Directories</i></span>, that allows you to control how policies with the component in them will handle <span style="font-style : italic; "><i>directories</i></span>, rather than files. This is a useful feature because although a policy can control all files in a certain directory, it cannot stop a user from copying or moving a parent directory, thus circumventing the policy. This feature allows you to write policies that prevent this and similar problems. For more details, see the <span style="font-style : italic; color   : #0000ff; "><font color="blue" ><i>Policy Design Guide</i></font></span>.</p>
+ <h2><a name="XREF_58190_Defining_User"></a>Defining User Components</h2>
+ <p class="BodyLevel1">User-type components are organized on the Users tab of the Subjects compo&#173;nent pane. They share all of the generic object component characteristics we discussed above. In addition, they have some special qualities as well.</p>
+ <h3>User Components: Membership</h3>
+ <p class="BodyLevel1">To define the membership of a user component, you can specify the following entities:</p>
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span style="font-weight : bold; "><b>An existing user component</b></span>, either dragged from the component bin or typed manually</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span style="font-weight : bold; "><b>An enrolled LDAP user or group</b></span>, either selected using the search tool, or typed manually</p>
+
+ <h3><a name="XREF_63382_The_Member_Search"></a>The Member Search Tool</h3>
+ <p class="BodyLevel1">Because your enrolled users and groups may number in the hundreds or even thousands, Policy Author provides the search tool shown in the figure below. This tool displays whenever you click the Members <span class="FM_Bold">Lookup</span>&#160;button. You can use it to search for users, groups, and contacts. </p>
+ <h4>About Contacts</h4>
+ <p class="BodyLevel1">Contacts are the users stored in the AD as listings in the MS Outlook’s Global Address Book. They are enrolled along with users, using the Enrollment Manager, depending on the OU value specified. Once enrolled, they can be used to define user components, but note that these components can <span style="font-style : italic; "><i>only</i></span> be used as recipi&#173;ents of communication policies—it makes no sense to use them in subjects of policies.</p>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="Components00016.jpg" style="width : 366.804pt; height : 315.996pt; " id="image7" src="Components00016.jpg" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook"><a name="XREF_45882_Using_the_Add"></a>Using the Add Members Lookup tool</p>
+ <h4>Searching for Users</h4>
+ <p class="BodyLevel1">To use the Search tool, first select an item from the <span class="FM_Bold">Source</span> combo-box (<span style="font-weight : bold; color   : #ff0000; "><font color="red" ><b>A</b></font></span>), which displays a list of all enrollments performed so far. If you do not know what enrollment you need, use the default, All. You can type any number of charac&#173;ters in the <span class="FM_Bold">Name Starts With</span> field (<span style="font-weight : bold; color   : #ff0000; "><font color="red" ><b>B</b></font></span>), to filter on users or groups in that way. (In the example, we filtered on all users whose names start with “ge”.) When you click the <span class="FM_Bold">Find Now</span>&#160;button, the results of the filter appear&#160;in the source (left) field of the Members pane (<span style="font-weight : bold; color   : #ff0000; "><font color="red" ><b>C</b></font></span>), which is organized in three tabs, for users, groups, and contacts. Select the items you want from that list, then click the <span class="FM_Bold">Add</span>&#160;button to add them to the target (right) pane (<span style="font-weight : bold; color   : #ff0000; "><font color="red" ><b>D</b></font></span>). If you make a mistake, you can use the <span class="FM_Bold">Remove</span>&#160;button to remove users or groups from the target pane. Click <span class="FM_Bold">OK</span> when you have selected all the members you want.</p>
+ <h3>User Components: Default Properties</h3>
+ <p class="BodyLevel1">The following table displays the default properties of user components. As with other object components, the Control Center administrator can define addi&#173;tional custom properties; for details on how to do this, refer to the<span style="font-style : italic; "><i>&#160;</i></span>Control Center<span style="font-style : italic; color   : #0000ff; "><font color="blue" ><i>&#160;</i></font></span><span class="FM_Emphasis">Administrator’s Guide</span>.</p>
+<table width="100%">
+ <tr>
+ <td>
+ <table style="border-spacing: 0; padding-left: 4.00pt; padding-top: 4.00pt; padding-right: 4.00pt; padding-bottom: 3.00pt;float: aligncenter;margin-bottom: 24.00pt; width: 359.73pt;" cellspacing="0" align="center">
+  <caption align="center">
+  </caption>
+  <tr style=" height : 25.00pt;background : #1f8c4a;">
+  <th style="width : 74.235pt; background : #1f8c4a;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Property</p>
+</th>
+  <th style="width : 230.875pt; background : #1f8c4a;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Description</p>
+</th>
+  <th style="width : 54.624pt; background : #1f8c4a;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Valid Operators</p>
+</th>
+</tr>
+  <tr style=" height : 15.00pt;">
+  <td style="width : 74.235pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">Account Name</p>
+</td>
+  <td style="width : 230.875pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Account with which this user is associated.</p>
+</td>
+  <td style="width : 54.624pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">is, is not</p>
+</td>
+</tr>
+  <tr style=" height : 15.00pt;">
+  <td style="width : 74.235pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">Company</p>
+</td>
+  <td style="width : 230.875pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Company with which this user is associated.</p>
+</td>
+  <td style="width : 54.624pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">is, is not</p>
+</td>
+</tr>
+  <tr style=" height : 15.00pt;">
+  <td style="width : 74.235pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">Country Name</p>
+</td>
+  <td style="width : 230.875pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Country of this user.</p>
+</td>
+  <td style="width : 54.624pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">is, is not</p>
+</td>
+</tr>
+  <tr style=" height : 15.00pt;">
+  <td style="width : 74.235pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">Department</p>
+</td>
+  <td style="width : 230.875pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Department with which this user is associated.</p>
+</td>
+  <td style="width : 54.624pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">is, is not</p>
+</td>
+</tr>
+  <tr style=" height : 63.00pt;">
+  <td style="width : 74.235pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">E-Mail Address</p>
+</td>
+  <td style="width : 230.875pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">One or more e-mail addresses associated with the user. This property is used to define e-mail-based users, which can serve as the Send To users in Communication policies—that is, the intended recipients of e-mails with attachments. As a rule, you will not use e-mail based users as policy subjects. For more on Communication policies, see <a href="../Policies/Communication_Policies.htm#XREF_98220_Communication"><span class="FM_blue">Communication Policies</span></a>.</p>
+</td>
+  <td style="width : 54.624pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">is, is not</p>
+</td>
+</tr>
+  <tr style=" height : 58.00pt;">
+  <td style="width : 74.235pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">E-Mail Domain</p>
+</td>
+  <td style="width : 230.875pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">The domain to which the user belongs. This property is useful for creating user components that represent whole e-mail domains, which can then be used to control e-mail attachments to any user within one or more domains. </p>
+  <p class="CellBody">Note that wildcard characters are not supported by this property.</p>
+</td>
+  <td style="width : 54.624pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">is, is not</p>
+</td>
+</tr>
+  <tr style=" height : 15.00pt;">
+  <td style="width : 74.235pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">First Name</p>
+</td>
+  <td style="width : 230.875pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">This user’s first name.</p>
+</td>
+  <td style="width : 54.624pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">is, is not</p>
+</td>
+</tr>
+  <tr style=" height : 15.00pt;">
+  <td style="width : 74.235pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">Full Name</p>
+</td>
+  <td style="width : 230.875pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">This user’s whole name.</p>
+</td>
+  <td style="width : 54.624pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">is, is not</p>
+</td>
+</tr>
+  <tr style=" height : 77.00pt;">
+  <td style="width : 74.235pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">Group</p>
+</td>
+  <td style="width : 230.875pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Group to which this computer belongs. This can refer either to host groups defined in Active Directory and enrolled from there, or to groups defined directly in Policy Author.</p>
+  <p class="CellBody">Note that wildcard characters are not supported by this property.</p>
+  <p class="CellBody">The format is: fully qualified domain name (FQDN):Groups:Name of user Group. For example, nextlabs.com:Groups:B2B Sales</p>
+</td>
+  <td style="width : 54.624pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">is, is not</p>
+</td>
+</tr>
+  <tr style=" height : 15.00pt;">
+  <td style="width : 74.235pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">ISO Country Code</p>
+</td>
+  <td style="width : 230.875pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">The ISO code of this user’s country.</p>
+</td>
+  <td style="width : 54.624pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">is, is not</p>
+</td>
+</tr>
+  <tr style=" height : 15.00pt;">
+  <td style="width : 74.235pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">Last Name</p>
+</td>
+  <td style="width : 230.875pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">This user’s last name.</p>
+</td>
+  <td style="width : 54.624pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">is, is not</p>
+</td>
+</tr>
+  <tr style=" height : 23.00pt;">
+  <td style="width : 74.235pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">Numeric Country Code</p>
+</td>
+  <td style="width : 230.875pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Numeric code of this user’s country.</p>
+</td>
+  <td style="width : 54.624pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">is, is not</p>
+</td>
+</tr>
+  <tr style=" height : 15.00pt;">
+  <td style="width : 74.235pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">Title</p>
+</td>
+  <td style="width : 230.875pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Title assigned to this user: Mr., Mrs., Ms., Dr., etc.</p>
+</td>
+  <td style="width : 54.624pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">is, is not</p>
+</td>
+</tr>
+  <tr style=" height : 31.00pt;">
+  <td style="width : 74.235pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">User Principal Name</p>
+</td>
+  <td style="width : 230.875pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">This user’s LDAP principal name. This is a unique identifier for a user in Active Directory, typically in the form of an e-mail address; for example, jdoe@yourcompany.com.</p>
+</td>
+  <td style="width : 54.624pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">is, is not</p>
+</td>
+</tr>
+ </table>
+</td></tr>
+</table>
+ <p class="BodyLevel1"></p>
+ <h4>And/Or Logic with Properties</h4>
+ <p class="BodyLevel1">You can add more than one property to a user component definition, by clicking the plus&#160;icon. When you do this, the AND operator applies: the component includes&#160;all users who have property X <span style="font-style : italic; "><i>and</i></span>&#160;property Y. In the example shown in the figure below, the user would have to be in the company NextLabs, <span style="font-style : italic; "><i>and</i></span>&#160;have the title Senior Engineer.</p>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="PropertyAND.jpg" style="width : 362.692pt; height : 146.475pt; " id="image8" src="PropertyAND.jpg" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook">Logical Operators with User Properties</p>
+ <p class="BodyLevel1">Component properties do not support OR logic. For example, if you suspect that sometimes the job title is represented as <span style="font-style : italic; "><i>Sr. Engineer, </i></span>you may want OR logic: “Any user whose job title is Senior Engineer OR Sr. Engineer.” This cannot be handled at the component level, but it can be done at the policy level. That is, you must create a second user component, identical to the one above but with the alternative title. If you then include both these users in a policy, it would cover all users with either of those job titles, and the specified company name.</p>
+ <h2><a name="XREF_94560_Defining_Computer"></a>Defining Computer Components</h2>
+ <p class="BodyLevel1">Computer-type components share all of the generic object component charac&#173;teristics discussed above. In addition, they have some special qualities as well.</p>
+ <h3><a name="XREF_99845_Membership"></a>Computer Components: Membership</h3>
+ <p class="BodyLevel1">To define the membership of a computer component, you can specify the fol&#173;lowing entities:</p>
+ <p style="margin-left : 32.400pt; text-indent : -10.080pt; margin-top  : 0.000pt; margin-bottom : 4.000pt; font-weight : bold;">•Any existing computer component<span style="font-weight : normal; ">, either dragged from the component bin, or typed manually</span></p>
+ <p>•Any enrolled host(s) or host group(s), selected using the Member Search tool, which you open by clicking the <span class="FM_Bold" style="font-family : Trebuchet MS; font-style : normal; font-weight : bold; font-size  : 10.0pt; color   : #000000; text-decoration : none; letter-spacing : 0.00em; "><font size="2" color="black" style="font-size:10.000000pt;"><b>Lookup</b></font></span>&#160;button (see <a href="#XREF_63382_The_Member_Search"><span class="FM_blue" style="color   : #0000ff; text-decoration : none; letter-spacing : 0.00em; "><font color="blue" >The Member Search Tool</font></span></a>).</p>
+ <p class="BodyLevel1">•<span style="font-weight : bold; "><b>Computers with Enforcers:</b></span>&#160;This predefined component represents all computers where any Desktop-type of enforcer is installed. It can be use&#173;ful in policies that, for example, prevent anyone from copying or moving certain classes of documents to any unenforced computer: “Deny All Users to Copy [documents] to All Computers Not In Computers with Enforcers.” </p>
+ <p style="margin-left : 32.000pt; text-indent : -0.625pt;">The actual membership of this component is a potentially long list of computer names. For convenience, the <span class="FM_Bold">Actions</span> menu has a special com&#173;mand, <span class="FM_Bold">Update Computers with Enforcers</span>, that lets you update the membership list all at once.</p>
+ <h3>Computer Components: Default Properties</h3>
+ <p class="BodyLevel1">The following table displays the default properties of computer components. As with other object components, the Control Center&#160;administrator can define additional custom properties; for more details, refer to the<span style="font-style : italic; "><i>&#160;</i></span>Control Center<span style="font-style : italic; color   : #0000ff; "><font color="blue" ><i>&#160;Administrator’s Guide</i></font></span> for more information.</p>
+<table width="100%">
+ <tr>
+ <td>
+ <table style="border-spacing: 0; padding-left: 4.00pt; padding-top: 4.00pt; padding-right: 4.00pt; padding-bottom: 3.00pt;float: aligncenter;margin-bottom: 24.00pt; width: 361.61pt;" cellspacing="0" align="center">
+  <caption align="center">
+  </caption>
+  <tr style=" height : 25.00pt;background : #1f8c4a;">
+  <th style="width : 65.485pt; background : #1f8c4a;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Property</p>
+</th>
+  <th style="width : 241.500pt; background : #1f8c4a;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Description</p>
+</th>
+  <th style="width : 54.624pt; background : #1f8c4a;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Valid Operators</p>
+</th>
+</tr>
+  <tr style=" height : 23.00pt;">
+  <td style="width : 65.485pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">DNS Host</p>
+</td>
+  <td style="width : 241.500pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Name of this computer, which the DNS uses for resolving IP addresses in order to find this computer in the network.</p>
+</td>
+  <td style="width : 54.624pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">is, is not</p>
+</td>
+</tr>
+  <tr style=" height : 15.00pt;">
+  <td style="width : 65.485pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">Machine Name</p>
+</td>
+  <td style="width : 241.500pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">The permanent name assigned to this computer.</p>
+</td>
+  <td style="width : 54.624pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">is, is not</p>
+</td>
+</tr>
+  <tr style=" height : 69.00pt;">
+  <td style="width : 65.485pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">Group</p>
+</td>
+  <td style="width : 241.500pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Group to which this computer belongs. This can refer either to host groups defined in Active Directory and enrolled from there, or to groups defined directly in Policy Author.</p>
+  <p class="CellBody">Note that wildcard characters are not supported by this property.</p>
+  <p class="CellBody">The format is: fully qualified domain name (FQDN):Groups:Name of host Group. For example, nextlabs.com:nextlabs.com:Groups:hostG1</p>
+</td>
+  <td style="width : 54.624pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">is, is not</p>
+</td>
+</tr>
+  <tr style=" height : 23.00pt;">
+  <td style="width : 65.485pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">Network Address</p>
+</td>
+  <td style="width : 241.500pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">The network name assigned to the PC, which will be resolved by a DNS. You may also use the direct numeric IP representation.</p>
+</td>
+  <td style="width : 54.624pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">is, is not</p>
+</td>
+</tr>
+  <tr style=" height : 23.00pt;">
+  <td style="width : 65.485pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">Operating System</p>
+</td>
+  <td style="width : 241.500pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Operating system of this computer.</p>
+</td>
+  <td style="width : 54.624pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">is, is not</p>
+</td>
+</tr>
+  <tr style=" height : 39.00pt;">
+  <td style="width : 65.485pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">Site</p>
+</td>
+  <td style="width : 241.500pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">The name of the site where the desktop is located. Sites are defined as one or more ranges of IP addresses. They must be enrolled manually, using the ImportLocations utility (see the Control Center<span style="font-style : italic; color   : #0000ff; "><font color="blue" ><i>&#160;</i></font></span><span class="FM_Emphasis">Administrator’s Guide</span> for more information).</p>
+</td>
+  <td style="width : 54.624pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">is, is not</p>
+</td>
+</tr>
+ </table>
+</td></tr>
+</table>
+ <p class="BodyLevel1"></p>
+ <h2><a name="XREF_69930_Defining"></a>Defining Application Components</h2>
+ <p class="BodyLevel1">Note that application components&#160;can be used only in policies enforced by the Enterprise Data Protection&#160;product. Like other component types, they are defined by their memberships and their properties. Their memberships can con&#173;sist of the following:</p>
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>An existing application component, either dragged from the component bin or typed manually. May be one of two predefined components described below.</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>An application, selected from the Lookup list. This list displays all applica&#173;tions currently enrolled in Control Center.</p>
+
+ <p class="BodyLevel1">Applications have only three default properties, as described below. You cannot define custom properties for applications.</p>
+<table width="100%">
+ <tr>
+ <td>
+ <table style="border-spacing: 0; padding-left: 4.00pt; padding-top: 4.00pt; padding-right: 4.00pt; padding-bottom: 3.00pt;float: aligncenter;margin-bottom: 24.00pt; width: 361.61pt;" cellspacing="0" align="center">
+  <caption align="center">
+  </caption>
+  <tr style=" height : 25.00pt;background : #1f8c4a;">
+  <th style="width : 65.485pt; background : #1f8c4a;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Property</p>
+</th>
+  <th style="width : 241.500pt; background : #1f8c4a;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Description</p>
+</th>
+  <th style="width : 54.624pt; background : #1f8c4a;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Valid Operators</p>
+</th>
+</tr>
+  <tr style=" height : 39.00pt;">
+  <td style="width : 65.485pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">URL</p>
+</td>
+  <td style="width : 241.500pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">URL in standard format, describing some web or network location. This property can be used with MS Internet Explorer to define web applications that can then be used in policies. For details, see <a href="#XREF_10755_Controlling_Web"><span class="FM_blue">Controlling Web Applications</span></a>.</p>
+</td>
+  <td style="width : 54.624pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">is, is not</p>
+</td>
+</tr>
+  <tr style=" height : 23.00pt;">
+  <td style="width : 65.485pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">Display Name</p>
+</td>
+  <td style="width : 241.500pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">The name that displays wherever the component is used in Policy Author.</p>
+</td>
+  <td style="width : 54.624pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">is, is not</p>
+</td>
+</tr>
+  <tr style=" height : 47.00pt;">
+  <td style="width : 65.485pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">Executable Name</p>
+</td>
+  <td style="width : 241.500pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">The executable filename of the application file, with full path. As long as you provide the full path, and you are confident the path will not change, this is a convenient way to define Application components even if you have not enrolled the executables themselves.</p>
+</td>
+  <td style="width : 54.624pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">is, is not</p>
+</td>
+</tr>
+ </table>
+</td></tr>
+</table>
+ <p class="BodyLevel1"></p>
+ <p class="BodyLevel1">When you define an application component, it is available for use as a part of the subject in policies. Bear in mind that applications are logically connected to the user component and the computer component; all these three work together as the single subject of the policy.</p>
+ <p class="BodyLevel1">It is important to understand that application components refer specifically to applications, <span style="font-style : italic; "><i>not</i></span>&#160;to any file type or extension that may be associated with applications. For example, you might create an<span style="font-style : italic; "><i>&#160;</i></span>application component called <span style="font-style : italic; "><i>MS Word</i></span>. If you then use this component in a Deny policy, the policy blocks users from using Word to open the specified documents. Although Word is asso&#173;ciated with a .DOC file extension, this does not mean that this policy applies to .DOC files generally; the policy does <span style="font-style : italic; "><i>not</i></span> block anyone from opening .DOC docu&#173;ments using another application, such as Notepad or WordPad. Again, the com&#173;ponent refers to the application, not the file type.</p>
+ <p class="BodyLevel1">Also, bear in mind that Control Center&#160;considers different versions of an appli&#173;cation as entirely independent of one another, and they must be enrolled sepa&#173;rately. If you have more than one version of an application running in your environment and enrolled in Control Center&#160;and you want to create application components to use them in policies, you must create a separate application component for each, and make sure they are specified in the policies you write.</p>
+ <h3><a name="XREF_42155_Predefined"></a>Predefined Application Components</h3>
+ <p class="BodyLevel1">Control Center&#160;provides several predefined application components that allow you to easily set up commonly desired policies. To use the predefined compo&#173;nents, you must first import the seed data for your Data Protection product. For information about importing seed data, see the Control Center <span class="FM_Emphasis">Administrator’s Guide</span>.</p>
+ <h4><a name="XREF_78444_Autorun_Prevention"></a>Autorun Prevention</h4>
+ <p class="BodyLevel1">In many cases, security administrators may want to block any executables from automatically launching on network PCs. There are two predefined application components that can help with this:</p>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="AutoRunApps.jpg" style="width : 204.348pt; height : 157.836pt; " id="image9" src="AutoRunApps.jpg" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span style="font-weight : bold; "><b>Autorun.exe</b></span>&#160;represents the autorun executable. You can create a policy with this application as the subject, to prevent autorun from launching anywhere when a CD or other removable media is inserted or attached to a PC: “DENY All users, on all hosts, using Autorun.exe, for all actions, on all documents.” This component is read-only.</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span style="font-weight : bold; "><b>Applications that Start Automatically</b></span>&#160;is a more generic component that you can define yourself. It contains the Autorun.exe component, but also allows you to add any other applications you have enrolled, that you want to be able to block.</p>
+
+ <h4><a name="XREF_21507_Application"></a>Application Monitoring</h4>
+ <p class="BodyLevel1">Unless you specify otherwise, Control Center applies each policy to all applica&#173;tions running on monitored PCs. However, there are two other predefined appli&#173;cation components that allow you to define a list of applications you want to either exempt from monitoring, or explicitly include for monitoring, while ignor&#173;ing all others.</p>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="AutoRunApps00017.jpg" style="width : 216.774pt; height : 153.750pt; " id="image10" src="AutoRunApps00017.jpg" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span style="font-weight : bold; "><b>Monitor All </b></span><span style="font-weight : bold; "><b>Applications—Exceptions</b></span>: If you want to exclude specific applications while applying to all others, add them to this list and deploy this component.</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span style="font-weight : bold; "><b>Monitor Specific </b></span><span style="font-weight : bold; "><b>Applications</b></span>: If you want your policies to monitor only specific applications and ignore all others, add them to this list and deploy this component.</p>
+
+ <p class="BodyLevel1">They appear in the list in the application component bin, just like any other application component you might define. However, they work in a different way: they are global for all policies—that is, once defined and deployed, they apply to all policies deployed in your network. They have the same effect as if you had included an application component in every deployed policy, so that it only works on some applications and ignores others.</p>
+ <p class="BodyLevel1">You can define one or the other of these components (or neither of them), but you generally should not define both. Note that these two function as described on their own, simply as components. That is, you deploy them by themselves—there is no need to use them in any policy.</p>
+ <p class="BodyLevel1">By default, Control Center&#160;monitors all applications on desktops where Desktop Enforcers are running. If you do not define a list for either of these application components, this is the expected behavior. </p>
+ <p class="BodyLevel1">If you specify one or more applications to monitor, then all Desktop Enforcers monitor <span style="font-style : italic; "><i>only those</i></span> for all deployed policies, and ignores all other applications. This may be useful if you are launching a limited set of policies that you know&#160;involve only a well-defined set of applications.</p>
+ <p class="BodyLevel1">On the other hand, if you define one or more exceptions, Control Center&#160;will monitor all applications on desktops where Desktop Enforcers are running, with the exception of the applications you specify. You may use this feature if you have some application—for example, an anti-virus security tool running on every desktop in your network—that you are sure you will never want any policy to block for any user under any circumstances. </p>
+ <p class="PublisherBook"><span class="FM_Emphasis">Note: </span>For best system performance, you should define exceptions for all operational and support software, for example, anti-virus scanners, back-up software, disk defragmentation software, and search indexes.</p>
+ <p class="BodyLevel1">If you do define and deploy both a Monitor Specific and an Exception application component, the latter will take priority over the former. That is, only those applications specified in the Monitor Specific list are monitored, with the excep&#173;tion of any that are listed in the Exceptions list.</p>
+ <p class="PublisherBook"><span class="FM_Emphasis">Note: </span>You should not delete either of these predefined components for any reason. If you do delete one, you cannot simply recreate a new com&#173;ponent with the same name; it will not function properly.</p>
+ <h4>Windows Explorer</h4>
+ <p class="BodyLevel1">Note that for the purposes of excluding or including, Windows Explorer is consid&#173;ered an application if you are explicitly <span style="font-style : italic; "><i>excluding</i></span>&#160;applications, but not if you are explicitly <span style="font-style : italic; "><i>including</i></span>&#160;applications. That is, if you deploy the <span style="font-weight : bold; "><b>Monitor Specific Applications </b></span>component, Windows Explorer will be monitored by default even if you do not include it in the list. In this case, it will be considered a part of the operating system rather than an application. As a result, Control Center&#160;will enforce policies based on actions such as move, copy, delete, save, and so on.</p>
+ <p class="BodyLevel1">On the other hand, if you deploy a <span style="font-weight : bold; "><b>Monitor All Applications—Exceptions</b></span> compo&#173;nent, you can list Explorer as an application. In this case, Control Center&#160;treats Explorer as an application, and will not enforce policies governing any of Explorer’s file handling functions. You should be very careful about doing this, since it will override any policies that include standard file-handling functions—copy, move, delete, save, etc.</p>
+ <h3><a name="XREF_10755_Controlling_Web"></a>Controlling Web Applications</h3>
+ <p class="BodyLevel1">If you need to design policies that control the use of web applications, you can do so by creating application components with the URL property specified as one or more URLs where the web applications are hosted. (In fact, all such applica&#173;tions will be based on Internet Explorer, but this does not need to be explicit in the component’s definition.)</p>
+ <p class="BodyLevel1">To use a common example, you may want to block users from attaching sensitive files to e-mail via the popular services G-Mail and Yahoo Mail. To do this,</p>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Create a new application component, and name it <span style="font-style : italic; "><i>Webmail Applications</i></span>.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">For the Member field, drag All Applications from the component bin, or leave it blank. </p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">In the Property panel, select “URL” from the Property Name combo-box list, and type http://mail.yahoo.com/** OR http://www.gmail.com/** for the Property Value. This creates an application component that represents both these blacklisted web applications.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Create your policy, based on this application and the Run action:</p>
+</li>
+ </ol>
+ <h5>For “Sensitive Data”</h5>
+ <h5>On Run</h5>
+ <h5>By All Users using Webmail Applications </h5>
+ <h5>Do Deny and Notify “Sending sensitive information using web mail application is prohibited.”</h5>
+ <p class="BodyLevel1">(<span style="font-style : italic; "><i>Sensitive Data</i></span>&#160;is a document component that is already defined.) Once this policy is deployed, all users are still able to open the G-Mail or Yahoo Mail web&#173;sites, and send e-mails without attachments, or with non-sensitive documents attached. However, if they try to use either site to send a document covered by the Sensitive Data component, the policy blocks the action and displays the notification message.</p>
+ <p class="BodyLevel1">Note that the above is just an example; you can create any URL-based applica&#173;tion components you like, based on any URLs you want to block, monitor, or oth&#173;erwise base policies on.</p>
+ <h2>Defining Device Components</h2>
+ <p class="BodyLevel1">It is helpful to think of device components as a path, since they are&#160;recognizable as a drive location on the local PC. However, device components also have five properties that let you distinguish among different kinds of devices, so you can define highly granular components to represent classes of devices. These prop&#173;erties are described in the following table.</p>
+<table width="100%">
+ <tr>
+ <td>
+ <table style="border-spacing: 0; padding-left: 4.00pt; padding-top: 4.00pt; padding-right: 4.00pt; padding-bottom: 3.00pt;float: aligncenter;margin-bottom: 24.00pt; width: 360.17pt;" cellspacing="0" align="center">
+  <caption align="center">
+  </caption>
+  <tr style=" height : 16.00pt;background : #1f8c4a;">
+  <th style="width : 68.575pt; background : #1f8c4a;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Property</p>
+</th>
+  <th style="width : 160.175pt; background : #1f8c4a;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Description</p>
+</th>
+  <th style="width : 131.424pt; background : #1f8c4a;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Valid Values</p>
+</th>
+</tr>
+  <tr style=" height : 15.00pt;">
+  <td style="width : 68.575pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;" rowspan="2">
+  <p style="font-weight : bold; font-size  : 8.0pt;">Type</p>
+</td>
+  <td style="width : 160.175pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;" rowspan="2">
+  <p class="CellBody">Type of device, as defined by data transfer protocol and connection type.</p>
+</td>
+  <td style="width : 131.424pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">USB (all USB devices)</p>
+</td>
+</tr>
+  <tr style=" height : 15.00pt;">
+  <td style="width : 131.424pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Firewire (all IEEE 1394 devices) </p>
+</td>
+</tr>
+  <tr style=" height : 39.00pt;">
+  <td style="width : 68.575pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;" rowspan="4">
+  <p style="text-align  : center; font-weight : bold; font-size  : 8.0pt;">Class</p>
+</td>
+  <td style="width : 160.175pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;" rowspan="4">
+  <p class="CellBody">Class of device, which describes its functional category.</p>
+  <p class="CellBody">All four classes belong to USB device type; you need not specify a class for Firewire devices.</p>
+</td>
+  <td style="width : 131.424pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Storage (all devices that store data, including drives, CD writers, phones, iPods, PDAs, etc.)</p>
+</td>
+</tr>
+  <tr style=" height : 39.00pt;">
+  <td style="width : 131.424pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Hub (network hubs, including other devices that work as hubs by passing the data through to other devices)</p>
+</td>
+</tr>
+  <tr style=" height : 47.00pt;">
+  <td style="width : 131.424pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Image (includes any cameras, such as webcams, that stream data directly to the PC rather than to their own internal storage)</p>
+</td>
+</tr>
+  <tr style=" height : 39.00pt;">
+  <td style="width : 131.424pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Network (includes network cards, wireless 802.11 receivers, and all infrared-connected devices)</p>
+</td>
+</tr>
+  <tr style=" height : 23.00pt;">
+  <td style="width : 68.575pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="text-align  : center; font-weight : bold; font-size  : 8.0pt;">Vendor</p>
+</td>
+  <td style="width : 160.175pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Unique four-digit hexadecimal ID representing the device’s vendor </p>
+</td>
+  <td style="width : 131.424pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Any valid vendor ID.</p>
+</td>
+</tr>
+  <tr style=" height : 31.00pt;">
+  <td style="width : 68.575pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="text-align  : center; font-weight : bold; font-size  : 8.0pt;">Product</p>
+</td>
+  <td style="width : 160.175pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Unique four-digit hexadecimal ID representing the device’s product name, as assigned by the vendor</p>
+</td>
+  <td style="width : 131.424pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Any valid product ID.</p>
+</td>
+</tr>
+  <tr style=" height : 31.00pt;">
+  <td style="width : 68.575pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="text-align  : center; font-weight : bold; font-size  : 8.0pt;">Serial Number</p>
+</td>
+  <td style="width : 160.175pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">The device’s serial number, as assigned by the vendor. Note that only USB storage devices have this property.</p>
+</td>
+  <td style="width : 131.424pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Any valid serial number. These are in the form of alphanumeric strings of varying length.</p>
+</td>
+</tr>
+ </table>
+</td></tr>
+</table>
+ <p class="BodyLevel1"></p>
+ <p class="BodyLevel1">To define a device component in Policy Studio, follow these steps:</p>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">In the Policy Author components panel, expand the <span class="FM_Bold">Resources</span>&#160;panel and select the <span class="FM_Bold">Devices</span> tab.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Click the <span class="FM_Bold">New</span> button to create a new Device component.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Type a name for the new component.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Define a path to the device using the following syntax: </p>
+</li>
+  <h5>device://type/class/vendor/product/serial number</h5>
+  <p class="Title">You can use wildcard characters in the property values.</p>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Save the component. </p>
+</li>
+ </ol>
+ <h3><a name="XREF_54282_Syntax"></a>Syntax of Device Properties </h3>
+ <p class="BodyLevel1">Bear in mind the following points about the syntax of the properties you specify for device components:</p>
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>The Vendor and Product IDs will always be four-character hexadecimal values, rather than actual names like “Apple” or “iPod”. (For help finding these for a given device, refer to the Control Center design guide.)</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>All property values are case-insensitive.</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>All delimiters must be forward slashes.</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>When using wildcard characters, pay attention to the number of levels you really need to define for a component to behave exactly as expected. For example, if you want a component to represent all USB storage devices and you define it as <span class="FM_onscreen">device://USB/**</span>, the definition is too broad: it will cover not only storage devices, but also other types of USB devices such as network cards, which will cause undesirable results. (Bear in mind, USB is used by many connections inside PCs—it does not refer only to the exter&#173;nal ports where you plug in peripherals.) In this example, the definition should include another level, <span class="FM_onscreen">device://USB/storage/**</span>, to cover only the intended devices.</p>
+
+ <h2><a name="XREF_93178_Defining_Portal"></a>Defining Portal Components</h2>
+ <p class="BodyLevel1">Portal components represent areas on a collaboration portal such as SharePoint. They resemble path-based document components in that they can represent places on the portal where you may want to control access to specific users, or places whose content you want to control in some way. You can use portal com&#173;ponents to define controlled areas on a collaboration portal, just as you use doc&#173;ument components to define controlled directories on the file system.</p>
+ <p class="BodyLevel1">Specifically, portal content components can represent the following kinds of entities:</p>
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Portals</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Sites</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Web pages </p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Portlets (also called <span style="font-style : italic; "><i>Web parts</i></span>): libraries, lists, discussions, calendars and other structure elements smaller than sites or pages</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Library items</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>List items</p>
+
+ <p class="BodyLevel1">To work with portal content components, expand the Resources component bin and click on the Portal Content tab there. Click the New button to create a new portal content component.</p>
+ <h3>Portal Content: Memberships</h3>
+ <p class="BodyLevel1">As with all object components, you have the option of defining portal content by typing an element name into the Membership field or dragging an existing component into that field. Wildcard characters that are supported for Document components are also supported for Portal components. See <a><span class="FM_blue">Wildcards for Docu&#173;ment and Portal Components</span></a>.</p>
+ <p class="PublisherBook"><span class="FM_Emphasis">Note: </span>As with document components, if you type the item manually, you must type the precise path and name, because there is no value check mechanism to detect errors. The most reliable way to define these components is&#160;to open the SharePoint area or item in your browser, then copy the URL from the browser into this field in the component definition.</p>
+ <p class="BodyLevel1">Here are some examples of the required syntax for different types of SharePoint content. All examples represent items on a SharePoint 2007 server called <span style="font-style : italic; "><i>blue&#173;jungle</i></span>:</p>
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>For a site called “Alpha”:</p>
+
+ <h5>//sharepoint2007.bluejungle.com/Alpha</h5>
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>For a sub-site called “abc” and all its children:</p>
+
+ <h5>//sharepoint2007.bluejungle.com/Alpha/abc/**</h5>
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>For all items in a library “Docs 2”:</p>
+
+ <h5>SharePoint://sharepoint2007.bluejungle.com/Alpha/Docs 2/**</h5>
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>For a list “DealList”:</p>
+
+ <h5>SharePoint://sharepoint2007.bluejungle.com/Alpha/Lists/DealList</h5>
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>For a library item “IND Design.doc”:</p>
+
+ <h5>SharePoint://sharepoint2007.bluejungle.com/Alpha/Docs 2/IND Design.doc</h5>
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>For a list item called “Test1”:</p>
+
+ <h5>SharePoint://sharepoint2007.bluejungle.com /Alpha/Lists/DealList/Test1</h5>
+ <h3>Portal Content: Default Properties</h3>
+ <p class="BodyLevel1">The following table lists the default properties that appear in the Property Name list when you create a new portal content component. This list of proper&#173;ties is based on the attributes of content items in SharePoint; they may or may not be available for other collaboration portals. As with other object compo&#173;nents, the Control Center administrator can display additional custom proper&#173;ties. For more information, see the Control Center<span style="font-style : italic; color   : #0000ff; "><font color="blue" ><i>&#160;</i></font></span><span class="FM_Emphasis">Administrator’s Guide</span>.</p>
+ <p class="BodyLevel1">Note that the Property name field is an open text input; you can type the name of any property, whether or not it appears in the drop-down list. The enforcers where this policy is deployed will then run a string match. If the property exists, the filter is enforced; if not, it is ignored. This open field is particularly useful for SharePoint content components, since it is easy to create custom properties for SharePoint items.</p>
+ <p class="BodyLevel1">For setting values for date properties, a calendar picker tool is provided.</p>
+<table width="100%">
+ <tr>
+ <td>
+ <table style="border-spacing: 0; padding-left: 4.00pt; padding-top: 4.00pt; padding-right: 4.00pt; padding-bottom: 3.00pt;float: aligncenter;margin-bottom: 24.00pt; width: 360.36pt;" cellspacing="0" align="center">
+  <caption align="center">
+  </caption>
+  <tr style=" height : 25.00pt;background : #1f8c4a;">
+  <th style="width : 65.485pt; background : #1f8c4a;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Property</p>
+</th>
+  <th style="width : 230.875pt; background : #1f8c4a;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Description</p>
+</th>
+  <th style="width : 63.999pt; background : #1f8c4a;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Valid Operators</p>
+</th>
+</tr>
+  <tr style=" height : 23.00pt;">
+  <td style="width : 65.485pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">Created</p>
+</td>
+  <td style="width : 230.875pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Date when the content item was created.</p>
+</td>
+  <td style="width : 63.999pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">on or after, before</p>
+</td>
+</tr>
+  <tr style=" height : 15.00pt;">
+  <td style="width : 65.485pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">Created by</p>
+</td>
+  <td style="width : 230.875pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">User who initially created the content item.</p>
+</td>
+  <td style="width : 63.999pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">is, is not</p>
+</td>
+</tr>
+  <tr style=" height : 23.00pt;">
+  <td style="width : 65.485pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">Description</p>
+</td>
+  <td style="width : 230.875pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Text description of the content item, if one has been supplied.</p>
+</td>
+  <td style="width : 63.999pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">is, is not</p>
+</td>
+</tr>
+  <tr style=" height : 23.00pt;">
+  <td style="width : 65.485pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">File Size</p>
+</td>
+  <td style="width : 230.875pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">The file size of the content item.</p>
+</td>
+  <td style="width : 63.999pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">=, &gt;, &gt;=, &lt;, &lt;=, !=</p>
+</td>
+</tr>
+  <tr style=" height : 23.00pt;">
+  <td style="width : 65.485pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">Modified</p>
+</td>
+  <td style="width : 230.875pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Date when the content item was most recently modified.</p>
+</td>
+  <td style="width : 63.999pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">on or after, before</p>
+</td>
+</tr>
+  <tr style=" height : 15.00pt;">
+  <td style="width : 65.485pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">Modified by</p>
+</td>
+  <td style="width : 230.875pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">User who most recently modified the content item.</p>
+</td>
+  <td style="width : 63.999pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">is, is not</p>
+</td>
+</tr>
+  <tr style=" height : 23.00pt;">
+  <td style="width : 65.485pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">Name</p>
+</td>
+  <td style="width : 230.875pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">The file name of the content element. Wildcard characters are supported.</p>
+</td>
+  <td style="width : 63.999pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">is, is not</p>
+</td>
+</tr>
+  <tr style=" height : 39.00pt;">
+  <td style="width : 65.485pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">Sub-type</p>
+</td>
+  <td style="width : 230.875pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Sub-type of the content item; valid only if Type property is Portlet. Valid values include List and Library. Not mandatory; if type is portlet and no subtype is specified, the component will include both subtypes.</p>
+</td>
+  <td style="width : 63.999pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">is, is not</p>
+</td>
+</tr>
+  <tr style=" height : 23.00pt;">
+  <td style="width : 65.485pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">Title</p>
+</td>
+  <td style="width : 230.875pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">The title string that has been applied to the content item. Wildcard characters are supported.</p>
+</td>
+  <td style="width : 63.999pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">is, is not</p>
+</td>
+</tr>
+  <tr style=" height : 70.00pt;">
+  <td style="width : 65.485pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">Type</p>
+</td>
+  <td style="width : 230.875pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Type of content item. Valid values include:</p>
+  <p class="CellBody">•<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Portal</p>
+  <p class="CellBody">•<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Site</p>
+  <p class="CellBody">•<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Page</p>
+  <p class="CellBody">•<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Portlet [i.e. Library or List]</p>
+  <p class="CellBody">•<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Item [i.e. Library Item or List Item]</p>
+</td>
+  <td style="width : 63.999pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">is, is not</p>
+</td>
+</tr>
+ </table>
+</td></tr>
+</table>
+ <p class="BodyLevel1"></p>
+ <h2><a name="XREF_10041_Defining_HPE_Site"></a>Defining Server Components</h2>
+ <p class="BodyLevel1">The last category of object components, Servers, is used only in policies designed for the Enforcer for Windows Networks. These components let you write policies based on transfer protocols, by blocking communication across specified communication ports.This can be useful for blocking, restricting or monitoring activity over protocols that rely on standard port numbers—for example FTP (20, 21), Telnet (23), HTTP (80), HTTPS (443), or any other stan&#173;dard communication protocol you want to control or monitor.</p>
+ <p class="BodyLevel1">Because the Network Enforcer runs on the desktop, it is a part of the Enterprise Data Protection&#160;product. For more details, refer to the policy design guide for that product, <span class="FM_Emphasis">Designing Enterprise Data Protection Policies</span>. </p>
+ <script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+
+
+highlightSearch();
+//-->
+//]]></script>
+</body>
+</html>

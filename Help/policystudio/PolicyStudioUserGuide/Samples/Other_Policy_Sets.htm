@@ -1,0 +1,166 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ <title>Other_Policy_Sets</title>
+
+ <meta name="generator" content="Adobe RoboHelp 9" />
+ <meta name="Originator" content="ImportMif" />
+ <meta name="OriginalFile" content="C:\Users\mlittle\Desktop\PSUserGuide\PSUserGuideFM\Samples.fm" />
+ <link rel="stylesheet" href="../../RHStyleMapping.css" type="text/css" />
+
+ <link rel="stylesheet" href="..\..\RHStyleMapping.css" type="text/css" />
+
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whlang.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whtopic.js"></script>
+
+</head>
+
+<body><script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.gbWhTopic)
+{
+	var strUrl = document.location.href;
+	var bc = 0;
+	var n = strUrl.toLowerCase().indexOf("bc-");
+	if(n != -1)
+	{
+		document.location.href = strUrl.substring(0, n);
+		bc = strUrl.substring(n+3);
+	}
+
+	if (window.addTocInfo)
+	{
+	addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	
+	document.write("<p style=\"text-align:right\"> ");
+AddMasterBreadcrumbs("../../index.htm", "", ">", "Home", "../Welcome/Welcome1.htm");
+document.write("Other_Policy_Sets<\/p>");
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../../index.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+
+//-->
+//]]></script>
+ <h1><a name="XREF_45699_Other_PolicySets"></a>Other Policy&nbsp;Sets</h1>
+ <p class="BodyLevel1">The other four policy sets are more complex, and contain more policies, than the Destiny Team Members set. However, once you familiarize yourself with the the first sample set, it should be clear just by examining the definitions of the others and of their components, how they are designed to work. For that rea&#173;son, we will provide a less detailed summary of their design and purpose here.</p>
+ <h2>Policy Set 2: Sales</h2>
+ <p class="BodyLevel1">The purpose of this set is to control what users can do with information related to sales activity and forecasts. It consists of three policies:</p>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="SmplsSales00001.jpg" style="width : 155.160pt; height : 69.120pt; " id="image10" src="SmplsSales00001.jpg" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="BodyLevel1"><span style="font-weight : bold; "><b>Sales Forecast Handling</b></span>: Defines the basic information barrier within which sales forecasts documents will be contained, by preventing any user from dupli&#173;cating (moving, copying or cutting &amp; pasting) or distributing (e-mailing or IM-ing) any documents in a designated directory, to any location outside that same directory. You will find that a policy using this standard syntax—“Deny All Users to Duplicate or Distribute from In location [resource] X to Outside location X”—will commonly be required, in all kinds of policy sets. (For example, compare this policy to the Compensation Data Duplication policy, under Compensation Planning.)</p>
+ <p class="BodyLevel1"><span style="font-weight : bold; "><b>CRM Data Export:</b></span>&#160;Controls how users can export data from the company’s CRM application. Specifically, it allows users to export CRM report files from the CRM application to areas within the controlled sales areas, but blocks them from exporting them to any other location. These files are defined by the CRM Export Files component, as any file whose name starts with the string “report”. Since the CRM application automatically uses this naming convention when exporting data, this will cover all required files. This policy provides a good example of the use of an application in the subject of a policy, and of how to use different source and target resources to define locations.</p>
+ <p class="BodyLevel1"><span style="font-weight : bold; "><b>Sales Forecast Access</b></span>: Prevents anyone but General Manager, the Controller, and all Sales Managers from accessing any documents in the controlled sales area, during a specified six-week blackout period. It also requires that all access during this period can be only on company computers. This policy provides a good example of using computer components in a policy subject, and of setting a time window during which the policy will be enforced.</p>
+ <h2>Policy Set 3: SharePoint Conflict of Interest </h2>
+ <p class="BodyLevel1">The purpose of this set is to define two segregated user sites on a single Share&#173;Point server where members of the Investment Banking group and the Research group can post their documents and other information and collaborate with one another in each group, but are reliably blocked from accessing any information on one another’s sites. It represents a standard information barrier scenario consisting of just two policies, but is of interest because it demonstrates how you can define information barriers on SharePoint portals. </p>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="SmplsPortal00002.jpg" style="width : 210.024pt; height : 58.752pt; " id="image11" src="SmplsPortal00002.jpg" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="BodyLevel1"><span style="font-weight : bold; "><b>Investment Banking Conflict of Interest</b></span>. This policy explicitly denies all mem&#173;bers of the Research team from accessing any content on the Investment Bank&#173;ing site. This access will always be blocked, regardless of any permissions users in the IB group may grant for the content they post on their site. This eliminates the most vexing security problem of SharePoint site access—namely, that owners of site content have the authority to grant access to other users, which can eas&#173;ily lead to breaches of information use policies.</p>
+ <p class="BodyLevel1"><span style="font-weight : bold; "><b>Research Conflict of Interest</b></span>. This policy allows only members of the Research team to access the Research site on the SharePoint portal. Here, too, the policy overrides any permissions granted by individual members of any team, that might otherwise open the site or some of its content to access by unauthorized users.</p>
+ <h2>Policy Set 4: Compensation Planning</h2>
+ <p class="BodyLevel1">The purpose of this policy set is to define several information barriers around all documents containing information regarding employee compensation. This is useful for controlling access to sensitive data per se, but it also illustrates how the policies in a set can work together to enforce a sequential work flow—in this case, the processing of annual compensation reviews. The set consists of seven policies:</p>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="SmplsCompPlan00003.jpg" style="width : 257.976pt; height : 118.080pt; " id="image12" src="SmplsCompPlan00003.jpg" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="BodyLevel1"><span style="font-weight : bold; "><b>Compensation Data Access</b></span>: Restricts exporting data from the payroll applica&#173;tion database to any location but the controlled area. Note the similarity to the Sales policy, CRM Data Export. In this case, the payroll data documents are defined as <span style="font-style : italic; "><i>payroll*.csv</i></span>—integrating with the naming convention used by the application being controlled.</p>
+ <p class="BodyLevel1"><span style="font-weight : bold; "><b>Compensation Data Duplication:</b></span>&#160;Defines the primary information barrier—the controlled area where compensation documents may be stored. (Note that it uses the same standard syntax as the Sales Forecast Handling.)</p>
+ <p class="BodyLevel1"><span style="font-weight : bold; "><b>Engineering Compensation Recommendations Access</b></span>: A standard access pol&#173;icy, which blocks everyone but Engineering Managers from all files in the Engi&#173;neering Compensation Recommendations directory, and requires that they do so from company computers only. In addition, it defines a ten-week time window, which is helpful in imposing a strict deadline for finishing recommendations.</p>
+ <p class="BodyLevel1"><span style="font-weight : bold; "><b>Marketing Compensation Recommendations</b></span>: Identical to the previous policy, but applies to Marketing Managers.</p>
+ <p class="BodyLevel1"><span style="font-weight : bold; "><b>Compensation Plan Approval</b></span>: Deployed simply to send a notification e-mail when any authorized user finalizes a compensation plan document, which is defined as moving it from the Recommendations directory to the Final Plan directory. This is a good example of how you can use Monitor policies to help enforce a standard workflow: the Engineering and Marketing Managers work on recommendations in their own separately defined controlled areas, then pass them on to the Compensation Analyst when they are finished. Once they do this, they are blocked from making any more changes, by the following policy.</p>
+ <p class="BodyLevel1"><span style="font-weight : bold; "><b>Final Compensation Plan Updates</b></span>: A standard access policy, which blocks everyone but Compensation Analysts from making any modifications to any files in the Final Compensation Plan directory. This creates a lock-box mechanism: a place where Engineering and Sales Managers can place their final recommenda&#173;tions, but lose any access once they do. The previous policy sends a notification to the compensation analyst when this hand-off occurs. Again, this is related to enforcing workflow. </p>
+ <p class="BodyLevel1"><span style="font-weight : bold; "><b>Final Compensation Policy Retention</b></span>: Permanently blocks any user from delet&#173;ing a finalized compensation plan. Note that Compensation Analysts is permitted to modify these plans, but are blocked by this policy from deleting them. This is useful in enforcing document retention requirements.</p>
+ <h2>Policy Set 5: Corporate</h2>
+ <p class="BodyLevel1">This set defines access and use boundaries around three classes of information: Confidential, Highly Restricted, and Internal Use. These categories fall into the following logical hierarchy, from least to most sensitive:</p>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="SmplsCorporate00004.jpg" style="width : 182.232pt; height : 131.616pt; " id="image13" src="SmplsCorporate00004.jpg" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span style="font-weight : bold; "><b>Confidential</b></span>: May be accessed by authorized users and distributed by e-mail or IM, but all instances of distribution will be written to a log for auditing purposes.</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span style="font-weight : bold; "><b>Internal Use</b></span>: May not be copied, moved, or cut &amp; pasted outside a pro&#173;tected location on the network, where it can be accessed only by employees or contractors.</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span style="font-weight : bold; "><b>Highly Restricted</b></span>: May not be copied, moved, or cut &amp; pasted outside a protected location on the network, where it can be accessed only by users with highly restricted clearance.</p>
+
+ <p class="BodyLevel1">Within these folders there are five policies:</p>
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span style="font-weight : bold; "><b>Confidential Distribution:</b></span>&#160;A Monitor policy, simply logs all instances when users distribute (attach to e-mail or IM) confidential information. </p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span style="font-weight : bold; "><b>Internal Use Access</b></span>: Prevents anyone but employees and contractors from accessing documents in the Internal Use protected location.</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span style="font-weight : bold; "><b>Internal Use Distribution</b></span>: Prevents anyone from distributing (by e-mail or IM) documents in the Internal Use protected location. </p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span style="font-weight : bold; "><b>Highly Restricted Access</b></span>: Prevents anyone but highly restricted autho&#173;rized employees from accessing documents in the Highly Restricted pro&#173;tected location.</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span style="font-weight : bold; "><b>Highly Restricted Distribution</b></span>: Prevents anyone from duplicating (mov&#173;ing, copying, or cut &amp; pasting) or distributing (by e-mail or IM) docu&#173;ments in the Highly Restricted protected location.</p>
+
+ <p class="BodyLevel1">This group of policies provides a good example of how you can use folders to organize policies within a set, according to their function.</p>
+<script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+
+
+highlightSearch();
+//-->
+//]]></script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="com.nextlabs.policystudio.editor">
+      <editor
+            context="USER"
+            displayName="User Component"
+            editorClass="com.nextlabs.policystudio.editor.user.UserComponentEditor"
+            icon="icons/userComponent.gif"
+            panelClass="com.bluejungle.destiny.policymanager.editor.ComponentEditorPanel"
+            type="COMPONENT">
+      </editor>
+   </extension>
+      <extension
+         point="com.nextlabs.policystudio.tab">
+      <tab
+            class="com.nextlabs.policystudio.editor.user.UserListPanel"
+            folder="Subjects"
+            name="Users">
+      </tab>
+   </extension>
+</plugin>

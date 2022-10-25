@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ivy-module version="1.0"
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:noNamespaceSchemaLocation="http://incubator.apache.org/ivy/schemas/ivy.xsd">
+    <info organisation="nextlabs"
+          module="com.nextlabs.policystudio.dependencies"
+		  revision="6.0.0.0"
+		  branch="6.0.0.0"/>
+    <configurations>
+	    <conf name="main" visibility="private" />
+	    <conf name="eclipse_dependencies" visibility="private" />
+	    <conf name="jre" visibility="private" />
+	    <conf name="installer" visibility="private" />
+		<conf name="test" visibility="private" />
+		<conf name="report" visibility="private" />
+	</configurations>
+	<publications>
+	  <artifact conf="main" name="PolicyStudio" type="exe"/>
+	</publications>
+	<dependencies>
+	  <dependency org="eclipse" name="eclipse" rev="3.4" conf="main,eclipse_dependencies->*" />
+	  <dependency org="lowagie" name="iText" rev="2.0.6" conf="main->default" />
+	  <dependency org="castor" name="castor" rev="0.9.5.4" conf="main->default" />
+	  <dependency org="ehcache" name="ehcache" rev="1.1" conf="main->default" />
+	  <dependency org="sun" name="jre" rev="1.6.0_18" conf="jre->default" />
+		<dependency org="nextlabs" name="Platform" rev="6.0.0.0" conf="main->PolicyStudio" />
+	  <dependency org="nextlabs" name="CommonInstallScript" rev="1.0" conf="installer->main" />
+          <dependency org="podofo" name="podofo" rev="0.81_modified" conf="main->VS2008" />
+          <dependency org="zlib" name="zlib" rev="1.2.5" conf="main->main" />
+          <dependency org="freetype" name="freetype" rev="6.0" conf="main->main" />
+ 	  <!-- Major Hack.  Need to put the necessary libraries in the Platform!!! -->
+	  <dependency org="nextlabs" name="PolicyController" branch="5.0" rev="5.0" conf="main->policy_studio" />
+
+	</dependencies>
+</ivy-module>

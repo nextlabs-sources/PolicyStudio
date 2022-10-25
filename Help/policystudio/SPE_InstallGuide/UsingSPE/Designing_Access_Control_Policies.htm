@@ -1,0 +1,202 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ <title>Designing_Access_Control_Policies</title>
+
+ <meta name="generator" content="Adobe RoboHelp 9" />
+ <meta name="Originator" content="ImportMif" />
+ <meta name="OriginalFile" content="C:\Documents and Settings\mlittle\Desktop\SharePoint\SharePointFM\UsingSPE.fm" />
+ <link rel="stylesheet" href="../../default.css" type="text/css" />
+
+ <link rel="stylesheet" href="..\..\default.css" type="text/css" />
+
+ <script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whlang.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.gbWhTopic)
+{
+	var strUrl = document.location.href;
+	var bc = 0;
+	var n = strUrl.toLowerCase().indexOf("bc-");
+	if(n != -1)
+	{
+		document.location.href = strUrl.substring(0, n);
+		bc = strUrl.substring(n+3);
+	}
+
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Using the Entitlement Manager for SharePoint\nDesigning Access Control Policies");
+addButton("show",BTN_IMG,"Show TOC and Search","","","","",0,0,"../../whd_show0.gif","../../whd_show2.gif","../../whd_show1.gif");
+addButton("hide",BTN_IMG,"Hide TOC and Search","","","","",0,0,"../../whd_hide0.gif","../../whd_hide2.gif","../../whd_hide1.gif");
+
+	}
+
+	
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../../index.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+//]]></script>
+</head>
+
+<body><script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+//]]></script>
+<table width="100%" cellspacing="0" border="1">
+	<col style="width: 100%;" />
+	<tr style="height: 78px;">
+		<td bgcolor="#003399">&#160;</td>
+	</tr>
+ </table>
+<script type="text/javascript" language="javascript">//<![CDATA[
+document.write("<p  style=\"text-align:right;font-family:Arial;font-size:12pt;font-weight: normal;font-style: normal;text-decoration: none;\">");
+AddMasterBreadcrumbs("../../index.htm", "font-family:Arial;font-size:12pt;font-weight: normal;font-style: normal;text-decoration: none;", "&gt;", "Home", "../Introducing/Welcome.htm");
+document.write("<a style=\"font-family:Arial;font-size:12pt;font-weight: normal;font-style: normal;text-decoration: none;\" href=\"Using_the_Entitlement_Manager_for_SharePoint.htm\">Using the Entitlement Manager for SharePoint<\/a> &gt; Designing Access Control Policies<\/p>");
+//]]></script>
+ <p style="text-align: right;">&#160;</p>
+
+ <h1><a name="XREF_52361_Designing_Access"></a>Designing Access Control Policies</h1>
+ <p class="BodyLevel1">This section describes how to create two of the three kinds of Access Control policies available with the Entitlement Manager for SharePoint:</p>
+ 
+<p class="BodyLevel2">1<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><a href="#XREF_61180_Access_Control">Example Policy: Access Control </a></p>
+
+ 
+<p class="BodyLevel2">2<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><a href="#XREF_70279_Access_Control_for">Example Policy: Access Control for SharePoint Administrative Settings</a></p>
+
+ <p class="PublisherBook"><span class="Emphasis">Note: </span>For more information on applying Security Trimming on top of these Access Control policies, see <a href="Adding_Security_Trimming_to_Access_Control_Policies.htm#XREF_59707_Adding_Security">Adding Security Trimming to Access Control Policies</a>.</p>
+ <h2>Example Policy: <a name="XREF_61180_Access_Control"></a>Access Control </h2>
+ <p class="BodyLevel1">As is discussed in the section <a href="Policy_Design_Basics.htm#XREF_43123_What_Actions_Can">What Actions Can Be Enforced?</a>, you can write Access Control policies that control the following actions users can perform in SharePoint: Attach to Item, Create/Edit, Delete, Download, Export, Move, Open, and Upload.</p>
+ <p class="BodyLevel1">Let’s continue our sample use case with a policy that uses the Open, Download, and Export actions: after a document as been uploaded to the Engineering Site Collection and marked &quot;IP,&quot; we want to limit users from performing these actions unless they are both members of engineering team and US citizens. We would perform the following steps:</p>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Create an Allow Only Document policy to apply to the Open, Download, and Export actions. </p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Define the Policy Subject. For our use case, we select users components for Engineers and US citizens. We click &quot;+&quot; before dragging in the second component to place them in a logical &quot;AND&quot; relationship, so both must be true for the policy to apply.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Define the Policy Target:</p>
+</li>
+ </ol>
+ 
+<p class="BodyLevel2">3<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Drag the existing Engineering Site Collection Resource Portal Component into the target in policy.</p>
+
+ 
+<p class="BodyLevel2">4<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Create a new Portal Component to reference the Classification in the SharePoint column, by selecting &quot;With Properties&quot; and &quot;IP = YES.&quot;</p>
+
+ 
+<p class="BodyLevel2">5<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Click &quot;+&quot; and drag the new Classification Portal Component into the pol&#173;icy target.</p>
+
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="accesscontrolsamplepolicy1.jpg" style="width : 455.250pt; height : 321.749pt; " id="image13" src="accesscontrolsamplepolicy1.jpg" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook">Restricting Access to Engineering Site Collection</p>
+ <p class="BodyLevel1">When this policy is applied, access to IP documents in the Engineering Site Collection will be limited to US Engineers.</p>
+ <h2>Example Policy: <a name="XREF_70279_Access_Control_for"></a>Access Control for SharePoint Administrative Settings</h2>
+ <p class="BodyLevel1">In addition to controlling access to content, policies may need to control how users access and use the Setting pages and other administrative controls within SharePoint. You may need to limit how users with Administrative permissions change SharePoint’s administrative settings to extend access to other potentially unauthorized users. Continuing our example use case, let’s say that we want to prevent any user (even the Site Administrator) from accessing the permissions pages for the Engineering Site Collection (where they might, for example, try to extend access to non-US users).</p>
+ <p class="BodyLevel1">To address a use case like this one, you can construct SharePoint settings policies by defining portal components that represent SharePoint administrative settings for specific portal areas, and then using these components as the resource in standard document policies. These components, called <span style="font-style : italic; "><i>SharePoint settings components</i></span>, actually represent the individual settings pages of a specified SharePoint location. They consist of a URL or pre-define component that describes the site location, plus one or more predefined components representing the settings page(s) for that URL.</p>
+ <p class="BodyLevel1">SharePoint has ten of these settings pages: Columns, Communications, Galleries, General Settings, Look and Feel, Permissions and Management, Site Administration, Site Collection Administration, Users and Permissions, and Views.</p>
+ <p class="BodyLevel1">Accordingly, ten predefined settings page components are available for use in Policy Author, as shown in the figure below. You can define components that represent each of these pages for specified sites, and use them in policies however you like to control specific users’ access to those particular settings pages on those sites or portal areas. You can also combine more than one page in a single settings component.</p>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="SPSettingComponents.jpg" style="width : 360.000pt; height : 175.125pt; " id="image14" src="SPSettingComponents.jpg" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook">Predefined Settings Page Components</p>
+ <p class="BodyLevel1">Only one of these components is already installed in the policy database by default; the others must be manually imported. See <a href="../ConfiguringSPE/Configuring_the_SharePoint_Policy_Model.htm#XREF_28957_Controlling">Configuring &#160;&#160;Settings Page Components</a> for details.</p>
+ <h3><a name="XREF_19336_Defining"></a>Defining SharePoint Settings Components</h3>
+ <p class="BodyLevel1">Follow these steps to define a SharePoint settings component:</p>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Open the Resources component bin, go to the Portals tab, and click the New button to create a new portal content resource component.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Give the component a name that reflects its function—for example, “Engi&#173;neering Site Permission”.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">In the first Members field, Portals In, supply the URL for the site or other area whose permissions pages you want to control or monitor (just as you would do in any SharePoint policy). Or, if you have a pre-defined Portal Component that represents the page, drag it into your new Portal Compo&#173;nent.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Add a second Members field, and drag one of the predefined SharePoint Setting components from the Portal component bin into it, as shown in the example below. Again, this represents the settings page that you want this component to represent, for this URL.</p>
+</li>
+  <p class="BodyLevel1"></p>
+  <div align="center"><img alt="engineeringsitepermissions1.jpg" style="width : 543.749pt; height : 233.356pt; " id="image15" src="engineeringsitepermissions1.jpg" />
+  </div>
+  <p class="BodyLevel1">&nbsp;</p>
+  <p class="TitleBook">Sample SharePoint Settings Component</p>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">A SharePoint settings component can represent more than one settings page for the specified URL—for example both Users and Permissions, and General Settings. If you want to do this, be sure to drag the multiple set&#173;tings page components into the <span style="font-style : italic; "><i>same</i></span>&#160;Members field, as shown below, rather than adding a separate new field for each.</p>
+</li>
+  <p class="BodyLevel1"></p>
+  <div align="center"><img alt="engineeringsitepermissions2.jpg" style="width : 531.750pt; height : 260.570pt; " id="image16" src="engineeringsitepermissions2.jpg" />
+  </div>
+  <p class="BodyLevel1">&nbsp;</p>
+  <p class="TitleBook">Combining Multiple Settings Pages in One Component</p>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Click <span class="Bold">Submit</span> to save your component.</p>
+</li>
+ </ol>
+ <h3>Constructing Policies</h3>
+ <p class="BodyLevel1">Once you have defined settings components, you can use them as resources in standard Document policies. Simply specify a user component, use the Access action, and include the settings component as the resource, as shown in the following figure.</p>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="engineeringsitepermissions3.jpg" style="width : 429.749pt; height : 347.250pt; " id="image17" src="engineeringsitepermissions3.jpg" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook">Sample SharePoint Settings Policy</p>
+ <p>&#160;</p>
+<script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+
+highlightSearch();
+//-->
+//]]></script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="com.nextlabs.policystudio.editor">
+      <editor
+            context="DEVICE_CONTROL_POLICY"
+            displayName="Device Control Policy"
+            editorClass="com.nextlabs.policystudio.editor.devicecontrol.DeviceControlPolicyEditor"
+            icon=""
+            panelClass="com.bluejungle.destiny.policymanager.editor.PolicyEditorPanel"
+            type="POLICY">
+      </editor>
+   </extension>
+   <extension
+         point="com.nextlabs.policystudio.creation">
+      <creation
+            class="com.nextlabs.policystudio.editor.devicecontrol.PolicyCreation"
+            context="DEVICE_CONTROL_POLICY"
+            validation="com.nextlabs.policystudio.editor.devicecontrol.PolicyCreation">
+      </creation>
+   </extension>
+
+</plugin>

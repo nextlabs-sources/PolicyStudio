@@ -1,0 +1,140 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ <title>Designing_Audit_Policies</title>
+
+ <meta name="generator" content="Adobe RoboHelp 9" />
+ <meta name="Originator" content="ImportMif" />
+ <meta name="OriginalFile" content="C:\Documents and Settings\mlittle\Desktop\SharePoint\SharePointFM\UsingSPE.fm" />
+ <link rel="stylesheet" href="../../default.css" type="text/css" />
+
+ <link rel="stylesheet" href="..\..\default.css" type="text/css" />
+
+ <script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whlang.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.gbWhTopic)
+{
+	var strUrl = document.location.href;
+	var bc = 0;
+	var n = strUrl.toLowerCase().indexOf("bc-");
+	if(n != -1)
+	{
+		document.location.href = strUrl.substring(0, n);
+		bc = strUrl.substring(n+3);
+	}
+
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Using the Entitlement Manager for SharePoint\nDesigning Audit Policies");
+addButton("show",BTN_IMG,"Show TOC and Search","","","","",0,0,"../../whd_show0.gif","../../whd_show2.gif","../../whd_show1.gif");
+addButton("hide",BTN_IMG,"Hide TOC and Search","","","","",0,0,"../../whd_hide0.gif","../../whd_hide2.gif","../../whd_hide1.gif");
+
+	}
+
+	
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../../index.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+//]]></script>
+</head>
+
+<body><script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+//]]></script>
+<table width="100%" cellspacing="0" border="1">
+	<col style="width: 100%;" />
+	<tr style="height: 78px;">
+		<td bgcolor="#003399">&#160;</td>
+	</tr>
+ </table>
+<script type="text/javascript" language="javascript">//<![CDATA[
+document.write("<p  style=\"text-align:right;font-family:Arial;font-size:12pt;font-weight: normal;font-style: normal;text-decoration: none;\">");
+AddMasterBreadcrumbs("../../index.htm", "font-family:Arial;font-size:12pt;font-weight: normal;font-style: normal;text-decoration: none;", "&gt;", "Home", "../Introducing/Welcome.htm");
+document.write("<a style=\"font-family:Arial;font-size:12pt;font-weight: normal;font-style: normal;text-decoration: none;\" href=\"Using_the_Entitlement_Manager_for_SharePoint.htm\">Using the Entitlement Manager for SharePoint<\/a> &gt; Designing Audit Policies<\/p>");
+//]]></script>
+ <p style="text-align: right;">&#160;</p>
+
+ <h1><a name="XREF_21995_Designing_Audit"></a>Designing Audit Policies</h1>
+ <p class="BodyLevel1">The last family of policies that you can design for the Entitlement Manager for SharePoint includes audit policies. This section includes the following information:</p>
+ 
+<p class="BodyLevel2">1<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><a href="#XREF_81325_Examples_Use_Cases">Example Policy: &#160;Event Auditing </a></p>
+
+ 
+<p class="BodyLevel2">2<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><a href="#XREF_41975_Permission_Change">Example Policy: &#160;&#160;Permission Change Auditing </a></p>
+
+ <h2>Example Policy: &#160;<a name="XREF_81325_Examples_Use_Cases"></a>Event Auditing </h2>
+ <p class="BodyLevel1">Anytime a policy decision is enforced, the event is automatically &quot;logged&quot; and available for reporting. This includes Classification, Access Control, and Data Protection policies. However, there may be times when you want to log events without intervening in user behavior or applying classifications to data. By simply creating &quot;Monitor&quot; policies, you can collect information about any user event for which there is a SharePoint action (for a list of available actions, see <a href="Policy_Design_Basics.htm#XREF_43123_What_Actions_Can">What Actions Can Be Enforced?</a>). </p>
+ <p class="BodyLevel1">A common use case would be where Administrators need to monitor the creation of new webparts within SharePoint. SharePoint’s benefit in allowing users to share information by easily creating new sites, lists, and libraries is one of the main reasons SharePoint is so popular. However, many organizations seek to monitor (not block or necessarily prevent) the creation of new webparts to ensure that data is not being duplicated unnecessarily (misallocating company resources). Note that this is a different use case than an Access Control policy, which might prevent certain SharePoint users from creating new lists containing restricted data. (For more example use cases, see the overview of <a href="../Introducing/About_SharePoint_Policies.htm#XREF_85633_Auditing_Policies">Auditing Policies</a>.)</p>
+ <h2><a name="XREF_41975_Permission_Change"></a>Example Policy: &#160;&#160;Permission Change Auditing </h2>
+ <p class="BodyLevel1">One source&#160;of the difficulty of managing SharePoint entitlements is the fact that owners of individual sites or web parts can grant new access permissions to other users, beyond the knowledge or control of the central SharePoint administrator. As a useful tool in monitoring and controlling this kind of activity, the Entitlement Manager for SharePoint&#160;lets you deploy policies that log all detailed information about all instances where end users change permission levels for sites they control. You can then use this information to run audits of who is changing permission levels, in order to track what changes are being made</p>
+ <h3>Permission Change Policies</h3>
+ <p class="BodyLevel1">The permission change policies you deploy should have these characteristics (each shown in the figure below):</p>
+ <p class="FM_Lettered1">A.They use the Monitor enforcement effect.</p>
+ <p class="FM_Lettered">B.They include All Users as subject.</p>
+ <p class="FM_Lettered">C.They use an Edit action component, which need include only the Cre&#173;ate/Edit basic action.</p>
+ <p class="FM_Lettered">D.As a resource, they use a SharePoint settings component, as described in the previous section. These are Portal-type resource components that represent a specific group of administrative set&#173;tings for a specific site (see <a href="Designing_Access_Control_Policies.htm#XREF_19336_Defining">Defining SharePoint Settings Components</a>).</p>
+ <p class="FM_Lettered">E.They must include the Log Permission Change custom obligation. </p>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="permissionsAuditPolicy.jpg" style="width : 330.750pt; height : 372.126pt; " id="image42" src="permissionsAuditPolicy.jpg" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook">Sample Permission Auditing Policy</p>
+ <p class="BodyLevel1">Once you construct and deploy such policies, the Entitlement Manager for SharePoint&#160;begins logging detailed information on all instances of users editing the administrative settings specified in the policy. </p>
+ <p>&#160;</p>
+<script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+
+highlightSearch();
+//-->
+//]]></script>
+</body>
+</html>

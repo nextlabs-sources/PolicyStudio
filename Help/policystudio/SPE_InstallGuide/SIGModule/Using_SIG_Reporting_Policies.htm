@@ -1,0 +1,251 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ <title>Using_SIG_Reporting_Policies</title>
+
+ <meta name="generator" content="Adobe RoboHelp 9" />
+ <meta name="Originator" content="ImportMif" />
+ <meta name="OriginalFile" content="C:\Documents and Settings\mlittle\Desktop\SharePoint\SharePointFM\SIGModule.fm" />
+ <link rel="stylesheet" href="../../default.css" type="text/css" />
+
+ <link rel="stylesheet" href="..\..\default.css" type="text/css" />
+
+ <script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whlang.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.gbWhTopic)
+{
+	var strUrl = document.location.href;
+	var bc = 0;
+	var n = strUrl.toLowerCase().indexOf("bc-");
+	if(n != -1)
+	{
+		document.location.href = strUrl.substring(0, n);
+		bc = strUrl.substring(n+3);
+	}
+
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Reporting\nUsing SIG Reporting Policies");
+addButton("show",BTN_IMG,"Show TOC and Search","","","","",0,0,"../../whd_show0.gif","../../whd_show2.gif","../../whd_show1.gif");
+addButton("hide",BTN_IMG,"Hide TOC and Search","","","","",0,0,"../../whd_hide0.gif","../../whd_hide2.gif","../../whd_hide1.gif");
+
+	}
+
+	
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../../index.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+//]]></script>
+</head>
+
+<body><script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+//]]></script>
+<table width="100%" cellspacing="0" border="1">
+	<col style="width: 100%;" />
+	<tr style="height: 78px;">
+		<td bgcolor="#003399">&#160;</td>
+	</tr>
+ </table>
+<script type="text/javascript" language="javascript">//<![CDATA[
+document.write("<p  style=\"text-align:right;font-family:Arial;font-size:12pt;font-weight: normal;font-style: normal;text-decoration: none;\">");
+AddMasterBreadcrumbs("../../index.htm", "font-family:Arial;font-size:12pt;font-weight: normal;font-style: normal;text-decoration: none;", "&gt;", "Home", "../Introducing/Welcome.htm");
+document.write("<a style=\"font-family:Arial;font-size:12pt;font-weight: normal;font-style: normal;text-decoration: none;\" href=\"The_SIG_Reporting_Module.htm\">Reporting<\/a> &gt; Using SIG Reporting Policies<\/p>");
+//]]></script>
+ <p style="text-align: right;">&#160;</p>
+
+ <h1><a name="XREF_27635_Using_SIG"></a>Using SIG Reporting Policies</h1>
+ <p class="BodyLevel1">In order for the SIG reports to provide data on how users are accessing and using SharePoint resources, first that data must be collected and logged as users work throughout the enterprise. To do this, Compliant Enterprise&#160;relies on specially defined policies that must be deployed to all Entitlement Managers for SharePoint in the system. This means that before you can generate and use any SIG reports, you must construct and deploy one or more of these policies. </p>
+ <p class="BodyLevel1">This chapter describes how these policies work, and how you define them. It is organized in the following sections:</p>
+ 
+<p class="BodyLevel2">1<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><a href="#XREF_37602_Policy_Definitions">SIG Policies: Content</a></p>
+
+ 
+<p class="BodyLevel2">2<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><a href="#XREF_34501_Constructing">Constructing SIG Policies</a></p>
+
+ 
+<p class="BodyLevel2">3<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><a href="#XREF_20771_Customizing_the">Customizing the Obligations</a></p>
+
+ <h2>SIG <a name="XREF_37602_Policy_Definitions"></a>Policies: Content</h2>
+ <p class="BodyLevel1">None of the predefined reports available on the SIG tab in Reporter will be able to filter and display SharePoint activity data until such data has first been collected and stored. That data is only collected when you deploy special policies that contain the instructions for what kind of SharePoint access and usage events to log. We refer to these as <span style="font-style : italic; "><i>SIG Reporting Policies</i></span>. You define a SIG reporting policy like any other kind, but with the following requirements:</p>
+ 
+<p class="BodyLevel2">4<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>It must include at least one of the custom obligations specific to SIG reporting: <span style="font-style : italic; "><i>Log SharePoint Control</i></span>&#160;or <span style="font-style : italic; "><i>Log SharePoint Activity</i></span>.</p>
+
+ 
+<p class="BodyLevel2">5<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>It must be targeted at actions relevant to SharePoint activity.</p>
+
+ 
+<p class="BodyLevel2">6<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>It must be targeted at Portal-type resources.</p>
+
+ 
+<p class="BodyLevel2">7<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Regardless of the obligation it includes, the policy can have any effect: Allow Only, Deny, or Allow/Monitor. There is no connection between the policy effect and the behavior of the obligations.</p>
+
+ <p class="BodyLevel1">Whenever an active SIG reporting policy is triggered, the activity details are logged and will be available for inclusion in SIG reports. Which kind of reports the activity will be reflected in depends on which of the two SIG Report Obligations is included in the policy.</p>
+ <h2>About SIG Report Obligations</h2>
+ <p class="BodyLevel1">In order to set up the SIG Reporting feature, you need to import two obligations into your Policy Studio: <span style="font-style : italic; "><i>Log SharePoint Control</i></span>&#160;and <span style="font-style : italic; "><i>Log SharePoint Activity</i></span>&#160;(see <a href="Setting_Up_the_Module.htm#XREF_43356_Importing_the">Importing the Custom Obligations</a>.) Once installed, these are available for incorporating into SIG policies.You can add them to any policy you like, by clicking the Custom Obligation checkbox and selecting them from the list of available obligations.</p>
+ <h3><a name="XREF_45991_Log_SharePoint"></a>Log SharePoint Activity</h3>
+ <p class="BodyLevel1">The function of this obligation is to log user activity and mark it for inclusion in SharePoint Policy Activity Reports. This means that <span style="font-style : italic; "><i>only</i></span>&#160;user activity that triggers some policy containing this obligation will be included in Policy Activity Reports.</p>
+ <p class="BodyLevel1">This obligation has two editable attributes, <span style="font-style : italic; "><i>Department</i></span>&#160;and <span style="font-style : italic; "><i>Business Process</i></span>, whose use is described below.</p>
+ <h3><a name="XREF_35435_Log_SharePoint"></a>Log SharePoint Control </h3>
+ <p class="BodyLevel1">The function of this obligation is to log user activity and mark it for inclusion in SharePoint Lifecycle Reports. Here too, <span style="font-style : italic; "><i>only</i></span>&#160;user activity that triggers some policy containing this obligation will be included in Lifecycle Reports.</p>
+ <p class="BodyLevel1">This obligation also has two editable attributes, <span style="font-style : italic; "><i>Department</i></span>&#160;and <span style="font-style : italic; "><i>Business Process</i></span>, whose use is described below.</p>
+ <h2><a name="XREF_34501_Constructing"></a>Constructing SIG&nbsp;Policies</h2>
+ <p class="BodyLevel1">As we have mentioned, a SIG policy is basically any policy that contains one or both of the SIG obligations described above.</p>
+ 
+<p class="BodyLevel2">8<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>When constructing SIG policies, bear the following guidelines in mind:</p>
+
+ 
+<p class="BodyLevel2">9<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Each SIG policy must contain at least one SIG obligation. </p>
+
+ 
+<p class="BodyLevel2">10<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;</font></span>Every time a policy that contains a <span style="font-style : italic; "><i>Log SharePoint Control</i></span>&#160;obligation is triggered, it will log data for display in SP Lifecycle reports.</p>
+
+ 
+<p class="BodyLevel2">11<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;</font></span>Every time a policy that contains a <span style="font-style : italic; "><i>Log SharePoint Activity </i></span>obligation is triggered, it will log data for display in SP Policy Activity reports.</p>
+
+ 
+<p class="BodyLevel2">12<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;</font></span>You can use both obligations in a single policy. If you do, every time the policy is triggered the data will be logged for display in both kinds of SIG reports.</p>
+
+ 
+<p class="BodyLevel2">13<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;</font></span>The SIG obligation in a policy is entirely independent of the policy’s effect. That is, the policy may be a Deny, Allow Only, or Allow/Monitor effect; whichever effect will be triggered, and the activity will be logged in any case, for SIG reporting purposes. You may want a blocking policy with regard to certain SharePoint resources, and an Allow Only for others; or you may want an Allow/Monitor policy for all SharePoint resources, simply for the purpose of logging data for SIG Reports.</p>
+
+ 
+<p class="BodyLevel2">14<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;</font></span>You can specify a Department or a Business Process for each obligation, and add many obligations with different Department or Business Pro&#173;cesses specified. This lets you leverage the obligation for many different purposes, as described below.</p>
+
+ <h2>Department and Business&nbsp;Process</h2>
+ <p class="BodyLevel1">Both of the SIG custom obligations have two editable attributes, <span style="font-style : italic; "><i>Department</i></span>&#160;and <span style="font-style : italic; "><i>Business Process</i></span>, as shown at right. The purpose of these attributes is to allow the policy designer to include one or both of these in every SIG policy, in order to associate SharePoint activity that triggers the policy with some department, business process, or both.</p>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="DeptBusProc.jpg" style="width : 190.872pt; height : 76.464pt; " id="image4" src="DeptBusProc.jpg" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="BodyLevel1">The reason for that, is to allow auditors to generate reports reflecting department- or business process-related SharePoint activity. For instance, it allows auditors to run a report showing how users are accessing SharePoint resources in the course of all defined business processes: Development, Product Management, Marketing Communications, Sales Lead Generation, Tech Support, Field Engineering, and so on. This kind of specific, business-related information can be very helpful in fine-tuning SharePoint access and usage policies.</p>
+ <h3>Using SIG Attributes</h3>
+ <p class="BodyLevel1">Policy designers should generally define one attribute per obligation, and then include one or more related obligations per policy, which is targeted at some resources relevant to the department or business process specified in the obligation. </p>
+ <p class="BodyLevel1">What Departments and Business Processes you chose to define is entirely up to you. You can use the obligation to associate a policy with either a Department or a Business Process, or both. It often happens that a process is associated with a specific department.</p>
+ <p class="BodyLevel1">For example, one policy might specify that every time any user in the Sales group accesses any resource on the Competitor Information site on the SharePoint portal, the event will be allowed, but it will be logged by a SIG obligation specifying Department=Sales and Business Process=Lead Generation. Another policy, covering the SharePoint library of contract documents and legal guidelines, might use the same obligation, but defined as Department=Sales and Business Process=Contract Negotiation. </p>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="SIGModule00006.jpg" style="width : 206.352pt; height : 194.868pt; " id="image5" src="SIGModule00006.jpg" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook">Multiple SIG Obligations</p>
+ <p class="BodyLevel1">You can also use more than one obligation in a policy, for cases when user activity falls into more than one department (or process). For example, you might want Contract Negotiation activity to be reflected in reports on both Sales Department and Legal Department activity. This could be set up in one policy, as shown in the figure below.</p>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="SPLogOblig2x.jpg" style="width : 362.030pt; height : 206.101pt; " id="image6" src="SPLogOblig2x.jpg" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook">One Policy, Multiple SIG Obligations</p>
+ <p class="BodyLevel1">Of course, you can write policies that reflect departments or business processes one-to-one: for example, any time any user opens an product design document, it is logged as connected to the Product Development business process, but with no department specified, since users across many departments may read this kind of document. This will give you more specificity in your logged usage data, but it will require designing and deploying a larger number of policies.</p>
+ <h2><a name="XREF_20771_Customizing_the"></a>Customizing the Obligations</h2>
+ <p class="BodyLevel1">In addition to simply using the two SIG obligations with different Department and Business Process attributes, as described above, you also have the option of customizing them to create more SharePoint logging obligations with more specialized names, in place of the generic names <span style="font-style : italic; "><i>Log SharePoint Activity</i></span>&#160;and <span style="font-style : italic; "><i>Log SharePoint Control.</i></span>&#160;(You can use either of these as the template for your custom obligation; the only difference is what kind of reports the logged results will appear in, as we have seen.) These would function in basically the same way—letting you create policies that attach Department and Business Process category labels to logged activity data—but they have the benefit of being more descriptively named, making them more intuitive for policy designers; making them easier to find, if you have large numbers of processes or departments; and ensuring that designers use them in a consistent way.</p>
+ <p class="BodyLevel1">To create a new, custom SIG obligation, </p>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Using any text editor, open the SIG configuration snippet file, SIG_Reporting_Module_Obligations.xml, which you received as a part of the module.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Open your live configuration file, configuration.xml.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Copy either the <span style="font-style : italic; "><i>Log SharePoint Activity</i></span>&#160;or the <span style="font-style : italic; "><i>Log SharePoint Control </i></span>obligation—whichever you prefer to use as the basis for your custom obli&#173;gation—from the snippet file into your live file.</p>
+</li>
+  <p class="BodyLevel1"></p>
+  <div align="center"><img alt="SIGModule00007.jpg" style="width : 362.304pt; height : 259.200pt; " id="image7" src="SIGModule00007.jpg" />
+  </div>
+  <p class="BodyLevel1">&nbsp;</p>
+  <p class="TitleBook">Custom SIG Obligations—Open Values</p>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">In the newly copied obligation, change the value of the &lt;DisplayName&gt; element to the name of the custom obligation you want to add. In the example in the figure above, we call it <span style="font-style : italic; "><i>Log Adding Sales Lead</i></span>. Do not change any other elements.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Close the file and save your changes. When you restart the Policy Server, the new obligation will be available in Policy Author’s combo-box list of available Custom Obligations, in all policies. The obligation displays as fol&#173;lows:</p>
+</li>
+ </ol>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="SPLogObligD.jpg" style="width : 360.780pt; height : 97.440pt; " id="image8" src="SPLogObligD.jpg" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook">Custom Obligation in Policy Studio</p>
+ <p class="BodyLevel1">The policy designer can then use this obligation in a new policy, with the following logic: Whenever any user Copies or Moves any data to the Sales Lead List on the Sales Site on SharePoint, allow him to do it, but run this custom obligation. Although it is not technically required, the policy designer would probably want to supply a value for the Business Process attribute—for example, <span style="font-style : italic; "><i>Add Sales Lead</i></span>—and, possibly, also for the Department—<span style="font-style : italic; "><i>Sales</i></span>. Naturally, the Resource specified in the policy would refer to the Sales Lead List on the Sales department’s SharePoint site.</p>
+ <h2>Supplying Attribute Values</h2>
+ <p class="BodyLevel1">If you prefer to define the custom obligation with already defined values for these attributes, you can do so by editing the configuration file:</p>
+ 
+<p class="BodyLevel2">15<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;</font></span>Add a Value element to the Department and Business Process arguments. The value is exactly the string you want to display in the fields in this obligation; the values in our example are shown below in the following figure. </p>
+
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="SIGModule00008.jpg" style="width : 481.902pt; height : 267.126pt; " id="image9" src="SIGModule00008.jpg" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook">Custom SIG Obligations—Argument Defined Values </p>
+ <p class="BodyLevel1">Once the obligation is configured this way and saved, it will display in Policy Author with both argument values filled in, as shown below. (Of course, if it suits your needs you may only supply one value or the other in the config file, which would leave the other field blank.)</p>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="SPLogObligC.jpg" style="width : 360.780pt; height : 104.377pt; " id="image10" src="SPLogObligC.jpg" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook">Custom Obligation in Policy Studio</p>
+ <p class="BodyLevel1">This approach is very helpful to policy analysts, especially when you have a large number of processes defined, since it lets you organize them among custom obligations, and also assign different departments as required.</p>
+ <h2>Hard-Coding Attribute Values</h2>
+ <p class="BodyLevel1">Note that in both the customization approaches described above, the policy designer is still free to type any value in the Department and Business Process fields of the custom obligation. This is controlled by the <span class="GreyBold">usereditable=&quot;true&quot;</span>&#160;switch for both these arguments in the config file’s &lt;Obligation&gt; section. If you want those values to be exactly the same whenever the obligation is used, you can hard-code it so the policy designer cannot change it. To do this, simply remove the <span style="font-family : Courier New; ">usereditable=&quot;true&quot; </span>switch from both the Department and the Business Process arguments, so it looks like this: </p>
+ <h5>&lt;Argument&gt;<br /> &#160;&#160;&#160;&#160;&#160;&#160;&lt;Name&gt;Department&lt;/Name&gt;|<br /> &#160;&#160;&#160;&#160;&#160;&#160;&lt;Value&gt;Sales&lt;/Value&gt;<br />&lt;/Argument&gt;</h5>
+ <h5>&lt;Argument&gt;</h5>
+ <h5> &#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Name&gt;Business Process&lt;/Name&gt;<br /> &#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Value&gt;Add Sales Lead&lt;/Value&gt;<br /> &lt;/Argument&gt;</h5>
+ <p class="BodyLevel1">Once you do this, when this obligation is added to a policy all fields will be already defined as shown in the screen shot above, but the policy designer cannot edit them. This has the benefit of ensuring that both labels are used absolutely consistently, eliminating the possibility of typos, slightly different phrasing from one day to the next or by different designers, and similar problems.</p>
+ <h3>Adding Custom Arguments</h3>
+ <p class="BodyLevel1">The SIG Obligations must include the Department and Business Process arguments, and only those arguments. That is, in the current release of the module, you cannot add custom arguments, but only define values for one or both of these two.</p>
+ <p>&#160;</p>
+<script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+
+highlightSearch();
+//-->
+//]]></script>
+</body>
+</html>

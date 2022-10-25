@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?eclipse version="3.2"?>
+<plugin>
+	<extension-point id="tabfolder" name="Policy Studio Tab Folder" schema="schema/tabfolder.exsd" />
+	<extension-point id="profile" name="Policy User Profile" schema="schema/profile.exsd"/>
+ <extension-point id="editor" name="PolicyStudio Editor" schema="schema/editor.exsd"/>
+ <extension-point id="tab" name="Policy Studio Tab" schema="schema/tab.exsd"/>
+ <extension-point id="preview" name="Policy Studio Preview" schema="schema/preview.exsd"/>
+ <extension-point id="readonly" name="Policy Studio Read-only Panel" schema="schema/readonly.exsd"/>
+ <extension-point id="pdf" name="Policy Studio PDF Generator" schema="schema/pdf.exsd"/>
+ <extension-point id="creation" name="Policy Studio Creation" schema="schema/creation.exsd"/>
+	<extension id="application" name="Policy Studio" point="org.eclipse.core.runtime.applications">
+		<application>
+			<run class="com.bluejungle.destiny.policymanager.ui.PolicyStudioApplication"></run>
+		</application>
+	</extension>
+	<extension point="org.eclipse.ui.perspectives">
+		<perspective class="com.bluejungle.destiny.policymanager.ui.PolicyAuthorPerspective" icon="resources/images/policy.gif"
+			id="com.bluejungle.destiny.policymanager.ui.PolicyAuthorPerspective" name="Policy Author"></perspective>
+  <perspective
+        class="com.bluejungle.destiny.policymanager.ui.PolicyManagerPerspective"
+        icon="resources/images/policy.gif"
+        id="com.bluejungle.destiny.policymanager.ui.PolicyManagerPerspective"
+        name="Policy Manager">
+  </perspective>
+	</extension>
+	<extension point="org.eclipse.ui.views">
+		<view allowMultiple="false" icon="resources/images/policy.gif" class="com.bluejungle.destiny.policymanager.ui.StatusPart"
+			category="com.bluejungle.destiny.policymanager.ui.StatusPart" name="StatusPart" id="com.bluejungle.destiny.policymanager.ui.StatusPart" />
+		<view allowMultiple="false" icon="resources/images/policy.gif" class="com.bluejungle.destiny.policymanager.ui.PolicyAuthorView"
+			category="com.bluejungle.destiny.policymanager.ui.PolicyStudioCategory" name="Policy Author"
+			id="com.bluejungle.destiny.policymanager.ui.PolicyAuthorView" />
+		<view allowMultiple="false" icon="resources/images/policy.gif" class="com.bluejungle.destiny.policymanager.ui.PreviewView"
+			category="com.bluejungle.destiny.policymanager.ui.PreviewView" name="Preview" id="com.bluejungle.destiny.policymanager.ui.PreviewView" />
+  <view
+        allowMultiple="false"
+        category="com.bluejungle.destiny.policymanager.ui.PolicyStudioCategory"
+        class="com.bluejungle.destiny.policymanager.ui.PolicyManagerView"
+        icon="resources/images/policy.gif"
+        id="com.bluejungle.destiny.policymanager.ui.PolicyManagerView"
+        name="Policy Manager">
+  </view>
+  <category
+        id="com.bluejungle.destiny.policymanager.ui.StatusPart"
+        name="Status">
+  </category>
+  <category
+        id="com.bluejungle.destiny.policymanager.ui.PolicyStudioCategory"
+        name="Policy Studio">
+  </category>
+  <category
+        id="com.bluejungle.destiny.policymanager.ui.PreviewView"
+        name="Preview">
+  </category>
+	</extension>
+	<extension point="org.eclipse.ui.editors">
+		<editor id="com.bluejungle.destiny.policymanager.editor.DomainObjectEditor" name="Domain Object Editor"
+			icon="resources/images/policy.gif" extensions="bjdo" class="com.bluejungle.destiny.policymanager.editor.DomainObjectEditor"
+			default="true"></editor>
+	</extension>
+
+	<extension point="com.nextlabs.policystudio.profile">
+    	<profile name="corporate"/>
+	</extension>
+ <extension
+       id="product"
+       point="org.eclipse.core.runtime.products">
+    <product
+          application="com.nextlabs.policystudio.application"
+          name="Policy Studio">
+       <property
+             name="appName"
+             value="Policy Studio">
+       </property>
+       <property
+             name="windowImages"
+             value="resources/images/policystudio.gif">
+       </property>
+    </product>
+ </extension>
+ <extension
+       point="org.eclipse.ui.commands">
+    <command
+          defaultHandler="com.bluejungle.destiny.policymanager.action.GlobalSwitchPerspectiveHandler"
+          id="com.bluejungle.destiny.policymanager.ui.PolicyAuthorPerspectiveCommand"
+          name="SwitchCommand">
+    </command>
+    <command
+          defaultHandler="com.bluejungle.destiny.policymanager.action.GlobalDuplicateHandler"
+          id="com.bluejungle.destiny.policymanager.ui.DuplicateCommand"
+          name="DuplicateCommand">
+    </command>
+ </extension>
+ <extension
+       point="org.eclipse.ui.bindings">
+	<key
+          commandId="com.bluejungle.destiny.policymanager.ui.DuplicateCommand"
+          schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+          sequence="M1+D">
+    </key>
+    <key
+          commandId="com.bluejungle.destiny.policymanager.ui.PolicyAuthorPerspectiveCommand"
+          schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+          sequence="M1+TAB">
+    </key>
+ </extension>
+ <extension
+       point="com.nextlabs.policystudio.tabfolder">
+       <tabfolder name="Subjects"/>
+       <tabfolder name="Actions"/>
+       <tabfolder name="Resources"/>
+ </extension>
+</plugin>

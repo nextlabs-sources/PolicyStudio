@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Ant-Version: Apache Ant 1.7.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Dynamic Access Control Policy Read-only Panel Plug-in
+Bundle-SymbolicName: com.nextlabs.policystudio.readonly.DynamicAccessControl;singleton:=true
+Bundle-Version: 1.0.0
+Bundle-Activator: com.nextlabs.policystudio.readonly.DynamicAccessControl.Activator
+Bundle-Vendor: NextLabs, Inc.
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ com.nextlabs.policystudio;bundle-version="1.0.0",
+ com.nextlabs.policystudio.dependencies;bundle-version="1.0.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-ActivationPolicy: ACTIVE
+Bundle-ClassPath: com.nextlabs.policystudio.readonly.DynamicAccessControl.jar,
+ .

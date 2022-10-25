@@ -1,0 +1,443 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ <title>Overview</title>
+
+ <meta name="generator" content="Adobe RoboHelp 9" />
+ <meta name="Originator" content="ImportMif" />
+ <meta name="OriginalFile" content="C:\CC_PSUserGuide_77\PSUserGuideFM\IntroPA.fm" />
+ <link rel="stylesheet" href="IntroPA.css" type="text/css" />
+
+ <link rel="stylesheet" href="..\..\RHStyleMapping.css" type="text/css" />
+
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whlang.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whtopic.js"></script>
+
+</head>
+
+<body><script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.gbWhTopic)
+{
+	var strUrl = document.location.href;
+	var bc = 0;
+	var n = strUrl.toLowerCase().indexOf("bc-");
+	if(n != -1)
+	{
+		document.location.href = strUrl.substring(0, n);
+		bc = strUrl.substring(n+3);
+	}
+
+	if (window.addTocInfo)
+	{
+	addTocInfo("Introduction\nOverview");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	
+	document.write("<p style=\"text-align:right\"> ");
+AddMasterBreadcrumbs("../../PolicyStudioUserGuideTOC.htm", "", "&gt;", "Policy&nbsp;Studio&nbsp;", "../Welcome/Welcome_to_7_7.htm");
+document.write("<a href=\"Introducing_Policy_Author.htm\">Introduction<\/a> &gt; Overview<\/p>");
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../../PolicyStudioUserGuideTOC.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+
+//-->
+//]]></script>
+ <h1><a name="XREF_38744_Overview"></a>Overview</h1>
+ <p class="BodyLevel1">Policy Author is a graphical user interface that you use to accomplish the follow&#173;ing tasks:</p>
+ <p class="BodyLevel1"><span class="FM_italics" style="font-weight : bold; "><b>Modeling</b></span>: This refers to the process of creating an abstract model representing the various parts of the enterprise environment, such as users, applications, documents, and desktop PCs. The actual work of modeling consists of defining <span class="FM_italics" style="font-style : italic; "><i>policy components</i></span>. A component is a named definition that represents a cate&#173;gory or class of entities, such as users, data resources, or applications; or of actions, such as Open or Copy. </p>
+ <p class="BodyLevel1">Components can be thought of as the parts of speech you use to construct your policy statements. For example, you might define “noun” policy components, such as <span style="font-style : italic; "><i>All employees in the human resources department</i></span> or A<span style="font-style : italic; "><i>ny file with an .xls extension</i></span>, and “verb” components like <span style="font-style : italic; "><i>Copy</i></span>, <span style="font-style : italic; "><i>Print</i></span>, and <span style="font-style : italic; "><i>Rename File</i></span>.</p>
+ <p class="BodyLevel1"><span class="FM_italics" style="font-weight : bold; "><b>Constructing Policies</b></span>: This refers to the process of building information control policies in Control Center. Policies use components as building blocks to repre&#173;sent rules that you wish to enforce to control information access and use in your organization. </p>
+ <p class="BodyLevel1">For example, you might construct the following policy: “Allow only product managers to download or print spreadsheets.” The components used in this pol&#173;icy are “product managers,” “download,” “print,” and “spreadsheets.” When finished, policies are stored in a Policy Master database for distribution to the network components that enforce them.</p>
+ <p class="BodyLevel1">You can qualify policies using conditions. Conditions can change a policy’s effect based on dynamic comparisons, evaluations, or contextual factors. Policy Designers can select pre-defined Conditions, including the time of day, day of the week, connection type, and last heartbeat. More complex conditions can also be written directly in ACPL. </p>
+ <p class="BodyLevel1">Finally, a policy also includes notification obligations, such as notifications to the end user or e-mail warnings to an administrator whenever a policy is enforced anywhere in the network.</p>
+ <p class="BodyLevel1"><span class="FM_italics" style="font-weight : bold; "><b>Deployment</b></span>: Deployment simply means the distribution of new or modified pol&#173;icies and policy components to the appropriate enforcement points on desktop PCs, laptops, and file servers throughout the organization. This means you can create, review and refine policies as long as you like, but they are not enforced until you actually deploy them.</p>
+ <h2>Versions of Policy Studio</h2>
+ <p class="BodyLevel1">There are two versions of Policy Studio: the Enterprise Edition, which includes the full functionality, and the Dynamic Access Control (DAC) Edition, which includes support only for deploying policies to Windows Active Directory. The basic Policy Author interface is the same for the two versions; however, there are differences in what components display. Using Policy Studio for DAC policies is discussed in more detail in <a href="../Policies/Dynamic_Access_Control_Policies.htm#XREF_22129_Dynamic_Access"><span class="FM_blue">Dynamic Access Control Policies</span></a>.</p>
+ <h2>User Permissions</h2>
+ <p class="BodyLevel1">A Policy Studio user can have full permissions to create and manage policies and policy components, or limited permissions. For example, some users might be assigned permissions to create policies and all types of policy components, some might have permissions to create policies but not components, while others might be able to view policies only. User permissions are defined in the Adminis&#173;trator application by the Control Center administrator.</p>
+ <h2>About Views</h2>
+ <p class="BodyLevel1">For the Enterprise version of Policy Studio, you can configure views to control which UI features are displayed. You might do this if you only have certain kinds of enforcers installed (SharePoint, for example) and only want to see UI features for that enforcer. The three views are:</p>
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span style="font-weight : bold; "><b>File System View:</b></span> All controls and features relevant only to file system-based components are displayed and active. All those relevant only to col&#173;laboration portals—the Portals component pane, for example—are hidden.</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span style="font-weight : bold; "><b>Portal View:</b></span> All controls and features relevant to collaboration portal-based components are displayed and active to use. All those relevant only to file systems—the Attach to E-Mail and Copy Content basic action, for example—are hidden.</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span style="font-weight : bold; "><b>Corporate View</b></span>: All controls for all component types are displayed and active.</p>
+
+ <p class="BodyLevel1">The default view is Corporate. Note, however, that if you do not see some of the features described in this manual, it might be because you are working in one of the other more restricted views.</p>
+ <h3>Changing Views</h3>
+ <p class="BodyLevel1">If you need to change to another view, you can do so by editing an element in the Policy Studio configuration file, <span style="font-style : italic; "><i>plugin.xml.</i></span>This file is installed on the Policy Studio host, under the directory plugins\com.nextlabs. policystudio, as shown in the figure below.</p>
+ <p class="BodyLevel1">To change the view you see in Policy Studio, open this file, search for the <br /><span style="font-weight : bold; "><b>profilename</b></span>&#160;element, as shown in the figure, and change its value. Valid values are <span style="font-style : italic; "><i>corporate</i></span>, <span style="font-style : italic; "><i>filesystem</i></span>, and <span style="font-style : italic; "><i>portal</i></span>; the value must be enclosed in quotes. Save your change and restart Policy Studio to display the specified view.</p>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="pluginsDir.jpg" style="width : 482.520pt; height : 334.224pt; " id="image0" src="pluginsDir.jpg" />
+ </div>
+ <p class="BodyLevel1">&#160;</p>
+ <p class="TitleBook">Changing Policy Author Views</p>
+ <h2>Starting Policy&nbsp;Studio</h2>
+ <p class="BodyLevel1">Policy Studio is installed as a standard Windows application; you launch it by selecting <span class="FM_Bold">Start &gt;&#160;All Programs &gt;&#160;NextLabs &gt; Policy Studio</span>. When you start Pol&#173;icy Studio, the Policy Author interface displays by default. You can toggle between the two interfaces using Ctrl + Tab, or the <span class="FM_Bold">Policy Author</span>&#160;and <span class="FM_Bold">Policy Manager</span>&#160;commands in the <span class="FM_Bold">Window</span> menu.</p>
+ <h3>Logging In</h3>
+ <p class="BodyLevel1">When you start Policy Studio, you must specify a user name and password and a Policy Management Server host name. The user name can be any user currently defined with permission to use Policy Author. The default user, <span style="font-style : italic; "><i>Administrator</i></span>, has a password assigned during the Control Center&#160;installation; other users are defined by the system administrator after installation.</p>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="StudioLogIn.png" style="width : 368.249pt; height : 217.624pt; " id="image1" src="StudioLogIn.png" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook">Logging In to Policy Studio</p>
+ <p class="BodyLevel1">The Policy Management Server is the machine where the Control Center&#160;you want to use is running; this is specified during Policy Studio installation, and dis&#173;plays automatically. (The Management Server is a software component of Control Center.) You also have the option of connecting to any other instance of Control Center, as long as you know its host name and the valid user name and password for it. Policy Studio displays all currently running Control Center serv&#173;ers it can detect, in the Policy Management Server combo-box; you can select the one you want to use.</p>
+ <h3>Logging Out</h3>
+ <p class="BodyLevel1">To close Policy Author, use the Exit command in the File menu, or click the stan&#173;dard Windows <span style="font-weight : bold; "><b>X</b></span>&#160;icon in the upper right corner of the window. Your work is always saved automatically when you exit the application.</p>
+ <h2>Menu Commands</h2>
+ <p class="BodyLevel1">There are six menus available in Policy Author: File, Edit, Tools, Actions, Win&#173;dow, and Help. The table below describes the functions of all commands in these menus. Note that several of the commands may be disabled (greyed-out) at any given time, depending on whether they are logically valid for the type and state of the currently selected policy object. For example, if no object is selected, the Properties command is disabled; or if the selected policy is not currently active, the Deactivate command is disabled.</p>
+ <p class="BodyLevel1">Some of the menu commands, such as Delete, Submit, and Deactivate, can be applied to multiple policy objects. To select multiple policies or components, press Ctrl and click each object. All the selected objects, however, must be in the appropriate state for the command to be enabled. For example, to delete multiple objects, the selected objects must either be in Draft (This object has not been deployed) or Inactive status; in other words, all the objects must be in a state in which they can be deleted.</p>
+<table width="100%">
+ <tr>
+ <td>
+ <table style="border-spacing: 0; padding-left: 4.00pt; padding-top: 4.00pt; padding-right: 4.00pt; padding-bottom: 3.00pt;float: aligncenter;margin-bottom: 24.00pt; width: 486.42pt;" cellspacing="0" align="center">
+  <caption align="center">
+  </caption>
+  <tr style=" height : 16.00pt;background : #1f8c4a;">
+  <th style="width : 57.471pt; background : #1f8c4a;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Menu</p>
+</th>
+  <th style="width : 99.028pt; background : #1f8c4a;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Command</p>
+</th>
+  <th style="width : 329.926pt; background : #1f8c4a;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Function</p>
+</th>
+</tr>
+  <tr style=" height : 31.00pt;">
+  <td style="width : 57.471pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;" rowspan="4">
+  <p style="font-weight : bold; font-size  : 8.0pt;">File</p>
+</td>
+  <td style="width : 99.028pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Import</p>
+</td>
+  <td style="width : 329.926pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Disabled. This command is enabled in Policy Manager only. It launches the Import tool, which allows you to import policy objects from an XML file into the Policy Studio database. For details, see <a href="../PolicyManager/Importing_and_Exporting_Policies.htm#XREF_71115_Importing_Objects"><span class="FM_blue">Importing Objects</span></a>. </p>
+</td>
+</tr>
+  <tr style=" height : 15.00pt;">
+  <td style="width : 99.028pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Change Password</p>
+</td>
+  <td style="width : 329.926pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Allows users to change their own login password.</p>
+</td>
+</tr>
+  <tr style=" height : 15.00pt;">
+  <td style="width : 99.028pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Properties</p>
+</td>
+  <td style="width : 329.926pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Displays the properties tab of the currently selected policy or component.</p>
+</td>
+</tr>
+  <tr style=" height : 15.00pt;">
+  <td style="width : 99.028pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Exit</p>
+</td>
+  <td style="width : 329.926pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Closes Policy Studio.</p>
+</td>
+</tr>
+  <tr style=" height : 15.00pt;">
+  <td style="width : 57.471pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;" rowspan="4">
+  <p style="font-weight : bold; font-size  : 8.0pt;">Edit</p>
+</td>
+  <td style="width : 99.028pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Undo</p>
+</td>
+  <td style="width : 329.926pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Undoes the effect of the last action performed.</p>
+</td>
+</tr>
+  <tr style=" height : 15.00pt;">
+  <td style="width : 99.028pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Redo</p>
+</td>
+  <td style="width : 329.926pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Redoes the last undone action.</p>
+</td>
+</tr>
+  <tr style=" height : 15.00pt;">
+  <td style="width : 99.028pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Delete</p>
+</td>
+  <td style="width : 329.926pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Deletes the currently selected item or items.</p>
+</td>
+</tr>
+  <tr style=" height : 23.00pt;">
+  <td style="width : 99.028pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Duplicate</p>
+</td>
+  <td style="width : 329.926pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Creates a clone of the selected component (see <a href="../Components/Cloning_Components.htm#XREF_26169_Cloning_Components"><span class="FM_blue">Cloning Components</span></a>) or policy (see <a href="../Policies/Cloning_Policies.htm#XREF_42991_Cloning_Policies"><span class="FM_blue">Cloning Policies</span></a>).</p>
+</td>
+</tr>
+  <tr style=" height : 23.00pt;">
+  <td style="width : 57.471pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;" rowspan="2">
+  <p style="font-weight : bold; font-size  : 8.0pt;">Tools</p>
+</td>
+  <td style="width : 99.028pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Deployment History</p>
+</td>
+  <td style="width : 329.926pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Opens the Deployment History window; for details, see <a href="../Deploying/Managing_Policies_and_Components.htm#XREF_38867_Finding_Out_Where"><span class="FM_blue">Finding Out Where a Component is Used</span></a>. </p>
+</td>
+</tr>
+  <tr style=" height : 31.00pt;">
+  <td style="width : 99.028pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Deployment Status</p>
+</td>
+  <td style="width : 329.926pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Opens the Deployment History window, which displays the current deployment status of all components and policies that have been deployed. For details, see <a href="../Deploying/Management_Tools.htm#XREF_26912_Deployment_byHost"><span class="FM_blue">Deployments by&nbsp;Host</span></a>.</p>
+</td>
+</tr>
+  <tr style=" height : 31.00pt;">
+  <td style="width : 57.471pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;" rowspan="11">
+  <p style="font-weight : bold; font-size  : 8.0pt;">Actions</p>
+</td>
+  <td style="width : 99.028pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Modify</p>
+</td>
+  <td style="width : 329.926pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Changes the status of the currently displayed component or policy to Draft. You must do this whenever you want to make any changes to a component or policy that has been submitted. Function is the same as the Modify button at the bottom of the Editing pane.</p>
+</td>
+</tr>
+  <tr style=" height : 39.00pt;">
+  <td style="width : 99.028pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Submit</p>
+</td>
+  <td style="width : 329.926pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Submits the currently selected components or policies for changing from one status to another—for example, from Draft status to Submitted for Deployment. Function is the same as the Submit button at the bottom of the Editing pane. Disabled if no object is selected, or if any of the selected objects is not currently in Modify state.</p>
+</td>
+</tr>
+  <tr style=" height : 39.00pt;">
+  <td style="width : 99.028pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Deploy</p>
+</td>
+  <td style="width : 329.926pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Deploys the currently displayed component or policy. Function is the same as the Deploy button at the bottom of the Editing pane. As with individually deployed objects, you can specify a scheduled deployment, or choose Now. Disabled if no object is selected, or if the selected object has not been submitted for deployment.</p>
+</td>
+</tr>
+  <tr style=" height : 23.00pt;">
+  <td style="width : 99.028pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Deploy All</p>
+</td>
+  <td style="width : 329.926pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Deploys all currently submitted components or policies. Function is the same as the Deploy button at the bottom of the Editing pane.</p>
+</td>
+</tr>
+  <tr style=" height : 31.00pt;">
+  <td style="width : 99.028pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Deactivate</p>
+</td>
+  <td style="width : 329.926pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Changes the status of the currently selected policies or components from Active to Deactivated. Disabled if no object is selected, or if any of the selected objects is not currently in Active state.</p>
+</td>
+</tr>
+  <tr style=" height : 23.00pt;">
+  <td style="width : 99.028pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Show Policy Usage</p>
+</td>
+  <td style="width : 329.926pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">For the currently displayed component, displays a list of all policies in which it is currently included, regardless of the policies’ status.</p>
+</td>
+</tr>
+  <tr style=" height : 31.00pt;">
+  <td style="width : 99.028pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Show Deployed Version</p>
+</td>
+  <td style="width : 329.926pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">For the currently displayed component or policy, displays the detailed definition of the version that is currently deployed. Disabled if no object is selected, or if the selected object is not currently deployed.</p>
+</td>
+</tr>
+  <tr style=" height : 23.00pt;">
+  <td style="width : 99.028pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Check Dependencies</p>
+</td>
+  <td style="width : 329.926pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">For the currently displayed component or policy, runs a value check and displays all the components that are required by (that is, referenced inside) the component or policy.</p>
+</td>
+</tr>
+  <tr style=" height : 31.00pt;">
+  <td style="width : 99.028pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Set Deployment Target</p>
+</td>
+  <td style="width : 329.926pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Allows you to manually specify which enforcement point the selected policy or component will be deployed to. You can use this feature as an alternative to Control Center’s Auto-deployment capability.</p>
+</td>
+</tr>
+  <tr style=" height : 42.00pt;">
+  <td style="width : 99.028pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Version History</p>
+</td>
+  <td style="width : 329.926pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Opens the Version History window for the currently displayed component or policy. This window displays a list of all previously deployed versions, starting with the most recent one. Versions are identified by date and time stamp. For details, see <a href="#XREF_76168_The_Preview_Pane"><span class="FM_blue">The Preview Pane</span></a>.</p>
+  <p class="CellBody">This command is disabled if the selected object has never been deployed.</p>
+</td>
+</tr>
+  <tr style=" height : 31.00pt;">
+  <td style="width : 99.028pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Update Computers with Enforcers</p>
+</td>
+  <td style="width : 329.926pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Updates the definition of the special Computer component, All Computers with Enforcers, to include any newly-installed Desktop enforcers in the network. For more on this component, see <a href="../Components/Defining_Object_Components.htm#XREF_99845_Membership"><span class="FM_blue">Computer Components: Membership</span></a>.</p>
+</td>
+</tr>
+  <tr style=" height : 31.00pt;">
+  <td style="width : 57.471pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;" rowspan="3">
+  <p style="font-weight : bold; font-size  : 8.0pt;">Window</p>
+</td>
+  <td style="width : 99.028pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Preview</p>
+</td>
+  <td style="width : 329.926pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Opens the Preview pane, at the right side of the Editor pane. The Preview pane allows you to test the actual content that would result from the current definition of a component. For details, see <a href="#XREF_76168_The_Preview_Pane"><span class="FM_blue">The Preview Pane</span></a>.</p>
+</td>
+</tr>
+  <tr style=" height : 15.00pt;">
+  <td style="width : 99.028pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Policy Manager</p>
+</td>
+  <td style="width : 329.926pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Toggles to the Policy Manager interface. You can also type Ctrl + Tab.</p>
+</td>
+</tr>
+  <tr style=" height : 15.00pt;">
+  <td style="width : 99.028pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Policy Author</p>
+</td>
+  <td style="width : 329.926pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Disabled</p>
+</td>
+</tr>
+  <tr style=" height : 15.00pt;">
+  <td style="width : 57.471pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;" rowspan="2">
+  <p style="font-weight : bold; font-size  : 8.0pt;">Help</p>
+</td>
+  <td style="width : 99.028pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Display Help</p>
+</td>
+  <td style="width : 329.926pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Displays the Policy Studio User’s Guide, in HTML, in your default Web browser.</p>
+</td>
+</tr>
+  <tr style=" height : 72.00pt;">
+  <td style="width : 99.028pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">About</p>
+</td>
+  <td style="width : 329.926pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Displays the About window, with standard copyright information about Policy Studio, the currently installed version, in the following format:</p>
+  <p class="CellBody">v-&lt;Major Version&gt;.&lt;Minor Version&gt;.&lt;Maint Version&gt; (Build No) </p>
+  <p class="CellBody">The build number reflects not only the Policy Studio version, but also the version of the Control Center currently installed.</p>
+  <p class="CellBody">This tab also displays which Control Center&#160;Server you are currently using, by host name, and the user name you logged in with.</p>
+</td>
+</tr>
+ </table>
+</td></tr>
+</table>
+ <p class="BodyLevel1"></p>
+ <p class="BodyLevel1">Note that these same menus are available whether you are viewing Policy Author or Policy Manager, but for the latter, many of the commands are dis&#173;abled. For details, see <a><span class="FM_blue">Policy Manager Menu Commands</span></a>.</p>
+ <h2>Interface Panes</h2>
+ <p class="BodyLevel1"><a href="../Components/Defining_Components.htm#XREF_15343_Defining_Components"><span class="FM_blue">Defining Components</span></a>&#160;in this manual provides a detailed description of how you use Policy Author to define components. This section provides a brief overview of the tools available in Policy Author.</p>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="IntroPA00007.jpg" style="width : 498.075pt; height : 383.994pt; " id="image2" src="IntroPA00007.jpg" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook">Policy Author views</p>
+ <p class="BodyLevel1">As the figure shows, the Main window is divided into three panes: </p>
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>The <span style="font-weight : bold; "><b>policy tree,</b></span>&#160;at the upper left, is where you store, organize, and retrieve policies once you have defined them.</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>The <span style="font-weight : bold; "><b>component panels,</b></span>&#160;at the lower left, are where you store and retrieve components once you have defined them. To construct policies, you simply drag components from one of these panels into the appropriate fields in the editing pane. (Click on one of the panels to expand it, if it is collapsed.) Note that some of the panels are further organized into sev&#173;eral tabs for different component types.</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>The <span style="font-weight : bold; "><b>editing pane</b></span>, on the right, is where you work as you define new com&#173;ponents or policies, or edit existing ones. You can use the buttons at the bottom of this pane to control the state of a policy: to submit, deploy, or modify it.</p>
+
+ <p class="BodyLevel1">Each object you open is displayed on a tab in this editing pane, and stays open until you close it. Each tab within this pane can be docked; you can grab it and reposition it below or to the right or left of other tabs. This allows you to view more than one object at once in a tiled layout, as shown in the following figure.</p>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="EditorDocking.png" style="width : 476.375pt; height : 364.400pt; " id="image3" src="EditorDocking.png" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook">Viewing Tabs in docked layout</p>
+ <h3><a name="XREF_76168_The_Preview_Pane"></a>The Preview Pane</h3>
+ <p class="BodyLevel1">A fourth pane, Preview, can be opened as needed, using the Preview command in the Window menu. The Preview pane allows you to display all of the individ&#173;ual entities that would be included in a component as it is presently defined. It displays at the right side of the window.</p>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="PreviewPane.png" style="width : 254.249pt; height : 260.375pt; " id="image4" src="PreviewPane.png" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook">Previewing component contents</p>
+ <p class="BodyLevel1">This feature is very useful for testing or debugging components. If the list con&#173;tains entities you did not expect or intend to be included in the component you are defining, or does not contain entities you wanted to include, you know there is a problem with the definition of the component, and you can correct it before deployment.</p>
+ <p class="BodyLevel1">You can also use this feature to filter an existing component by one or more properties. For example, you can open All Users, under Properties select “Department Is Finance,” then click the Go button in the Preview pane. The resulting list will show a list of all the individual users in the Finance Depart&#173;ment. This is very useful in determining which property is most suitable for defining new components, since it allows you to see the actual results of various definitions.</p>
+ <p class="BodyLevel1">The preview feature is available only for User, Computer, Application, and Docu&#173;ment components. For Document components, the preview generally displays a list of file names, but if you have included an&#160;Include Only Directories property, it also lists network directories. (For details on this feature, see <a href="../Components/Defining_Object_Components.htm#XREF_68154_Property"><span class="FM_blue">About the Include Only Directories Property</span></a>.)</p>
+ <h4>Using Wildcards</h4>
+ <p class="BodyLevel1">When searching for components in the Preview Pane, you can use the wildcard characters ’?’ (match any single character) and ’*’ (match any one or more char&#173;acters) to filter by properties. For example, you could filter Users by LastName Is W*, as shown in the figure below. Note that specifying the All Users in the Users field is not required; it could just as well be left blank. The point is, you can use this feature to filter any existing component by some properties, with or without wildcards.</p>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="WildcardPreview.jpg" style="width : 488.304pt; height : 161.732pt; " id="image5" src="WildcardPreview.jpg" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook">Using Wildcards with the Preview Pane</p>
+ <script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+
+
+highlightSearch();
+//-->
+//]]></script>
+</body>
+</html>

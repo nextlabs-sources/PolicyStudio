@@ -1,0 +1,30 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Policy Studio Plug-in
+Bundle-SymbolicName: com.nextlabs.policystudio;singleton:=true
+Bundle-Version: 1.0.0
+Bundle-Activator: com.bluejungle.destiny.policymanager.Activator
+Bundle-Vendor: NextLabs, Inc.
+Bundle-ClassPath: policystudio.jar,.
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.core.runtime.compatibility.auth,
+ org.eclipse.ui,
+ com.nextlabs.policystudio.dependencies
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: com.bluejungle.destiny.policymanager,
+ com.bluejungle.destiny.policymanager.action,
+ com.bluejungle.destiny.policymanager.editor,
+ com.bluejungle.destiny.policymanager.event,
+ com.bluejungle.destiny.policymanager.event.defaultimpl,
+ com.bluejungle.destiny.policymanager.framework,
+ com.bluejungle.destiny.policymanager.framework.standardlisteners,
+ com.bluejungle.destiny.policymanager.model,
+ com.bluejungle.destiny.policymanager.ui,
+ com.bluejungle.destiny.policymanager.ui.controls,
+ com.bluejungle.destiny.policymanager.ui.dialogs,
+ com.bluejungle.destiny.policymanager.ui.dialogs.browser,
+ com.bluejungle.destiny.policymanager.ui.dialogs.browser.impl,
+ com.bluejungle.destiny.policymanager.ui.dialogs.browser.impl.dictionary,
+ com.bluejungle.destiny.policymanager.ui.usergroup,
+ com.bluejungle.destiny.policymanager.util

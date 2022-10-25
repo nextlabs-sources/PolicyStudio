@@ -1,0 +1,241 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ <title>Policy_Set_I_Destiny_Project</title>
+
+ <meta name="generator" content="Adobe RoboHelp 9" />
+ <meta name="Originator" content="ImportMif" />
+ <meta name="OriginalFile" content="C:\Users\mlittle\Desktop\PSUserGuide\PSUserGuideFM\Samples.fm" />
+ <link rel="stylesheet" href="../../RHStyleMapping.css" type="text/css" />
+
+ <link rel="stylesheet" href="..\..\RHStyleMapping.css" type="text/css" />
+
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whlang.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whtopic.js"></script>
+
+</head>
+
+<body><script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.gbWhTopic)
+{
+	var strUrl = document.location.href;
+	var bc = 0;
+	var n = strUrl.toLowerCase().indexOf("bc-");
+	if(n != -1)
+	{
+		document.location.href = strUrl.substring(0, n);
+		bc = strUrl.substring(n+3);
+	}
+
+	if (window.addTocInfo)
+	{
+	addTocInfo("Using the Sample Policy Sets\nPolicy Set I Destiny Project");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	
+	document.write("<p style=\"text-align:right\"> ");
+AddMasterBreadcrumbs("../../index.htm", "", ">", "Home", "../Welcome/Welcome1.htm");
+document.write("<a href=\"Using_the_Sample_Policy_Sets.htm\">Using the Sample Policy Sets<\/a> > Policy Set I Destiny Project<\/p>");
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../../index.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+
+//-->
+//]]></script>
+ <h1><a name="XREF_35593_Sample_Walkthrough"></a>Policy Set I: Destiny Project</h1>
+ <p class="BodyLevel1">The Destiny Project sample set shows how two policies can be used to prevent unauthorized access to and use of confidential project information. In this example, members of a project team collaborate on a set of documents as they design and develop a new product. Each team member works on a part of the project and shares files with the team on a file server. In addition, team mem&#173;bers often work with documents offline from local copies of these documents. </p>
+ <p class="BodyLevel1">The information control requirements for the Destiny project are:</p>
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>There is a team, called the Destiny Team, that needs access to confiden&#173;tial information.</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Destiny documents are shared within the directory \\fileserver\share\ destiny on a shared file server.</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Team members will often need to copy documents to their PCs or lap&#173;tops, work on them locally, then update the version on the server.</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Destiny documents must not be copied to unprotected locations, sent to recipients outside the team, or accessed from non-company computers.</p>
+
+ <p class="BodyLevel1">To ensure that unauthorized persons do not gain access to this information and that information is not inadvertently leaked, two policies were implemented.</p>
+ <h2>Policy 1: &#160;Controlling Access </h2>
+ <p class="BodyLevel1">The first policy, Destiny Information Access, states:</p>
+ <p class="BodyLevel1" style="font-style : italic;"><span class="Emphasis" style="font-style : italic; "><i>“Allow only Destiny Team Members using Company Computers to Access Destiny Confidential Information”</i></span></p>
+ <p class="BodyLevel1">In terms of the ACPL policy grammar, the sample policy consists of the following “parts of speech:”</p>
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Effect = Allow Only</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Subject = Destiny Team Members on Company Computers using any application</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Action = Access</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Resource = Destiny Confidential Information</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Obligation = Log On Deny</p>
+
+ <p class="BodyLevel1">The following figure shows how this policy appears in Policy Author.</p>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="DestInfoAccess.jpg" style="width : 364.824pt; height : 295.416pt; " id="image6" src="DestInfoAccess.jpg" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook">Controlling Destiny Access</p>
+ <h3>Effect</h3>
+ <p class="BodyLevel1">The policy’s <span class="FM_italics">effect</span>&#160;determines the active enforcement behavior—that is, whether to permit or prevent the specified action. The Policy Author applica&#173;tion's Policy Editor provides the following options (the first option, Allow Only, is used in the Destiny Information Access example policy):</p>
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span style="font-weight : bold; "><b>Allow Only</b></span>: Only the specified subject is allowed to perform the speci&#173;fied action on the resource; all other subjects will be blocked from per&#173;forming the action. In this example policy, the subject is Destiny Team Members on Company Computers. Therefore, only users who are within the Destiny Team using a computer that is a Company Computer will be allowed to perform this action; both conditions must be present.</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span style="font-weight : bold; "><b>Deny</b></span>: The specified subject is not allowed to perform the specified action on the resources.</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span style="font-weight : bold; "><b>Monitor</b></span>: The action is allowed in any case, but all specified obliga&#173;tions—a log entry, a warning to the policy subject, and/or an e-mail notification—will occur whenever the policy is enforced.</p>
+
+ <p class="BodyLevel1">Control Center is a “deny override” system: policies are written either to pre&#173;vent subjects from performing actions or to perform obligations when a trigger occurs. Policies are not used to grant access. In this example policy, the Allow Only effect implicitly denies all users not covered by the definition of the pol&#173;icy’s subject.</p>
+ <h3>Subject</h3>
+ <p class="BodyLevel1">The policy’s <span class="FM_italics">subject</span>&#160;refers to the users, computers, and/or applications that perform the action. In this example, the subject includes both a user component and a computer component; since no application is specified, it includes all applications. These components are evaluated using a logical AND: the policy applies to Destiny Team Members (any application) on Company Computers, and all three must be true for the policy to evaluate to true. (Since Any Application will always be true, it need not actually be specified.) For example, if Jane Smith, who is a Destiny Team Member, attempts to access this information while using a Company Computer she is allowed to do so, but if she tries to access this information from a home computer, she is denied.</p>
+ <h3>Action</h3>
+ <p class="BodyLevel1">In this example, the <span class="FM_italics">action</span>&#160;is Access, a predefined <span class="FM_italics">action component</span>&#160;that is contains several basic actions within it. The following figure shows the action component as defined for this example, as it appears in Policy Author.</p>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="AccessAction2.jpg" style="width : 360.360pt; height : 278.928pt; " id="image7" src="AccessAction2.jpg" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook">Sample Action Component: Access</p>
+ <h3>Resource</h3>
+ <p class="BodyLevel1">The resource in this sample policy, Destiny Confidential Information, is a <span class="FM_italics">docu&#173;ment component</span>&#160;that describes a class of documents, defined by the network paths where they may be stored. In this example, Destiny Confidential Informa&#173;tion may reside on a number of server or desktop systems and move between the multiple locations. With the Destiny Confidential Information component, you can write policies about this class of information that apply to all of these locations. In our example, team members often need to work on local copies of Destiny Confidential Information. While these documents exist on local desktop systems, we want to ensure that policies are still appropriately applied. </p>
+ <p class="BodyLevel1">The following figure shows the definition of this document component in Policy Author, illustrating how it applies to documents on file servers and on local desktops within the My Documents folder.</p>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="DestinyConfidential.jpg" style="width : 366.480pt; height : 131.184pt; " id="image8" src="DestinyConfidential.jpg" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook">Destiny Confidential Information</p>
+ <h3>Customizing the&nbsp;Sample</h3>
+ <p class="BodyLevel1">Sample policy 1 defines one each of four component types, which you can actu&#173;ally use in your real policies, after customizing the definitions so match your needs. To view the details of how each component is defined, double click it to open it in the editing pane. The following steps walk through the process of mapping these components to your environment.</p>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Map the user component Destiny Team Members to users defined in your environment. You will then be able to see the effect of the policy on Des&#173;tiny Team Members as compared to other users.</p>
+</li>
+  
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Open the Destiny Team Members user component.</p>
+
+  
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Add one or more members to the team either by selecting them from the lookup list, or by typing their names directly. You can add either LDAP users or groups. At this point, do not include yourself in this user component.</p>
+
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Map the component Company Computers to computers within your envi&#173;ronment. You will then be able to see the effect of the policy when accessing documents from different computers.</p>
+</li>
+  
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Open the Company Computers component.</p>
+
+  
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Add one or more LDAP hosts or host groups to this component definition. Include the computer that you will be using in this computer compo&#173;nent.</p>
+
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Update the Destiny Confidential Information document component to map to a folder on a file server in your environment. You will then be able to see the effect of accessing documents that are considered Destiny Confi&#173;dential.</p>
+</li>
+ </ol>
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Open the Destiny Confidential Information document component. </p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Update the existing value “\\fileserver\share\” to point to a file server location in your environment. </p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>For testing the sample policy, you will need to create a folder called “Destiny” on both the file server and within your My Documents folder. Create one or more files in each of these directories. For help on the required syntax, see <a href="../Components/Defining_Object_Components.htm#XREF_83608_Member">Membership Specification Syntax</a>.</p>
+
+ <p class="BodyLevel1">Note that there is no need to make any changes to the Action component; it can be used as is.</p>
+ <h2>Policy 2: Duplication and Distribution Control</h2>
+ <p class="BodyLevel1">The second policy in the Destiny Project example application is designed to con&#173;trol the duplication and distribution of Destiny confidential information. The Destiny Information Usage policy states:</p>
+ <p class="BodyLevel1" style="font-style : italic;"><span class="Emphasis" style="font-style : italic; "><i>“Deny Duplication and Distribution of Destiny Confidential Information outside of Destiny Confidential Information”</i></span></p>
+ <p class="BodyLevel1">This sample policy consists of the following ACPL “parts of speech:”</p>
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Effect = Deny</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Subject = None Specified (implicit All)</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Action = Duplicate, Distribute</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>From Resource = Destiny Confidential Information</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>To Resource = outside Destiny Confidential Information</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Obligation = Log on deny</p>
+
+ <h3>Subject</h3>
+ <p class="BodyLevel1">In this example, no subject has been specified. By default, this means that the effect will apply to any subject that attempts to perform the specified action on the specified resource. Because this policy works together with the first exam&#173;ple policy (Destiny Information Access), in practice, only Destiny Project Mem&#173;bers will be able to access this information; the Destiny Information Usage policy will only affect those users. To be complete, however, the policy does not specify a specific subject; this makes the policy apply to all subjects.</p>
+ <h3>From and To Resources</h3>
+ <p class="BodyLevel1">Some system actions support a concept of both source and destination resources. For example, you can move a file from one location to another or rename a file from one name to another. For all such actions, an optional desti&#173;nation or “To” resource can be specified. This allows you to create policy that can prevent this action from occurring based on either the source or the desti&#173;nation, or both. </p>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="DestInfoUse.jpg" style="width : 371.952pt; height : 298.728pt; " id="image9" src="DestInfoUse.jpg" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook">Destiny Information Usage Policy</p>
+ <p class="BodyLevel1">In this example, preventing duplication of Destiny Confidential Information out&#173;side of Destiny Confidential Information will allow the user to move or copy the files to locations that are still within the definition of the Destiny Confidential Information document component but prevent them from moving or copying the documents to locations that are outside of the Destiny Confidential Information document component definition. For example, a user will be able to copy a file from Destiny folders on the server share to Destiny folders on a local hard drive and back, but will not be able to move or copy that document anywhere that they please. </p>
+ <p class="BodyLevel1">By implementing this type of policy, you can continue to control information as it moves or is duplicated as required by the business users, while maintaining the same control of the document and document copies.</p>
+ <script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+
+
+highlightSearch();
+//-->
+//]]></script>
+</body>
+</html>

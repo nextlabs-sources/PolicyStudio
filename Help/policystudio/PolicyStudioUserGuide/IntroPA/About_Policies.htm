@@ -1,0 +1,141 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ <title>About Policies</title>
+
+ <meta name="generator" content="Adobe RoboHelp 9" />
+ <meta name="Originator" content="ImportMif" />
+ <meta name="OriginalFile" content="C:\CC_PSUserGuide_77\PSUserGuideFM\IntroPA.fm" />
+ <link rel="stylesheet" href="IntroPA.css" type="text/css" />
+
+ <link rel="stylesheet" href="..\..\RHStyleMapping.css" type="text/css" />
+
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whlang.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whtopic.js"></script>
+
+</head>
+
+<body><script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.gbWhTopic)
+{
+	var strUrl = document.location.href;
+	var bc = 0;
+	var n = strUrl.toLowerCase().indexOf("bc-");
+	if(n != -1)
+	{
+		document.location.href = strUrl.substring(0, n);
+		bc = strUrl.substring(n+3);
+	}
+
+	if (window.addTocInfo)
+	{
+	addTocInfo("Introduction\nAbout Policies");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	
+	document.write("<p style=\"text-align:right\"> ");
+AddMasterBreadcrumbs("../../PolicyStudioUserGuideTOC.htm", "", "&gt;", "Policy&nbsp;Studio&nbsp;", "../Welcome/Welcome_to_7_7.htm");
+document.write("<a href=\"Introducing_Policy_Author.htm\">Introduction<\/a> &gt; About Policies<\/p>");
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../../PolicyStudioUserGuideTOC.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+
+//-->
+//]]></script>
+ <h1><a name="XREF_80199_About_Policies"></a>About Policies</h1>
+ <p class="BodyLevel1">A <span class="FM_Emphasis">policy</span>&#160;is a statement that describes a document access or usage situation and specifies what action Control Center&#160;should take when that situation arises. It defines a set of rules controlling how different categories of users in a given environment are allowed to use different categories of documents. You use Pol&#173;icy Author to construct policies as combinations of components that are linked together with operators and other logical constraints, and then further refined by contextual conditions, such as time of day. Typically, an organization will con&#173;struct enough policies to cover all potential business situations where some kind of information control is required, or where some event such as displaying a reminder message should be triggered in response to a user action.</p>
+ <p class="BodyLevel1">Each policy comprises a set of pre-defined building blocks that are combined according to a precise syntax. The following figure provides some examples.</p>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="IntroPA00012.jpg" style="width : 486.216pt; height : 196.128pt; " id="image6" src="IntroPA00012.jpg" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook">Components of a Policy</p>
+ <p class="BodyLevel1">Once defined and deployed in Control Center, policies are enforced continuously and automatically. Each enforcement event is caused by a single user perform&#173;ing a specific action on a particular resource that is covered by a policy. For example, say a Human Resources assistant attempts to open a Word document that contains an offer letter. Because there is a policy in force allowing only the HR director access to this type of document, Control Center&#160;enforces the policy by blocking access, displaying a message on the assistant’s PC explaining that he is not authorized to open the file, and sending a notification e-mail to the HR director.</p>
+ <h2>Editing Tools</h2>
+ <p class="BodyLevel1">The section, <a href="../Policies/Constructing_Policies.htm#XREF_39944_Constructing"><span class="FM_blue">Constructing Policies</span></a>, presents a detailed description of how you use Policy Author to construct policies. However, let’s take a quick overview of how Policy Author’s editing tools work.</p>
+ <p class="BodyLevel1">As the following figure shows, you use the policy editor pane, on the right, to define new policies and edit existing ones. This pane is divided into horizontal sections, each of which provides tools for adding a specific “part of speech” of the policy: a subject, a verb (action), an object (resource), or an adverb (con&#173;text). To build these parts of speech, you use the components you have already defined—simply drag them up from the component panel on the lower left.</p>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="PolicyEditor75.jpg" style="width : 490.854pt; height : 386.751pt; " id="image7" src="PolicyEditor75.jpg" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook">Policy Editing Controls</p>
+ <p class="BodyLevel1">You work from the top of the pane down: first select the enforcement action— <span style="font-style : italic; "><i>Deny</i></span>&#160;or <span style="font-style : italic; "><i>Allow</i></span>—then define the user(s) the policy will apply to, then the applica&#173;tions, the computer resources, the actions themselves, the relevant document types, and contextual factors such as time frame and connection type. You do not need to include all these components in every policy; for example, many policies do not specify any context. Also, you might often specify Any for a given component: for instance, you may restrict certain users when they open certain documents <span style="font-style : italic; "><i>on Any computer</i></span>, or block <span style="font-style : italic; "><i>Any user</i></span> from access to certain docu&#173;ments between certain hours. If you do not specify a component for an available section of the definition, it has the effect of Any.</p>
+ <p class="BodyLevel1">The bottom area of the policy editor, Obligations, allows you to define what happens when the policy is enforced: the event may be logged in the Activity Journal, a message may display to the person who violated the policy, an e-mail alert may be distributed to an administrator, or some combination of the three. You can also specify custom obligations, which can perform all kinds of other, more complex tasks when a policy is triggered. You can include more than one obligation for a given policy, and you can specify separate obligations that occur depending on whether the policy allows some action or blocks it. These are referred to as <span style="font-style : italic; "><i>On Allow</i></span>&#160;and <span style="font-style : italic; "><i>On Deny</i></span> obligations.</p>
+ <h2>Handling Policies</h2>
+ <p class="BodyLevel1">There are four main things you do with policies: <span style="font-weight : bold; "><b>Construct</b></span>&#160;them in the first place (or edit existing ones), <span style="font-weight : bold; "><b>Submit</b></span>&#160;them, <span style="font-weight : bold; "><b>Deploy</b></span>&#160;them, and <span style="font-weight : bold; "><b>Monitor</b></span>&#160;them. Let’s take a quick look at each of these.</p>
+ <h3>Constructing Policies</h3>
+ <p class="BodyLevel1">As we described above, you construct policies based on the available compo&#173;nents already defined, combined using logical operators, and with optional con&#173;text parameters added. When you first create a new policy, you must designate it as one of four types: a <span style="font-style : italic; "><i>Communication</i></span>&#160;policy, a <span style="font-style : italic; "><i>Document</i></span>&#160;policy, a <span style="font-style : italic; "><i>Device Control</i></span>&#160;policy, or a <span style="font-style : italic; "><i>Dynamic Access Control</i></span> policy.</p>
+ <p class="BodyLevel1">A more detailed description of how you use Policy Author to construct these types of policies is presented in <a><span class="FM_blue">Constructing Policies</span></a>.</p>
+ <h3>Submitting Policies</h3>
+ <p class="BodyLevel1">When you finish defining a policy, click the Submit button to submit it for deployment. The submitted state simply means it is finished, and ready to be distributed throughout the system. In practice, there are two consequences:</p>
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>The policy is locked: all editing tools are disabled for it. To make further changes, you need to click the Modify button, which takes the policy out of submitted state.</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>When you submit, Policy Author runs a dependency check to make sure that all the components required for this policy are valid and have been deployed. If a policy requires components that are not deployed yet, they must be deployed before or at the same time as the policy.</p>
+
+ <h3>Deploying Policies</h3>
+ <p class="BodyLevel1">Deploying refers to the distribution of a finished policy throughout the system, so that it is enforced on all specified users, computers, and so on. (Components are also deployed in this way, so that they are available for policies.) It is the point at which the policy “goes live” in the network, so to speak. You can deploy policies one at a time, or in batches. When you deploy them, you can specify whether they become active immediately, or at a specified time in the future. In addition, you can choose to deploy a policy to one or more specific enforcers, or you can use the <span style="font-style : italic; "><i>Autodeployment</i></span>&#160;feature. With Autodeployment, Control Center&#160;automatically identifies all the enforcement points where the policy would be relevant, and deploys it to them.</p>
+ <p class="BodyLevel1"><a><span class="FM_blue">Deploying Objects</span></a> provides much more detail on submitting and deploying poli&#173;cies.</p>
+ <h3>Monitoring Policies</h3>
+ <p class="BodyLevel1">The second interface of Policy Studio, Policy Manager, is specifically designed for monitoring and managing policies. For a full discussion of its features, see <a><span class="FM_blue">Introducing Policy Manager</span></a>. However, you can also use a number of Policy Author’s features to monitor the definition, status and history of all currently defined policies, whether they are deployed or not. These features also enable you to check what components are used by a policy, what enforcers it is deployed to, which version of it is deployed and how it differs from earlier ver&#173;sions, and what user deployed it. For more information about using these fea&#173;tures, see <a><span class="FM_blue">Deploying Objects</span></a>. </p>
+ <p class="BodyLevel1">&nbsp;</p>
+<script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+
+
+highlightSearch();
+//-->
+//]]></script>
+</body>
+</html>

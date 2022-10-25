@@ -1,0 +1,320 @@
+<!-- NOTE: Policy Studio has a different directory structure than the standard NextLabs 
+	directory tree due to Eclipse IDE integration 
+-->
+<project name="PolicyStudio" default="build" basedir="." xmlns:ivy="antlib:org.apache.ivy.ant" 
+		xmlns:rsel="antlib:org.apache.tools.ant.types.resources.selectors">
+
+	<property name="nlbuildroot" location="${basedir}" />
+	
+	<property file="${nlbuildroot}/scripts/build.properties" />
+	<property file="${nlbuildroot}/scripts/build_common.properties" />
+	<property file="${nlbuildroot}/build.properties" />
+
+	<property name="security_dir" value="${nlbuildroot}/security" />
+	<property name="build_dep_jar_dir" value="${build.dir}/plugins/com.nextlabs.policystudio.dependencies" />
+	<property name="build_dep_bin32_dir" value="${build.dir}/plugins/com.nextlabs.policystudio.dependencies" />
+	<property name="build_dep_bin64_dir" value="${build.dir}/plugins/com.nextlabs.policystudio.dependencies/bin64" />
+	<property name="build_security_dir" value="${build.dir}/plugins/com.nextlabs.policystudio.dependencies" />
+	<property name="build_native_bin32_dir" value="${build.dir}/main/native/win32/release" />
+
+	<taskdef resource="net/sf/antcontrib/antlib.xml">
+		<classpath>
+			<pathelement location="${xlib_jar_dir}/ant-contrib.jar"/>
+		</classpath>
+	</taskdef>
+
+	<mkdir dir="${common.build.script.dir}" />
+	<import file="${common.build.script.dir}/installer_build.xml" />
+	<import file="${common.build.script.dir}/java_build.xml" />
+	<import file="${common.build.script.dir}/version_build.xml" />
+
+	<property name="package32_dir" value="${nlbuildroot}/build/package32" />
+	<property name="package64_dir" value="${nlbuildroot}/build/package64" />
+	<property name="packageDAC32_dir" value="${nlbuildroot}/build/packageDACx32" />
+	<property name="packageDAC64_dir" value="${nlbuildroot}/build/packageDACx64" />
+	<property name="zip_file_name_suffix" value="${version_str}-${version_build_short}-${build_date_long}.zip" />
+	<property name="zip_file_ps32" value="${nlbuildroot}/build/PolicyStudio-setup-${zip_file_name_suffix}" />
+	<property name="zip_file_ps64" value="${nlbuildroot}/build/PolicyStudio-setup64-${zip_file_name_suffix}" />
+	<property name="zip_file_psDAC32" value="${nlbuildroot}/build/PolicyStudio-setupDAC-${zip_file_name_suffix}" />
+	<property name="zip_file_psDAC64" value="${nlbuildroot}/build/PolicyStudio-setup64DAC-${zip_file_name_suffix}" />
+	
+	<target name="create_shared_folder">
+		<mkdir dir="${build.dir}/shared" />
+		<delete includeemptydirs="true">
+			<fileset dir="${build.dir}/shared" includes="**/*"/>
+		</delete>
+	</target>
+	
+	<!-- add a create_shared_folder and create_version_jar -->
+	<!-- Remove dependency on "resolve" to avoid getting old version of Destiny .jars and Fate .dlls. -->
+	<target name="pre_compile" description="Perform any necessary steps required before compile, such as code generation"
+		depends="create_shared_folder, create_version_jar"/>
+
+	<target name="compile" description="Compile source code" depends="pre_compile" >
+		<!-- not sure how to fix the ivy issue -->
+		<subant target="build" buildpath="com.nextlabs.policystudio"/>
+		<subant target="build">
+			<fileset dir="${basedir}" includes="*/build.xml" excludes="com.nextlabs.policystudio"/>
+		</subant>
+		
+		<!-- Create Eclipse Metadata files -->
+		<loadproperties srcfile="${build.dir}/version.properties"/>
+		<propertyfile file="${build.dir}/shared/.eclipseproduct" comment="Eclipse Product File">
+			<entry key="version" value="${major}.${minor}.${maintenance}"/>
+			<entry key="name" value="Policy Studio"/>
+			<entry key="id" value="com.nextlabs.policystudio.product"/>
+		</propertyfile>
+		
+		<mkdir dir="${build.dir}/shared/workspace/.metadata/.plugins/org.eclipse.core.runtime/.settings"/>
+		
+		<propertyfile file="${build.dir}/shared/workspace/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.ui.workbench.prefs">
+			<entry key="eclipse.preferences.version" value="1"/>
+			<entry key="org.eclipse.ui.workbench.ACTIVE_TAB_BG_START" value="204,204,204"/>
+			<entry key="org.eclipse.ui.workbench.ACTIVE_TAB_BG_END" value="123,134,154"/>
+		</propertyfile>
+		
+		<propertyfile file="${build.dir}/shared/workspace/.metadata/.plugins/org.eclipse.core.runtime/.settings/com.nextlabs.policystudio.prefs">
+			<entry key="eclipse.preferences.version" value="1"/>
+			<entry key="KNOWN_POLICY_SERVERS" value=""/>
+			<entry key="EDITOR_BACKGROUD" value="255,255,255"/>
+			<entry key="EDITOR_PART_BACKGROUD" value="233,233,233"/>
+			<entry key="TABFOLDER_FOREGROUND" value="255,255,255"/>
+			<entry key="TABFOLDER_BACKGROUND" value="123,134,154"/>
+			<entry key="TABFOLDER_SELECTION_FOREGROUND" value="0,0,0"/>
+			<entry key="TABFOLDER_SELECTION_BACKGROUND" value="204,204,204"/>
+			<entry key="MAX_ITEMS" value="50"/>
+		</propertyfile>	
+	</target>
+	
+	<target name="copy_shared_resource">
+		<copy todir="${build.dir}/shared" verbose="true">
+			<fileset dir="${basedir}/etc">
+				<include name="*.*" />
+			</fileset>
+			<fileset dir="${basedir}/com.nextlabs.policystudio">
+				<include name="splash.bmp" />
+			</fileset>
+		</copy>
+		
+		<!-- Copy Help content --> 
+		<copy todir="${build.dir}/shared/${plugin.dir}/${policy.studio.plugin}/resources/help/">
+			<fileset dir="${basedir}/${help.dir.name}" />
+		</copy>
+		
+		<unzip dest="${build.dir}/shared/${plugin.dir}">
+			<fileset dir="${build.dir}/main/dependencies/eclipse_dependencies/zip">
+				<include name="*.zip"/>
+			</fileset>
+		</unzip>
+	</target>
+	
+	<target name="deploy" description="If appropriate, deploy to a location in which the module can be executed" 
+	        depends="download_dependencies, package, copy_shared_resource">
+		<foreach list="${targetenv.list}" target="deploy_for_targetenv" param="targetenv" delimiter=";" inheritall="true" inheritrefs="true" />
+	</target>
+	
+	<target name="deploy_for_targetenv">
+		<copy todir="${deploy.dir}/${targetenv}/">
+			<fileset dir="${build.dir}/shared" />
+			<fileset dir="${basedir}/etc/${targetenv}" />
+		</copy>
+	
+		<copy todir="${deploy.dir}/${targetenv}/${plugin.dir}">
+			<fileset dir="${build.dir}/main/dependencies/eclipse_dependencies/jlib/">
+				<include name="**/*"/>
+				<exclude name="release_*/**"/>
+			</fileset>
+			<fileset dir="${build.dir}/${plugin.dir}">
+				<exclude name="**/release_*/**"/>
+			</fileset>
+		</copy>
+		<copy todir="${deploy.dir}/${targetenv}/${plugin.dir}" overwrite="true">
+			<fileset dir="${build.dir}/main/dependencies/eclipse_dependencies/jlib/release_${targetenv}">
+				<include name="**/*"/>
+			</fileset>
+		</copy>
+		
+		<unzip dest="${deploy.dir}/${targetenv}/${plugin.dir}" overwrite="true">
+			<fileset dir="${build.dir}/main/dependencies/eclipse_dependencies/zip/release_${targetenv}">
+				<include name="*.zip"/>
+			</fileset>
+		</unzip>
+
+		<!-- Create Eclipse Metadata files -->
+		<loadproperties srcfile="${basedir}/build.${targetenv}.properties"/>
+		<mkdir dir="${deploy.dir}/${targetenv}/configuration"/>
+		<propertyfile file="${deploy.dir}/${targetenv}/configuration/config.ini" comment="Product Runtime Configuration File">
+			<entry key="osgi.splashPath" value="platform:/base/plugins/com.nextlabs.policystudio"/>
+			<entry key="eclipse.product" value="com.nextlabs.policystudio.product"/>
+			<entry key="osgi.bundles" value="${osgi.bundles}"/>
+			<entry key="osgi.bundles.defaultStartLevel" value="4"/>
+		</propertyfile>
+		
+		<loadproperties srcfile="${basedir}/build.${targetenv}.DAC.properties"/>
+		<mkdir dir="${deploy.dir}/${targetenv}/config_dac"/>
+		<propertyfile file="${deploy.dir}/${targetenv}/config_dac/config.ini" comment="Product Runtime Configuration File for Dac">
+			<entry key="osgi.splashPath" value="platform:/base/plugins/com.nextlabs.policystudio"/>
+			<entry key="eclipse.product" value="com.nextlabs.policystudio.product"/>
+			<entry key="osgi.bundles" value="${osgi.bundles.DAC}"/>
+			<entry key="osgi.bundles.defaultStartLevel" value="4"/>
+		</propertyfile>
+		
+		<!-- Copy JRE-->
+		<unzip src="${build.dir}/main/dependencies/jre/zip/release_${targetenv}/jre.zip" dest="${deploy.dir}/${targetenv}/jre" /> 		
+	</target>
+	
+	<target name="compile_installer" depends="prepare_assembly, pre_compile_installer">
+		<compileIsProject installerProjectFile="${installer.project.file}" additionalArgs="-a &quot;PSDAC&quot; -r &quot;PSDAC&quot;" />
+		<compileIsProject installerProjectFile="${installer.project.file}" additionalArgs="-a &quot;PSDACx64&quot; -r &quot;PSDACx64&quot;" />
+		<compileIsProject installerProjectFile="${installer.project.file}" additionalArgs="-a &quot;PolicyStudio&quot; -r &quot;PolicyStudio&quot;" />
+		<compileIsProject installerProjectFile="${installer.project.file}" additionalArgs="-a &quot;PolicyStudio64&quot; -r &quot;PolicyStudio64&quot;" />
+	</target>
+
+	<target name="package_installers">
+		<!-- Clean up -->
+		<!-- delete dir="${package32_dir}" />
+		<delete dir="${package64_dir}" />
+		<delete file="${zip_file_ps32}" />
+		<delete file="${zip_file_ps64}" / -->
+
+		<!-- Prepare package directories -->
+		<mkdir dir="${package32_dir}" />
+		<mkdir dir="${package64_dir}" />
+		<move file="${build.dir}/install/output/PolicyStudio/PolicyStudio/DiskImages/DISK1/PolicyStudio-setup.exe" todir="${package32_dir}" />
+		<move file="${build.dir}/install/output/PolicyStudio64/PolicyStudio64/DiskImages/DISK1/PolicyStudio-setup.exe" todir="${package64_dir}" />
+		<mkdir dir="${packageDAC32_dir}" />
+		<mkdir dir="${packageDAC64_dir}" />
+		<move file="${build.dir}/install/output/PSDAC/PSDAC/DiskImages/DISK1/PolicyStudioDAC-setup.exe" todir="${packageDAC32_dir}" />
+		<move file="${build.dir}/install/output/PSDACx64/PSDACx64/DiskImages/DISK1/PolicyStudioDAC-setup.exe" todir="${packageDAC64_dir}" />
+		
+		<!-- Zip up directories -->
+		<zip destfile="${zip_file_ps32}" basedir="${package32_dir}" update="false" />
+		<zip destfile="${zip_file_ps64}" basedir="${package64_dir}" update="false" />
+		<zip destfile="${zip_file_psDAC32}" basedir="${packageDAC32_dir}" update="false" />
+		<zip destfile="${zip_file_psDAC64}" basedir="${packageDAC64_dir}" update="false" />
+	</target>
+	
+	<target name="build_installer" description="Build the project" depends="installer_build.build_installer"/>
+
+	<target name="buildenv" description="Build the environment">
+		<exec executable="cmd.exe" failonerror="true">
+			<arg value="/C"/>
+			<arg value="buildenv.bat"/>
+		</exec>
+	</target> 
+	
+	<target name="nightly_build" description="Build the project" depends="buildenv, common_build.clean, build_installer, package_installers">
+		<echo message="Exit stage left-BUILD SUCCESSFUL"/>
+	</target>
+
+	<target name="prepare_assembly" depends="assemble_dependencies_jar, assemble_dependencies_bin32, assemble_dependencies_bin64, assemble_install_bin32, assemble_security_files" />
+
+	<target name="assemble_dependencies_jar">
+		<copy file="${xlib_jar_dir}/activation.jar" todir="${build_dep_jar_dir}" preservelastmodified="true" overwrite="true" verbose="true" />
+		<copy file="${xlib_jar_dir}/agent-ipc.jar" todir="${build_dep_jar_dir}" preservelastmodified="true" overwrite="true" verbose="true" />
+		<copy file="${xlib_jar_dir}/antlr.jar" todir="${build_dep_jar_dir}" preservelastmodified="true" overwrite="true" verbose="true" />
+		<copy file="${xlib_jar_dir}/app-framework.jar" todir="${build_dep_jar_dir}" preservelastmodified="true" overwrite="true" verbose="true" />
+		<copy file="${xlib_jar_dir}/axis.jar" todir="${build_dep_jar_dir}" preservelastmodified="true" overwrite="true" verbose="true" />
+		<copy file="${xlib_jar_dir}/c3p0.jar" todir="${build_dep_jar_dir}" preservelastmodified="true" overwrite="true" verbose="true" />
+		<copy file="${xlib_jar_dir}/castor.jar" todir="${build_dep_jar_dir}" preservelastmodified="true" overwrite="true" verbose="true" />
+		<copy file="${xlib_jar_dir}/cglib-full.jar" todir="${build_dep_jar_dir}" preservelastmodified="true" overwrite="true" verbose="true" />
+		<copy file="${xlib_jar_dir}/client-pf.jar" todir="${build_dep_jar_dir}" preservelastmodified="true" overwrite="true" verbose="true" />
+		<copy file="${xlib_jar_dir}/policyAuthor-keystore.jks" todir="${build_dep_jar_dir}" preservelastmodified="true" overwrite="true" verbose="true" />
+		<copy file="${xlib_jar_dir}/client-security-config.jar" todir="${build_dep_jar_dir}" preservelastmodified="true" overwrite="true" verbose="true" />
+		<copy file="${xlib_jar_dir}/common-domain-types.jar" todir="${build_dep_jar_dir}" preservelastmodified="true" overwrite="true" verbose="true" />
+		<copy file="${xlib_jar_dir}/common-domain.jar" todir="${build_dep_jar_dir}" preservelastmodified="true" overwrite="true" verbose="true" />
+		<copy file="${xlib_jar_dir}/common-framework-types.jar" todir="${build_dep_jar_dir}" preservelastmodified="true" overwrite="true" verbose="true" />
+		<copy file="${xlib_jar_dir}/common-framework.jar" todir="${build_dep_jar_dir}" preservelastmodified="true" overwrite="true" verbose="true" />
+		<copy file="${xlib_jar_dir}/common-pf.jar" todir="${build_dep_jar_dir}" preservelastmodified="true" overwrite="true" verbose="true" />
+		<copy file="${xlib_jar_dir}/common-res.jar" todir="${build_dep_jar_dir}" preservelastmodified="true" overwrite="true" verbose="true" />
+		<copy file="${xlib_jar_dir}/common-version-impl.jar" todir="${build_dep_jar_dir}" preservelastmodified="true" overwrite="true" verbose="true" />
+		<copy file="${xlib_jar_dir}/common-version.jar" todir="${build_dep_jar_dir}" preservelastmodified="true" overwrite="true" verbose="true" />
+		<copy file="${xlib_jar_dir}/commons-cli.jar" todir="${build_dep_jar_dir}" preservelastmodified="true" overwrite="true" verbose="true" />
+		<copy file="${xlib_jar_dir}/commons-collections.jar" todir="${build_dep_jar_dir}" preservelastmodified="true" overwrite="true" verbose="true" />
+		<copy file="${xlib_jar_dir}/commons-discovery.jar" todir="${build_dep_jar_dir}" preservelastmodified="true" overwrite="true" verbose="true" />
+		<copy file="${xlib_jar_dir}/commons-logging.jar" todir="${build_dep_jar_dir}" preservelastmodified="true" overwrite="true" verbose="true" />
+		<copy file="${xlib_jar_dir}/crypt.jar" todir="${build_dep_jar_dir}" preservelastmodified="true" overwrite="true" verbose="true" />
+		<copy file="${xlib_jar_dir}/dnsjava.jar" todir="${build_dep_jar_dir}" preservelastmodified="true" overwrite="true" verbose="true" />
+		<copy file="${xlib_jar_dir}/dom4j.jar" todir="${build_dep_jar_dir}" preservelastmodified="true" overwrite="true" verbose="true" />
+		<copy file="${xlib_jar_dir}/ehcache.jar" todir="${build_dep_jar_dir}" preservelastmodified="true" overwrite="true" verbose="true" />
+		<copy file="${xlib_jar_dir}/hibernate.jar" todir="${build_dep_jar_dir}" preservelastmodified="true" overwrite="true" verbose="true" />
+		<copy file="${xlib_jar_dir}/iText.jar" todir="${build_dep_jar_dir}" preservelastmodified="true" overwrite="true" verbose="true" />
+		<copy file="${xlib_jar_dir}/jaxrpc.jar" todir="${build_dep_jar_dir}" preservelastmodified="true" overwrite="true" verbose="true" />
+		<copy file="${xlib_jar_dir}/mail.jar" todir="${build_dep_jar_dir}" preservelastmodified="true" overwrite="true" verbose="true" />
+		<copy file="${xlib_jar_dir}/odmg.jar" todir="${build_dep_jar_dir}" preservelastmodified="true" overwrite="true" verbose="true" />
+		<copy file="${xlib_jar_dir}/policy-services.jar" todir="${build_dep_jar_dir}" preservelastmodified="true" overwrite="true" verbose="true" />
+		<copy file="${xlib_jar_dir}/policy-types.jar" todir="${build_dep_jar_dir}" preservelastmodified="true" overwrite="true" verbose="true" />
+		<copy file="${xlib_jar_dir}/saaj.jar" todir="${build_dep_jar_dir}" preservelastmodified="true" overwrite="true" verbose="true" />
+		<copy file="${xlib_jar_dir}/server-shared-services.jar" todir="${build_dep_jar_dir}" preservelastmodified="true" overwrite="true" verbose="true" />
+		<copy file="${xlib_jar_dir}/server-shared-types.jar" todir="${build_dep_jar_dir}" preservelastmodified="true" overwrite="true" verbose="true" />
+		<copy file="${xlib_jar_dir}/version-types.jar" todir="${build_dep_jar_dir}" preservelastmodified="true" overwrite="true" verbose="true" />
+		<copy file="${build.dir}/version.jar" todir="${build_dep_jar_dir}" preservelastmodified="true" overwrite="true" verbose="true" />
+		<copy file="${xlib_jar_dir}/wsdl4j.jar" todir="${build_dep_jar_dir}" preservelastmodified="true" overwrite="true" verbose="true" />
+		<copy file="${xlib_jar_dir}/xercesImpl.jar" todir="${build_dep_jar_dir}" preservelastmodified="true" overwrite="true" verbose="true" />
+	</target>
+
+	<target name="assemble_dependencies_bin32">
+		<copy file="${xlib_bin32_dir}/InstallerCommon32.dll" todir="${build_dep_bin32_dir}" preservelastmodified="true" overwrite="true" verbose="true" />
+		<copy file="${xlib_bin32_dir}/celog32.dll" todir="${build_dep_bin32_dir}" preservelastmodified="true" overwrite="true" verbose="true" />
+		<copy file="${xlib_bin32_dir}/IPCJNI32.dll" todir="${build_dep_bin32_dir}" preservelastmodified="true" overwrite="true" verbose="true" />
+		<copy file="${xlib_bin32_dir}/NetworkUtils32.dll" todir="${build_dep_bin32_dir}" preservelastmodified="true" overwrite="true" verbose="true" />
+		<copy file="${xlib_bin32_dir}/nl_sysenc_lib32.dll" todir="${build_dep_bin32_dir}" preservelastmodified="true" overwrite="true" verbose="true" />
+		<copy file="${xlib_bin32_dir}/pdflib32.dll" todir="${build_dep_bin32_dir}" preservelastmodified="true" overwrite="true" verbose="true" />
+		<copy file="${xlib_bin32_dir}/resattrlib32.dll" todir="${build_dep_bin32_dir}" preservelastmodified="true" overwrite="true" verbose="true" />
+		<copy file="${xlib_bin32_dir}/resattrmgr32.dll" todir="${build_dep_bin32_dir}" preservelastmodified="true" overwrite="true" verbose="true" />
+		<copy file="${xlib_bin32_dir}/tag_office2k732.dll" todir="${build_dep_bin32_dir}" preservelastmodified="true" overwrite="true" verbose="true" />
+		<copy file="${xlib_bin32_dir}/atl90.dll" todir="${build_dep_bin32_dir}" preservelastmodified="true" overwrite="true" verbose="true" />
+		<copy file="${xlib_bin32_dir}/msvcm90.dll" todir="${build_dep_bin32_dir}" preservelastmodified="true" overwrite="true" verbose="true" />
+		<copy file="${xlib_bin32_dir}/msvcp90.dll" todir="${build_dep_bin32_dir}" preservelastmodified="true" overwrite="true" verbose="true" />
+		<copy file="${xlib_bin32_dir}/msvcr90.dll" todir="${build_dep_bin32_dir}" preservelastmodified="true" overwrite="true" verbose="true" />
+		<copy file="${xlib_bin32_dir}/mfc90.dll" todir="${build_dep_bin32_dir}" preservelastmodified="true" overwrite="true" verbose="true" />
+		<copy file="${xlib_bin32_dir}/mfc90u.dll" todir="${build_dep_bin32_dir}" preservelastmodified="true" overwrite="true" verbose="true" />
+		<copy file="${xlib_bin32_dir}/mfcm90.dll" todir="${build_dep_bin32_dir}" preservelastmodified="true" overwrite="true" verbose="true" />
+		<copy file="${xlib_bin32_dir}/mfcm90u.dll" todir="${build_dep_bin32_dir}" preservelastmodified="true" overwrite="true" verbose="true" />
+		<copy file="${xlib_bin32_dir}/vcomp90.dll" todir="${build_dep_bin32_dir}" preservelastmodified="true" overwrite="true" verbose="true" />
+		<copy file="${xlib_bin32_dir}/Microsoft.VC90.ATL.manifest" todir="${build_dep_bin32_dir}" preservelastmodified="true" overwrite="true" verbose="true" />
+		<copy file="${xlib_bin32_dir}/Microsoft.VC90.CRT.manifest" todir="${build_dep_bin32_dir}" preservelastmodified="true" overwrite="true" verbose="true" />
+		<copy file="${xlib_bin32_dir}/Microsoft.VC90.MFC.manifest" todir="${build_dep_bin32_dir}" preservelastmodified="true" overwrite="true" verbose="true" />
+		<copy file="${xlib_bin32_dir}/Microsoft.VC90.OpenMP.manifest" todir="${build_dep_bin32_dir}" preservelastmodified="true" overwrite="true" verbose="true" />
+		<copy file="${xlib_bin32_dir}/freetype6.dll" todir="${build_dep_bin32_dir}" preservelastmodified="true" overwrite="true" verbose="true" />
+		<copy file="${xlib_bin32_dir}/libtiff.dll" todir="${build_dep_bin32_dir}" preservelastmodified="true" overwrite="true" verbose="true" />
+		<copy file="${xlib_bin32_dir}/PoDoFoLib.dll" todir="${build_dep_bin32_dir}" preservelastmodified="true" overwrite="true" verbose="true" />
+		<copy file="${xlib_bin32_dir}/zlib1.dll" todir="${build_dep_bin32_dir}" preservelastmodified="true" overwrite="true" verbose="true" />
+	</target>
+
+	<target name="assemble_dependencies_bin64">
+		<copy file="${xlib_bin64_dir}/celog.dll" todir="${build_dep_bin64_dir}" preservelastmodified="true" overwrite="true" verbose="true" />
+		<copy file="${xlib_bin64_dir}/IPCJNI.dll" todir="${build_dep_bin64_dir}" preservelastmodified="true" overwrite="true" verbose="true" />
+		<copy file="${xlib_bin64_dir}/NetworkUtils.dll" todir="${build_dep_bin64_dir}" preservelastmodified="true" overwrite="true" verbose="true" />
+		<copy file="${xlib_bin64_dir}/nl_sysenc_lib.dll" todir="${build_dep_bin64_dir}" preservelastmodified="true" overwrite="true" verbose="true" />
+		<copy file="${xlib_bin64_dir}/pdflib.dll" todir="${build_dep_bin64_dir}" preservelastmodified="true" overwrite="true" verbose="true" />
+		<copy file="${xlib_bin64_dir}/resattrlib.dll" todir="${build_dep_bin64_dir}" preservelastmodified="true" overwrite="true" verbose="true" />
+		<copy file="${xlib_bin64_dir}/resattrmgr.dll" todir="${build_dep_bin64_dir}" preservelastmodified="true" overwrite="true" verbose="true" />
+		<copy file="${xlib_bin64_dir}/tag_office2k7.dll" todir="${build_dep_bin64_dir}" preservelastmodified="true" overwrite="true" verbose="true" />
+		<copy file="${xlib_bin64_dir}/atl90.dll" todir="${build_dep_bin64_dir}" preservelastmodified="true" overwrite="true" verbose="true" />
+		<copy file="${xlib_bin64_dir}/msvcm90.dll" todir="${build_dep_bin64_dir}" preservelastmodified="true" overwrite="true" verbose="true" />
+		<copy file="${xlib_bin64_dir}/msvcp90.dll" todir="${build_dep_bin64_dir}" preservelastmodified="true" overwrite="true" verbose="true" />
+		<copy file="${xlib_bin64_dir}/msvcr90.dll" todir="${build_dep_bin64_dir}" preservelastmodified="true" overwrite="true" verbose="true" />
+		<copy file="${xlib_bin64_dir}/mfc90.dll" todir="${build_dep_bin64_dir}" preservelastmodified="true" overwrite="true" verbose="true" />
+		<copy file="${xlib_bin64_dir}/mfc90u.dll" todir="${build_dep_bin64_dir}" preservelastmodified="true" overwrite="true" verbose="true" />
+		<copy file="${xlib_bin64_dir}/mfcm90.dll" todir="${build_dep_bin64_dir}" preservelastmodified="true" overwrite="true" verbose="true" />
+		<copy file="${xlib_bin64_dir}/mfcm90u.dll" todir="${build_dep_bin64_dir}" preservelastmodified="true" overwrite="true" verbose="true" />
+		<copy file="${xlib_bin64_dir}/vcomp90.dll" todir="${build_dep_bin64_dir}" preservelastmodified="true" overwrite="true" verbose="true" />
+		<copy file="${xlib_bin64_dir}/Microsoft.VC90.ATL.manifest" todir="${build_dep_bin64_dir}" preservelastmodified="true" overwrite="true" verbose="true" />
+		<copy file="${xlib_bin64_dir}/Microsoft.VC90.CRT.manifest" todir="${build_dep_bin64_dir}" preservelastmodified="true" overwrite="true" verbose="true" />
+		<copy file="${xlib_bin64_dir}/Microsoft.VC90.MFC.manifest" todir="${build_dep_bin64_dir}" preservelastmodified="true" overwrite="true" verbose="true" />
+		<copy file="${xlib_bin64_dir}/Microsoft.VC90.OpenMP.manifest" todir="${build_dep_bin64_dir}" preservelastmodified="true" overwrite="true" verbose="true" />
+		<copy file="${xlib_bin64_dir}/libtiff.dll" todir="${build_dep_bin64_dir}" preservelastmodified="true" overwrite="true" verbose="true" />
+		<copy file="${xlib_bin64_dir}/PoDoFoLib.dll" todir="${build_dep_bin64_dir}" preservelastmodified="true" overwrite="true" verbose="true" />
+		<copy file="${xlib_bin64_dir}/zlibwapi.dll" todir="${build_dep_bin64_dir}" preservelastmodified="true" overwrite="true" verbose="true" />
+	</target>
+
+	<target name="assemble_install_bin32">
+		<copy file="${xlib_bin32_dir}/Installer_CA32.dll" todir="${build_native_bin32_dir}" preservelastmodified="true" overwrite="true" />
+		<copy file="${xlib_bin32_dir}/PA_CA32.dll" todir="${build_native_bin32_dir}" preservelastmodified="true" overwrite="true" />
+	</target>
+	
+	<target name="assemble_security_files">
+		<copy file="${security_dir}/config.dat" todir="${build_security_dir}" preservelastmodified="true" overwrite="true" />
+	</target>
+</project>

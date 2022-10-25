@@ -1,0 +1,263 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ <title>Monitoring Objects</title>
+
+ <meta name="generator" content="Adobe RoboHelp 9" />
+ <meta name="Originator" content="ImportMif" />
+ <meta name="OriginalFile" content="C:\CC_PSUserGuide_77\PSUserGuideFM\PolicyManager.fm" />
+ <link rel="stylesheet" href="PolicyManager.css" type="text/css" />
+
+ <link rel="stylesheet" href="..\..\RHStyleMapping.css" type="text/css" />
+
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whlang.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whtopic.js"></script>
+
+</head>
+
+<body><script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.gbWhTopic)
+{
+	var strUrl = document.location.href;
+	var bc = 0;
+	var n = strUrl.toLowerCase().indexOf("bc-");
+	if(n != -1)
+	{
+		document.location.href = strUrl.substring(0, n);
+		bc = strUrl.substring(n+3);
+	}
+
+	if (window.addTocInfo)
+	{
+	addTocInfo("Policy Manager\nMonitoring Objects");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	
+	document.write("<p style=\"text-align:right\"> ");
+AddMasterBreadcrumbs("../../PolicyStudioUserGuideTOC.htm", "", "&gt;", "Policy&nbsp;Studio&nbsp;", "../Welcome/Welcome_to_7_7.htm");
+document.write("<a href=\"Introducing_Policy_Manager.htm\">Policy Manager<\/a> &gt; Monitoring Objects<\/p>");
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../../PolicyStudioUserGuideTOC.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+
+//-->
+//]]></script>
+ <h1><a name="XREF_43851_Monitoring"></a>Monitoring Objects</h1>
+ <p class="BodyLevel1">This section presents a more workflow- or task-based perspective of how you use Policy Manager to monitor the components and policies deployed in your sys&#173;tem.</p>
+ <h2>Monitoring by&nbsp;State</h2>
+ <p class="BodyLevel1">The way this is done differs somewhat depending on which state the displayed objects are in—that is, which of the five State tabs is selected. For this reason, we will discuss the five State tabs each in turn.</p>
+ <h3>Segregating Administrators</h3>
+ <p class="BodyLevel1">The assumption here is that responsibilities for designing and constructing the policies, and those for reviewing, deploying, and managing them after deploy&#173;ment, are delegated to different administrative personnel. There is no way to assign permissions for users who can use Policy Author or Policy Manager only, but administrators can be segregated by function. For example, the Deploy per&#173;mission can be assigned only to the administrator authorized to review and approve policies, but not to the administrator or designer who can only con&#173;struct policies in Policy Author.</p>
+ <p class="BodyLevel1">These permissions are assigned in the Administrator application by the adminis&#173;trator who creates and manages users, groups, and roles.</p>
+ <h3>Monitoring Draft&nbsp;Objects</h3>
+ <p class="BodyLevel1">The Draft state tab shows policies and their child components in the selected folder that have been created and saved in Policy Author, but are not yet deployed or scheduled for deployment. This tab is most useful for policy devel&#173;opers as they review and refine the definitions of policies, in preparing them for deployment. This is most useful in organizations where the responsibilities for initially constructing policies, and for reviewing and finally deploying them, have been separated among different administrators. In such cases, this tab will be useful for limiting the display to only objects that have yet to be approved and deployed.</p>
+ <p class="BodyLevel1">When evaluating draft components, remember to make use of the Preview tab, in the Details pane. This tab lists the actual entities that would be covered by the component as defined; this list is useful for catching errors in component definitions, which might include entities you do not intend, or exclude ones you need to cover with the component. The Preview feature is especially useful when validating User components. Preview is available only for components, not policies.</p>
+ <p class="BodyLevel1">Since either the deployment itself or any adjustment of an object’s definition is done in Policy Author rather than here in Policy Manager, the Open command is useful when reviewing Draft objects. For any object in the grid, the user can right-click and select Open, and Policy Studio toggles to the Policy Author view, with that object open and ready to edit or deploy.</p>
+ <h3>Monitoring Pending Objects</h3>
+ <p class="BodyLevel1">Once an object has been submitted for deployment, it appears in the Pending tab. More precisely, this tab shows policies and their child components in the selected folder that are in either of the following pending states:</p>
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Objects that have been created and saved and scheduled for deployment, but are not yet actively deployed because the scheduled deployment time has not yet arrived</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Objects that have been marked for deactivation, but are still in Pending Deactivation state. </p>
+
+ <p class="BodyLevel1">This tab is most useful for policy administrators as they conduct a final review of all policies that have been submitted for deployment. It is also useful for trou&#173;bleshooting, as for example in discovering policies that administrators expected to be active but are not, since they are still pending deployment.</p>
+ <p class="BodyLevel1">To perform this kind of troubleshooting:</p>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Select the Pending tab and look in the Object grid for the policy that you expect to be deployed.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">If you find it here, check the time displayed in the Submitted column; if it is within an acceptable time frame, you might just leave it as is, to deploy automatically.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">If the displayed time is too far in the past, you can select the object, right-click, and select the Open command to open the object in Policy Author.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">From here, you can deploy the policy by clicking the Deploy icon or select&#173;ing Actions &gt; Deploy.</p>
+</li>
+ </ol>
+ <p class="BodyLevel1">If you expected an object to be deployed but it is not, and it does not display on this tab, first check the Draft tab—maybe it was never deployed at all. If you do not see it there, go back to the object in Policy Author and check the life cycle bar to confirm its current status.</p>
+ <h3>Monitoring Deployed&nbsp;Objects</h3>
+ <p class="BodyLevel1">The Deployed state tab shows objects in the selected folder that are currently deployed and active on one or more enforcers in the system. This tab is most useful for finding out where a given object is deployed, and for viewing the def&#173;initions of currently deployed objects. If you have deployed an object for the current time, this is where you look to confirm that it has been deployed.</p>
+ <p class="BodyLevel1">As on any other tab, the Details pane in the lower right provides details of the definition of whatever object is selected in the Object Grid, above it. On this tab, however, the Details pane provides a special tab, Hosts, which displays information on all the enforcer hosts where the selected object is currently deployed. This information includes the name of the host, the user who deployed the object to that host, and the type of enforcer running there. This tab displays in the Details pane only when the Deployed state tab is active.</p>
+ <h3>Monitoring Deactivated Objects</h3>
+ <p class="BodyLevel1">The Deactivated state tab shows policies and their child components in the selected folder that have been actively deployed at some point, but have since been deactivated. This tab is most useful for policy administrators or designers who are authorized to redeploy earlier versions of policies, or who are trouble&#173;shooting policy conflicts or other problems that may have been caused by improperly defined policies.</p>
+ <p class="BodyLevel1">Another common use for this tab is to confirm that a policy or component you expect to be deactivated, really is in that state. (This doesn’t constitute <span style="font-style : italic; "><i>moni&#173;toring</i></span>, exactly; it’s more like confirmation of a previous action.)</p>
+ <h3>Monitoring All&nbsp;Objects</h3>
+ <p class="BodyLevel1">The All tab lets you view all policies and components in the selected folder (and sub-folders), regardless of what state they are in. In this sense it resembles the whole object tree as displayed in Policy Author.</p>
+ <p class="BodyLevel1">This tab provides the broadest view of all policies and components, and is most useful for any administrator who is responsible for the larger picture—for exam&#173;ple, who need to view many policies at once, regardless of deployment status, to check for conflicts between those yet to be deployed, and those pending deployment. Compared to viewing objects in Policy Author, it offers the benefit of viewing definition details more quickly, since you can do this by simply select&#173;ing objects in the Object grid, which displays the details in the Details pane. This is faster and more convenient that viewing full definitions in Policy Author, which requires that you open each object before you can view its definition.</p>
+ <p class="BodyLevel1">In a well-developed implementation, the All tab may display such a large num&#173;ber of objects that it becomes unwieldy, and it may be preferable to filter by one of the other state tabs. Because the All tab displays an unfiltered view of all objects, the Search tool becomes especially handy when using it.</p>
+ <p class="BodyLevel1">This tab is useful when you are interested in some component or policy, but do not know what state it is in. In such cases you can start at the All tab, find the object (using the Search tool, if necessary), and then move to the appropriate state tab once you know what state the object is in.</p>
+ <h2><a name="XREF_54076_Using_Versions"></a>Using&nbsp;Versions</h2>
+ <p class="BodyLevel1">The version mechanism is useful in keeping track of changing objects whose def&#173;initions evolve, so you can see the definitions of previously deployed policies. This is most useful for auditing purposes, in cases when you need to demon&#173;strate that a certain set of policy controls were in effect at a certain time.</p>
+ <p class="BodyLevel1">Each newly created object, in Draft state, starts as Version 0. Once it is deployed, it becomes Version 1. Thereafter, every time the object moves out of Deployed state and is then redeployed, its version increments by one. Note that the version number increments simply by virtue of changing back into Deployed state, regardless of whether any changes have been made to the definition of the object. A date stamp is permanently assigned to each incremental revision, which provides a useful tool for managing and keeping track of versions.</p>
+ <p class="BodyLevel1">When working with versions, it is important to understand the distinction between an object’s <span style="font-style : italic; "><i>state</i></span>&#160;and its <span style="font-style : italic; "><i>status</i></span>, as discussed below. Different versions of the same object can be in different statuses, and in such cases the same object will be listed in more than one row in the Object Grid. In addition, if an object has undergone several changes, the different versions of it will be listed in the grid, with the same status—for example, all obsolete versions would be listed on the Deactivated tab, showing Inactive status.</p>
+ <h2><a name="XREF_57462_About_Object_Status"></a>About&nbsp;Object Status</h2>
+ <p class="BodyLevel1">As mentioned previously, it is helpful to think of the state tabs as filters, which let you view all objects in one of the possible states at a time. In addition, though, the Object grid on each tab has a column labeled Status, which reflects something a bit different. For this reason, a given <span style="font-style : italic; "><i>state</i></span>&#160;tab may list objects in more than one <span style="font-style : italic; "><i>status</i></span>. For example, objects listed on the Deployed tab may have a Deployed status, or they might have a Pending Deactivation status—they are currently deployed, but can be pending deactivation because the actual deactivation has not occurred yet. Simply put, an object’s status may be thought of as a sub-category of its state at a given time.</p>
+ <p class="BodyLevel1">The following table lists and defines all possible statuses for the four possible states. Note that these statuses are the same ones displayed in the lifecycle control bar, at the bottom of the Policy Author window.</p>
+<table width="100%">
+ <tr>
+ <td>
+ <table style="border-spacing: 0; padding-left: 4.00pt; padding-top: 4.00pt; padding-right: 4.00pt; padding-bottom: 3.00pt;float: aligncenter;margin-bottom: 24.00pt; width: 360.17pt;" cellspacing="0" align="center">
+  <caption align="center">
+  </caption>
+  <tr style=" height : 16.00pt;background : #1f8c4a;">
+  <th style="width : 81.628pt; background : #1f8c4a;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">State Tab</p>
+</th>
+  <th style="width : 152.122pt; background : #1f8c4a;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Possible Statuses</p>
+</th>
+  <th style="width : 126.424pt; background : #1f8c4a;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Description</p>
+</th>
+</tr>
+  <tr style=" height : 55.00pt;">
+  <td style="width : 81.628pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">Draft</p>
+</td>
+  <td style="width : 152.122pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Draft</p>
+</td>
+  <td style="width : 126.424pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Open for editing. The object has been created and saved, but either has not yet been submitted for deployment, or has been taken out of deployed state for further editing.</p>
+</td>
+</tr>
+  <tr style=" height : 31.00pt;">
+  <td style="width : 81.628pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;" rowspan="4">
+  <p style="font-weight : bold; font-size  : 8.0pt;">Pending</p>
+</td>
+  <td style="width : 152.122pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Submitted for Deployment</p>
+</td>
+  <td style="width : 126.424pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Closed for editing, but and in queue for deployment, but not yet deployed.</p>
+</td>
+</tr>
+  <tr style=" height : 31.00pt;">
+  <td style="width : 152.122pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Pending Deployment</p>
+</td>
+  <td style="width : 126.424pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">The request for deployment has been accepted and a time has been set for it to occur.</p>
+</td>
+</tr>
+  <tr style=" height : 23.00pt;">
+  <td style="width : 152.122pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Submitted for Deactivation</p>
+</td>
+  <td style="width : 126.424pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">The object has been marked for deactivation.</p>
+</td>
+</tr>
+  <tr style=" height : 31.00pt;">
+  <td style="width : 152.122pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Pending Deactivation</p>
+</td>
+  <td style="width : 126.424pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">The request for deactivation has been accepted and a time has been set for it to occur.</p>
+</td>
+</tr>
+  <tr style=" height : 47.00pt;">
+  <td style="width : 81.628pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;" rowspan="3">
+  <p style="font-weight : bold; font-size  : 8.0pt;">Deployed</p>
+</td>
+  <td style="width : 152.122pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Deployed</p>
+</td>
+  <td style="width : 126.424pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Control Center&#160;has finished deploying the object, and its definition has been sent out to be stored in memory of all relevant enforcers.</p>
+</td>
+</tr>
+  <tr style=" height : 31.00pt;">
+  <td style="width : 152.122pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Pending Deactivation</p>
+</td>
+  <td style="width : 126.424pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">The request for deactivation has been accepted and a time has been set for it to occur.</p>
+</td>
+</tr>
+  <tr style=" height : 31.00pt;">
+  <td style="width : 152.122pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Draft</p>
+</td>
+  <td style="width : 126.424pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">The object has been taken out of deployed state for editing. An earlier version is deployed.</p>
+</td>
+</tr>
+  <tr style=" height : 47.00pt;">
+  <td style="width : 81.628pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">Deactivated</p>
+</td>
+  <td style="width : 152.122pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Inactive</p>
+</td>
+  <td style="width : 126.424pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">The object has been deactivated, and the deactivated version has been deployed out to enforcers in the system.</p>
+</td>
+</tr>
+ </table>
+</td></tr>
+</table>
+ <p class="BodyLevel1"></p>
+ <p class="BodyLevel1">For a more detailed discussion of the Control Center state model and the dis&#173;tinction between state and status, see <a href="../StateModel/The_Object_State_Model.htm#XREF_33263_The_Object_State"><span class="FM_blue">The Object State Model</span></a>.</p>
+<script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+
+
+highlightSearch();
+//-->
+//]]></script>
+</body>
+</html>

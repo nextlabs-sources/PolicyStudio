@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ivy-module version="1.0"
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:noNamespaceSchemaLocation="http://incubator.apache.org/ivy/schemas/ivy.xsd">
+	<info organisation="nextlabs"
+	      module="com.nextlabs.policystudio.editor.user"
+	      revision="6.0.0.704"
+	      branch="6.0.0.704"/>
+	<configurations>
+		<conf name="main" visibility="private" />
+		<conf name="eclipse_dependencies" visibility="private" />
+		<conf name="jre" visibility="private" />
+		<conf name="installer" visibility="private" />
+		<conf name="test" visibility="private" />
+		<conf name="report" visibility="private" />
+	</configurations>
+	<publications>
+	</publications>
+	<dependencies>
+		<dependency org="nextlabs" name="com.nextlabs.policystudio" branch="6.0.0.704" rev="latest.integration" conf="main" />
+	</dependencies>
+</ivy-module>

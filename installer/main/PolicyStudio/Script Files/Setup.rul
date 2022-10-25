@@ -1,0 +1,204 @@
+////////////////////////////////////////////////////////////////////////////////                                                                        
+//                                                                            
+//    File Name:  Setup.rul                                                   
+//                                                                            
+//  Description:  InstallShield script                                        
+//
+////////////////////////////////////////////////////////////////////////////////                                                
+
+// Include Ifx.h for built-in InstallScript function prototypes, for Windows 
+// Installer API function prototypes and constants, and to declare code for 
+// the OnBegin and OnEnd events.
+#include "ifx.h"           
+#include "setup.h"                     
+#include "..\..\common\scripts\common.rul"
+#include "..\..\common\scripts\logging.rul"
+#include "crypt.rul"
+                        
+
+function INT MsiSetCustomActionDataAttribute(hMSI  )   
+                                 
+	number nStart,nEnd,nLength,nResult, nSize;
+ 	WSTRING sBuffer,value,propName,subProperty,subProperties,propNames;
+    
+begin             
+    propName = "ConfigureControlCenter";
+	nResult = MsiGetProperty( hMSI, propName, sBuffer, nSize );
+ 	WriteToLogFile(hMSI, "Get CustomActionData:("+propName+")"+sBuffer);
+ 	if(StrLength(GetProperty(hMSI,"REMOVE")) >1) then
+ 	    subProperties=subProperties+" REMOVE";
+ 	endif;
+ 	if(StrLength(GetProperty(hMSI,"IS_MAJOR_UPGRADE")) >1) then
+ 	    subProperties=subProperties+" IS_MAJOR_UPGRADE";
+ 	endif;
+ 	if(StrLength(GetProperty(hMSI,"Installed")) >1) then
+ 	    subProperties=subProperties+" Installed";
+ 	endif;
+ 	nStart=0;
+ 	nEnd=StrFindEx( subProperties, " ", nStart ); 	
+ 	while(nEnd >=nStart)
+ 	  nLength=nEnd-nStart;
+ 	  StrSub ( subProperty, subProperties, nStart, nLength );
+	  nResult = MsiGetProperty( hMSI, subProperty, value, nSize );
+	  sBuffer  =  sBuffer+" /"+subProperty+"="+value;
+	  WriteToLogFile(hMSI, "CustomActionData:"+sBuffer);
+	  nStart=nEnd+1;
+	  nEnd=StrFindEx( subProperties, " ", nStart );
+	  if(nEnd <0) then
+ 	    nEnd= StrLength( subProperties );
+ 	  endif; 
+	endwhile;
+	propNames="pa_keystore_password installDir";
+	nStart=0;
+ 	nEnd=StrFindEx( propNames, " ", nStart ); 	
+ 	while(nEnd >=nStart)
+ 	  nLength=nEnd-nStart;
+ 	  StrSub ( propName, propNames, nStart, nLength );
+	  nResult = MsiSetProperty( hMSI, propName, sBuffer);
+	  WriteToLogFile(hMSI, "Setting:"+propName);
+	  nStart=nEnd+1;
+	  nEnd=StrFindEx( propNames," ", nStart );
+	  if(nEnd <0) then
+ 	    nEnd= StrLength( propNames );
+ 	  endif; 
+	endwhile;
+	
+end;
+
+function string MsiGetCustomActionDataAttribute(hMSI, sAttributePrefix  )   
+                                 
+	number nLengthAttributePrefix, nLength, nResult, nSize, nStart, nEnd;
+ 	string sBuffer, sAttributeData;
+    
+begin             
+    sAttributeData="";
+	nLengthAttributePrefix = StrLength( sAttributePrefix );
+ 	nResult = MsiGetProperty( hMSI, "CustomActionData", sBuffer, nSize ); 
+ 	if (nResult != ERROR_SUCCESS) then
+ 		WriteToLogFile(hMSI, "Cannot read CustomActionData");
+ 		return sAttributeData;
+ 	endif;
+ 	WriteToLogFile(hMSI, "CustomActionData: "+sBuffer);
+ 	nStart = StrFindEx( sBuffer, "/" + sAttributePrefix + "=", 0 );
+ 	if (nStart < 0) then           
+ 		WriteToLogFile(hMSI, "Cannot find attribute: " + sAttributePrefix);
+ 		return sAttributeData;
+ 	endif;
+ 	nStart += (nLengthAttributePrefix + 2); 
+ 	
+		nEnd = StrFindEx( sBuffer, " /", nStart );           
+		if nEnd < 0 then
+			nLength = StrLength( sBuffer ) - nStart;
+		else                            
+			nLength = nEnd - nStart;
+		endif;
+                
+        StrSub ( sAttributeData, sBuffer, nStart, nLength ); 
+    WriteToLogFile(hMSI, sAttributePrefix + ": "+sAttributeData);
+    return sAttributeData;
+    
+end;
+
+////////////////////////////////////////////////////////////
+// Returns the Policy Author key store password
+////////////////////////////////////////////////////////////
+function WSTRING GetPolicyAuthorKeyStorePassword(hMSI)
+WSTRING result;
+begin
+	result = DeferredGetProperty(hMSI, "pa_keystore_password");
+	return result;
+end;                                   
+
+////////////////////////////////////////////////////////////
+// Stores Policy Author key store password inside config
+////////////////////////////////////////////////////////////
+function INT UpdatePAKeyStoreCfg(hMSI)
+STRING installDir;  
+STRING configFile;
+STRING PSCustomActionData;
+NUMBER nvResult;
+WSTRING PApassword;
+NUMBER PSPathBuffer;
+begin  
+	PSPathBuffer=MAX_PATH;
+	MsiGetProperty(hMSI, "CustomActionData", PSCustomActionData, PSPathBuffer);
+	WriteToLogFile (hMSI, "PolicyStudioCustomActionData=" + PSCustomActionData);                 
+	WriteToLogFile (hMSI, "Entering UpdatePAKeyStoreCfg");
+    installDir = DeferredGetProperty(hMSI,"installDir");
+    configFile = installDir ^ "security\\config.dat";
+    WriteToLogFile (hMSI, "configFile = " + configFile);
+	PApassword = GetPolicyAuthorKeyStorePassword(hMSI);
+	WriteToLogFile (hMSI, "Policy Author KeyStore Password = " + PApassword); 
+	nvResult = FindAndReplace(configFile, "password", PApassword);
+    return ERROR_SUCCESS;
+end; 
+
+///////////////////////////////////////////////////////////////
+// Validates the password for the Policy Author keystore
+///////////////////////////////////////////////////////////////
+function INT ValidatePAKeyStorePassword(hMSI)
+	INT iResult;
+	WSTRING password;
+	WSTRING confirm;
+	NUMBER bufSize;
+begin
+	DenyNextDialog(hMSI);
+	MsiGetProperty(hMSI, "PA_KEYSTORE_PASSWORD", password, bufSize);
+	MsiGetProperty(hMSI, "PA_KEYSTORE_PASSWORD_CONFIRM", confirm, bufSize); 
+	if (StrLength(password) == 0 && StrLength(confirm) == 0) then
+		MessageBox(@ERR_TITLE + ": " + @ERR_PA_KEYSTORE_PASSWORD_REQUIRED, SEVERE);
+		//ShowModalDialog(hMSI, @ERR_TITLE, @ERR_PA_KEYSTORE_PASSWORD_REQUIRED, SEVERE);	
+	else
+		iResult = ValidatePasswords (password, confirm);
+		if (iResult == 0) then
+			AllowNextDialog(hMSI);
+		elseif (iResult == 1) then
+			//No match
+			MessageBox(@ERR_TITLE + ": " + @ERR_PA_KEYSTORE_PASSWORD_NO_MACTH, SEVERE);
+			//ShowModalDialog(hMSI, @ERR_TITLE, @ERR_PA_KEYSTORE_PASSWORD_NO_MACTH, SEVERE);
+		else
+			//Not complex enough
+			MessageBox(@ERR_TITLE + ": " + @ERR_INVALID_PA_KEYSTORE_PASSWORD, SEVERE);
+			//ShowModalDialog(hMSI, @ERR_TITLE, @ERR_INVALID_PA_KEYSTORE_PASSWORD, SEVERE);
+		endif;
+	endif;
+	return ERROR_SUCCESS;
+end;
+
+function FindAndReplace(SrcDirFileName, SrchString, RplcString)
+	STRING svReturnLine,szString, secPart;
+	NUMBER nReturn, subPos; 
+	STRING firstPart;
+	NUMBER SrchLen, nvLineNumber;	
+begin
+	Disable(STATUSEX);	//stop displaying the progress bar
+    ShowObjWizardPages(NEXT);	//WARNING this may throw a user interface 
+    SrchLen = StrLength(SrchString); //length of search string
+    nvLineNumber = 0; //pre-set file line number to 0
+    
+    Din: 
+		while (FileGrep (SrcDirFileName, SrchString, svReturnLine, nvLineNumber, RESTART)=0)
+			//subPos is the number where the first char of search string was found  
+			subPos	= StrFind(svReturnLine, SrchString); 
+			//firstPart is the string upto search string but not including searchString
+			StrSub (firstPart, svReturnLine, 0, subPos);         
+			//secPart is the string after search string
+			StrSub (secPart, svReturnLine, subPos+SrchLen, 50);
+			//new string is firstPart followed by replace string followed by secPart
+			TextSub.Value( "SUBBED" ) = RplcString;
+			szString = firstPart+"<SUBBED>"+secPart;
+			TextSub.Substitute( szString );
+			//write line replacing original  
+			FileInsertLine (SrcDirFileName, szString, nvLineNumber, REPLACE);
+				//the code below examines the line written back for any other occurences
+				//systematically searching and re-writting back to file
+				
+				//search first line again for search string
+				if (FileGrep (SrcDirFileName, SrchString, svReturnLine, nvLineNumber, RESTART)=0) then 
+					goto Din;  //another occurence found
+				else 
+					//increment line number and start all over again
+					nvLineNumber = nvLineNumber + 1;
+				endif;				 		 
+		endwhile;  //while loop exited when END_OF_FILE reached  
+end;         

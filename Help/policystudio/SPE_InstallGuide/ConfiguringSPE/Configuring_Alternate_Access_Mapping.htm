@@ -1,0 +1,198 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ <title>Configuring_Alternate_Access_Mapping</title>
+
+ <meta name="generator" content="Adobe RoboHelp 9" />
+ <meta name="Originator" content="ImportMif" />
+ <meta name="OriginalFile" content="C:\Documents and Settings\mlittle\Desktop\SharePoint\SharePointFM\ConfiguringSPE.fm" />
+ <link rel="stylesheet" href="../../default.css" type="text/css" />
+
+ <link rel="stylesheet" href="..\..\default.css" type="text/css" />
+
+ <script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whlang.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.gbWhTopic)
+{
+	var strUrl = document.location.href;
+	var bc = 0;
+	var n = strUrl.toLowerCase().indexOf("bc-");
+	if(n != -1)
+	{
+		document.location.href = strUrl.substring(0, n);
+		bc = strUrl.substring(n+3);
+	}
+
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Configuring the Entitlement Manager for SharePoint\nConfiguring Alternate Access Mapping");
+addButton("show",BTN_IMG,"Show TOC and Search","","","","",0,0,"../../whd_show0.gif","../../whd_show2.gif","../../whd_show1.gif");
+addButton("hide",BTN_IMG,"Hide TOC and Search","","","","",0,0,"../../whd_hide0.gif","../../whd_hide2.gif","../../whd_hide1.gif");
+
+	}
+
+	
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../../index.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+//]]></script>
+</head>
+
+<body><script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+//]]></script>
+<table width="100%" cellspacing="0" border="1">
+	<col style="width: 100%;" />
+	<tr style="height: 78px;">
+		<td bgcolor="#003399">&#160;</td>
+	</tr>
+ </table>
+<script type="text/javascript" language="javascript">//<![CDATA[
+document.write("<p  style=\"text-align:right;font-family:Arial;font-size:12pt;font-weight: normal;font-style: normal;text-decoration: none;\">");
+AddMasterBreadcrumbs("../../index.htm", "font-family:Arial;font-size:12pt;font-weight: normal;font-style: normal;text-decoration: none;", "&gt;", "Home", "../Introducing/Welcome.htm");
+document.write("<a style=\"font-family:Arial;font-size:12pt;font-weight: normal;font-style: normal;text-decoration: none;\" href=\"Configuring_the_Entitlement_Manager_for_SharePoint.htm\">Configuring the Entitlement Manager for SharePoint<\/a> &gt; Configuring Alternate Access Mapping<\/p>");
+//]]></script>
+ <p style="text-align: right;">&#160;</p>
+
+ <h1><a name="XREF_68798_Configuring"></a>Configuring Alternate Access Mapping</h1>
+ <p class="BodyLevel1">Another necessary configuration step is creating Alternate Access Mappings, which ensures that a fully qualified domain name always defaults for other URLs users might enter. You do this in SharePoint by mapping a fully qualified name as the “Internal URL” for each web zone. </p>
+ <p class="BodyLevel1">The procedures for this configuration are slightly different <a href="#XREF_34338_In_SharePoint_2007">In SharePoint 2007</a>and <a href="#XREF_68401_In_SharePoint_2010">In SharePoint 2010</a>. They are discussed in separate sections below.</p>
+ <h2><a name="XREF_34338_In_SharePoint_2007"></a>In SharePoint 2007</h2>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Access the SharePoint server at Start &gt;&#160;All Programs &gt; Microsoft Office Server &gt; SharePoint 3.0 Central Administration.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">In the Global Configuration area of the Operations tab, click <span class="Bold">Alternate Access Mappings</span>.</p>
+</li>
+  <p class="BodyLevel1"></p>
+  <div align="center"><img alt="AccessMappings.jpg" style="width : 487.624pt; height : 250.875pt; " id="image0" src="AccessMappings.jpg" />
+  </div>
+  <p class="BodyLevel1">&nbsp;</p>
+  <p class="TitleBook">Alternate Access Mappings</p>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">In the Alternate Access Mappings window, click <span class="Bold">Add Internal URLs</span>.</p>
+</li>
+  <p class="BodyLevel1"></p>
+  <div align="center"><img alt="AccessMappingswindow.jpg" style="width : 579.000pt; height : 136.125pt; " id="image1" src="AccessMappingswindow.jpg" />
+  </div>
+  <p class="BodyLevel1">&nbsp;</p>
+  <p class="TitleBook"><a name="XREF_98522_Alternate_Access"></a>Alternate Access Mappings window</p>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">In the <span class="Bold">URL, protocol, host and port</span>&#160;field, enter the fully qualified domain name of the site. In the example in the following figure, this is “http://lab01-sps15.lab01.cn.nextlabs.com.”</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Select the <span class="Bold">Zone</span>&#160;for the URL. </p>
+</li>
+  <p class="BodyLevel1"></p>
+  <div align="center"><img alt="AccessMappingswindowaddurl.jpg" style="width : 533.749pt; height : 140.250pt; " id="image2" src="AccessMappingswindowaddurl.jpg" />
+  </div>
+  <p class="BodyLevel1">&nbsp;</p>
+  <p class="TitleBook"><a name="XREF_47051_Adding_an_URL"></a>Adding an URL</p>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Click <span class="Bold">Save</span> to save the mapping.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Repeat these steps to enter a fully qualified domain name as the &quot;Internal URL&quot; for every configured web zone on your service. For example, you would need to do this for the “internal” zone and the “external” zone.</p>
+</li>
+ </ol>
+ <h2><a name="XREF_68401_In_SharePoint_2010"></a>In SharePoint 2010</h2>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Access the SharePoint server at Start &gt;&#160;All Programs &gt; Microsoft SharePoint 2010 Products &gt; SharePoint 2010 Central Administration.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">In the System Settings area, click <span class="Bold">Configure alternate access mappings</span>.</p>
+</li>
+  <p class="BodyLevel1"></p>
+  <div align="center"><img alt="2010_aleternateaccessmappings.jpg" style="width : 710.249pt; height : 341.463pt; " id="image3" src="2010_aleternateaccessmappings.jpg" />
+  </div>
+  <p class="BodyLevel1">&nbsp;</p>
+  <p class="TitleBook">Alternate Access Mappings</p>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">In the Alternate Access Mappings window, click <span class="Bold">Add Internal URLs</span>.</p>
+</li>
+  <p class="BodyLevel1"></p>
+  <div align="center"><img alt="2010_aleternateaccessmappings2.jpg" style="width : 713.249pt; height : 223.392pt; " id="image4" src="2010_aleternateaccessmappings2.jpg" />
+  </div>
+  <p class="BodyLevel1">&nbsp;</p>
+  <p class="TitleBook">Alternate Access Mappings window</p>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">In the <span class="Bold">Alternate Access Mapping Collection</span>, select SharePoint-80.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">In the <span class="Bold">URL, protocol, host and port</span>&#160;field, enter the fully qualified domain name of the site. In our example in the following figure, this is “http://lab01-sps15.lab01.nextlabs.com.”</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">If applicable, select the <span class="Bold">Zone</span>&#160;for the URL. </p>
+</li>
+  <p class="BodyLevel1"></p>
+  <div align="center"><img alt="2010_aam3.jpg" style="width : 710.999pt; height : 263.142pt; " id="image5" src="2010_aam3.jpg" />
+  </div>
+  <p class="BodyLevel1">&nbsp;</p>
+  <p class="TitleBook"><a name="XREF_44122_Adding_an_Intenal"></a>Adding an Internal URL</p>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Click <span class="Bold">Save</span> to save the mapping.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Repeat these steps to enter a fully qualified domain name as the &quot;Internal URL&quot; for every configured web zone on your service. For example, you would need to do this for an “internal” zone and an “external” zone.</p>
+</li>
+ </ol>
+ <p>&#160;</p>
+<script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+
+highlightSearch();
+//-->
+//]]></script>
+</body>
+</html>

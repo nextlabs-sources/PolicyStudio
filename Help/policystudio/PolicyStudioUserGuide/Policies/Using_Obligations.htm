@@ -1,0 +1,207 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ <title>Using Obligations</title>
+
+ <meta name="generator" content="Adobe RoboHelp 9" />
+ <meta name="Originator" content="ImportMif" />
+ <meta name="OriginalFile" content="C:\CC_PSUserGuide_77\PSUserGuideFM\Policies.fm" />
+ <link rel="stylesheet" href="Policies.css" type="text/css" />
+
+ <link rel="stylesheet" href="..\..\RHStyleMapping.css" type="text/css" />
+
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whlang.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whtopic.js"></script>
+
+</head>
+
+<body><script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.gbWhTopic)
+{
+	var strUrl = document.location.href;
+	var bc = 0;
+	var n = strUrl.toLowerCase().indexOf("bc-");
+	if(n != -1)
+	{
+		document.location.href = strUrl.substring(0, n);
+		bc = strUrl.substring(n+3);
+	}
+
+	if (window.addTocInfo)
+	{
+	addTocInfo("Constructing Policies\nUsing Obligations");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	
+	document.write("<p style=\"text-align:right\"> ");
+AddMasterBreadcrumbs("../../PolicyStudioUserGuideTOC.htm", "", "&gt;", "Policy&nbsp;Studio&nbsp;", "../Welcome/Welcome_to_7_7.htm");
+document.write("<a href=\"Constructing_Policies.htm\">Constructing Policies<\/a> &gt; Using Obligations<\/p>");
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../../PolicyStudioUserGuideTOC.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+
+//-->
+//]]></script>
+ <h1><a name="XREF_87958_23_Using"></a>Using Obligations</h1>
+ <p class="BodyLevel1">As discussed earlier, for every policy you define in Policy Author you can specify various <span style="font-style : italic; "><i>obligations</i></span>, which are actions that Control Center&#160;perform every time the policy is enforced. It is very important to understand that “enforced” does not mean that some action was denied, necessarily, or that some action simply happened somewhere in the network. Rather, it means that some action occurred that matched the context specified by <span style="font-style : italic; "><i>the entire definition </i></span>of the pol&#173;icy: the subject (user + computer + application) and the action, and the resource, all evaluated to true; and so the specified effect (allow or deny) resulted. For the purposes of enforcement (and thus obligations), the important thing is not what that effect was, but whether or not the entire policy evaluated to true or not.</p>
+ <p class="BodyLevel1">This distinction becomes particularly important in connection with On Allow, Monitor obligations. For example, consider an Allow policy that permits Sales Managers to open files on a certain SharePoint site, and displays a warning noti&#173;fication about the sensitivity of the data whenever they do. That is, the policy is enforced when Sales Managers access the site, even though it does not block them. By contrast, when other authorized users—say, the Sales VP—access the same site they are also not blocked either, but this does not mean the policy was enforced. The effect is the same, but in the Sales VP’s case, the policy is not rel&#173;evant since its entire definition did not evaluate to true: the action and resource did, but the user did not. For this reason, the VP does not see the noti&#173;fication message, and the event is not logged in connection with this policy.</p>
+ <h2><a name="XREF_46027_Obligation"></a>Obligation Categories</h2>
+ <p class="BodyLevel1">For Document policies, obligations fall into three groups: event logging, notifi&#173;cations, and custom obligations. (Communication policies offer two additional, special obligations; see <a href="Communication_Policies.htm#XREF_50500_Special_Obligations"><span class="FM_blue">Special Obligations</span></a>.) Let’s take a closer look at the first two categories.</p>
+ <p class="PublisherBook"><span class="FM_Emphasis">Note: </span>Policies involving Copy Content action do not support e-mail notifica&#173;tions or logging obligations. However, they do trigger on-screen user notification obligations, and all other actions support all types of noti&#173;fications.</p>
+ <h3>Enforcement Event Logging</h3>
+ <p class="BodyLevel1">Event logging means that details about an enforcement event are saved in the Activity Journal, where they are available for analysis in detailed reports. Tech&#173;nically, events are buffered in a temporary log file on the local host, and period&#173;ically copied to the Activity Journal in batches. The local buffer file is tamper-resistant, and cannot be read, opened, changed or deleted by any user while the Enforcer is running.</p>
+ <p class="BodyLevel1">The Activity Journal gathers information about document access and use of all kinds throughout the network—not just those events connected with policy enforcement. This is what provides the platform’s valuable information use auditing features. However, policy-related events are our focus in this chapter.</p>
+ <h3>Notifications</h3>
+ <p class="BodyLevel1">Control Center&#160;can send two types of notifications: desktop notifications, which are text-balloon reminders that pop up on the PC where the policy was enforced, and e-mail notifications sent to one or more specified administrators, describing the incident. You can configure any policy to send either type, or both.</p>
+ <p class="BodyLevel1">You can only configure a policy to display desktop notifications on PCs where a Desktop Enforcer was installed—that is, server-side enforcers, such as Windows File Server and SharePoint Server Enforcer, cannot display these balloon notifi&#173;cations. Moreover, even desktop enforcers must have been installed with the Enforcement Notifications option enabled. This is generally the preferred option, and is the default whenever you do a complete installation. In addition, the subject who is using the PC has the option of disabling these text balloons by right-clicking on the CE icon and de-selecting Display Notifications.</p>
+ <p class="BodyLevel1">E-mail notifications are a powerful tool enabling system administrators, infor&#173;mation security personnel, or any other designated persons to know immedi&#173;ately whenever anyone in the network has performed some action that required a rule to be enforced—tried to e-mail a restricted internal document, say, or to print an “eyes-only” report.</p>
+ <h4><a name="XREF_76340_Configuring_E_Mail"></a>Configuring E-Mail Notifications</h4>
+ <p class="BodyLevel1">As the figure below shows, you enable this feature by adding an E-Mail Obliga&#173;tion to the policy itself. You can specify a different alert for On Deny and On Allow/Monitor. These obligations have two E-Mail Details properties that control how they work (the fields only display when you check the Send E-Mail option):</p>
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>The <span style="font-weight : bold; "><b>To</b></span>: field, where you supply the e-mail address to which the notifica&#173;tion message will be sent. You can specify any number of addresses in this field; just use a comma to delimit them.</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>The <span style="font-weight : bold; "><b>Message</b></span>: field, where you supply a message that will go into the body text of the notification e-mail. In addition to whatever you specify here, the body of each e-mail will also include details about that instance of enforcement: the user, the location, the document name, and so on.</p>
+
+ <p class="BodyLevel1">Note that the top Message field in both On Deny and On Allow is where you cus&#173;tomize the text displayed in the pop-up balloon that appears on a subject’s desktop whenever the current policy is enforced with a Deny. It should not be confused with the Message field under E-Mail Details, which is for the e-mail body text.</p>
+ <p class="BodyLevel1">As the figure shows, you can specify one message to be displayed to users who are allowed to perform the specified action, and a different one to those who are denied. The display of On Allow messages, however, can be disabled at the desktop enforcer level, if the end-user wishes.</p>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="DefineObligations.jpg" style="width : 487.480pt; height : 379.716pt; " id="image14" src="DefineObligations.jpg" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook">Configuring Administrator Notifications</p>
+ <p class="BodyLevel1">Besides the messages you specify here, all notification e-mails automatically include the following information:</p>
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>User who triggered the policy enforcement</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Host where user was working</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Application involved</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Source file being used or accessed</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Action attempted on the file</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Effect (allow/deny/when)</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Policy name</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Policy description</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Date and Time of enforcement</p>
+
+ <h4><a name="XREF_35158_The_From_Address"></a>The From Address</h4>
+ <p class="BodyLevel1">By default, the From address field in all e-mail notifications contains a dummy value. The Control Center&#160;administrator can replace this with a real address by manually editing the configuration file; for details, see the Configuration Tools chapter of the Control Center&#160;<span class="FM_Emphasis">Administrator’s Guide</span>. Note that you can define only one From address, which is included in all e-mails for all policies.</p>
+ <h2><a name="XREF_46770_Monitor_Policies"></a>Audit Policies</h2>
+ <p class="BodyLevel1">Recall that there are two available enforcement types:</p>
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span style="font-weight : bold; "><b>Deny</b></span>: Prevent the activity defined by the policy from happening</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span style="font-weight : bold; "><b>Allow</b></span>: Permit the activity defined by the policy to happen</p>
+
+ <p class="BodyLevel1">You can use Allow to create “audit policies”—that is, cases where you do not need to block a certain action, but you do want to track the details about it, every time it occurs. This is a powerful tool for any kind of auditing: either dur&#173;ing initial network auditing to discover what kinds of policies you need to imple&#173;ment, or in ex-post facto cases, such as proving that certain employees did or did not use specific documents in certain ways.</p>
+ <h3>Creating Audit Policies</h3>
+ <p class="BodyLevel1">In many cases you may want to define pure notification policies with a logging obligation only, since real-time e-mails may not be required for the purposes of establishing an audit trail. Similarly, in such cases you likely do not need a noti&#173;fication message to pop up on the subject’s PC. However, all three of these obli&#173;gation options are available in any case.</p>
+ <p class="BodyLevel1">Note that you can use Allow policies in creative ways, such as to remind users about policies, approaching deadlines, or any other matter that may or may not be connected with resource use and access. Especially when used in policies with time-based contexts, this feature offers great flexibility in sending auto&#173;matic notifications in response to specific user actions.</p>
+ <p class="BodyLevel1">Again, it is important to remember that just because a user is allowed to open or use a resource that is the subject of some audit policy, that does not neces&#173;sarily mean the policy was enforced in that case. For a policy to be enforced, <span style="font-style : italic; "><i>all</i></span>&#160;of its parts must evaluate to true: subject, action, resource, and time context.</p>
+ <h3>Allow Policy Obligations</h3>
+ <p class="BodyLevel1">When you define a new policy with Allow, you can only associate On Allow, Mon&#173;itor obligations with it. Allow policies can never result in a Deny effect—they always allow actions, regardless of how they are enforced.</p>
+ <h2><a name="XREF_60507_Custom_Obligations"></a>Custom Obligations</h2>
+ <p class="BodyLevel1">The Custom Obligation controls allow you to specify one or more custom obliga&#173;tions for any policy. Custom obligations may be any kind of executable code that can be triggered by the enforcement of a policy. The Control Center administra&#173;tor can create them as independent executable files, then register them with Control Center. Once they are registered, they are available to select from the combo-box list under the Custom Obligations Name field in any policy. (Note that this field does not display until the Custom Obligation box is checked.) When the policy is enforced, the executable is invoked and the specified event occurs.</p>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="CustObligField.jpg" style="width : 219.537pt; height : 168.240pt; " id="image15" src="CustObligField.jpg" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook">Custom Obligation option</p>
+ <p class="BodyLevel1">Here are some examples of custom obligations:</p>
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span style="font-weight : bold; "><b>User Prompt</b></span>: A policy prevents some user from accessing the files in a directory, then displays a web page describing the security policy that is applied, and offering the user an e-mail link to request access if he thinks the policy has been incorrectly applied.</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span style="font-weight : bold; "><b>Removable Media Encryption</b></span>: A policy allows some users to copy sensi&#173;tive data to Removable Media, but automatically encrypts the data before copying.</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span style="font-weight : bold; "><b>Send Page Alert</b></span>: A policy denies some users access to project files, and sends a call to the project owner's pager to notify him of any attempts to open the files.</p>
+
+ <p class="BodyLevel1">Click the plus icon to add more than one custom obligation to a policy. Use the minus sign icon to remove a custom obligation from a policy, if necessary.</p>
+ <p class="BodyLevel1">In addition to these two controls, custom policies may have one or more argu&#173;ments, which display as fields that may be open for editing, or may present drop-down lists. The type of arguments available, and the content of the lists, will depend on the function of the obligation. For example, a Send Page Alert obligation might offer a choice of several pager numbers.</p>
+ <p class="BodyLevel1">Custom obligations are created and configured entirely outside Policy Author. For details on creating, configuring and using custom obligations, refer to the Control Center<span style="font-style : italic; color   : #0000ff; "><font color="blue" ><i>&#160;</i></font></span><span class="FM_Emphasis">Administrator’s Guide</span>.</p>
+ <p class="BodyLevel1">Note also that Custom Obligations play a critical role in the behavior of Policy Assistants, in that each assistant relies on one or more obligation for its opera&#173;tion. In these cases, the obligation code is installed together with an enforcer, and the configuration snippet is predefined and supplied in a sample file; how&#173;ever, the obligation requires manual configuration before the assistant will work properly. For more details, see the <span class="FM_Emphasis">Policy Assistants User’s Guide.</span></p>
+ <h2><a name="XREF_52375_About_Enforcement"></a>About Enforcement Logging</h2>
+ <p class="BodyLevel1">As we have mentioned, enforcement logging can be configured as an obligation, associated with each individual policy you construct. By default it is enabled for On Deny in all policies; this cannot be disabled because it is good practice to log every instance of a Deny enforcement. </p>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="LoggingChecked.jpg" style="width : 164.762pt; height : 227.100pt; " id="image16" src="LoggingChecked.jpg" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="BodyLevel1">By default, no obligations are enabled for On Allow, Monitor obligations for all policies. You can enable one or all for any given policy, if you wish.</p>
+ <h2>Logging vs. E-Mail</h2>
+ <p class="BodyLevel1">Take care not to enable e-mail notifications for policies unless there is a real need to do so. This is a commonsense point, simply in order to reduce e-mail traffic and clutter in administrator mailboxes. For the same reason, you should consider how often a policy is likely to be enforced, before adding e-mail notifi&#173;cations to it. </p>
+ <p class="BodyLevel1">Logging is another matter; it should not present a problem to enable logging obligations for every policy you construct. These are stored in the Activity Jour&#173;nal, which should have adequate storage capacity for extensive logging. In fact, you are unlikely ever to define a policy whose enforcement you do <span class="FM_Emphasis">not</span>&#160;want recorded in the Activity Journal.</p>
+ <script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+
+
+highlightSearch();
+//-->
+//]]></script>
+</body>
+</html>

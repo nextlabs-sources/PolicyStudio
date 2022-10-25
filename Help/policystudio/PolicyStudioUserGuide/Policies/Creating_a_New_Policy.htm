@@ -1,0 +1,463 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ <title>Creating a New Policy</title>
+
+ <meta name="generator" content="Adobe RoboHelp 9" />
+ <meta name="Originator" content="ImportMif" />
+ <meta name="OriginalFile" content="C:\CC_PSUserGuide_77\PSUserGuideFM\Policies.fm" />
+ <link rel="stylesheet" href="Policies.css" type="text/css" />
+
+ <link rel="stylesheet" href="..\..\RHStyleMapping.css" type="text/css" />
+
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whlang.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whtopic.js"></script>
+
+</head>
+
+<body><script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.gbWhTopic)
+{
+	var strUrl = document.location.href;
+	var bc = 0;
+	var n = strUrl.toLowerCase().indexOf("bc-");
+	if(n != -1)
+	{
+		document.location.href = strUrl.substring(0, n);
+		bc = strUrl.substring(n+3);
+	}
+
+	if (window.addTocInfo)
+	{
+	addTocInfo("Constructing Policies\nCreating a New Policy");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	
+	document.write("<p style=\"text-align:right\"> ");
+AddMasterBreadcrumbs("../../PolicyStudioUserGuideTOC.htm", "", "&gt;", "Policy&nbsp;Studio&nbsp;", "../Welcome/Welcome_to_7_7.htm");
+document.write("<a href=\"Constructing_Policies.htm\">Constructing Policies<\/a> &gt; Creating a New Policy<\/p>");
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../../PolicyStudioUserGuideTOC.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+
+//-->
+//]]></script>
+ <h1><a name="XREF_18529_Creating_a"></a>Creating a New&nbsp;Policy</h1>
+ <p class="BodyLevel1">When you are constructing a policy, your work is automatically saved as you go, as long as Policy Studio has not timed out; you do not need to explicitly save your work. If you are interrupted while working on a policy, or you want to work on another task and return to authoring the policy later, you can stop and con&#173;tinue the authoring process as desired; your work will be saved as a draft. Note, however, that Policy Studio times out after 30 minutes of inactivity. You have to log back into Policy Studio after a timeout.</p>
+ <p class="BodyLevel1">When you first create a new policy, you must designate the policy type: <span style="font-style : italic; "><i>Commu&#173;nication, Device Control, Document,</i></span>&#160;or <span class="FM_Emphasis">Dynamic Access Control</span> policy. </p>
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Communication policies are designed for controlling the distribution of e-mail or other communication media, and include a special component that specifies who the recipient is. For more information about Communi&#173;cation policies, see <a href="Communication_Policies.htm#XREF_98220_Communication"><span class="FM_blue">Communication Policies</span></a>.</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Document policies control files or other document-type resources and their locations within the network, and have no concept of a recipient. </p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Device Control policies use device components and are enforced by the Removable Device Enforcer.</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Dynamic Access Control (DAC) policies integrate with Windows Dynamic Access Control. When DAC policies are deployed to Active Directory, Next&#173;Labs policies are converted into Windows Central Access Policies (CAPs) or Central Access Rules (CARs), depending on the hierarchy of policies. DAC policies can also be deployed to SharePoint to extend Windows DAC per&#173;missions to SharePoint servers where a NextLabs Entitlement Manager for SharePoint is installed. For more information about creating DAC policies, see <a href="Dynamic_Access_Control_Policies.htm#XREF_22129_Dynamic_Access"><span class="FM_blue">Dynamic Access Control Policies</span></a>.</p>
+
+ <h2>General Steps </h2>
+ <p class="BodyLevel1">The following procedure describes&#160;the general steps for creating a policy. The Policy Studio interface and features differ depending on which type of policy you are creating and which version of Policy Studio you have installed (Enter&#173;prise or DAC Edition).</p>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">In the policy tree, select the folder in which you want the new policy to be stored (all policies must be stored in a folder), then click the <span class="FM_Bold">New Pol&#173;icy</span> button.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">In the dialog box, type a name for the new policy, select a policy type, and click <span class="FM_Bold">OK</span>.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Build the policy by specifying the following basic information:</p>
+</li>
+  
+<p class="BodyLevel3"><span style="font-family:'Courier New'">o</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Enforcement type</p>
+
+  
+<p class="BodyLevel3"><span style="font-family:'Courier New'">o</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Subject</p>
+
+  
+<p class="BodyLevel3"><span style="font-family:'Courier New'">o</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Action</p>
+
+  
+<p class="BodyLevel3"><span style="font-family:'Courier New'">o</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Resource</p>
+
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Define conditions to specify additional policy enforcement criteria, such as the time or day, or connection type.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Create subpolicies—policies within a policy—to specify exceptions to a general policy. For example, if a parent policy specifies that access to sen&#173;sitive data is denied to all, a subpolicy can specify an exception to that rule, for example, that users with special clearance can access that sensi&#173;tive data.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Define obligations, which specify additional actions Control Center per&#173;form, such as displaying a user alert, when the situation described in the policy occurs.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Write a description of the policy.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Create a tag or tags for the policy. You can use these tags later in Reporter to search for specific policies for reporting purposes.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">When you are ready to publish the new policy, click <span class="FM_Bold">Submit</span>&#160;to submit it for deployment. The procedure for deploying policies is described in <a href="../Deploying/Deploying_Objects.htm#XREF_16596_Deploying_Objects"><span class="FM_blue">Deploying Objects</span></a>.</p>
+</li>
+ </ol>
+ <p class="BodyLevel1">Details on each step are provided in the sections that follow.</p>
+ <h2>Selecting the enforcement type</h2>
+ <p class="BodyLevel1"><a name="XREF_85174_5_In_the_dropdown"></a>In the <span class="FM_Bold">Enforcement</span>&#160;field, choose one of the following to determine what Control Center does if the event described in the policy occurs:</p>
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span class="FM_Bold">Deny</span>: do not permit the listed Subjects to perform the task specified in the policy, but allow all others to do so.</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span class="FM_Bold">Allow</span>: permit the listed Subjects to perform the task specified in the pol&#173;icy. Allowing a set of Subjects to perform a task does not mean that others are blocked from performing that action.</p>
+
+ <h2>Defining a Policy&nbsp;Subject</h2>
+ <p class="BodyLevel1">As the figure below shows, you can use the controls in the Subject group to define the subject of your policy—that is, a defined category of entities whose behavior the policy will govern. It is important to understand that although each of the three components in the subject—user, application, and computer—can contain several specifications linked with either AND or OR operators, the three of them work together as a single whole. They are connected with logical AND operators, and must all be true for the policy to evaluate to true. For example, a policy whose subject specifies all members of the Marketing department OR the Sales department using laptop computers to open a document in MS Word, will not stop Marketing or Sales users on laptops from opening it in Notepad, or Marketing or Sales users on desktops from opening it in Word.</p>
+ <p class="BodyLevel1">You can either fill in these controls, or leave one or more of them blank. If you leave a control blank, the effect is to apply the policy to all users, all comput&#173;ers, or all applications, respectively. In practice, it is quite common to design policies that do not specify computer or application components; policies that do not specify any user are less common.</p>
+ <p class="PublisherBook"><span class="FM_Emphasis">Note: </span>Application components can <span style="font-style : italic; "><i>only</i></span>&#160;be used in policies that are enforced by desktop-level enforcers. If you include them in a policy that is enforced on the server side—for example, by the Windows File Server or SharePoint Server enforcer—the policy will not work properly because server-side enforcers cannot detect which application the end user is using.</p>
+ <p class="BodyLevel1">To add a line to the Subject definition, click the plus <img alt="plus.png" style="width : 11.376pt; height : 10.152pt; margin-bottom : -1.000pt; " id="image0" src="plus.png" /> icon next to User, Com&#173;puter, or Application.</p>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">From the drop-down list, choose one of the following <span class="FM_italics">operators</span>: </p>
+</li>
+  
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span style="font-weight : bold; "><b>In</b></span>: The subject includes the user component that you specify in the edit&#173;ing box to the right of the drop-down list.</p>
+
+  
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span style="font-weight : bold; "><b>Not in</b></span>: The subject includes all users except the specified component.</p>
+
+  <p class="BodyLevel1"></p>
+  <div align="center"><img alt="PolicySubject.jpg" style="width : 449.250pt; height : 230.625pt; " id="image1" src="PolicySubject.jpg" />
+  </div>
+  <p class="BodyLevel1">&nbsp;</p>
+  <p class="TitleBook">Defining the policy subject</p>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">In the Component field to the right of the drop-down list, specify a sub&#173;ject component in one of the following ways:</p>
+</li>
+ </ol>
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Drag a component from the relevant component panel and drop it into the Component field.</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Type a component name. If a component with that name does not exist, a dialog box appears prompting you to create a new component with that name. This creates a blank component with the specified name. You must open it later to supply the properties that define the component. In prac&#173;tice, you might find it convenient to work this way—with policy definitions driving the kinds of components you need to define. </p>
+
+ <p class="BodyLevel1">You can add more than one component to any of the fields in the Subject. When you do, an OR operator is understood (Example 1 in the figure below). If you mean to use an AND operator (Example 2 in the figure below), click the plus icon next to User, Computer, or Application to add a new line. Do this to specify more than one component, separated by an AND or a BUT logical operator, for exam&#173;ple, “in both class A and class B”, or “in class X but not in class Y.” For example, you might want Users to include all employees in the Technical Publications department, excluding contractors.</p>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="Policies00007.jpg" style="width : 344.486pt; height : 274.660pt; " id="image2" src="Policies00007.jpg" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook">Multiple Components in Subjects</p>
+ <p class="BodyLevel1">If a policy includes or excludes many classes of subjects, or both, the policy can quickly become complex and difficult to read. In these cases, consider designing a policy that uses subpolicies. For more information, see <a href="#XREF_86058_Creating"><span class="FM_blue">Creating Subpolicies</span></a>.</p>
+ <h2>Defining a Policy&nbsp;Action</h2>
+ <p class="BodyLevel1">Just as every English sentence contains a&#160;verb, every policy has an action&#160;or actions. You can use the controls in the Action group to define what each pol&#173;icy’s action is and how it will work. If you include more than one action, an OR operator is assumed.&#160;If you do not specify any action component, the policy will be in effect for all actions—not a likely scenario.</p>
+ <p class="BodyLevel1"><a name="XREF_63413_6_In_Action_check"></a>In the Action field, click the plus <img alt="plus00008.png" style="width : 11.376pt; height : 10.152pt; margin-bottom : -1.000pt; " id="image3" src="plus00008.png" />&#160;icon, then drag an action component from the Actions panel into the component field, or type a name.</p>
+ <p class="BodyLevel1">Note that only one action is available for Device policies: Attach. For this rea&#173;son, this action is the default in the policy template. The Attach action does not need to be dragged into the policy.</p>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="PolicyAction.png" style="width : 346.248pt; height : 94.968pt; " id="image4" src="PolicyAction.png" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook">Specifying the policy action</p>
+ <h2>Defining a Policy&nbsp;Resource</h2>
+ <p class="BodyLevel1">Each policy must have a resource component on which the policy acts whenever it is enforced. To specify a resource,&#160;click the plus icon, and type the names of one or more document components that represent files or other resources. You can drag and drop components from the Resources panel into the Resource Com&#173;ponent area.</p>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="OnResources.png" style="width : 335.016pt; height : 116.784pt; " id="image5" src="OnResources.png" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook">Specifying the resource</p>
+ <h3>Target&nbsp;Location</h3>
+ <p class="BodyLevel1">For an action that logically involves a From location and a To location—Move, Rename, or Copy—you can specify a target location for the action of each policy, as shown in the previous figure. This control is used to specify a distinct location where you want to either permit or prohibit copying or moving all resources cov&#173;ered by the policy. If you do not specify a target, the policy will apply whenever the specified From action occurs, without regard to a target location.</p>
+ <p class="BodyLevel1">To specify a target location:</p>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Click the plus icon. </p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">In the drop-down list, select an operator: Into or Outside. Use Into to specify a particular destination; for example, when the specified users attempt to copy a file into a particular directory. Use Outside to specify anywhere but a particular destination.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">In the editing area, type or drag and drop file names, directories, storage locations (file servers and folders), or document or portal content compo&#173;nents.</p>
+</li>
+ </ol>
+ <h2><a name="XREF_46177_Defining_Conditions"></a>Defining Conditions</h2>
+ <p class="BodyLevel1">Using Conditions, you can create policies that change their effect based on dynamic comparisons, evaluations, or contextual factors. Several pre-defined conditions exist: Connection Type (Remote or Local), Heartbeat, Date/Time, and Recurrence. For more complex contextual factors, users can use Condition Expression, which are written directly in ACPL.</p>
+ <p class="BodyLevel1">Click the plus icon next to the condition that you want to set.</p>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="Policies00013.jpg" style="width : 462.000pt; height : 242.749pt; " id="image6" src="Policies00013.jpg" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook">Conditions in Policy Studio</p>
+ <h3>Connection Type</h3>
+ <p class="BodyLevel1">The Connection Type condition provides two choices: Remote or Local. If you set this to Remote, the policy is enforced only if users are connected to the com&#173;puter remotely, via Remote Desktop Protocol (RDP). This is useful for restricting what remote users can do—use only certain applications, or access resources only on certain network servers.</p>
+ <p class="PublisherBook"><span class="FM_Emphasis">Note: </span>This condition can <span style="font-style : italic; "><i>only</i></span> be used in policies that are enforced by desk&#173;top-level enforcers. If you include it in a policy that is enforced on the server side—for example, by the Windows File Server or SharePoint Server enforcer—it does not work properly, since server-side enforcers cannot detect the end user’s connection type.</p>
+ <p class="BodyLevel1">To add the Connection Type condition into the policy, click the plus icon, then select either Remote or Local.</p>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="ConnectionCondition.png" style="width : 354.842pt; height : 97.862pt; " id="image7" src="ConnectionCondition.png" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook">Connection Type condition</p>
+ <h3>Heartbeat</h3>
+ <p class="BodyLevel1">The Heartbeat condition allows you to define policies that are triggered on the basis of how many minutes have passed since the Control Center&#160;Server has received a heartbeat message from some enforcer. When the value specified here is exceeded, the policy is enforced. The most obvious use of this feature is to protect the data on lost or stolen notebook PCs: once they have been discon&#173;nected from the network for a suspiciously long time, a policy might be enforced that, for example, encrypts or deletes all sensitive files on the local drive.</p>
+ <p class="BodyLevel1">To add the Heartbeat condition into the policy, click the plus icon to display the input field, then either accept the default value of 100 minutes, or set a differ&#173;ent number.</p>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="HeartbeatCondition.png" style="width : 315.750pt; height : 32.375pt; " id="image8" src="HeartbeatCondition.png" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook">Heartbeat condition</p>
+ <h3>Date/Time and Recurrence</h3>
+ <p class="BodyLevel1">In the Date/Time and Recurrence conditions, you can place once-only or recur&#173;ring time restrictions on the enforcement of the policy. Once-only restrictions are defined in the Date/Time area; for example, you can specify a date range to have the policy apply to one month only, or specify a Start date if you want to make a policy effective starting on a specific date (leave the End date blank to continue enforcement permanently). Recurring restrictions are defined in the Recurrence area; for example, you can enforce the policy only at certain times of the week, such as to restrict access to certain files over the weekend. The time conditions shown in the following figure enforces a policy from 10/05/2013 12:00 AM to 11/01/2013 12:00 AM. In that time period, the policy is enforced all day every Saturday and Sunday.</p>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="TimeCondition.png" style="width : 373.217pt; height : 187.113pt; " id="image9" src="TimeCondition.png" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook">Setting time conditions</p>
+ <p class="BodyLevel1">It is important to understand the difference between these time condition set&#173;tings. Date/Time settings are a part of the policy’s definition: if some user does some thing to some resource and it is within this specified time period, the pol&#173;icy is enforced; if it is outside that period, the policy is not enforced. However, it is evaluated in either case. If a Recurrence time is specified for a policy, that sets a time period for when the policy will be evaluated at all. That is, if some user does some thing to some resource at a time outside the recurrence time period, the policy will not be in force at all, and so will never be enforced no matter what the event.</p>
+ <p class="BodyLevel1">Note that time is evaluated based on the clock running on the Policy Manage&#173;ment Server (a Control Center&#160;component), which is determined by the time zone where the Policy Management Server host is located. For example, if you are using Policy Studio in a branch office in Buffalo, and the Control Center&#160;is installed on a server at company headquarters in Tulsa, the time you specify is interpreted as Tulsa time.</p>
+ <p class="BodyLevel1">If you leave the time conditions blank, the action specified in the policy is always restricted, starting when the policy is deployed.</p>
+ <h3><a name="XREF_18668_Advanced_Conditions"></a>Condition Expressions</h3>
+ <p class="BodyLevel1">Condition Expressions greatly extend how contextual parameters can be used to qualify a policy evaluation. One significant capability Condition Expressions offer is to change a policy’s effect based on relationships between the resource, subject, and host attributes that are dynamically returned on a policy query. This capability assumes that you have a custom Policy Controller plug-in that provides these attributes dynamically.</p>
+ <p class="BodyLevel1">For instance, a possible use case could be a condition that compares the attri&#173;bute values returned for one resource (the Product Line a document is associ&#173;ated with) with the attribute values returned for one subject (the Product Line a user is associated with). The basic ACPL syntax for this condition would be:</p>
+ <h5><span class="FM_onscreen">resource.&lt;resource type&gt;.&lt;attribute&gt; = subject.<br />&lt;attribute&gt;</span></h5>
+ <p class="BodyLevel1">The example condition would be:</p>
+ <h5>resource.fso.ProductLine = user.ProductLine</h5>
+ <p class="BodyLevel1">In addition, policy designers can combine multiple attribute-to-attribute match conditions, as well as other matches (attribute-to-string, attribute-to-constant, attribute-to-integer). Matches can also be defined using different methods, listed in the following table. Condition Expressions use Boolean logic, so all Match Operators can be reversed to “Not.” Where multiple matches are com&#173;bined, they can be linked using a logical “AND” or “OR”. Finally, partial and full wildcards can be used to replace all or parts of strings. Examples with explana&#173;tions are provided below.</p>
+<table width="100%">
+ <tr>
+ <td>
+ <table style="border-spacing: 0; padding-left: 4.00pt; padding-top: 4.00pt; padding-right: 4.00pt; padding-bottom: 3.00pt;float: aligncenter;margin-bottom: 24.00pt; width: 486.00pt;" cellspacing="0" align="center">
+  <caption align="center">
+  </caption>
+  <tr style=" height : 16.00pt;background : #1f8c4a;">
+  <th style="width : 96.476pt; background : #1f8c4a;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Name</p>
+</th>
+  <th style="width : 96.476pt; background : #1f8c4a;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">ACPL Operator</p>
+</th>
+  <th style="width : 293.047pt; background : #1f8c4a;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Description</p>
+</th>
+</tr>
+  <tr style=" height : 42.00pt;">
+  <td style="width : 96.476pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">Equal or Multi-value equal (match any)</p>
+</td>
+  <td style="width : 96.476pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">=</p>
+</td>
+  <td style="width : 293.047pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">When a single value is present for each attribute, A = B when A and B values match.</p>
+  <p class="CellBody">When multiple values are present for attributes, {A} = {B} when any value in set {A} matches any value in set {B}.</p>
+</td>
+</tr>
+  <tr style=" height : 23.00pt;">
+  <td style="width : 96.476pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">Multi-value unordered equal</p>
+</td>
+  <td style="width : 96.476pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">equals_unordered</p>
+</td>
+  <td style="width : 293.047pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">When multiple values are present for each attribute, {A} <span class="FM_Emphasis">equals_unordered </span>{B} when set {A} and set {B} are identical, where order is not relevant.</p>
+</td>
+</tr>
+  <tr style=" height : 50.00pt;">
+  <td style="width : 96.476pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">Set includes</p>
+</td>
+  <td style="width : 96.476pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">includes</p>
+</td>
+  <td style="width : 293.047pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Where multiple values are present for attributes, {A} <span class="FM_Emphasis">includes </span>{B} when all values in set {B} are present in set {A}. This can also apply where {B} is an empty set.</p>
+  <p class="CellBody">Where multiple values are present for set {A} and a single value is present for B, set {A} includes {B} when the single value in {B} is present in set {A}.</p>
+</td>
+</tr>
+  <tr style=" height : 23.00pt;">
+  <td style="width : 96.476pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">Greater than/equal to, less than/equal to</p>
+</td>
+  <td style="width : 96.476pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">&gt;, &gt;=, &lt;, &lt;=</p>
+</td>
+  <td style="width : 293.047pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">A matches B, where the value returned for attribute A is less than, less than or equal to, greater than, or greater than or equal to value B.</p>
+</td>
+</tr>
+ </table>
+</td></tr>
+</table>
+ <p class="BodyLevel1"></p>
+ <h4>Example Condition for Equal and Multi-Value Equal </h4>
+ <p class="BodyLevel1">The following is an example condition that includes an attribute-to-attribute multi-value equal AND an attribute-to-string match. </p>
+ <h5>(resource.fso.ProductLine = user.ProductLine) AND (resource.fso.ReviewStatus = &quot;Approved&quot;)</h5>
+ <p class="BodyLevel1">In this example, the user attribute ProductLine must match the resource attri&#173;bute ProductLine, while multiple attributes are possible for both. As noted in the previous table, for multi-value match, the “=” operator evaluates to true when <span class="FM_Emphasis">any </span>of the values match. In other words, if a document belongs to Product Lines A, B, and C, and the user belongs to Product Lines C, D, and E, the condi&#173;tion is met. The attribute-to-string match specifies that the resource attribute ReviewStatus must match the string “Approved.” Because a logical AND links the two conditions, both must match for the entire condition to be true.</p>
+ <h4>Example Condition for Multi-Value Unordered Equal</h4>
+ <p class="BodyLevel1">The “equals_unordered” operator should be used in cases where all attribute values must match between two multi-value sets, where the order of values is not relevant. A typical use case is for a policy that allows access only when a document is not export controlled, OR the user requesting access to the resource has ALL the proper export licenses associated with that resource. </p>
+ <h5><span class="FM_onscreen">(resource.fso.ExportControl=&quot;NO&quot;) OR (resource.fso.ExportLicense equals_unordered user.ExportLicense)</span></h5>
+ <h4>Example Condition for Set Includes</h4>
+ <p class="BodyLevel1">The “includes” operator should be used in cases where set {A} should be included within set {B}. This is different from “equals_unordered,” as set {B} might have additional values not present in set {A}. This is also different from “=” as set {B} can be an empty set. </p>
+ <p class="BodyLevel1">A possible use case for this operator could be where a user must have all the appropriate class (or security) attributes as a resource to be granted access to that resource. In other words, user set {A} must include resource set {B}, where the user has all the proper clearances associated with the resource. Notice that this use case is different than equal or multi-value equal, as set {B} can be empty. If the resource has no security settings associated with it, user set {A} can include the empty resource set {B}, and the user should be able to access the resource.</p>
+ <h5>resource.fso.DocSecurity includes user.SecurityAccess</h5>
+ <h4>Example Condition for Greater/Lesser Than</h4>
+ <p class="BodyLevel1">In addition to equal matches, you can also use greater/less than, and greater/less than or equal to operators in Condition Expression. Some examples could include policies that match dynamic attributes to dates (“date last accessed” or “today’s date,” or the date a license or policy is still valid), or integers (number of times accessed). </p>
+ <h5>resource.fso.LicenseEndDate &gt;= current_time</h5>
+ <h4>Condition Expression using Custom Functions</h4>
+ <p class="BodyLevel1">While you can enter condition expressions as described above, you can also con&#173;struct a Condition Expression as a custom function, which is implemented as a Policy Controller service. The basic ACPL syntax for a function is:</p>
+ <h5><span class="FM_onscreen">call_function(&quot;Service_Name&quot;, &quot;Function_Name&quot;, &lt;argu&#173;ments&gt;)</span></h5>
+ <p class="BodyLevel1">The arguments can consist of expressions that are resource attributes, subject attributes, string literals, or integers. Some examples include: </p>
+ <h5>call_function(&quot;ExportLicenses&quot;, &quot;ExportLicenseMatch&quot;, user.ExportLicense, resource.fso.ExportLicense)= &quot;yes&quot;</h5>
+ <h5>call_function(&quot;SECURITY&quot;, &quot;Check classifica&#173;tion&quot;,user.clas<span class="FM_onscreen">sification, &quot;TOP SECRET&quot;)= &quot;yes&quot;</span></h5>
+ <h5><span class="FM_onscreen">call_function(&quot;CitizenshipChecker&quot;, &quot;Citizenship&quot;, user.sid) = &quot;United States Of America&quot; OR call_function(&quot;CitizenshipChecker&quot;, &quot;Citizenship&quot;, user.sid) = &quot;Canada&quot;</span></h5>
+ <h2><a name="XREF_86058_Creating"></a>Creating Subpolicies</h2>
+ <p class="BodyLevel1">A subpolicy is a policy inside another policy. Subpolicies are typically used for specifying additional policy enforcement criteria in the form of exceptions. The following examples, expressed in English, show typical ways to use subpolicies.</p>
+ <p class="BodyLevel1">In the following example, a parent policy denies access to confidential resources. Three subpolicies specify exceptions to the parent policy, allowing three types of users—licensed users, executives, and members of the legal department—to access confidential resources.</p>
+ <h5>Deny Access to Confidential Resources<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Allow Licensed Users<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Allow Executives<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Allow Legal Department</h5>
+ <p class="BodyLevel1">The next example shows a hierarchical set of policies. The top-level policy denies access to sensitive financial documents. The first subpolicy specifies an exception to the top-level policy: Members of the finance group are allowed access. The second subpolicy specifies an exception to the first subpolicy: con&#173;tractors in the finance group are denied access. The third subpolicy specifies an exception to the second subpolicy: contractors in the finance group with special clearance are allowed access.</p>
+ <h5>Deny Access to Sensitive Financial Documents<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Allow Finance Group<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Deny Contractors<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Allow Contractors with Special Clearance</h5>
+ <p class="BodyLevel1">This policy structure is not supported by DAC policies. In a DAC policy, a subpol&#173;icy cannot contain a subpolicy. You can only create policies in the structure shown in the first example.</p>
+ <p class="BodyLevel1">As the examples show, subpolicies provide an intuitive way to express complex policies that specify multiple conditions or exceptions. The examples also show the best way to design policies: Start with a policy that applies broadly, and then enumerate specific exceptions to that general policy. This is an important design concept because it enables you to define policies that are modular and extensible. </p>
+ <p class="BodyLevel1">To create a subpolicy:</p>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">In the policy editing pane, click in the <span class="FM_Bold">Subpolicy</span>&#160;field. </p>
+</li>
+  <p class="BodyLevel1"></p>
+  <div align="center"><img alt="Subpolicy.jpg" style="width : 354.125pt; height : 54.250pt; " id="image10" src="Subpolicy.jpg" />
+  </div>
+  <p class="BodyLevel1">&nbsp;</p>
+  <p class="TitleBook">Creating a subpolicy</p>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Type a name for the policy. A dialog prompts you to create a new subpol&#173;icy with that name. </p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Select Yes. The new subpolicy appears in the editing pane, and in the pol&#173;icy tree, nested with the parent policy. As the following figure shows, the policy tree provides a clear view of the relationship between policies.</p>
+</li>
+  <p class="BodyLevel1"></p>
+  <div align="center"><img alt="PolicyTree_Hierarchy.png" style="width : 314.249pt; height : 187.500pt; " id="image11" src="PolicyTree_Hierarchy.png" />
+  </div>
+  <p class="BodyLevel1">&nbsp;</p>
+  <p class="TitleBook">Policy tree displaying a subpolicy below a parent policy</p>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">In the editing pane, define the subpolicy. Because a subpolicy is simply a policy within a policy, you define a subpolicy in the same way you define a policy.</p>
+</li>
+ </ol>
+ <h2><a name="XREF_62134_Defining"></a>Defining Obligations</h2>
+ <p class="BodyLevel1">In the Obligations section, you can specify additional actions that Control Center&#160;will take when the situation described in the policy occurs. The obligation can be a message to the user, a log message written to the Activity Journal, or an e-mail. For more details, <a href="Using_Obligations.htm#XREF_87958_23_Using"><span class="FM_blue">Using Obligations</span></a>.</p>
+ <p class="BodyLevel1">To set up the obligations for a policy, perform the following steps.</p>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">First, look for the label that describes the policy effect that you want to trigger the obligations: On Deny, or On Allow, Monitor. You can set up obli&#173;gations for several different effects if desired; for example, log an event and send an e-mail on Deny, but merely log an event on Allow.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">To display a message on the subject’s computer screen whenever the pol&#173;icy action is blocked, type the text in the On Deny Message field. To define a message that displays when the action is allowed, type it in the On Allow, Monitor Message field. These messages will appear only on com&#173;puters where the Compliance Notifications feature has been enabled dur&#173;ing installation of the policy enforcer software. You can specify different messages for both On Deny and On Allow, if you wish.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">To log the fact that this policy is triggered even for Allow, click the Log checkbox. (For On Deny obligations, logging is always enabled, and this box cannot be unchecked.)</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">To send a notification e-mail, click the Send E-mail checkbox, type the recipient’s e-mail address in the To field, and type the body of the e-mail in the Message field. To specify more than one recipient, separate each with a comma.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">The From address of these e-mails can be defined on the Control Center&#160;Server side, and will be the same for all policies. It is configured by your administrator.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">If you want to associate a custom obligation with this policy, click the Cus&#173;tom Obligation box to display the Name field, then type the name of the custom obligation there. (Custom obligations must be created outside of Control Center&#160;and distributed to all enforcer hosts where they will be implemented. For a detailed discussion, refer to the<span style="font-style : italic; "><i>&#160;</i></span>Control Center<span style="font-style : italic; color   : #0000ff; "><font color="blue" ><i>&#160;</i></font></span><span class="FM_Emphasis">Administrator’s Guide</span>.)</p>
+</li>
+ </ol>
+ <p class="PublisherBook"><span class="FM_Emphasis">Note: </span>Custom obligations are also required for the operation of Policy Assis&#173;tants, which are optional plug-in modules designed to simplify or auto&#173;mate specific use cases. (They are available only with the Enterprise Data Protection&#160;product.) For details, see the <span class="FM_Emphasis">Policy Assistants User’s Guide</span>.</p>
+ <p class="BodyLevel1">The following figure shows obligations specified for On Deny and On Allow.</p>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="DefineObligations.png" style="width : 453.500pt; height : 399.000pt; " id="image12" src="DefineObligations.png" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook">Defining policy obligations</p>
+ <h2>Adding a Description</h2>
+ <p class="BodyLevel1">In the Description field, type a meaningful description of the policy. You might use language from your company’s policy manual, if appropriate. Although this field is optional, a description is useful, particularly if several users are collabo&#173;rating in constructing policies.</p>
+ <h2>Adding a Tag</h2>
+ <p class="BodyLevel1">In the Tags section, you can add one or more tags to a policy, which you use later to search for specific policies when creating reports in Reporter. You can quickly narrow the view of policy activity data to those that contain certain tags. For example, if you plan to audit all policies related to export control, you can add an Export Control tag to each policy that enforces export controls. Similarly, if you want to audit policies by control type—access control, storage control, device control, and so on—you can create a tag to indicate each policy’s control type.</p>
+ <p class="BodyLevel1">Each tag definition contains a name and a value, and each policy can have any number of tags. For example, if a policy restricts access to data in SAP Docu&#173;ment Management System (DMS) that is classified as ITAR, you may create the following tags:</p>
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>System = SAP DMS</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Export Control = ITAR</p>
+
+ <p class="BodyLevel1">Tags are used solely as criteria on which to filter policies for reporting purposes. Although there are many other attributes associated with policies—such as user name, resource attributes, action, and policy name—on which you can filter in Reporter, tags are often the most useful because you can add your own key words and values that make the policies easier to identify and find.</p>
+ <p class="BodyLevel1">Before creating tags for policies, define the reporting requirements, and then identify the tags needed to support those requirements. Use a consistent nam&#173;ing convention and apply tags uniformly to ensure that policy activity reports that are filtered by tags return the results you expect. For example, if some pol&#173;icies governing export control data contain the tag, <span class="FM_onscreen">Export Control = ITAR</span>, while some export control policies contain the tag, <span class="FM_onscreen">Classification = ITAR</span>, and others do not contain any tags, filtering on one tag does not capture all the export control policy activity data.</p>
+ <p class="BodyLevel1">To create a tag:</p>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">In the <span class="FM_Bold">Tags</span>&#160;section, in <span class="FM_Bold">Name</span>, type a name for the tag. </p>
+</li>
+  <p class="Title">In Reporter, tag names appear in the Policy Criteria drop-down list in the Report Query page. Select a tag from this list to filter policies by a spe&#173;cific tag.</p>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">In <span class="FM_Bold">Value</span>, type a value for the tag.</p>
+</li>
+  <p class="Title">In Reporter, this is the value you would specify in the value field of the Policy Criteria setting, if filtering on a specific tag and value.</p>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Click <span class="FM_Bold">Add</span>.</p>
+</li>
+ </ol>
+ <p class="Title">The following figure shows one tag (System = SAP DMS) that has been added to the policy, and a second tag (Export Control = ITAR) being cre&#173;ated.</p>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="TagsSection.jpg" style="width : 359.326pt; height : 205.631pt; " id="image13" src="TagsSection.jpg" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook">Adding tags</p>
+ <script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+
+
+highlightSearch();
+//-->
+//]]></script>
+</body>
+</html>

@@ -1,0 +1,240 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ <title>Configuration_and_Management</title>
+
+ <meta name="generator" content="Adobe RoboHelp 9" />
+ <meta name="Originator" content="ImportMif" />
+ <meta name="OriginalFile" content="C:\Documents and Settings\mlittle\Desktop\SharePoint\SharePointFM\AdminSPE.fm" />
+ <link rel="stylesheet" href="../../default.css" type="text/css" />
+
+ <link rel="stylesheet" href="..\..\default.css" type="text/css" />
+
+ <script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whlang.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.gbWhTopic)
+{
+	var strUrl = document.location.href;
+	var bc = 0;
+	var n = strUrl.toLowerCase().indexOf("bc-");
+	if(n != -1)
+	{
+		document.location.href = strUrl.substring(0, n);
+		bc = strUrl.substring(n+3);
+	}
+
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Administration\nConfiguration and Management");
+addButton("show",BTN_IMG,"Show TOC and Search","","","","",0,0,"../../whd_show0.gif","../../whd_show2.gif","../../whd_show1.gif");
+addButton("hide",BTN_IMG,"Hide TOC and Search","","","","",0,0,"../../whd_hide0.gif","../../whd_hide2.gif","../../whd_hide1.gif");
+
+	}
+
+	
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../../index.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+//]]></script>
+</head>
+
+<body><script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+//]]></script>
+<table width="100%" cellspacing="0" border="1">
+	<col style="width: 100%;" />
+	<tr style="height: 78px;">
+		<td bgcolor="#003399">&#160;</td>
+	</tr>
+ </table>
+<script type="text/javascript" language="javascript">//<![CDATA[
+document.write("<p  style=\"text-align:right;font-family:Arial;font-size:12pt;font-weight: normal;font-style: normal;text-decoration: none;\">");
+AddMasterBreadcrumbs("../../index.htm", "font-family:Arial;font-size:12pt;font-weight: normal;font-style: normal;text-decoration: none;", "&gt;", "Home", "../Introducing/Welcome.htm");
+document.write("<a style=\"font-family:Arial;font-size:12pt;font-weight: normal;font-style: normal;text-decoration: none;\" href=\"Administration.htm\">Administration<\/a> &gt; Configuration and Management<\/p>");
+//]]></script>
+ <p style="text-align: right;">&#160;</p>
+
+ <h1><a name="XREF_12239_Configuration_and"></a>Configuration and Management</h1>
+ <p class="BodyLevel1">No configuration changes are required for running enforcers once they have been installed. There are some configuration controls available through Administrator, and there are some minimal management activities that enforcer administrative personnel may need to perform from time to time.</p>
+ <h2>Configuration Tools</h2>
+ <p class="BodyLevel1">The only configuration settings available for enforcers are the enforcer profile settings, and the log file management settings. For details, see <a href="Managing_Enforcer_Profiles.htm#XREF_74802_Managing_Enforcer">Managing Enforcer Profiles</a>&#160;and <a href="Managing_Event_Logging.htm#XREF_99541_Examining_Log_Files">Managing Event Logging</a>.</p>
+ <h2>Management Activities</h2>
+ <p class="BodyLevel1">Because enforcers are designed to run continuously with no complications, there are very few management functions required from system administrators. These include stopping enforcers that are currently running, restarting enforcers after they have been stopped, and monitoring the status of currently running enforcers.</p>
+ <h3><a name="XREF_32169_Starting_and"></a>Stopping and Restarting</h3>
+ <p class="BodyLevel1">Because enforcers are designed to resist tampering, no user can stop them through the standard services manager, the Windows Task Manager, changing registry settings, or any other standard Windows procedure. They can be stopped only with a special, password-protected utility.</p>
+ <p class="BodyLevel1">Note that as a tamper resistance feature, no one can even view the contents of an Entitlement Manager’s installation directory while the Entitlement Manager is running. This means that you must stop the Entitlement Manager before you can, for example, examine log files in the logs directory.</p>
+ <p class="BodyLevel1">Administrators can manually stop each individual Entitlement Manager at the local host using a utility called <span style="font-style : italic; font-weight : bold; "><i><b>StopEnforcer.exe, </b></i></span>installed on each Enforcer host at <span style="font-style : italic; "><i>C:\Program Files\NextLabs\Control Center\public_bin</i></span>. You can run this utility from a link under Start &gt;&#160;All Programs &gt; NextLabs. This utility requires the administrative password set for whatever profile is assigned to the Entitlement Manager. This means you need to know which profile is in use, and what its password is, before you can stop an Entitlement Manager.</p>
+ <p class="BodyLevel1">Note that, technically, this utility actually stops the separate Policy Controller, on which all Entitlement Managers rely. Once you stop the Policy Controller with this utility, you can restart it again manually with the standard Services manager in Windows Control Panel, or by rebooting the host.</p>
+ <h3>Monitoring Entitlement Managers</h3>
+ <p class="BodyLevel1">You can monitor the status of all enforcers and Entitlement Managers in the network—on file servers and on PCs—by opening Administrator, going to the Status tab, and clicking the Policy Enforcer Status link. By default, this tab displays the status of all enforcers in the system that are displaying warnings. To show all enforcers with or without warnings, uncheck the Enforcers with Warnings Only checkbox (<span style="font-weight : bold; color   : #ff0000; "><font color="red" ><b>A</b></font></span>). To view only desktop server enforcers, select <span style="font-style : italic; "><i>All Desktop Enforcers</i></span>&#160;from the Show combo-box list at the left (<span style="font-weight : bold; color   : #ff0000; "><font color="red" ><b>B</b></font></span>). If you are interested in the status of enforcers or Entitlement Managers on a specific enforcer host or host group, you can also filter by host name by typing it into the Search By Host field (<span style="font-weight : bold; color   : #ff0000; "><font color="red" ><b>C</b></font></span>) and clicking the Search button.</p>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="ICEStatus.jpg" style="width : 509.328pt; height : 146.232pt; " id="image0" src="ICEStatus.jpg" />
+ </div>
+ <p class="BodyLevel1">&#160;</p>
+ <p class="TitleBook">Monitoring the Status of Enforcers</p>
+ <p class="BodyLevel1">Descriptions of the contents of the enforcer status grid are provided in the following table.</p>
+ <table width="100%">
+  <tr>
+  <td>
+ <table style="border-spacing: 0; padding-left: 4.00pt; padding-top: 4.00pt; padding-right: 4.00pt; padding-bottom: 3.00pt;float: aligncenter;margin-bottom: 24.00pt; width: 360.00pt;" cellspacing="0" align="center">
+  <caption align="center">
+  </caption>
+  <tr style=" height : 16.00pt;background : #0b3999;">
+  <th style="width : 50.450pt; background : #0b3999;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellHeading">Column</p>
+</th>
+  <th style="width : 309.550pt; background : #0b3999;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellHeading">Description</p>
+</th>
+</tr>
+  <tr style=" height : 45.00pt;">
+  <td style="width : 50.450pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="FM_CellBodyBold">Status</p>
+</td>
+  <td style="width : 309.550pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Indicates the current status of this enforcer, which may be either of the following:</p>
+  <p class="CellBody">Green light = Clear: the policy enforcer is sending normal heartbeats.</p>
+  <p class="CellBody">Exclamation point = Warning: the policy enforcer has not sent a heartbeat in the last 24 hours.</p>
+</td>
+</tr>
+  <tr style=" height : 15.00pt;">
+  <td style="width : 50.450pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="FM_CellBodyBold">Host</p>
+</td>
+  <td style="width : 309.550pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Name of the machine where the policy enforcer is installed.</p>
+</td>
+</tr>
+  <tr style=" height : 15.00pt;">
+  <td style="width : 50.450pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="FM_CellBodyBold">Type</p>
+</td>
+  <td style="width : 309.550pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Indicates the policy enforcer type: File Server Enforcer or Desktop Enforcer.</p>
+</td>
+</tr>
+  <tr style=" height : 63.00pt;">
+  <td style="width : 50.450pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="FM_CellBodyBold">Last Heartbeat</p>
+</td>
+  <td style="width : 309.550pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Time stamp of the last heartbeat generated by this policy enforcer. If the policy enforcer is running normally, this time should correspond to the configured heartbeat interval. However, keep in mind that this does not necessarily indicate a problem, since certain policy enforcers—in particular, those on laptop computers used by remote personnel or computers that are turned off when not in use—might not be able to send a heartbeat for an extended period of time even though they are operating normally.</p>
+</td>
+</tr>
+  <tr style=" height : 23.00pt;">
+  <td style="width : 50.450pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="FM_CellBodyBold">Last Policy Update</p>
+</td>
+  <td style="width : 309.550pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Tells when a new or modified policy or policy component was last deployed to this policy enforcer.</p>
+</td>
+</tr>
+  <tr style=" height : 23.00pt;">
+  <td style="width : 50.450pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="FM_CellBodyBold">Policy Up to Date</p>
+</td>
+  <td style="width : 309.550pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">A check mark appears if the policy enforcer has received the latest version of the policies that are targeted for deployment to it.</p>
+</td>
+</tr>
+  <tr style=" height : 23.00pt;">
+  <td style="width : 50.450pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="FM_CellBodyBold">Profile Name</p>
+</td>
+  <td style="width : 309.550pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Tells which policy enforcer profile is assigned to this host. This profile determines behavior such as logging and heartbeat frequency.</p>
+</td>
+</tr>
+  <tr style=" height : 47.00pt;">
+  <td style="width : 50.450pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="FM_CellBodyBold">Hide</p>
+</td>
+  <td style="width : 309.550pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Click to remove this host from the display. This is useful when the policy enforcer software has been uninstalled, and you therefore no longer need to monitor that host. If a policy enforcer is ever reinstalled on this host, the host will reappear on the list. If you click Hide by mistake on a host with an active policy enforcer, it will reappear automatically the next time the policy enforcer sends a heartbeat.</p>
+</td>
+</tr>
+ </table>
+</td></tr>
+ </table>
+ <p class="BodyLevel1"></p>
+ <h3><a name="XREF_30194_Uninstalling"></a>Uninstalling, Repairing, or Modifying</h3>
+ <p class="BodyLevel1">Entitlement Managers use the standard Repair/Remove procedure common to all Windows applications. Because of the Entitlement Manager’s tamper-resistance features, an authorized administrator must first stop the Entitlement Manager before removing it. It is recommend that the same Administrator remove the Entitlement Manager as installed it.</p>
+ <p class="BodyLevel1">Note that the Policy Controller and the individual Entitlement Managers and enforcers are listed separately in the Add/Remove Programs list, as shown in the figure below. You must uninstall both—the Entitlement Manager first, and the Policy Controller second. The sequence must not be reversed.</p>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="AddRemove2.jpg" style="width : 360.792pt; height : 139.125pt; " id="image1" src="AddRemove2.jpg" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook">Adding and Removing Enforcers</p>
+ <p class="BodyLevel1">The process for uninstalling, repairing, or modifying is common to all Compliant Enterprise Entitlement Managers:</p>
+ <p class="FM_Numbered1">1.Open the Windows Control Panel;</p>
+ <p class="FM_Numbered">2.Launch the Add or Remove Programs utility;</p>
+ <p class="FM_Numbered">3.Select the enforcer or Entitlement Manager from the list there;</p>
+ <p class="FM_Numbered">4.Click the Change button.</p>
+ <p class="BodyLevel1">When this wizard runs for an enforcer or Entitlement Manager, it offers the following options:</p>
+ 
+<p class="BodyLevel2">1<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span style="font-weight : bold; "><b>Modify</b></span>: Available only for the Policy Controller; allows you to reset any of the options that were selected during the initial installation.</p>
+
+ 
+<p class="BodyLevel2">2<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span style="font-weight : bold; "><b>Repair</b></span>: Runs an automatic diagnostic procedure that detects and restores any missing or damaged system files, for the currently installed version.</p>
+
+ 
+<p class="BodyLevel2">3<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span style="font-weight : bold; "><b>Remove</b></span>: Uninstalls the current enforcer or Entitlement Manager. You use this option when you want to remove the Entitlement Manager for any reason—for example, to upgrade to a new version.</p>
+
+ <p>&#160;</p>
+<script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+
+highlightSearch();
+//-->
+//]]></script>
+</body>
+</html>

@@ -1,0 +1,531 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ <title>Dynamic Access Control Policies</title>
+
+ <meta name="generator" content="Adobe RoboHelp 9" />
+ <meta name="Originator" content="ImportMif" />
+ <meta name="OriginalFile" content="C:\CC_PSUserGuide_77\PSUserGuideFM\Policies.fm" />
+ <link rel="stylesheet" href="Policies.css" type="text/css" />
+
+ <link rel="stylesheet" href="..\..\RHStyleMapping.css" type="text/css" />
+
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whlang.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whtopic.js"></script>
+
+</head>
+
+<body><script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.gbWhTopic)
+{
+	var strUrl = document.location.href;
+	var bc = 0;
+	var n = strUrl.toLowerCase().indexOf("bc-");
+	if(n != -1)
+	{
+		document.location.href = strUrl.substring(0, n);
+		bc = strUrl.substring(n+3);
+	}
+
+	if (window.addTocInfo)
+	{
+	addTocInfo("Constructing Policies\nDynamic Access Control Policies");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	
+	document.write("<p style=\"text-align:right\"> ");
+AddMasterBreadcrumbs("../../PolicyStudioUserGuideTOC.htm", "", "&gt;", "Policy&nbsp;Studio&nbsp;", "../Welcome/Welcome_to_7_7.htm");
+document.write("<a href=\"Constructing_Policies.htm\">Constructing Policies<\/a> &gt; Dynamic Access Control Policies<\/p>");
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../../PolicyStudioUserGuideTOC.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+
+//-->
+//]]></script>
+ <h1><a name="XREF_22129_Dynamic_Access"></a>Dynamic Access Control Policies</h1>
+ <p class="BodyLevel1">NextLabs Dynamic Access Control (DAC) policies allow you to integrate NextLabs policy enforcement with Windows Server 2012 Dynamic Access Control. DAC pol&#173;icies are routed through the NextLabs DAC Bridge Server, which is installed auto&#173;matically with NextLabs Control Center. First, NextLabs DAC policies are deployed from Policy Studio. The DAC Bridge Server then converts the NextLabs policy into a Windows Central Access Rule (CAR) and inserts the CAR into tar&#173;geted Active Directory servers. Specifically, the DAC Bridge Server converts ACPL definitions for Subjects, Actions, and Resources into User and Host Claims, Permissions, and Resource Properties in Microsoft’s Security Description Defini&#173;tion Language (SDDL). Once Central Access Rules have been created in Active Directory, they can be deployed from Active Directory to Windows File Servers using Microsoft GPO. </p>
+ <p class="BodyLevel1">In addition, you can also deploy DAC policies directly from Policy Studio to Microsoft SharePoint Servers where a NextLabs Entitlement Manager for Share&#173;point is installed. That way, you can maintain consistent DAC settings for resources that are stored in Microsoft File Servers and SharePoint, using one set of policy definitions maintained in Policy Studio.</p>
+ <p class="BodyLevel1">This section provides the following information:</p>
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><a href="#XREF_70311_Configuring_the"><span class="FM_blue">Configuring DAC Bridge</span></a></p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><a href="#XREF_64696_Writing_Dynamic"><span class="FM_blue">Writing Dynamic Access Control Policies</span></a></p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><a href="#XREF_72088_Deploying_Dynamic"><span class="FM_blue">Deploying Dynamic Access Control Policies</span></a></p>
+
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="DACbridge.jpg" style="width : 489.418pt; height : 240.208pt; " id="image19" src="DACbridge.jpg" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook"><a name="XREF_16258_Dynamic_Access"></a>Dynamic Access Control Deployment</p>
+ <h2><a name="XREF_70311_Configuring_the"></a>Configuring DAC Bridge </h2>
+ <p class="BodyLevel1">After the DAC Bridge Server installs with Control Center, it displays as a Server Component in the NextLabs Administrator console (listed as ddac). While there are no special instructions for installation, the following configuration proce&#173;dures must be performed before you can write and deploy DAC policies:</p>
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><a href="#XREF_99414_Configuring"><span class="FM_blue">Configuring PowerShell</span></a></p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><a href="#XREF_41854_Configuring"><span class="FM_blue">Configuring Connection and Mapping Settings in the DAC Configuration File</span></a></p>
+
+ <h3><a name="XREF_99414_Configuring"></a>Configuring PowerShell </h3>
+ <p class="BodyLevel1">The DAC Bridge Server uses PowerShell to insert policy information into Active Directory. Before policies can be deployed, Powershell must be configured on the host where Control Center is installed so Powershell can remotely access Active Directory and run local scripts. </p>
+ <p class="BodyLevel1">Follow these steps on the Control Center host:</p>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Enable remote access of Active Directory by doing <span style="font-style : italic; "><i>one</i></span> of the following:</p>
+</li>
+  
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Download and install the Active Directory Gateway Management Service</p>
+
+  <p class="Title"><span class="FM_Emphasis">or</span>&#160;</p>
+  
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Add the AD/DS role from Server Manager.</p>
+
+  <p class="PublisherBook"><span class="FM_Emphasis">Note: </span>For more information on either procedure, consult Microsoft documen&#173;tation. </p>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Launch PowerShell and run the following command to import the Active Directory library:</p>
+</li>
+  <h5>import-module ActiveDirectory</h5>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Run the following command to enable local scripts:</p>
+</li>
+ </ol>
+ <h5>Set-ExecutionPolicy RemoteSigned</h5>
+ <h3><a name="XREF_41854_Configuring"></a>Configuring Connection and Mapping Settings in the DAC Configura&#173;tion File</h3>
+ <p class="BodyLevel1">Before you can deploy DAC policies, you must configure DAC Bridge Server set&#173;tings in the DAC Configuration file (<span class="FM_onscreen">ddac_config.xml</span>). This file stores connec&#173;tion information that allows the DAC Bridge Server to locate and connect with the target Active Directory Server(s). This file also defines attribute-to-claim and attribute-to-property mapping, which the DAC Bridge Server uses to convert NextLabs policies to Microsoft CARs.</p>
+ <p class="BodyLevel1">The following procedures provide more information about how to prepare the DAC Configuration file, including:</p>
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><a href="#XREF_29779_Setting_the_Update"><span class="FM_blue">Setting the DAC Policy Update Frequency</span></a></p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><a href="#XREF_91950_Action_to"><span class="FM_blue">Action-to-Permission Mapping</span></a></p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><a href="#XREF_66727_Defining"><span class="FM_blue">Defining Connection and Mappings for Active Directory Server(s)</span></a></p>
+
+ <h4><a name="XREF_29779_Setting_the_Update"></a>Setting the DAC Policy Update Frequency</h4>
+ <p class="BodyLevel1">As is discussed in more detail in <a href="#XREF_72088_Deploying_Dynamic"><span class="FM_blue">Deploying Dynamic Access Control Policies</span></a>, deploying Dynamic Access Control policies is a two-step process. First, the pol&#173;icy is deployed from Policy Studio in a target (also called “manual”) deploy&#173;ment. Then, after an interval that is configured in the <span class="FM_onscreen">ddac_config.xml</span>&#160;file, an update process checks if there is new or updated DAC policy information. If there is new or updated policy information, the DAC Bridge Server retrieves the updates, converts the ACPL policy to an SDDL CAR, and inserts the CAR inside Active Directory.</p>
+ <p class="BodyLevel1">In the <span class="FM_onscreen">ddac.config.xml file</span>, configure how frequently the DAC Bridge Server should check for updates. Follow these steps:</p>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">&#160;Open the <span class="FM_onscreen">ddac_config.xml</span>&#160;file at <span class="FM_onscreen">&lt;install directory&gt;/Policy Server/server/tools/config.</span></p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Locate the <span style="font-family : Courier New; font-size  : 9.0pt; "><font size="1" style="font-size:9pt;">&lt;check-updates-frequency&gt;</font></span> section and enter a value in sec&#173;onds for the interval. Note that the default setting is <span class="FM_onscreen">60</span>. </p>
+</li>
+ </ol>
+ <h5>&lt;check-updates-frequency&gt;60&lt;/check-updates-frequency&gt;</h5>
+ <h4><a name="XREF_91950_Action_to"></a>Action-to-Permission Mapping</h4>
+ <p class="BodyLevel1">As discussed in <a href="#XREF_22129_Dynamic_Access"><span class="FM_blue">Dynamic Access Control Policies</span></a>, the DAC Bridge Server also con&#173;verts NextLabs ACPL actions into Microsoft SDDL permissions. This conversion mapping is defined in <span class="FM_onscreen">&lt;action-mapping&gt;</span>&#160;elements within the DAC configuration file (<span class="FM_onscreen">ddac_config.xml</span>) (see the example below). Action-to-permission map&#173;pings apply across all Active Directory servers. In other words, you cannot have one set of mappings for one Active Directory server, and another set for another Active Directory server. Default mappings that are pre-configured should not be modified without consulting NextLabs Support. </p>
+ <p class="PublisherBook"><span class="FM_Emphasis">Note: </span>For more information on DAC actions available in Policy Studio, see <a href="#XREF_98423_Actions_for_DAC"><span class="FM_blue">Actions for DAC Policies</span></a>.</p>
+ <h5 style="margin-top  : 0.000pt; margin-bottom : 0.000pt;">&lt;action-mapping&gt;</h5>
+ <h5 style="margin-top  : 0.000pt; margin-bottom : 0.000pt;"> &#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;nextlabs&gt;OPEN, RUN&lt;/nextlabs&gt;</h5>
+ <h5 style="margin-top  : 0.000pt; margin-bottom : 0.000pt;"> &#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;sddl&gt;0x1200a9&lt;/sddl&gt;</h5>
+ <h5 style="margin-top  : 0.000pt; margin-bottom : 0.000pt;">&lt;/action-mapping&gt;</h5>
+ <h5 style="margin-top  : 0.000pt; margin-bottom : 0.000pt;">&lt;action-mapping&gt;</h5>
+ <h5 style="margin-top  : 0.000pt; margin-bottom : 0.000pt;"> &#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;nextlabs&gt;OPEN&lt;/nextlabs&gt;</h5>
+ <h5 style="margin-top  : 0.000pt; margin-bottom : 0.000pt;"> &#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;sddl&gt;FR&lt;/sddl&gt;</h5>
+ <h5 style="margin-top  : 0.000pt; margin-bottom : 0.000pt;">&lt;/action-mapping&gt;</h5>
+ <h5 style="margin-top  : 0.000pt; margin-bottom : 0.000pt;">&lt;action-mapping&gt;</h5>
+ <h5 style="margin-top  : 0.000pt; margin-bottom : 0.000pt;"> &#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;nextlabs&gt;EDIT&lt;/nextlabs&gt;</h5>
+ <h5 style="margin-top  : 0.000pt; margin-bottom : 0.000pt;"> &#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;sddl&gt;0x100116&lt;/sddl&gt;</h5>
+ <h5 style="margin-top  : 0.000pt; margin-bottom : 0.000pt;">&lt;/action-mapping&gt;</h5>
+ <h5 style="margin-top  : 0.000pt; margin-bottom : 0.000pt;">&lt;action-mapping&gt;</h5>
+ <h5 style="margin-top  : 0.000pt; margin-bottom : 0.000pt;"> &#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;nextlabs&gt;DELETE, EDIT, OPEN&lt;/nextlabs&gt;</h5>
+ <h5 style="margin-top  : 0.000pt; margin-bottom : 0.000pt;"> &#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;sddl&gt;0x1301bf&lt;/sddl&gt;</h5>
+ <h5 style="margin-top  : 0.000pt; margin-bottom : 0.000pt;">&lt;/action-mapping&gt;</h5>
+ <h5 style="margin-top  : 0.000pt; margin-bottom : 0.000pt;">&lt;action-mapping&gt;</h5>
+ <h5 style="margin-top  : 0.000pt; margin-bottom : 0.000pt;"> &#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;nextlabs&gt;DELETE, EDIT, OPEN, RUN&lt;/nextlabs&gt;</h5>
+ <h5 style="margin-top  : 0.000pt; margin-bottom : 0.000pt;"> &#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;sddl&gt;FA&lt;/sddl&gt;</h5>
+ <h5 style="margin-top  : 0.000pt; margin-bottom : 0.000pt;">&lt;/action-mapping&gt;</h5>
+ <h4><a name="XREF_66727_Defining"></a>Defining Connection and Mappings for Active Directory Server(s)</h4>
+ <p class="BodyLevel1">For each Active Directory server you are deploying DAC policies to, you must configure an <span class="FM_onscreen">&lt;ad-definition&gt; </span>section in the <span class="FM_onscreen">ddac_config.xml</span> file. This sec&#173;tion includes connection information (server location and log in credentials), and mapping definitions that determine how ACPL attributes are converted into SDDL User and Host Claims and Resource Properties. </p>
+ <p class="BodyLevel1">This<span class="FM_onscreen">&#160;</span>mapping must be done for all User, Host, and Resource attributes, and for Groups that will be referenced by DAC policies. Unlike Action-to-Permission mapping (which is the same across all Active Directory servers), User, Host, Resource, and Group mappings can be configured differently for each Active Directory server. </p>
+ <p class="PublisherBook"><span class="FM_Emphasis">Note: </span>Keep in mind that there is no validation of values that are entered in this file. If these values are not configured correctly, an error displays in the NextLabs DCC log file.</p>
+ <p class="PublisherBook"><span class="FM_Emphasis">Note: </span>Property and Claim IDs in Active Directory cannot have any invalid file characters, including <span class="FM_onscreen">\ / : * ? &quot; &lt; &gt; | </span>or space. If these characters are entered in the mapping definitions, an error displays in the Next&#173;Labs DCC log file. For more information about the proper format for Active directory properties and claims, consult Microsoft documenta&#173;tion.</p>
+ <p class="BodyLevel1">Below is an example <span class="FM_onscreen">&lt;ad-definition&gt;</span> section followed by step-by-step instruc&#173;tions.</p>
+ <h5 style="margin-left : 10.860pt; text-indent : -0.750pt; margin-top  : 0.000pt; margin-bottom : 0.000pt;">&lt;ad-definition&gt;</h5>
+ <h5 style="margin-left : 10.860pt; text-indent : -0.750pt; margin-top  : 0.000pt; margin-bottom : 0.000pt;">&nbsp;</h5>
+ <h5 style="margin-left : 10.860pt; text-indent : -0.750pt; margin-top  : 0.000pt; margin-bottom : 0.000pt;"><span style="font-family:Times New Roman; font-size:7.0pt"><font size="1" style="font-size:7pt;">&nbsp;&nbsp;&nbsp;</font></span>&lt;connection-settings&gt;</h5>
+ <h5 style="margin-left : 10.860pt; text-indent : -0.750pt; margin-top  : 0.000pt; margin-bottom : 0.000pt;"><span style="font-family:Times New Roman; font-size:7.0pt"><font size="1" style="font-size:7pt;">&nbsp;&nbsp;&nbsp;</font></span><span style="font-family:Times New Roman; font-size:7.0pt"><font size="1" style="font-size:7pt;">&nbsp;&nbsp;&nbsp;</font></span>&lt;name&gt;<span style="color   : #ff0000; "><font color="red" >ad2k12.nextlabs.com</font></span>&lt;/name&gt;</h5>
+ <h5 style="margin-left : 10.860pt; text-indent : -0.750pt; margin-top  : 0.000pt; margin-bottom : 0.000pt;"><span style="font-family:Times New Roman; font-size:7.0pt"><font size="1" style="font-size:7pt;">&nbsp;&nbsp;&nbsp;</font></span><span style="font-family:Times New Roman; font-size:7.0pt"><font size="1" style="font-size:7pt;">&nbsp;&nbsp;&nbsp;</font></span>&lt;login&gt;<span style="color   : #ff0000; "><font color="red" >ad2k12.nextlabs.com\Administrator</font></span>&lt;/login&gt;</h5>
+ <h5 style="margin-left : 10.860pt; text-indent : -0.750pt; margin-top  : 0.000pt; margin-bottom : 0.000pt;"><span style="font-family:Times New Roman; font-size:7.0pt"><font size="1" style="font-size:7pt;">&nbsp;&nbsp;&nbsp;</font></span><span style="font-family:Times New Roman; font-size:7.0pt"><font size="1" style="font-size:7pt;">&nbsp;&nbsp;&nbsp;</font></span>&lt;password&gt;scc1d86db33184b96278786ce58a47957&lt;/password&gt;</h5>
+ <h5 style="margin-left : 10.860pt; text-indent : -0.750pt; margin-top  : 0.000pt; margin-bottom : 0.000pt;"><span style="font-family:Times New Roman; font-size:7.0pt"><font size="1" style="font-size:7pt;">&nbsp;&nbsp;&nbsp;</font></span>&lt;/connection-settings&gt;</h5>
+ <h5 style="margin-left : 10.860pt; text-indent : -0.750pt; margin-top  : 0.000pt; margin-bottom : 0.000pt;">&nbsp;</h5>
+ <h5 style="margin-left : 31.860pt; text-indent : -21.750pt; margin-top  : 0.000pt; margin-bottom : 0.000pt;"><span style="font-family:Times New Roman; font-size:7.0pt"><font size="1" style="font-size:7pt;">&nbsp;&nbsp;&nbsp;</font></span>&lt;ad-rule-identity&gt;CN=Central Access Rules,CN=Claims Configu&#173;ration,CN=Services,CN=Configuration,DC=<span style="color   : #ff0000; "><font color="red" >nextlabs</font></span>,DC=com&lt;/ad-rule-identity&gt;</h5>
+ <h5 style="margin-left : 31.860pt; text-indent : -21.750pt; margin-top  : 0.000pt; margin-bottom : 0.000pt;">&nbsp;</h5>
+ <h5 style="margin-left : 32.610pt; text-indent : -22.501pt; margin-top  : 0.000pt; margin-bottom : 0.000pt;"><span style="font-family:Times New Roman; font-size:7.0pt"><font size="1" style="font-size:7pt;">&nbsp;&nbsp;&nbsp;</font></span>&lt;ad-policy-identity&gt;CN=Central Access Policies,CN=Claims Con&#173;figuration,CN=Services,CN=Configuration,DC=<span style="color   : #ff0000; "><font color="red" >nextlabs</font></span>,DC=com&lt;/ad-policy-identity&gt;</h5>
+ <h5 style="margin-left : 32.610pt; text-indent : -22.501pt; margin-top  : 0.000pt; margin-bottom : 0.000pt;">&nbsp;</h5>
+ <h5 style="margin-left : 10.860pt; text-indent : -0.750pt; margin-top  : 0.000pt; margin-bottom : 0.000pt;"><span style="font-family:Times New Roman; font-size:7.0pt"><font size="1" style="font-size:7pt;">&nbsp;&nbsp;&nbsp;</font></span>&lt;group-sid-mapping&gt;</h5>
+ <h5 style="margin-left : 10.860pt; text-indent : -0.750pt; margin-top  : 0.000pt; margin-bottom : 0.000pt;"><span style="font-family:Times New Roman; font-size:7.0pt"><font size="1" style="font-size:7pt;">&nbsp;&nbsp;&nbsp;</font></span><span style="font-family:Times New Roman; font-size:7.0pt"><font size="1" style="font-size:7pt;">&nbsp;&nbsp;&nbsp;</font></span>&lt;group-name&gt;<span style="color   : #ff0000; "><font color="red" >GROUP NAME1</font></span>&lt;/group-name&gt;</h5>
+ <h5 style="margin-left : 10.860pt; text-indent : -0.750pt; margin-top  : 0.000pt; margin-bottom : 0.000pt;"><span style="font-family:Times New Roman; font-size:7.0pt"><font size="1" style="font-size:7pt;">&nbsp;&nbsp;&nbsp;</font></span><span style="font-family:Times New Roman; font-size:7.0pt"><font size="1" style="font-size:7pt;">&nbsp;&nbsp;&nbsp;</font></span>&lt;sid&gt;<span style="color   : #ff0000; "><font color="red" >sidnumber</font></span>&lt;/sid&gt;</h5>
+ <h5 style="margin-left : 10.860pt; text-indent : -0.750pt; margin-top  : 0.000pt; margin-bottom : 0.000pt;"><span style="font-family:Times New Roman; font-size:7.0pt"><font size="1" style="font-size:7pt;">&nbsp;&nbsp;&nbsp;</font></span>&lt;/group-sid-mapping&gt;</h5>
+ <h5 style="margin-left : 10.860pt; text-indent : -0.750pt; margin-top  : 0.000pt; margin-bottom : 0.000pt;"><span style="font-family:Times New Roman; font-size:7.0pt"><font size="1" style="font-size:7pt;">&nbsp;&nbsp;&nbsp;</font></span></h5>
+ <h5 style="margin-left : 10.860pt; text-indent : -0.750pt; margin-top  : 0.000pt; margin-bottom : 0.000pt;">&lt;!-- resource mappings acpl =&gt; properties --&gt;</h5>
+ <h5 style="margin-left : 10.860pt; text-indent : -0.750pt; margin-top  : 0.000pt; margin-bottom : 0.000pt;"><span style="font-family:Times New Roman; font-size:7.0pt"><font size="1" style="font-size:7pt;">&nbsp;&nbsp;&nbsp;</font></span>&lt;ad-mapping&gt;</h5>
+ <h5 style="margin-left : 10.860pt; text-indent : -0.750pt; margin-top  : 0.000pt; margin-bottom : 0.000pt;"><span style="font-family:Times New Roman; font-size:7.0pt"><font size="1" style="font-size:7pt;">&nbsp;&nbsp;&nbsp;</font></span><span style="font-family:Times New Roman; font-size:7.0pt"><font size="1" style="font-size:7pt;">&nbsp;&nbsp;&nbsp;</font></span>&lt;acpl&gt;<span style="color   : #ff0000; "><font color="red" >resource.fso.attribute1</font></span>&lt;/acpl&gt;</h5>
+ <h5 style="margin-left : 10.860pt; text-indent : -0.750pt; margin-top  : 0.000pt; margin-bottom : 0.000pt;"><span style="font-family:Times New Roman; font-size:7.0pt"><font size="1" style="font-size:7pt;">&nbsp;&nbsp;&nbsp;</font></span><span style="font-family:Times New Roman; font-size:7.0pt"><font size="1" style="font-size:7pt;">&nbsp;&nbsp;&nbsp;</font></span>&lt;ad&gt;<span style="color   : #ff0000; "><font color="red" >AD_RESOURCE_PROPERTY</font></span>&lt;/ad&gt;</h5>
+ <h5 style="margin-left : 10.860pt; text-indent : -0.750pt; margin-top  : 0.000pt; margin-bottom : 0.000pt;"><span style="font-family:Times New Roman; font-size:7.0pt"><font size="1" style="font-size:7pt;">&nbsp;&nbsp;&nbsp;</font></span>&lt;/ad-mapping&gt;</h5>
+ <h5 style="margin-left : 10.860pt; text-indent : -0.750pt; margin-top  : 0.000pt; margin-bottom : 0.000pt;">&nbsp;</h5>
+ <h5 style="margin-left : 10.860pt; text-indent : -0.750pt; margin-top  : 0.000pt; margin-bottom : 0.000pt;">&lt;!-- user mappings acpl =&gt; claims --&gt;</h5>
+ <h5 style="margin-left : 10.860pt; text-indent : -0.750pt; margin-top  : 0.000pt; margin-bottom : 0.000pt;"><span style="font-family:Times New Roman; font-size:7.0pt"><font size="1" style="font-size:7pt;">&nbsp;&nbsp;&nbsp;</font></span>&lt;ad-mapping&gt;</h5>
+ <h5 style="margin-left : 10.860pt; text-indent : -0.750pt; margin-top  : 0.000pt; margin-bottom : 0.000pt;"><span style="font-family:Times New Roman; font-size:7.0pt"><font size="1" style="font-size:7pt;">&nbsp;&nbsp;&nbsp;</font></span><span style="font-family:Times New Roman; font-size:7.0pt"><font size="1" style="font-size:7pt;">&nbsp;&nbsp;&nbsp;</font></span>&lt;acpl&gt;<span style="color   : #ff0000; "><font color="red" >user.attribute1</font></span>&lt;/acpl&gt;</h5>
+ <h5 style="margin-left : 10.860pt; text-indent : -0.750pt; margin-top  : 0.000pt; margin-bottom : 0.000pt;"><span style="font-family:Times New Roman; font-size:7.0pt"><font size="1" style="font-size:7pt;">&nbsp;&nbsp;&nbsp;</font></span><span style="font-family:Times New Roman; font-size:7.0pt"><font size="1" style="font-size:7pt;">&nbsp;&nbsp;&nbsp;</font></span>&lt;ad&gt;<span style="color   : #ff0000; "><font color="red" >AD_USER_CLAIM</font></span>&lt;/ad&gt;</h5>
+ <h5 style="margin-left : 10.860pt; text-indent : -0.750pt; margin-top  : 0.000pt; margin-bottom : 0.000pt;"><span style="font-family:Times New Roman; font-size:7.0pt"><font size="1" style="font-size:7pt;">&nbsp;&nbsp;&nbsp;</font></span>&lt;/ad-mapping&gt;</h5>
+ <h5 style="margin-left : 10.860pt; text-indent : -0.750pt; margin-top  : 0.000pt; margin-bottom : 0.000pt;">&nbsp;</h5>
+ <h5 style="margin-left : 10.860pt; text-indent : -0.750pt; margin-top  : 0.000pt; margin-bottom : 0.000pt;">&lt;!-- host mappings acpl =&gt; claims --&gt;</h5>
+ <h5 style="margin-left : 10.860pt; text-indent : -0.750pt; margin-top  : 0.000pt; margin-bottom : 0.000pt;"><span style="font-family:Times New Roman; font-size:7.0pt"><font size="1" style="font-size:7pt;">&nbsp;&nbsp;&nbsp;</font></span>&lt;ad-mapping&gt;</h5>
+ <h5 style="margin-left : 10.860pt; text-indent : -0.750pt; margin-top  : 0.000pt; margin-bottom : 0.000pt;"><span style="font-family:Times New Roman; font-size:7.0pt"><font size="1" style="font-size:7pt;">&nbsp;&nbsp;&nbsp;</font></span><span style="font-family:Times New Roman; font-size:7.0pt"><font size="1" style="font-size:7pt;">&nbsp;&nbsp;&nbsp;</font></span>&lt;acpl&gt;<span style="color   : #ff0000; "><font color="red" >host.attribute1</font></span>&lt;/acpl&gt;</h5>
+ <h5 style="margin-left : 10.860pt; text-indent : -0.750pt; margin-top  : 0.000pt; margin-bottom : 0.000pt;"><span style="font-family:Times New Roman; font-size:7.0pt"><font size="1" style="font-size:7pt;">&nbsp;&nbsp;&nbsp;</font></span><span style="font-family:Times New Roman; font-size:7.0pt"><font size="1" style="font-size:7pt;">&nbsp;&nbsp;&nbsp;</font></span>&lt;ad&gt;<span style="color   : #ff0000; "><font color="red" >AD_HOST_CLAIM</font></span>&lt;/ad&gt;</h5>
+ <h5 style="margin-left : 10.860pt; text-indent : -0.750pt; margin-top  : 0.000pt; margin-bottom : 0.000pt;"><span style="font-family:Times New Roman; font-size:7.0pt"><font size="1" style="font-size:7pt;">&nbsp;&nbsp;&nbsp;</font></span>&lt;/ad-mapping&gt;</h5>
+ <h5 style="margin-left : 10.860pt; text-indent : -0.750pt; margin-top  : 0.000pt; margin-bottom : 0.000pt;">&nbsp;</h5>
+ <h5 style="margin-left : 10.860pt; text-indent : -0.750pt; margin-top  : 0.000pt; margin-bottom : 0.000pt;">&lt;/ad-definition&gt;</h5>
+ <p class="BodyLevel1">Follow these steps to configure connection and definition settings for each Active Directory server you will be deploying DAC policies to:</p>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Locate the <span class="FM_onscreen">&lt;ad-definition&gt;&lt;/ad-definition&gt;</span><span style="font-family : Courier New; font-size  : 9.0pt; "><font size="1" style="font-size:9pt;">&#160;</font></span>section of the <span class="FM_onscreen">ddac_config.xml</span> file.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">In the<span class="FM_onscreen"> &lt;name&gt; </span>element inside the<span class="FM_onscreen"> &lt;connection-settings&gt;</span>&#160;section, enter the fully qualified domain name (FQDN) of the host where the Active Directory server is located.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">In the <span class="FM_onscreen">&lt;login&gt;</span> element inside the<span class="FM_onscreen"> &lt;connection-settings&gt;</span>&#160;section, enter a user name for a user who has the necessary permissions to access, create, and edit information in Active Directory.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Use the NextLabs <span class="FM_onscreen">mkpassword</span>&#160;utility to encrypt the password for the Active Directory user:</p>
+</li>
+  
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Change directories to <span class="FM_onscreen">&lt;install directory&gt;/Policy Server/Tools</span>.</p>
+
+  
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Run the command <span class="FM_onscreen">mkpassword.bat -password &lt;yourpassword&gt;</span>.</p>
+
+  
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Copy the encrypted password value that is returned.</p>
+
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">In the <span class="FM_onscreen">ddac_config.xml</span>&#160;file, paste the encrypted password value into the <span class="FM_onscreen">&lt;password&gt;</span> element.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Locate the <span class="FM_onscreen">&lt;ad-rule-identity&gt;</span> and<span class="FM_onscreen"> &lt;ad-policy-identity&gt;</span>&#160;sections. In the Domain Controller (DC) field of each section, enter the domain the Active Directory server(s) reside within (<span class="FM_onscreen">nextlabs</span>&#160;in the examples below). </p>
+</li>
+  <h5 style="margin-left : 19.860pt; text-indent : -0.750pt;">&lt;ad-rule-identity&gt;CN=Central Access Rules,CN=Claims <br />Configuration,CN=Services,CN=Configuration,DC=<span style="color   : #ff0000; "><font color="red" >nextlabs</font></span>,DC=com<br />&lt;/ad-rule-identity&gt;</h5>
+  <h5 style="margin-left : 19.860pt; text-indent : -0.750pt;">&lt;ad-policy-identity&gt;CN=Central Access Policies,CN=Claims <br />Configuration,CN=Services,CN=Configuration,DC=<span style="color   : #ff0000; "><font color="red" >nextlabs</font></span>,DC=com<br />&lt;/ad-policy-identity&gt;</h5>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Map ACPL Group Names to Active Directory Group SIDs. The Group Name and SID should match what is defined in Active Directory. For each new mapping, make a new copy of a <span class="FM_onscreen">&lt;group-sid-mapping&gt;&lt;/group-sid-map&#173;ping&gt;</span> element.</p>
+</li>
+  <h5 style="text-indent : -1.110pt;">&lt;group-sid-mapping&gt;<br /><span style="font-family:Times New Roman; font-size:7.0pt"><font size="1" style="font-size:7pt;">&nbsp;&nbsp;&nbsp;</font></span>&lt;group-name&gt;Group Name&lt;/group-name&gt;<br /><span style="font-family:Times New Roman; font-size:7.0pt"><font size="1" style="font-size:7pt;">&nbsp;&nbsp;&nbsp;</font></span>&lt;ad&gt;sidnumber&lt;/ad&gt;<br />&lt;/group-sid-mapping&gt;</h5>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Map ACPL Resource Attributes to AD Resource Properties. For each new mapping, make a new copy of an <span class="FM_onscreen">&lt;ad-mapping&gt;&lt;/ad-mapping&gt;</span>&#160;element. Note the following requirements:</p>
+</li>
+  
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>The ACPL resource attribute format must be <br /><span class="FM_onscreen">resource.fso.&lt;attributename&gt;</span> in lower case.</p>
+
+  
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>The AD resource property format must be <span class="FM_onscreen">AD_&lt;PROPERTYNAME&gt; </span>in all upper case, where <span class="FM_onscreen">&lt;PROPERTYNAME&gt;</span>&#160;is the identifier assigned in Active Directory. </p>
+
+  <h5 style="margin-left : 18.360pt; text-indent : 34.890pt;">&lt;ad-mapping&gt;<br /><span style="font-family:Times New Roman; font-size:7.0pt"><font size="1" style="font-size:7pt;">&nbsp;&nbsp;&nbsp;</font></span><span style="font-family:Times New Roman; font-size:7.0pt"><font size="1" style="font-size:7pt;">&nbsp;&nbsp;&nbsp;</font></span>&lt;acpl&gt;resource.fso.attribute1&lt;/acpl&gt;<br /><span style="font-family:Times New Roman; font-size:7.0pt"><font size="1" style="font-size:7pt;">&nbsp;&nbsp;&nbsp;</font></span><span style="font-family:Times New Roman; font-size:7.0pt"><font size="1" style="font-size:7pt;">&nbsp;&nbsp;&nbsp;</font></span>&lt;ad&gt;AD_RESOURCE_PROPERTY1&lt;/ad&gt;<br /><span style="font-family:Times New Roman; font-size:7.0pt"><font size="1" style="font-size:7pt;">&nbsp;&nbsp;&nbsp;</font></span>&lt;/ad-mapping&gt;</h5>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Map all ACPL User Attributes to AD User Claims. For each new mapping, make a new copy of an &lt;ad-mapping&gt; element. Note the following requirements:</p>
+</li>
+  
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>The <span class="FM_onscreen">&lt;acpl&gt;</span>&#160;user attribute must be in the format <span class="FM_onscreen">user.&lt;attributename&gt; </span>in all lower case.</p>
+
+  
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>The <span class="FM_onscreen">&lt;ad&gt; </span>user claim must be in the format <span class="FM_onscreen">AD_&lt;CLAIMNAME&gt;</span>&#160;in all upper case, where <span class="FM_onscreen">&lt;CLAIMNAME&gt;</span> is the identifier assigned in Active Directory.</p>
+
+  <h5 style="margin-left : 18.360pt; text-indent : 34.890pt;">&lt;ad-mapping&gt;<br /><span style="font-family:Times New Roman; font-size:7.0pt"><font size="1" style="font-size:7pt;">&nbsp;&nbsp;&nbsp;</font></span><span style="font-family:Times New Roman; font-size:7.0pt"><font size="1" style="font-size:7pt;">&nbsp;&nbsp;&nbsp;</font></span>&lt;acpl&gt;user.attribute1&lt;/acpl&gt;<br /><span style="font-family:Times New Roman; font-size:7.0pt"><font size="1" style="font-size:7pt;">&nbsp;&nbsp;&nbsp;</font></span><span style="font-family:Times New Roman; font-size:7.0pt"><font size="1" style="font-size:7pt;">&nbsp;&nbsp;&nbsp;</font></span>&lt;ad&gt;AD_USER_CLAIM1&lt;/ad&gt;<br /><span style="font-family:Times New Roman; font-size:7.0pt"><font size="1" style="font-size:7pt;">&nbsp;&nbsp;&nbsp;</font></span>&lt;/ad-mapping&gt;</h5>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Map all ACPL Host Attributes to AD Host Claims. For each new mapping, make a new copy of an <span class="FM_onscreen">&lt;ad-mapping&gt;</span>&#160;element. Note the following requirements:</p>
+</li>
+  
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>The <span class="FM_onscreen">&lt;acpl&gt;</span>&#160;host attribute must be entered in the format <span class="FM_onscreen">host.&lt;attrib&#173;utename&gt;</span>, in lower case.</p>
+
+  
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>The <span class="FM_onscreen">&lt;ad&gt; </span>host claim must be entered in the format <span class="FM_onscreen">AD_&lt;HOSTCLAIM&gt;</span>, where <span class="FM_onscreen">&lt;HOSTCLAIM&gt;</span> is the identifier assigned in AD.</p>
+
+  <h5 style="margin-left : 18.360pt; text-indent : 34.890pt;">&lt;ad-mapping&gt;<br /><span style="font-family:Times New Roman; font-size:7.0pt"><font size="1" style="font-size:7pt;">&nbsp;&nbsp;&nbsp;</font></span><span style="font-family:Times New Roman; font-size:7.0pt"><font size="1" style="font-size:7pt;">&nbsp;&nbsp;&nbsp;</font></span>&lt;acpl&gt;host.attribute1&lt;/acpl&gt;<br /><span style="font-family:Times New Roman; font-size:7.0pt"><font size="1" style="font-size:7pt;">&nbsp;&nbsp;&nbsp;</font></span><span style="font-family:Times New Roman; font-size:7.0pt"><font size="1" style="font-size:7pt;">&nbsp;&nbsp;&nbsp;</font></span>&lt;ad&gt;AD_HOST_CLAIM1&lt;/ad&gt;<br /><span style="font-family:Times New Roman; font-size:7.0pt"><font size="1" style="font-size:7pt;">&nbsp;&nbsp;&nbsp;</font></span>&lt;/ad-mapping&gt;</h5>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">After you have made all changes, save the file and restart the Policy Server. </p>
+</li>
+ </ol>
+ <h2><a name="XREF_64696_Writing_Dynamic"></a>Writing Dynamic Access Control Policies</h2>
+ <p class="BodyLevel1">This section provides information you need to write DAC policies. Information is broken into the following sections:</p>
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><a href="#XREF_47581_About_DAC_Policies"><span class="FM_blue">Versions of Policy Studio</span></a></p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><a href="#XREF_68947_Characteristics_of"><span class="FM_blue">Characteristics of all DAC Policies</span></a></p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><a href="#XREF_61469_Policy_Studio"><span class="FM_blue">Policy Studio Structure for DAC Policies</span></a></p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><a href="#XREF_74652_File_Server_and"><span class="FM_blue">Example DAC Policy</span></a></p>
+
+ <h3>Versions of Policy Studio <a name="XREF_47581_About_DAC_Policies"></a></h3>
+ <p class="BodyLevel1">Policy Studio’s interface varies depending on the version of Policy Studio you are using. If your implementation is Enterprise edition, all policy types, tabs, and component panes are available. If your implementation is DAC Edition, the only policy type available is the Dynamic Access Control Rule type, and only tabs and components pertinent to DAC policies will display.</p>
+ <p class="PublisherBook"><span class="FM_Emphasis">Note: </span>These instructions assume a DAC Edition Policy Studio; however, the procedures for writing a DAC Policy are the same for Enterprise Edi&#173;tion.</p>
+ <h3><a name="XREF_68947_Characteristics_of"></a>Characteristics of all DAC Policies</h3>
+ <p class="BodyLevel1">No matter which version of Policy Studio you are using, all DAC Policies have the following characteristics:</p>
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>CAR policies have an Allow effect</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>The Subject can be User or Computer</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>All policies use DAC actions that are populated through seed data import. These actions should not be modified.</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Resource components can be Document (for File Server deployments) and Portal (for Sharepoint deployments)</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Document Component can target documents by file server location and by resource attribute</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Portal Resource Components can target documents in Sharepoint both by target lists and libraries and by column values in Sharepoint (just like other Entitlement Manager for SharePoint Access Control policies). </p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>All attributes referenced by DAC policies (for users, hosts, and resources) must be configured in the DAC Configuration file (see <a href="#XREF_66727_Defining"><span class="FM_blue">Defining Connection and Mappings for Active Directory Server(s)</span></a>).</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Monitor Policy for Active Directory: If the logging option is selected, a NextLabs DAC policy will be converted into a CAR with “Proposed Permis&#173;sions” in Active Directory. This is similar to a NextLabs Allow policy.</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Access Control Policy for Active Directory: If the logging option is <span class="FM_Emphasis" style="font-family : Times New Roman; font-size  : 11.0pt; "><font size="3" style="font-size:11pt;">not</font></span>&#160;selected, the NextLabs policy will be converted into a CAR with “Current Permissions” in Active Directory.</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Logging and Access Control for SharePoint: If the logging option is selected for a DAC policy to be deployed to Sharepoint, the result will be an access control policy that is also logged in the Activity Journal.</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>All groups referenced in DAC policies must be configured in the DAC Con&#173;figuration file (see <a href="#XREF_66727_Defining"><span class="FM_blue">Defining Connection and Mappings for Active Directory Server(s)</span></a>).</p>
+
+ <h3><a name="XREF_61469_Policy_Studio"></a>Policy Studio Structure for DAC Policies</h3>
+ <p class="BodyLevel1">In Active Directory, all CARs must be stored within a parent Central Access Pol&#173;icy (CAP). In Policy Studio, the equivalent of the parent CAP is a parent policy. Subpolicies within a parent policy are converted to CARs.</p>
+ <p class="BodyLevel1">Like other types of NextLabs policies, all policies must be stored in a folder in Policy Studio. The following figure shows an example of a folder and policy structure to use for DAC policies.</p>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="DacPolicyTree.png" style="width : 334.251pt; height : 184.125pt; " id="image20" src="DacPolicyTree.png" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook">DAC Policy Studio Folder Structure</p>
+ <h3><a name="XREF_98423_Actions_for_DAC"></a> Actions for DAC Policies</h3>
+ <p class="BodyLevel1">The following table lists DAC Permissions available in Policy Studio and the Next&#173;Labs Basic Action(s) these permissions map to. </p>
+<table width="100%">
+ <tr>
+ <td>
+ <table style="border-spacing: 0; padding-left: 4.00pt; padding-top: 4.00pt; padding-right: 4.00pt; padding-bottom: 3.00pt;float: aligncenter;margin-bottom: 24.00pt; width: 360.00pt;" cellspacing="0" align="center">
+  <caption align="center">
+  </caption>
+  <tr style=" height : 16.00pt;background : #1f8c4a;">
+  <th style="width : 180.000pt; background : #1f8c4a;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">DAC Permission(s)</p>
+</th>
+  <th style="width : 180.000pt; background : #1f8c4a;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Basic Action(s)</p>
+</th>
+</tr>
+  <tr style=" height : 15.00pt;">
+  <td style="width : 180.000pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">Read and Execute</p>
+</td>
+  <td style="width : 180.000pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Open, Run</p>
+</td>
+</tr>
+  <tr style=" height : 15.00pt;">
+  <td style="width : 180.000pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">Read</p>
+</td>
+  <td style="width : 180.000pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Open</p>
+</td>
+</tr>
+  <tr style=" height : 15.00pt;">
+  <td style="width : 180.000pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">Write</p>
+</td>
+  <td style="width : 180.000pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Edit</p>
+</td>
+</tr>
+  <tr style=" height : 15.00pt;">
+  <td style="width : 180.000pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">Modify</p>
+</td>
+  <td style="width : 180.000pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Open, Run, Edit, Delete</p>
+</td>
+</tr>
+ </table>
+</td></tr>
+</table>
+ <p class="BodyLevel1"></p>
+ <h3><a name="XREF_74652_File_Server_and"></a>Example DAC Policy</h3>
+ <p class="BodyLevel1">This section describes the steps for creating an example DAC policy. Our exam&#173;ple policy restricts full control file server permissions for files that reside in Win&#173;dows 2012 File Servers and Microsoft SharePoint, based on file classification and user claims. The basic structure of the policy is:</p>
+ <p class="BodyLevel1" style="margin-left : 17.500pt; text-indent : -0.625pt; font-style : italic;"><span class="FM_Emphasis" style="font-style : italic; "><i>For Documents Classified as “Financial” that are stored in File Servers and Portal Locations, Allow Only the Financial Planning Team to have Full Con&#173;trol Permissions.</i></span></p>
+ <p class="BodyLevel1">Follow these steps:</p>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">In Policy Author, create a folder, which will contain the DAC policy. </p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Select the folder, click New Policy, and create a Dynamic Access Control policy. Specify a policy name that you want to assign to the CAP in Active Directory.&#160;In our example, this is “CAP F: Financial Documents.”</p>
+</li>
+  <p class="BodyLevel1"></p>
+  <div align="center"><img alt="DACpolicyexample1.png" style="width : 356.999pt; height : 167.124pt; " id="image21" src="DACpolicyexample1.png" />
+  </div>
+  <p class="BodyLevel1">&nbsp;</p>
+  <p class="TitleBook">Creating a new CAP policy for DAC</p>
+  <p class="Title">The new policy appears in the editing pane. As the following figure shows, this parent policy is simply a container for the actual policies, which you define as subpolicies.</p>
+  <p class="BodyLevel1"></p>
+  <div align="center"><img alt="CAPPolicy.png" style="width : 354.499pt; height : 199.999pt; " id="image22" src="CAPPolicy.png" />
+  </div>
+  <p class="BodyLevel1">&nbsp;</p>
+  <p class="TitleBook">Parent policy (CAP) in editing pane</p>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Click in the Subpolicy field, and type a name for the subpolicy. This name is assigned to the CAR in Active Directory.</p>
+</li>
+  <p class="Title">A dialog prompts you to create a new subpolicy with that name. </p>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Select Yes. The new subpolicy appears in the editing pane, as shown in the following figure. In this example, the subpolicy name is &quot;Full Control of Financial Documents.&quot;</p>
+</li>
+  <p class="BodyLevel1"></p>
+  <div align="center"><img alt="CARPolicy.png" style="width : 432.750pt; height : 381.875pt; " id="image23" src="CARPolicy.png" />
+  </div>
+  <p class="BodyLevel1">&nbsp;</p>
+  <p class="TitleBook">Subpolicy (CAR) in editing pane</p>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Create a new Subject (User or Computer) component that references a User or Host Attribute that has been mapped to an AD Claim. In our exam&#173;ple, we create a Finance Team user component, which targets users whose attribute “Department” is “Finance.”</p>
+</li>
+  <p class="BodyLevel1"></p>
+  <div align="center"><img alt="UserComponent.png" style="width : 494.250pt; height : 290.250pt; " id="image24" src="UserComponent.png" />
+  </div>
+  <p class="BodyLevel1">&nbsp;</p>
+  <p class="TitleBook">User component referencing a user attribute mapped to an AD user</p>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Select the subpolicy, and drag the new Subject component into the User Component field.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Create a new Document Resource component that references the file server directory and/or document Attribute that has been mapped to an Active Directory Resource Property (you may target resources by location and/or by attribute). In our example, we create a document component, Financial Documents, which targets files whose attribute “Type” is “Finance.”</p>
+</li>
+  <p class="BodyLevel1"></p>
+  <div align="center"><img alt="ResourceComponent.png" style="width : 433.374pt; height : 332.125pt; " id="image25" src="ResourceComponent.png" />
+  </div>
+  <p class="BodyLevel1">&nbsp;</p>
+  <p class="TitleBook">Document component referencing a document attribute mapped to an AD resource property</p>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Select the subpolicy, and drag the new Document component into the Tar&#173;get field.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Create a new Portal Resource component that references the SharePoint list or library and/or a configured column name and value. In our exam&#173;ple, we are targeting all lists and libraries.</p>
+</li>
+  <p class="BodyLevel1"></p>
+  <div align="center"><img alt="PortalComponent.png" style="width : 416.124pt; height : 331.250pt; " id="image26" src="PortalComponent.png" />
+  </div>
+  <p class="BodyLevel1">&nbsp;</p>
+  <p class="TitleBook">Targeting a Portal Location</p>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Select the subpolicy, and drag the new portal resource component into the Target field to specify an OR relationship with the first resource com&#173;ponent. The following figure shows the definition of the subpolicy so far.</p>
+</li>
+  <p class="BodyLevel1"></p>
+  <div align="center"><img alt="CARPolicyExample.png" style="width : 420.499pt; height : 458.500pt; " id="image27" src="CARPolicyExample.png" />
+  </div>
+  <p class="BodyLevel1">&nbsp;</p>
+  <p class="TitleBook">Example DAC Policy</p>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">DAC policies also support the use of Condition Expressions to express rela&#173;tionships between subject and resource attributes. When imported into Active Directory, Condition Expressions are inserted into the Conditional Expression section of a CAR. For more information, see <a href="Creating_a_New_Policy.htm#XREF_18668_Advanced_Conditions"><span class="FM_blue">Condition Expres&#173;sions</span></a>.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">For DAC policies deployed to Active Directory, specify whether a CAR should have Proposed or Current permissions. (In Active Directory, Pro&#173;posed permissions are for auditing and logging, whereas Current permis&#173;sions offer access control.)&#160;Select the Log Effect (Proposed Permissions on Windows Server 2012)<span class="FM_Bold">&#160;</span>option if you want the policy to be an audit only policy. Leave this option unchecked if you want to create an access con&#173;trol policy.</p>
+</li>
+ </ol>
+ <p class="Title">For DAC policies deployed to SharePoint, selecting this option will result in an Access Control policy for which events are also logged to the Activity Journal.</p>
+ <p class="PublisherBook"><span class="FM_Emphasis">Note: </span>DAC Policies must be deployed to Active Directory and SharePoint Servers in a Target Deployment. This is discussed in the following section, <a href="#XREF_72088_Deploying_Dynamic"><span class="FM_blue">Deploying Dynamic Access Control Policies</span></a>.</p>
+ <h2><a name="XREF_72088_Deploying_Dynamic"></a>Deploying Dynamic Access Control Policies</h2>
+ <p class="BodyLevel1">DAC policies must be deployed to Active Directory and Sharepoint servers using a targeted deployment. Follow these steps:</p>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">With the parent (CAP) policy open, select Actions &gt; Set Deployment Tar&#173;gets<span class="FM_Bold">.</span></p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">In the Deployment Type combo-box, choose Manual Deployment. The Set Deployment Targets window opens, as shown in the figure below. </p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">For DAC policies, select deployment targets in the Portal (SharePoint) and/or Active Directory tabs, and select Add. </p>
+</li>
+  <p class="PublisherBook"><span class="FM_Emphasis">Note: </span>You can design a single policy to be deployed to multiple Active Direc&#173;tories and Sharepoint Servers. Each deployment target must be set for the policy here.</p>
+  <p class="BodyLevel1"></p>
+  <div align="center"><img alt="DACpolicyexample8.jpg" style="width : 479.024pt; height : 185.674pt; " id="image28" src="DACpolicyexample8.jpg" />
+  </div>
+  <p class="BodyLevel1">&nbsp;</p>
+  <p class="TitleBook">Setting SharePoint and Active Directory Deployment Targets</p>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">When you have finished setting the Portal and Active Directory targets, click Save.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Deploy the policy.</p>
+</li>
+ </ol>
+ <h2>What’s Next?</h2>
+ <p class="BodyLevel1">After deploying DAC policies to Active Directory, an IT Administrator can deploy CARs to target Windows 2012 File Servers using standard Microsoft GPO proce&#173;dures. (Consult Microsoft documentation for more information.) For DAC policies deployed to a Sharepoint Server, policies are&#160;active as soon as they are deployed.</p>
+<script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+
+
+highlightSearch();
+//-->
+//]]></script>
+</body>
+</html>

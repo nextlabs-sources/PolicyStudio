@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="com.nextlabs.policystudio.editor">
+      <editor
+            context="OBJECT"
+            displayName="Object Component"
+            editorClass="com.nextlabs.policystudio.editor.SAP.SAPResourceComponentEditor"
+            icon="icons/elements_obj.gif"
+            panelClass="com.bluejungle.destiny.policymanager.editor.ComponentEditorPanel"
+            type="COMPONENT">
+      </editor>
+   </extension>
+   <extension
+         point="com.nextlabs.policystudio.tab">
+      <tab
+            class="com.nextlabs.policystudio.editor.SAP.SAPResourceListPanel"
+            folder="Resources"
+            name="SAP">
+      </tab>
+   </extension>
+</plugin>

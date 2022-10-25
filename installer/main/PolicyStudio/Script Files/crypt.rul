@@ -1,0 +1,63 @@
+/*
+ * Created on Sep 27, 2005
+ * 
+ * All sources, binaries and HTML pages (C) copyright 2004 by Blue Jungle Inc.,
+ * Redwood City CA, Ownership remains with Blue Jungle Inc, All rights reserved
+ * worldwide.
+ */
+#include "crypt.h"
+
+/////////////////////////////////////////////////////////////
+// Encrypts a clear text password into an encrypted password 
+// hMSI : MSI handle
+// passToEncrypt : clear text password to encrypt
+// Returns the encrypted password
+/////////////////////////////////////////////////////////////
+function WSTRING EncryptPassword(hMSI, passToEncrypt)
+	int iResult;
+	NUMBER fileHandle;
+	WSTRING args;
+	WSTRING cmd;
+	WSTRING javaExe;
+	WSTRING cryptJar;
+	WSTRING result;
+	WSTRING sResult;
+	WSTRING tempFileName;
+	WSTRING escapedPw; 
+	string installDir,tempFolder;
+begin
+    installDir=DeferredGetProperty(hMSI, "INSTALLDIR");
+	cryptJar = installDir ^ "\\tools\\crypt\\crypt.jar";
+	javaExe = installDir ^ "\\java\\jre\\bin\\java.exe";
+	tempFolder=DeferredGetProperty(hMSI,"tempFolder");
+	tempFileName = tempFolder ^ "temp.output";
+	LongPathToQuote(cryptJar, TRUE);
+	LongPathToQuote(javaExe, TRUE);
+	LongPathToQuote(tempFileName, TRUE);
+	escapedPw = passToEncrypt;
+	StrReplace ( escapedPw, '^', '^^', 0 );
+	StrReplace ( escapedPw, '&', '^&', 0 );
+	StrReplace ( escapedPw, '<', '^<', 0 );
+	StrReplace ( escapedPw, '>', '^>', 0 );
+	StrReplace ( escapedPw, '(', '^(', 0 );
+	StrReplace ( escapedPw, ')', '^)', 0 );
+	StrReplace ( escapedPw, '@', '^@', 0 );
+	StrReplace ( escapedPw, '|', '^|', 0 );
+	//TODO handle the quote char '"'
+	cmd = "cmd.exe";
+	args = "/c \"" + javaExe + " -jar " + cryptJar + " -e -w \"" + escapedPw + "\" > " + tempFileName + "\"";
+	iResult = LaunchAppAndWait(cmd, args, LAAW_OPTION_HIDDEN | LAAW_OPTION_WAIT);
+	if (iResult == ERROR_SUCCESS) then
+		OpenFileMode (FILE_MODE_NORMAL);
+		iResult = OpenFile (fileHandle, tempFolder, "temp.output");
+		if (iResult == 0) then
+			GetLine(fileHandle, result);
+			CloseFile(fileHandle);
+		else
+			NumToStr(sResult, iResult);
+ 			WriteToLogFile(hMSI, "Error opening file " + tempFileName);
+		endif;
+		DeleteFile(tempFileName);
+	endif;
+	return result;
+end;

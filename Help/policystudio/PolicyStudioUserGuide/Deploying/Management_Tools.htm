@@ -1,0 +1,252 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ <title>Management Tools</title>
+
+ <meta name="generator" content="Adobe RoboHelp 9" />
+ <meta name="Originator" content="ImportMif" />
+ <meta name="OriginalFile" content="C:\CC_PSUserGuide_77\PSUserGuideFM\Deploying.fm" />
+ <link rel="stylesheet" href="Deploying.css" type="text/css" />
+
+ <link rel="stylesheet" href="..\..\RHStyleMapping.css" type="text/css" />
+
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whlang.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whtopic.js"></script>
+
+</head>
+
+<body><script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.gbWhTopic)
+{
+	var strUrl = document.location.href;
+	var bc = 0;
+	var n = strUrl.toLowerCase().indexOf("bc-");
+	if(n != -1)
+	{
+		document.location.href = strUrl.substring(0, n);
+		bc = strUrl.substring(n+3);
+	}
+
+	if (window.addTocInfo)
+	{
+	addTocInfo("Deploying Objects\nManagement Tools");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	
+	document.write("<p style=\"text-align:right\"> ");
+AddMasterBreadcrumbs("../../PolicyStudioUserGuideTOC.htm", "", "&gt;", "Policy&nbsp;Studio&nbsp;", "../Welcome/Welcome_to_7_7.htm");
+document.write("<a href=\"Deploying_Objects.htm\">Deploying Objects<\/a> &gt; Management Tools<\/p>");
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../../PolicyStudioUserGuideTOC.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+
+//-->
+//]]></script>
+ <h1><a name="XREF_32332_Management_Tools"></a>Management Tools</h1>
+ <p class="BodyLevel1">You can use Policy Author to monitor the current status of your deployed objects from several perspectives:</p>
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>The <span style="font-weight : bold; "><b>component</b></span> perspective: which policies incorporate a particular com&#173;ponent (see <a href="#XREF_44188_Deployed_Components"><span class="FM_blue">Deployed Components</span></a>)</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>The <span style="font-weight : bold; "><b>policy</b></span> perspective: what is going on with all currently deployed poli&#173;cies (see <a href="#XREF_59644_Deployed_Policies"><span class="FM_blue">Deployed Policies</span></a>)</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>The <span style="font-weight : bold; "><b>enforcer</b></span>&#160;perspective: which policies each enforcer in your network is using, and how (see <a href="#XREF_26912_Deployment_byHost"><span class="FM_blue">Deployments by&nbsp;Host</span></a>)</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>The <span style="font-weight : bold; "><b>version</b></span>&#160;<span style="font-weight : bold; "><b>history</b></span> perspective: which version of each policy or compo&#173;nent is currently deployed, and what other alternative versions exist (see <a href="#XREF_45064_Checking"><span class="FM_blue">Version History</span></a>)</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>The<span class="FM_Bold">&#160;audit logging </span>perspective: view which users modified versions of poli&#173;cies and when they did so (see <a href="#XREF_61937_Audit_Logging"><span class="FM_blue">Policy Audit Logging</span></a>)</p>
+
+ <h2><a name="XREF_44188_Deployed_Components"></a>Deployed Components</h2>
+ <p class="BodyLevel1">One of the ways you can monitor current deployment is by component. That is, from time to time, you may need to find out which policies a particular compo&#173;nent is being used in. To do this, select the component you are interested in, and select <span class="FM_Bold">Actions</span>&#160;&gt; <span class="FM_Bold">Show Policy Usage</span>. Policy Author displays a list of all poli&#173;cies that use the selected component.</p>
+ <p class="BodyLevel1">You can also use the Search tool—the search field at the top of the policies tree—for this purpose. When you type a text string in the field and click <span class="FM_Bold">Search</span>, Policy Author displays a list of policies containing the string you typed. If the string is part of a component name, Policy Author display a list of policies con&#173;taining that component. The search is not case-sensitive.</p>
+ <p class="BodyLevel1">The example in the following figure shows the search results for the string “financial documents”. To return to the policy tree view, click the <span class="FM_Bold">X</span>&#160;button next to the <span class="FM_Bold">Search</span> button.</p>
+ <p class="BodyLevel1">&#160;</p>
+ <div align="center"><img alt="FindAccess.png" style="width : 340.000pt; height : 154.124pt; " id="image5" src="FindAccess.png" />
+ </div>
+ <p class="BodyLevel1"></p>
+ <p class="TitleBook">Using the Search tool</p>
+ <h2><a name="XREF_59644_Deployed_Policies"></a>Deployed Policies</h2>
+ <p class="BodyLevel1">To view the current state of the policies you deployed, select <span class="FM_Bold">Tool</span>&#160;&gt; <span class="FM_Bold">Deploy&#173;ment History</span>. This displays a list of all policy deployments in the past eight days in chronological order, as shown in the figure below.</p>
+ <p class="BodyLevel1">Note that this window is unrelated to any object you may have selected. It dis&#173;plays information about recent deployments, regardless of what objects may be open or selected.</p>
+ <p class="BodyLevel1">Each row in this list represents a single a <span style="font-style : italic; "><i>deployment package</i></span>. A deployment package simply refers to one policy and any associated components that were deployed together. (This is not required, but in practice, administrators gener&#173;ally define several policies and then deploy them at the same time.) To see what policy and components were deployed in a particular package, double-click the row.</p>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="DeploymentHistory.png" style="width : 369.381pt; height : 229.337pt; " id="image6" src="DeploymentHistory.png" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook">The <a name="XREF_70728_Deployment_History"></a>Deployment History window</p>
+ <p class="BodyLevel1">The table below describes the information presented in the Deployment History window.</p>
+<table width="100%">
+ <tr>
+ <td>
+ <table style="border-spacing: 0; padding-left: 4.00pt; padding-top: 4.00pt; padding-right: 4.00pt; padding-bottom: 3.00pt;float: aligncenter; width: 360.99pt;" cellspacing="0" align="center">
+  <tr style=" height : 16.00pt;background : #1f8c4a;">
+  <th style="width : 75.950pt; background : #1f8c4a;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Column</p>
+</th>
+  <th style="width : 285.039pt; background : #1f8c4a;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Description</p>
+</th>
+</tr>
+  <tr style=" height : 23.00pt;">
+  <td style="width : 75.950pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Scheduled Time</p>
+</td>
+  <td style="width : 285.039pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">The time at which this package was actually submitted for deployment, regardless of any specified delay before the scheduled deployment.</p>
+</td>
+</tr>
+  <tr style=" height : 23.00pt;">
+  <td style="width : 75.950pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Deployment Time</p>
+</td>
+  <td style="width : 285.039pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">The time at which this package is supposed to take effect. This may be the same as the Scheduled At time, or some point thereafter.</p>
+</td>
+</tr>
+  <tr style=" height : 15.00pt;">
+  <td style="width : 75.950pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Contents</p>
+</td>
+  <td style="width : 285.039pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">The number of items (policies + components) in this package.</p>
+</td>
+</tr>
+  <tr style=" height : 83.00pt;">
+  <td style="width : 75.950pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Status</p>
+</td>
+  <td style="width : 285.039pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">The current status of this package. There are four possible statuses:</p>
+  <p class="CellBody">•<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Scheduled: The request for deployment has been accepted and a time has been set for it to occur. After scheduling a deployment, you can also Can&#173;cel Scheduled Deployment; this returns the object to the Submitted state.</p>
+  <p class="CellBody">•<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Deployed: Control Center has finished deploying the object.</p>
+  <p class="CellBody">•<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Pending Deactivation: The request for deactivation has been accepted and a time has been set for it to occur.</p>
+  <p class="CellBody">•<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Inactive: The object has been deactivated.</p>
+</td>
+</tr>
+ </table>
+</td></tr>
+</table>
+ <p class="BodyLevel1"></p>
+ <h3><a name="XREF_92976_Canceling"></a>Canceling Deployment</h3>
+ <p class="BodyLevel1">You can use the Deployment History window to cancel deployment packages that are still in Scheduled state (see <a href="Managing_Policies_and_Components.htm#XREF_67501_Cancelling"><span class="FM_blue">Cancelling</span></a>). Note that the <span class="FM_Bold">Cancel Selected Deployment</span>&#160;button is not enabled unless a Scheduled item is selected in the list.</p>
+ <h2><a name="XREF_26912_Deployment_byHost"></a>Deployments&#160;by&nbsp;Host</h2>
+ <p class="BodyLevel1">To check which policies and components are currently deployed on which Policy Enforcers in your network, select <span class="FM_Bold">Tools</span>&#160;&gt; <span class="FM_Bold">Deployment Status</span>.</p>
+ <p class="BodyLevel1">As the following figure shows, the Deployment Status window is organized into four tabs, for Desktop Enforcers, File Server Enforcers, Active Directory Enforc&#173;ers, and Portal Enforcers. Each tab displays a list of all hosts—file servers or PCs—where policies have been deployed. For each machine in the Host list, the total numbers of policies and of policy components deployed are also displayed.</p>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="DeploymentStatus.png" style="width : 478.499pt; height : 399.000pt; " id="image7" src="DeploymentStatus.png" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook">Deployment Status by Policy Enforcer</p>
+ <p class="BodyLevel1">On each tab, when you select an enforcer in the Host list, the Contents list dis&#173;plays all policies and components deployed on it.</p>
+ <p class="BodyLevel1">When you select a policy or component in the Contents list, the item’s definition appears in the Details pane.</p>
+ <h2><a name="XREF_45064_Checking"></a>Version History</h2>
+ <p class="BodyLevel1">As another alternative, you can check which policy enforcers have received deployment of a particular policy or component, when the deployment occurred, and whether more than one version of a policy has been deployed. This can happen when you make some changes to a policy and then deploy it to the network, but the new version cannot be deployed to one or more enforcers—for example, if the host is a laptop that is temporarily disconnected from the network.</p>
+ <p class="BodyLevel1">To view this information, select a policy or component, then select <span class="FM_Bold">Actions</span>&#160;&gt; <span class="FM_Bold">Version History</span>. If the command is disabled, it means you have selected an object that has never been deployed. This command opens the Version History window, as shown in the following figure. </p>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="VersionHistory.png" style="width : 458.050pt; height : 276.175pt; " id="image8" src="VersionHistory.png" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook">Version History window</p>
+ <p class="BodyLevel1">The left pane of this window displays a list of currently scheduled and past deployments of the selected policy or component. Each item in this list repre&#173;sents a version of the selected policy or component. You can select any item in this list and view details, in the information pane on the right. That pane con&#173;tains two tabs:</p>
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>The <span style="font-weight : bold; "><b>Definition</b></span> tab displays the detailed definition of the selected ver&#173;sion.</p>
+
+ 
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>The <span style="font-weight : bold; "><b>Deployed Policy Enforcers</b></span>&#160;tab displays a list of hosts where the selected version has been deployed, and the type of each host: desktop, file server, or portal. Here too, file servers will include both Windows and Linux, without distinction. Also, both Windows Desktop Enforcers and Out&#173;look Enforcers are considered desktop type. </p>
+
+ <h2>Policy <a name="XREF_61937_Audit_Logging"></a>Audit Logging</h2>
+ <p class="BodyLevel1">Policy Studio supports the ability to audit which users made changes to policies in each stage of the policy life cycle, and when the changes were submitted. You can view the following information in four locations in Policy Studio:</p>
+ <p style="margin-left : 32.400pt; margin-right : 18.000pt; text-indent : -10.080pt; margin-top  : 0.000pt; margin-bottom : 4.000pt;">•Policy creation date, time, and user ID</p>
+ <p class="BodyLevel1" style="margin-left : 32.400pt; margin-right : 18.000pt; text-indent : -10.080pt; margin-top  : 0.000pt; margin-bottom : 4.000pt;">•Policy modification date, time, and user ID</p>
+ <p class="BodyLevel1" style="margin-left : 32.400pt; margin-right : 18.000pt; text-indent : -10.080pt; margin-top  : 0.000pt; margin-bottom : 4.000pt;">•Policy submission date, time, and user ID</p>
+ <p class="BodyLevel1" style="margin-left : 32.400pt; margin-right : 18.000pt; text-indent : -10.080pt; margin-top  : 0.000pt; margin-bottom : 4.000pt;">•Policy deployment date, time, and user ID</p>
+ <h3>Policy Audit Logging in Policy Author</h3>
+ <p class="BodyLevel1">The following figure shows where Audit Logging information appears in Policy Author’s Policy Status pane, for any open policy or policy component. </p>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="policy_edit_status.jpg" style="width : 449.708pt; height : 425.009pt; " id="image9" src="policy_edit_status.jpg" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook" style="text-indent : -14.400pt;"><a name="XREF_18744_Policy_Management"></a>Policy audit user, date, and time information in example policy</p>
+ <h3>Policy Audit Logging in the Deployment History window</h3>
+ <p class="BodyLevel1">The following figure shows where Policy Audit information displays in the Deployment History window. </p>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="DeploymentHistory.jpg" style="width : 358.998pt; height : 231.999pt; " id="image10" src="DeploymentHistory.jpg" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook"><a name="XREF_33844_Policy_Audit"></a>Policy audit information in the Deployment History <br />window</p>
+ <h3>Policy Audit Logging in the Version History Window</h3>
+ <p class="BodyLevel1">The following figure shows where Policy Audit information displays in the Ver&#173;sion History window. </p>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="PolicyAuditVersionHistory.jpg" style="width : 477.425pt; height : 281.800pt; " id="image11" src="PolicyAuditVersionHistory.jpg" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook"><a name="XREF_22961_Policy_Audit"></a>Policy audit information in the Version History window</p>
+ <h3>Policy Audit Logging in Policy Manager</h3>
+ <p class="BodyLevel1">The following figure shows where Policy Audit information displays in Policy Manager.</p>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="PolicyAuditPolicyManager.jpg" style="width : 481.542pt; height : 314.503pt; " id="image12" src="PolicyAuditPolicyManager.jpg" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook"><a name="XREF_53849_Policy_Audit"></a>Policy audit information in Policy Manager</p>
+ <script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+
+
+highlightSearch();
+//-->
+//]]></script>
+</body>
+</html>

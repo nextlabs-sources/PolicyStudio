@@ -1,0 +1,210 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ <title>Configuring_Alternate_User_Authentication</title>
+
+ <meta name="generator" content="Adobe RoboHelp 9" />
+ <meta name="Originator" content="ImportMif" />
+ <meta name="OriginalFile" content="C:\Documents and Settings\mlittle\Desktop\SharePoint\SharePointFM\ConfiguringSPE.fm" />
+ <link rel="stylesheet" href="../../default.css" type="text/css" />
+
+ <link rel="stylesheet" href="..\..\default.css" type="text/css" />
+
+ <script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whlang.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.gbWhTopic)
+{
+	var strUrl = document.location.href;
+	var bc = 0;
+	var n = strUrl.toLowerCase().indexOf("bc-");
+	if(n != -1)
+	{
+		document.location.href = strUrl.substring(0, n);
+		bc = strUrl.substring(n+3);
+	}
+
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Configuring the Entitlement Manager for SharePoint\nConfiguring Alternate User Authentication");
+addButton("show",BTN_IMG,"Show TOC and Search","","","","",0,0,"../../whd_show0.gif","../../whd_show2.gif","../../whd_show1.gif");
+addButton("hide",BTN_IMG,"Hide TOC and Search","","","","",0,0,"../../whd_hide0.gif","../../whd_hide2.gif","../../whd_hide1.gif");
+
+	}
+
+	
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../../index.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+//]]></script>
+</head>
+
+<body><script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+//]]></script>
+<table width="100%" cellspacing="0" border="1">
+	<col style="width: 100%;" />
+	<tr style="height: 78px;">
+		<td bgcolor="#003399">&#160;</td>
+	</tr>
+ </table>
+<script type="text/javascript" language="javascript">//<![CDATA[
+document.write("<p  style=\"text-align:right;font-family:Arial;font-size:12pt;font-weight: normal;font-style: normal;text-decoration: none;\">");
+AddMasterBreadcrumbs("../../index.htm", "font-family:Arial;font-size:12pt;font-weight: normal;font-style: normal;text-decoration: none;", "&gt;", "Home", "../Introducing/Welcome.htm");
+document.write("<a style=\"font-family:Arial;font-size:12pt;font-weight: normal;font-style: normal;text-decoration: none;\" href=\"Configuring_the_Entitlement_Manager_for_SharePoint.htm\">Configuring the Entitlement Manager for SharePoint<\/a> &gt; Configuring Alternate User Authentication<\/p>");
+//]]></script>
+ <p style="text-align: right;">&#160;</p>
+
+ <h1><a name="XREF_68842_Configuring"></a>Configuring Alternate User Authentication</h1>
+ <p class="BodyLevel1">The Entitlement Manager for SharePoint&#160;supports policy enforcement based on standard Windows user authentication, which is the most commonly used of the authentication methods SharePoint itself supports. In addition, the Entitlement Manager for SharePoint supports two alternate methods of authenticating users:</p>
+ 
+<p class="BodyLevel2">1<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><a href="#XREF_35316_Configuring_Forms"> Forms-Based Authentication</a></p>
+
+ 
+<p class="BodyLevel2">2<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><a href="#XREF_89756_Active_Directory">Active Directory Federated Services</a></p>
+
+ <h2><a name="XREF_35316_Configuring_Forms"></a>&#160;Forms-Based Authentication</h2>
+ <p class="BodyLevel1">The Entitlement Manager for SharePoint supports Form-Based Authentication (FBA). FBA is most commonly used by external users connecting to the network via a web server. It requires that they provide some information in an HTML form, which is then stored in a specialized data repository where it can be used for authentication purposes.</p>
+ <p class="BodyLevel1">To enable FBA on your Control Center, you must perform a special kind of enrollment to enroll the users into your system dictionary. This procedure is similar to enrolling from LDIF files, as described in the Control Center Administrator’s Guide. However, note the following important differences:</p>
+ <p style="margin-left : 32.400pt; margin-right : 18.000pt; text-indent : -10.080pt; margin-top  : 0.000pt; margin-bottom : 4.000pt;">For the LDIF source file, use the file sba.ldif as your template. You can rename it if you like, as long as you refer to the new name in the <span class="GreyBold">ldif.filename</span> element in the definition file.</p>
+ <p class="BodyLevel1" style="margin-left : 32.400pt; margin-right : 18.000pt; text-indent : -10.080pt; margin-top  : 0.000pt; margin-bottom : 4.000pt;">As the definition file for this enrollment, use the file fba.default.def as your template. </p>
+ <p class="BodyLevel1">Both these files are provided in the Support directory on your Compliant Enterprise&#160;installation CD. Both files will have to be modified to suit the particular data source you are using for your authorization. (Again, refer to the <span style="font-style : italic; "><i>Administrator’s Guide</i></span>&#160;for more information about the structure and use of LDIF and definition files in general.) These required modifications are summarized in the following table.</p>
+ <table width="100%">
+  <tr>
+  <td>
+ <table style="border-spacing: 0; padding-left: 4.00pt; padding-top: 4.00pt; padding-right: 4.00pt; padding-bottom: 3.00pt;float: aligncenter;margin-bottom: 24.00pt; width: 358.80pt;" cellspacing="0" align="center">
+  <caption align="center">
+  </caption>
+  <tr style=" height : 16.00pt;background : #0b3999;">
+  <th style="width : 73.151pt; background : #0b3999;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellHeading">File</p>
+</th>
+  <th style="width : 82.479pt; background : #0b3999;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellHeading">Element</p>
+</th>
+  <th style="width : 203.169pt; background : #0b3999;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellHeading">Function</p>
+</th>
+</tr>
+  <tr style=" height : 31.00pt;">
+  <td style="width : 73.151pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;" rowspan="4">
+  <p class="FM_CellBodyBold">fba.ldif</p>
+</td>
+  <td style="width : 82.479pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">userPrincipalName</p>
+</td>
+  <td style="width : 203.169pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">&lt;defaultProvider&gt;:&lt;user&gt;, where &lt;defaultProvider&gt; matches your default membership provider as defined in web.config in your FBA web application.</p>
+</td>
+</tr>
+  <tr style=" height : 15.00pt;">
+  <td style="width : 82.479pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">cn</p>
+</td>
+  <td style="width : 203.169pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Same as above</p>
+</td>
+</tr>
+  <tr style=" height : 15.00pt;">
+  <td style="width : 82.479pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">objectGUID</p>
+</td>
+  <td style="width : 203.169pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Same as above</p>
+</td>
+</tr>
+  <tr style=" height : 15.00pt;">
+  <td style="width : 82.479pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">objectSID</p>
+</td>
+  <td style="width : 203.169pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Same as above</p>
+</td>
+</tr>
+  <tr style=" height : 23.00pt;">
+  <td style="width : 73.151pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;" rowspan="2">
+  <p class="FM_CellBodyBold">fba.default.def</p>
+</td>
+  <td style="width : 82.479pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">ldif.filename</p>
+</td>
+  <td style="width : 203.169pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Name and fully qualified path of the fba.ldif file you are using.</p>
+</td>
+</tr>
+  <tr style=" height : 31.00pt;">
+  <td colspan="2" style="width : 285.648pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Other elements as necessary to reflect the object mapping of your membership provider. The mapping in this template file corresponds to ASP.Net SQL membership provider.</p>
+</td>
+</tr>
+ </table>
+</td></tr>
+ </table>
+ <p class="BodyLevel1"></p>
+ <h3>Running the Enrollment</h3>
+ <p class="BodyLevel1">To enroll your FBA users, run the Enrollment Manager using the following command, filling in the appropriate values for the arguments:</p>
+ <h5 style="margin-right : 17.856pt;">enrollmgr -enroll -t LDIF -n &lt;domain_name&gt; -s &lt;hostname&gt; &#160;-p &lt;8443&gt; -u &lt;username&gt; -w &lt;password&gt; -d &lt;definitionfile&gt; </h5>
+ <p class="BodyLevel1">This will enroll the users defined in the Once the users are enrolled, they can be incorporated into User components, like any other users. These components can then be used in SharePoint policies, which will enforce against user actions based on form- as well as Windows-based authentication.</p>
+ <h2><a name="XREF_89756_Active_Directory"></a>Active Directory Federated Services</h2>
+ <p class="BodyLevel1">Configuration of SharePoint to use Active Directory Federated Servers (ADFS) allows companies to federate identity services so that employees or users from an external company (such as a partner or customer organization) can log into a SharePoint server using their existing AD credentials.</p>
+ <p class="BodyLevel1">In order to create policies to authorize external, federated users, the external AD user information must be enrolled using the LDIF enrollment adapter. This procedure is discussed in detail in the Control Center Administrator’s Guide.</p>
+ 
+<p class="BodyLevel2">3<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>When you enroll external user information, be sure the values for <span class="GreyBold">user&#173;PrincipalName</span>, <span class="GreyBold">cn</span>, <span class="GreyBold">objectGUID</span>, and <span class="GreyBold">objectSID</span>&#160;are all <span class="GreyBold">&lt;defaultpro&#173;vider&gt;:&lt;user&gt;</span>, where <span class="GreyBold">&lt;defaultprovider&gt;</span>&#160;is the default provider defined in the web.config file used to configure ADFS for SharePoint.</p>
+
+ <p>&#160;</p>
+<script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+
+highlightSearch();
+//-->
+//]]></script>
+</body>
+</html>

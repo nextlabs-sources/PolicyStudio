@@ -1,0 +1,181 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ <title>Setting_Up_the_Module</title>
+
+ <meta name="generator" content="Adobe RoboHelp 9" />
+ <meta name="Originator" content="ImportMif" />
+ <meta name="OriginalFile" content="C:\Documents and Settings\mlittle\Desktop\SharePoint\SharePointFM\SIGModule.fm" />
+ <link rel="stylesheet" href="../../default.css" type="text/css" />
+
+ <link rel="stylesheet" href="..\..\default.css" type="text/css" />
+
+ <script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whlang.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.gbWhTopic)
+{
+	var strUrl = document.location.href;
+	var bc = 0;
+	var n = strUrl.toLowerCase().indexOf("bc-");
+	if(n != -1)
+	{
+		document.location.href = strUrl.substring(0, n);
+		bc = strUrl.substring(n+3);
+	}
+
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Reporting\nSetting Up the Module");
+addButton("show",BTN_IMG,"Show TOC and Search","","","","",0,0,"../../whd_show0.gif","../../whd_show2.gif","../../whd_show1.gif");
+addButton("hide",BTN_IMG,"Hide TOC and Search","","","","",0,0,"../../whd_hide0.gif","../../whd_hide2.gif","../../whd_hide1.gif");
+
+	}
+
+	
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../../index.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+//]]></script>
+</head>
+
+<body><script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+//]]></script>
+<table width="100%" cellspacing="0" border="1">
+	<col style="width: 100%;" />
+	<tr style="height: 78px;">
+		<td bgcolor="#003399">&#160;</td>
+	</tr>
+ </table>
+<script type="text/javascript" language="javascript">//<![CDATA[
+document.write("<p  style=\"text-align:right;font-family:Arial;font-size:12pt;font-weight: normal;font-style: normal;text-decoration: none;\">");
+AddMasterBreadcrumbs("../../index.htm", "font-family:Arial;font-size:12pt;font-weight: normal;font-style: normal;text-decoration: none;", "&gt;", "Home", "../Introducing/Welcome.htm");
+document.write("<a style=\"font-family:Arial;font-size:12pt;font-weight: normal;font-style: normal;text-decoration: none;\" href=\"The_SIG_Reporting_Module.htm\">Reporting<\/a> &gt; Setting Up the Module<\/p>");
+//]]></script>
+ <p style="text-align: right;">&#160;</p>
+
+ <h1><a name="XREF_89534_Seting_Up_theModule"></a>Setting Up the&nbsp;Module</h1>
+ <p class="BodyLevel1">The SIG Reporting Module is delivered together with every SharePoint Server Enforcer. You can add it to an already running Control Center, or set it up as part of an initial platform installation after the standard installation is complete. Setting up the module involves two steps:</p>
+ 
+<p class="BodyLevel2">1<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Activating the pre-defined reports</p>
+
+ 
+<p class="BodyLevel2">2<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Importing the custom obligations</p>
+
+ <h2><a name="XREF_33039_Activating_the"></a>Activating the Predefined Reports</h2>
+ <p class="BodyLevel1">The predefined SIG reports are included in every standard installation of Reporter 5.5; you simply need to activate them. You do this by the following procedure:</p>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Using any text editor, open the Control Center configuration file <span style="font-style : italic; "><i>configu&#173;ration.xml</i></span>. By default, this file is located at</p>
+</li>
+  <h5>c:\Program Files\NextLabs\Policy Server\server\ configuration\configuration.xml</h5>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Search for the &lt;Reporter&gt; section, as shown below.</p>
+</li>
+  <p class="BodyLevel1"></p>
+  <div align="center"><img alt="SIGModule00004.jpg" style="width : 361.152pt; height : 105.840pt; " id="image1" src="SIGModule00004.jpg" />
+  </div>
+  <p class="BodyLevel1">&#160;</p>
+  <p class="TitleBook">Activating the SIG Reports Tab</p>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">The default value for the &lt;ShowSharePointReports&gt; element in this sec&#173;tion, “0”, hides the special Reporter tab that displays all predefined SIG reports. To display the reports, change this value to “1” and save your change.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Restart your Policy Server, and the new SIG tab with all predefined reports will display when you open Reporter.</p>
+</li>
+ </ol>
+ <h2><a name="XREF_43356_Importing_the"></a>Importing the Custom Obligations</h2>
+ <p class="BodyLevel1">Importing the custom obligations requires manually editing the system configuration file, <span style="font-style : italic; "><i>configuration.xml</i></span>. Specifically, you need to add two obligation sections into the system configuration file. When you save your changes and restart your Policy Server, these obligations will be available for use in the Custom Obligations combo-box of any new policy you create in Policy Server, as shown below.</p>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="CustObligField.jpg" style="width : 362.160pt; height : 149.976pt; " id="image2" src="CustObligField.jpg" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook">SIG Custom Obligations</p>
+ <p class="BodyLevel1">Follow these steps:</p>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Use Wordpad to open your Control Center configuration file, <span style="font-style : italic; "><i>configura&#173;tion.xml</i></span>.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Search for the &lt;Obligations&gt; section of the configuration file. </p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Using any text editor, open the SIG configuration snippet file, <span style="font-weight : bold; "><b>SIG_Reporting_Module_Obligations.xml</b></span>, which you received as a part of the module.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Copy the two obligation sections from the snippet file into the &lt;Obliga&#173;tions&gt; section of your live configuration file. An example of one of these obligations is shown in the figure below.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Close your live configuration file, saving your change.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Restart your Policy Server, to force the system to read the new version of the configuration file.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Start Policy Studio, and check that the obligations are available by creat&#173;ing a new policy and pulling down the Custom Obligations combo-box. They should display in the list of custom obligations there.</p>
+</li>
+ </ol>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="SIGModule00005.jpg" style="width : 481.884pt; height : 270.072pt; " id="image3" src="SIGModule00005.jpg" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook">The Log SharePoint Activity Obligation</p>
+ <p class="BodyLevel1">At this point, you are ready to construct and deploy policies that log SharePoint access and usage activity.</p>
+ <p>&#160;</p>
+<script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+
+highlightSearch();
+//-->
+//]]></script>
+</body>
+</html>

@@ -1,0 +1,198 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ <title>Designing_Data_Protection_Policies</title>
+
+ <meta name="generator" content="Adobe RoboHelp 9" />
+ <meta name="Originator" content="ImportMif" />
+ <meta name="OriginalFile" content="C:\Documents and Settings\mlittle\Desktop\SharePoint\SharePointFM\UsingSPE.fm" />
+ <link rel="stylesheet" href="../../default.css" type="text/css" />
+
+ <link rel="stylesheet" href="..\..\default.css" type="text/css" />
+
+ <script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whlang.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.gbWhTopic)
+{
+	var strUrl = document.location.href;
+	var bc = 0;
+	var n = strUrl.toLowerCase().indexOf("bc-");
+	if(n != -1)
+	{
+		document.location.href = strUrl.substring(0, n);
+		bc = strUrl.substring(n+3);
+	}
+
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Using the Entitlement Manager for SharePoint\nDesigning Data Protection Policies");
+addButton("show",BTN_IMG,"Show TOC and Search","","","","",0,0,"../../whd_show0.gif","../../whd_show2.gif","../../whd_show1.gif");
+addButton("hide",BTN_IMG,"Hide TOC and Search","","","","",0,0,"../../whd_hide0.gif","../../whd_hide2.gif","../../whd_hide1.gif");
+
+	}
+
+	
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../../index.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+//]]></script>
+</head>
+
+<body><script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+//]]></script>
+<table width="100%" cellspacing="0" border="1">
+	<col style="width: 100%;" />
+	<tr style="height: 78px;">
+		<td bgcolor="#003399">&#160;</td>
+	</tr>
+ </table>
+<script type="text/javascript" language="javascript">//<![CDATA[
+document.write("<p  style=\"text-align:right;font-family:Arial;font-size:12pt;font-weight: normal;font-style: normal;text-decoration: none;\">");
+AddMasterBreadcrumbs("../../index.htm", "font-family:Arial;font-size:12pt;font-weight: normal;font-style: normal;text-decoration: none;", "&gt;", "Home", "../Introducing/Welcome.htm");
+document.write("<a style=\"font-family:Arial;font-size:12pt;font-weight: normal;font-style: normal;text-decoration: none;\" href=\"Using_the_Entitlement_Manager_for_SharePoint.htm\">Using the Entitlement Manager for SharePoint<\/a> &gt; Designing Data Protection Policies<\/p>");
+//]]></script>
+ <p style="text-align: right;">&#160;</p>
+
+ <h1><a name="XREF_57751_Designing_Data"></a>Designing Data Protection Policies</h1>
+ <p class="BodyLevel1">Data Protection policies refer to the capability to extend protections to data even when data is download or exported outside of SharePoint. This section provides the following information about these policies:</p>
+ 
+<p class="BodyLevel2">1<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><a href="#XREF_57655_About_Download">About Download Tagging</a></p>
+
+ 
+<p class="BodyLevel2">2<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><a href="#XREF_50496_Supported_Download">Supported Download Tagging Methods</a></p>
+
+ 
+<p class="BodyLevel2">3<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><a href="#XREF_61557_Persistent_Tag_on">Example Policy: Persistent Tag on Download &#160;</a></p>
+
+ <h2><a name="XREF_57655_About_Download"></a>About Download Tagging</h2>
+ <p class="BodyLevel1">You can do this by designing policies that automatically assign metadata tags to documents when they are downloaded from SharePoint, so that other NextLabs enforcer policies can reference these tags wherever they move throughout your enterprise. These tags can be applied to documents listed in document libraries and generic document lists. Tags may be based on the name of the column in which they are listed, or defined however the policy designer wishes. </p>
+ <p class="BodyLevel1">For example, a document library on some site may have a column for &quot;Status&quot; to let users track whether a document is in Draft, Pending, or Approved state. You might design a policy that lets authorized users download Draft documents, but blocks them from distributing them as e-mail or IM attachments. To make this policy work, you would set up automatic tagging so that all documents on this site are tagged with a “State= [ &#160;]” property when they are downloaded. Because the tag would persist wherever the document is copied, your desktop-level distribution policy will prevent it from being e-mailed even though it has left the protection of the Entitlement Manager for SharePoint. Extending our engineering site collection use case, another scenario may be that you want the &quot;IP&quot; tag on upload value to be persistent so that even engineers who are authorized to download these documents may not email them to unauthorized users. </p>
+ <p class="BodyLevel1">When a user downloads a document from SharePoint Server, uploads it to a different location on SharePoint Server, then downloads it again, the values of the tags will be based on its last location on a SharePoint server. Any tags that are based on any prior locations on any SharePoint server will not be removed. Any tags that are based on any prior locations on a non-SharePoint server (i.e. tags that were created by a Tagging Policy Assistant), will not be removed. </p>
+ <h2><a name="XREF_50496_Supported_Download"></a>Supported Download Tagging Methods</h2>
+ <p class="BodyLevel1">This feature lets you automate four kinds of SharePoint download tagging, each of which corresponds with a custom obligation that must be configured:</p>
+ 
+<p class="BodyLevel2">4<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span style="font-weight : bold; "><b>System-Column Tagging</b></span>: Applies tags that reflect all the standard sys&#173;tem columns present by default in SharePoint lists and libraries. These include Resource, Signature, Modified By, File Size, Type, Sub-type, Cre&#173;ated, Modified, Name, and Created By. </p>
+
+ 
+<p class="BodyLevel2">5<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span style="font-weight : bold; "><b>All-Column Tagging</b></span>: Applies tags that reflect all system columns plus all columns marked as being Displayed in the specified document library or list, as long as their data type is <span style="font-style : italic; "><i>Text, Number, Currency, </i></span>or<span style="font-style : italic; "><i>&#160;Choice. </i></span>(You mark columns as Displayed by checking the Display checkbox in the Edit View screen of the library or list.) That is, columns with other data types, and those not marked for display, will not be covered by All-Col&#173;umn tagging policies.</p>
+
+ 
+<p class="BodyLevel2">6<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span style="font-weight : bold; "><b>Specific-Column Tagging:</b></span>&#160;Applies tags that reflect only a specific subset of columns. These are defined within individual policies. These can be different for different policies that may be applied to the same set of SharePoint resources. They may be system or custom columns, or a com&#173;bination of both. </p>
+
+ 
+<p class="BodyLevel2">7<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span style="font-weight : bold; "><b>User-Defined Tagging:</b></span>&#160;Allows the policy designer to define the tags that will be applied. These can be any alphanumeric text string you like, and may be completely unrelated to the column names in the SharePoint list or library.</p>
+
+ <h3>Required Configuration</h3>
+ <p class="BodyLevel1">Before you are ready to create Data Protection policies, you must perform the following configuration:</p>
+ 
+<p class="BodyLevel2">8<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Configure the obligations for all kinds of Download tagging you want to apply (see <a href="../ConfiguringSPE/Configuring_the_SharePoint_Policy_Model.htm#XREF_19542_Configuring">Configuring Obligations</a>)</p>
+
+ 
+<p class="BodyLevel2">9<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Create columns values for classifications (see <a href="../ConfiguringSPE/Configuring_the_SharePoint_Policy_Model.htm#XREF_10097_Configuring">Configuring SharePoint Site Columns for &#160;Tagging Policies</a>)</p>
+
+ <h2><a name="XREF_61557_Persistent_Tag_on"></a>Example Policy: Persistent Tag on Download &#160;</h2>
+ <p class="BodyLevel1">You determine what kind of download tagging should occur based on the custom obligations appropriate to your needs. When you design policies of this kind, you need to focus on the following questions:</p>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Which SharePoint document libraries or lists contain documents that I am concerned about tagging?</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">What columns (that is, properties) in these libraries or lists do I want to use as tags when documents are downloaded? Do I need to add any new columns—<span style="font-style : italic; "><i>Security Level</i></span>, for example—just for the purpose of tagging?</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Given the properties I want to use as tags, which of the four types of tag&#173;ging do I want to use for this policy?</p>
+</li>
+ </ol>
+ <p class="BodyLevel1">Once you have done this planning, you can construct policies to implement automatic tagging. Bear in mind the following guidelines:</p>
+ 
+<p class="BodyLevel2">10<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;</font></span>The policy must be Document type.</p>
+
+ 
+<p class="BodyLevel2">11<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;</font></span>The resource involved must be a Portal Content component, typically based on the URL of the SharePoint page containing the library or list you are targetting. This could be more than one URL, as long as you are tagging based on columns present in all lists or libraries. You can even use wildcards to represent “any library or list.&quot; For example, the policy might tag any document from any SharePoint page that has an Internal Only column. Such a policy would tag documents downloaded from lists that have this column defined, but would not effect files downloaded from lists that do not have this column.</p>
+
+ 
+<p class="BodyLevel2">12<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;</font></span>The action must be Open.</p>
+
+ 
+<p class="BodyLevel2">13<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;</font></span>The policy must include one of the SharePoint tagging obligations. If you use any of the three column-based obligations (All-Column Tagging, User-Defined Tagging, or Specific-Column Tagging, as shown below), you may also need to specify which column you want to use.</p>
+
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="SPTaggingObligations.jpg" style="width : 306.087pt; height : 177.811pt; " id="image39" src="SPTaggingObligations.jpg" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook">SharePoint Column Tagging Methods</p>
+ 
+<p class="BodyLevel2">14<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;</font></span>You can only specify one column per obligation, but you can click the &quot;<span class="Bold">+</span>&quot; icon to include the same obligation more than once in the same policy. The effect will be to assign more than one tag to specified documents when they are downloaded from SharePoint.</p>
+
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="SPTaggingObligations2.jpg" style="width : 302.765pt; height : 194.362pt; " id="image40" src="SPTaggingObligations2.jpg" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook">SharePoint Specific-Column Tagging Obligation</p>
+ 
+<p class="BodyLevel2">15<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;</font></span>If you use the User-Defined Tagging obligation, you need to type the tag and value you want in the Tag Name and Tag Value fields (as in the example below). Here too you can apply multiple tags by including the obligation more than once in the same policy.</p>
+
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="SPTaggingObligations3.jpg" style="width : 303.136pt; height : 158.378pt; " id="image41" src="SPTaggingObligations3.jpg" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook">User-Defined Tagging Obligation</p>
+ <p>&#160;</p>
+<script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+
+highlightSearch();
+//-->
+//]]></script>
+</body>
+</html>

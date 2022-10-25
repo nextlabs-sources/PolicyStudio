@@ -1,0 +1,289 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ <title>Designing_Classification_Policies</title>
+
+ <meta name="generator" content="Adobe RoboHelp 9" />
+ <meta name="Originator" content="ImportMif" />
+ <meta name="OriginalFile" content="C:\Documents and Settings\mlittle\Desktop\SharePoint\SharePointFM\UsingSPE.fm" />
+ <link rel="stylesheet" href="../../default.css" type="text/css" />
+
+ <link rel="stylesheet" href="..\..\default.css" type="text/css" />
+
+ <script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whlang.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.gbWhTopic)
+{
+	var strUrl = document.location.href;
+	var bc = 0;
+	var n = strUrl.toLowerCase().indexOf("bc-");
+	if(n != -1)
+	{
+		document.location.href = strUrl.substring(0, n);
+		bc = strUrl.substring(n+3);
+	}
+
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Using the Entitlement Manager for SharePoint\nDesigning Classification Policies");
+addButton("show",BTN_IMG,"Show TOC and Search","","","","",0,0,"../../whd_show0.gif","../../whd_show2.gif","../../whd_show1.gif");
+addButton("hide",BTN_IMG,"Hide TOC and Search","","","","",0,0,"../../whd_hide0.gif","../../whd_hide2.gif","../../whd_hide1.gif");
+
+	}
+
+	
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../../index.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+//]]></script>
+</head>
+
+<body><script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+//]]></script>
+<table width="100%" cellspacing="0" border="1">
+	<col style="width: 100%;" />
+	<tr style="height: 78px;">
+		<td bgcolor="#003399">&#160;</td>
+	</tr>
+ </table>
+<script type="text/javascript" language="javascript">//<![CDATA[
+document.write("<p  style=\"text-align:right;font-family:Arial;font-size:12pt;font-weight: normal;font-style: normal;text-decoration: none;\">");
+AddMasterBreadcrumbs("../../index.htm", "font-family:Arial;font-size:12pt;font-weight: normal;font-style: normal;text-decoration: none;", "&gt;", "Home", "../Introducing/Welcome.htm");
+document.write("<a style=\"font-family:Arial;font-size:12pt;font-weight: normal;font-style: normal;text-decoration: none;\" href=\"Using_the_Entitlement_Manager_for_SharePoint.htm\">Using the Entitlement Manager for SharePoint<\/a> &gt; Designing Classification Policies<\/p>");
+//]]></script>
+ <p style="text-align: right;">&#160;</p>
+
+ <h1><a name="XREF_44709_Designing"></a>Designing Classification Policies</h1>
+ <p class="BodyLevel1">This section cover the following information about Classification policies for the Entitlement Manager for SharePoint:</p>
+ 
+<p class="BodyLevel2">1<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><a href="#XREF_72123_About_Content">About Content Aware Classification </a></p>
+
+ 
+<p class="BodyLevel2">2<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><a href="#XREF_88868_Content_Aware">Example Policy: &#160;Content Aware Classification on Upload &#160;</a></p>
+
+ 
+<p class="BodyLevel2">3<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><a href="#XREF_76355_Applying_Content">Applying Content Analysis to Existing Documents as a Batch Process </a></p>
+
+ <h2><a name="XREF_72123_About_Content"></a>About Content Aware Classification </h2>
+ <p class="BodyLevel1">You can write policies that scan the content of SharePoint documents and automatically tag them when specific keywords or content types are detected. Note that the only kinds of policies that can apply content analysis for the Entitlement Manager for SharePoint are <span class="Emphasis">classification</span>&#160;policies (in other words, you cannot allow or block access based on content, although you can allow or block access based on classification values once they are present). </p>
+ <p class="BodyLevel1"><span class="Emphasis">Content Aware </span>Classification for SharePoint works by applying a value to a pre-existing column in a document library or list. You can apply content analysis to SharePoint documents either upon the upload of the new document, or using a batch process that will automatically classify all existing documents in designated lists or libraries.</p>
+ <h3>Supported File Types</h3>
+ <p class="BodyLevel1">You can perform content analysis to the following kinds of documents:</p>
+ 
+<p class="BodyLevel2">4<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Native Document Object Model</p>
+
+ 
+<p class="BodyLevel2">5<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Microsoft Office 2003/2007</p>
+
+ 
+<p class="BodyLevel2">6<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Adobe PDF</p>
+
+ 
+<p class="BodyLevel2">7<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Autodesk DWG</p>
+
+ 
+<p class="BodyLevel2">8<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>ZIP</p>
+
+ 
+<p class="BodyLevel2">9<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>HTML (.htm/.html)</p>
+
+ 
+<p class="BodyLevel2">10<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;</font></span>XML and XML Schema (.xml and .xsd)</p>
+
+ 
+<p class="BodyLevel2">11<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;</font></span>Rich Text Format (.rtf)</p>
+
+ 
+<p class="BodyLevel2">12<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;</font></span>Plain Text (.txt)</p>
+
+ 
+<p class="BodyLevel2">13<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;</font></span>Raw / Plain Text</p>
+
+ 
+<p class="BodyLevel2">14<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;</font></span>All other file types (i.e. Extensible HTML (.xhtml))</p>
+
+ <h3>Methods of Content Analysis</h3>
+ <p class="BodyLevel1">This feature supports the following kinds of content analysis:</p>
+ 
+<p class="BodyLevel2">15<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;</font></span>Customized Match Criteria, where the user supplies a specific key word or phrase.</p>
+
+ 
+<p class="BodyLevel2">16<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;</font></span>Default Match Criteria (already defined in the system) for the following kinds of content:</p>
+
+ 
+<p class="BodyLevel3">1<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Credit Card Number</p>
+
+ 
+<p class="BodyLevel3">2<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Currency Values</p>
+
+ 
+<p class="BodyLevel3">3<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Phone Number</p>
+
+ 
+<p class="BodyLevel3">4<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Social Security Number</p>
+
+ 
+<p class="BodyLevel3">5<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Internet Protocol (IP) v4 Address</p>
+
+ 
+<p class="BodyLevel3">6<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Date of Birth (DOB)</p>
+
+ 
+<p class="BodyLevel3">7<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Mailing Address (State and ZIP)</p>
+
+ <h3>Required Configuration</h3>
+ <p class="BodyLevel1">Before you are ready to create Content Aware Classification policies, you must perform the following configuration:</p>
+ 
+<p class="BodyLevel2">17<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;</font></span>Configure the “Upload” action (see <a href="../ConfiguringSPE/Configuring_the_SharePoint_Policy_Model.htm#XREF_80665_Configuring">Configuring Special Actions</a>)</p>
+
+ 
+<p class="BodyLevel2">18<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;</font></span>Configure the “Set Column Value” obligation (see <a href="../ConfiguringSPE/Configuring_the_SharePoint_Policy_Model.htm#XREF_19542_Configuring">Configuring Obligations</a>)</p>
+
+ 
+<p class="BodyLevel2">19<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;</font></span>Create columns for all sites where you want to apply classifications (see <a href="../ConfiguringSPE/Configuring_the_SharePoint_Policy_Model.htm#XREF_10097_Configuring">Configuring SharePoint Site Columns for &#160;Tagging Policies</a>)</p>
+
+ <h2><a name="XREF_88868_Content_Aware"></a>Example Policy: &#160;Content Aware Classification on Upload &#160;</h2>
+ <p class="BodyLevel1">After you have performed the preliminary SharePoint setup and planning, you are ready to create content aware policies. Let’s take the example use case that anytime an engineer uploads a new document to a designated site, we want to perform content analysis on the document to as certain whether it should be classified as “intellectual property” or not. We design a content analysis policy that searches for specific key terms. We would perform the following steps:</p>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Create a Document policy to Monitor the Action of Uploading documents. </p>
+</li>
+  <p class="PublisherBook"><span class="Emphasis">Note: </span>Policies that apply content analysis in SharePoint must be “Monitor” policies for the “Upload” action. You cannot create Allow/Deny poli&#173;cies that apply content analysis, or policies that use a different Action (such as Create/Edit).</p>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Create a Resource Portal Component for the site to be targeted in policy. We create one for our engineering site (“Engineering Site Collection” in the example below).</p>
+</li>
+  <p class="BodyLevel1"></p>
+  <div align="center"><img alt="classificationpolicy.jpg" style="width : 466.500pt; height : 213.247pt; " id="image5" src="classificationpolicy.jpg" />
+  </div>
+  <p class="BodyLevel1">&nbsp;</p>
+  <p class="TitleBook"><a name="XREF_59111_Creating_a_Policy"></a>Creating a Policy for Content Analysis upon Upload</p>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Create another Resource Portal Component for content analysis (see below). </p>
+</li>
+  
+<p class="BodyLevel2">20<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;</font></span>In the “With Content” area, select a Property Name from the drop down menu. Select “Contains Content” to analyze content, or select “Content Type” to search content of a particular format or type.</p>
+
+  
+<p class="BodyLevel2">21<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;</font></span>The contents of the next drop down list depend on what was selected in the first. Since we selected “Contains Content,” we can select a “Key&#173;word” in the second drop down list.</p>
+
+  
+<p class="BodyLevel2">22<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;</font></span>In “Contains Match Count Greater or Equal To,” you can specify the number of incidences upon which the policy should be triggered. For example, if you want the policy to be triggered on a single instance of a keyword, select “1.” </p>
+
+  <p class="BodyLevel1"></p>
+  <div align="center"><img alt="engineeringIPcomponent.jpg" style="width : 660.000pt; height : 217.875pt; " id="image6" src="engineeringIPcomponent.jpg" />
+  </div>
+  <p class="BodyLevel1">&nbsp;</p>
+  <p class="TitleBook"><a name="XREF_16529_Creating_a_Content"></a>Creating a Content Analysis Portal Component</p>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Select the Custom Obligation &quot;Set Column Value.&quot; Enter the target Column Name, and the Column Value that should be applied if the policy evaluates to true.</p>
+</li>
+ </ol>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="setcolumnvalue.jpg" style="width : 390.749pt; height : 243.750pt; " id="image7" src="setcolumnvalue.jpg" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook">Set Column Value Obligation</p>
+ <p class="BodyLevel1">After this policy is saved and deployed, anytime a user uploads a document to the engineering site collection, the document will be checked for the keyword “Product Name.” If it is present three or more times, the value to the IP column will automatically be set to “Yes.”</p>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="classificationcolumn.jpg" style="width : 786.000pt; height : 220.391pt; " id="image8" src="classificationcolumn.jpg" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook">IP Column with Values Applied, According to Example Use Case</p>
+ <h2><a name="XREF_76355_Applying_Content"></a>Applying Content Analysis to Existing Documents as a Batch Process </h2>
+ <p class="BodyLevel1">In addition to applying content analysis to SharePoint documents based on upload events, you can run batch processes on a designated library or list. When the batch process runs, it automatically analyzes content and applies appropriate tags, based on the Content Aware classification policies deployed to the Entitlement Manager (discussed in the previous section). (In our example use case, the batch analysis will apply to the Engineering Site Collection and scan for the presence of keyword “Product Name.”)</p>
+ <p class="PublisherBook"><span class="Emphasis">Note: </span>To start a content analysis batch process, you must log in as non-ADFS user. A user logged in via ADFS is not permitted to start or schedule a content analysis batch process.</p>
+ <p class="BodyLevel1">To schedule a content analysis batch process:</p>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">In the target library or list, go to Settings &gt; Document Library Settings.</p>
+</li>
+  <p class="BodyLevel1"></p>
+  <div align="center"><img alt="SPlibsettings.jpg" style="width : 206.999pt; height : 142.500pt; " id="image9" src="SPlibsettings.jpg" />
+  </div>
+  <p class="BodyLevel1">&nbsp;</p>
+  <p class="TitleBook">Document Library Settings</p>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">In Permissions and Management, click <span class="Bold">Analyze Content</span>.</p>
+</li>
+  <p class="BodyLevel1"></p>
+  <div align="center"><img alt="sp_analyzecontent_main.jpg" style="width : 787.499pt; height : 279.373pt; " id="image10" src="sp_analyzecontent_main.jpg" />
+  </div>
+  <p class="BodyLevel1">&nbsp;</p>
+  <p class="TitleBook">Clicking Analyze Content</p>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">In the Content Analysis window, you can create schedules for content analysis that will be performed on the library or list. </p>
+</li>
+ </ol>
+ 
+<p class="BodyLevel3">8<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>To create a new schedule, click <span class="Bold">Create Schedule</span>. A window displays where you specify how frequently content analysis should be per&#173;formed and what time of the day the process should start. </p>
+
+ 
+<p class="BodyLevel3">9<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>To apply an already defined schedule, select it from the drop down menu, and click <span class="Bold">Start Content Analysis</span>.</p>
+
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="sp_analyzecontentschedule.jpg" style="width : 651.000pt; height : 243.875pt; " id="image11" src="sp_analyzecontentschedule.jpg" />
+ </div>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="UsingSPE00001.jpg" style="width : 790.500pt; height : 1.605pt; " id="image12" src="UsingSPE00001.jpg" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook">Schedule a Content Analysis process</p>
+ <p>&#160;</p>
+<script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+
+highlightSearch();
+//-->
+//]]></script>
+</body>
+</html>

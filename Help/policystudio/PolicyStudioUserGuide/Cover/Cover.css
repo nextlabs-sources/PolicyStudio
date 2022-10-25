@@ -1,0 +1,356 @@
+﻿
+BODY {
+        
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 8.5pt;
+
+}
+p.FM_BookSubtitle {
+        margin-left:     0.000pt;
+        margin-right:    0.000pt;
+        text-align:      left;
+        text-indent:     0.000pt;
+        margin-top:      20.000pt;
+        margin-bottom:   0.000pt;
+        word-spacing:    0.250em;
+        font-family:     Arial;
+        font-style:      normal;
+        font-weight:     normal;
+        font-size:       18.0pt;
+        color:           #000000;
+        background-color: none;
+        text-decoration: none;
+        letter-spacing:  0.00em;
+        
+}
+caption.FM_BookSubtitle {
+        margin-left:     0.000pt;
+        margin-right:    0.000pt;
+        text-align:      left;
+        text-indent:     0.000pt;
+        margin-top:      20.000pt;
+        margin-bottom:   0.000pt;
+        word-spacing:    0.250em;
+        font-family:     Arial;
+        font-style:      normal;
+        font-weight:     normal;
+        font-size:       18.0pt;
+        color:           #000000;
+        background-color: none;
+        text-decoration: none;
+        letter-spacing:  0.00em;
+        
+}
+p.FM_CoverNum1 {
+        margin-left:     18.000pt;
+        margin-right:    0.000pt;
+        text-align:      left;
+        text-indent:     -18.000pt;
+        margin-top:      3.000pt;
+        margin-bottom:   0.000pt;
+        word-spacing:    0.250em;
+        font-family:     Times New Roman;
+        font-style:      normal;
+        font-weight:     normal;
+        font-size:       10.0pt;
+        color:           #000000;
+        background-color: none;
+        text-decoration: none;
+        letter-spacing:  0.00em;
+        
+}
+caption.FM_CoverNum1 {
+        margin-left:     18.000pt;
+        margin-right:    0.000pt;
+        text-align:      left;
+        text-indent:     -18.000pt;
+        margin-top:      3.000pt;
+        margin-bottom:   0.000pt;
+        word-spacing:    0.250em;
+        font-family:     Times New Roman;
+        font-style:      normal;
+        font-weight:     normal;
+        font-size:       10.0pt;
+        color:           #000000;
+        background-color: none;
+        text-decoration: none;
+        letter-spacing:  0.00em;
+        
+}
+p.FM_CoverDate {
+        margin-left:     0.000pt;
+        margin-right:    0.000pt;
+        text-align:      left;
+        text-indent:     0.000pt;
+        margin-top:      11.000pt;
+        margin-bottom:   0.000pt;
+        word-spacing:    0.250em;
+        font-family:     Arial;
+        font-style:      normal;
+        font-weight:     normal;
+        font-size:       14.0pt;
+        color:           #000000;
+        background-color: none;
+        text-decoration: none;
+        letter-spacing:  0.00em;
+        
+}
+caption.FM_CoverDate {
+        margin-left:     0.000pt;
+        margin-right:    0.000pt;
+        text-align:      left;
+        text-indent:     0.000pt;
+        margin-top:      11.000pt;
+        margin-bottom:   0.000pt;
+        word-spacing:    0.250em;
+        font-family:     Arial;
+        font-style:      normal;
+        font-weight:     normal;
+        font-size:       14.0pt;
+        color:           #000000;
+        background-color: none;
+        text-decoration: none;
+        letter-spacing:  0.00em;
+        
+}
+p.FM_CoverBody {
+        margin-left:     0.000pt;
+        margin-right:    0.000pt;
+        text-align:      left;
+        text-indent:     0.000pt;
+        margin-top:      11.000pt;
+        margin-bottom:   4.000pt;
+        word-spacing:    0.250em;
+        font-family:     Arial;
+        font-style:      normal;
+        font-weight:     normal;
+        font-size:       9.0pt;
+        color:           #000000;
+        background-color: none;
+        text-decoration: none;
+        letter-spacing:  0.00em;
+        
+}
+caption.FM_CoverBody {
+        margin-left:     0.000pt;
+        margin-right:    0.000pt;
+        text-align:      left;
+        text-indent:     0.000pt;
+        margin-top:      11.000pt;
+        margin-bottom:   4.000pt;
+        word-spacing:    0.250em;
+        font-family:     Arial;
+        font-style:      normal;
+        font-weight:     normal;
+        font-size:       9.0pt;
+        color:           #000000;
+        background-color: none;
+        text-decoration: none;
+        letter-spacing:  0.00em;
+        
+}
+p.FM_BookTitle {
+        margin-left:     0.000pt;
+        margin-right:    0.000pt;
+        text-align:      left;
+        text-indent:     0.000pt;
+        margin-top:      18.000pt;
+        margin-bottom:   0.000pt;
+        word-spacing:    0.250em;
+        font-family:     Arial;
+        font-style:      normal;
+        font-weight:     bold;
+        font-size:       18.0pt;
+        color:           #000000;
+        background-color: none;
+        text-decoration: none;
+        letter-spacing:  0.00em;
+        
+}
+caption.FM_BookTitle {
+        margin-left:     0.000pt;
+        margin-right:    0.000pt;
+        text-align:      left;
+        text-indent:     0.000pt;
+        margin-top:      18.000pt;
+        margin-bottom:   0.000pt;
+        word-spacing:    0.250em;
+        font-family:     Arial;
+        font-style:      normal;
+        font-weight:     bold;
+        font-size:       18.0pt;
+        color:           #000000;
+        background-color: none;
+        text-decoration: none;
+        letter-spacing:  0.00em;
+        
+}
+p.FM_CoverNum {
+        margin-left:     18.000pt;
+        margin-right:    0.000pt;
+        text-align:      left;
+        text-indent:     -18.000pt;
+        margin-top:      3.000pt;
+        margin-bottom:   0.000pt;
+        word-spacing:    0.250em;
+        font-family:     Times New Roman;
+        font-style:      normal;
+        font-weight:     normal;
+        font-size:       10.0pt;
+        color:           #000000;
+        background-color: none;
+        text-decoration: none;
+        letter-spacing:  0.00em;
+        
+}
+caption.FM_CoverNum {
+        margin-left:     18.000pt;
+        margin-right:    0.000pt;
+        text-align:      left;
+        text-indent:     -18.000pt;
+        margin-top:      3.000pt;
+        margin-bottom:   0.000pt;
+        word-spacing:    0.250em;
+        font-family:     Times New Roman;
+        font-style:      normal;
+        font-weight:     normal;
+        font-size:       10.0pt;
+        color:           #000000;
+        background-color: none;
+        text-decoration: none;
+        letter-spacing:  0.00em;
+        
+}
+OL, UL {
+        margin-top: 0px;
+        margin-bottom: 0px;
+}
+
+span.FM_PageNumber {
+        font-family:     Arial;
+        font-style:      normal;
+        font-weight:     bold;
+        font-size:       9.0pt;
+        color:           #000000;
+        text-decoration: none;
+        letter-spacing:  0.00em;
+        
+}
+span.FM_EquationVariables {
+        font-style:      italic;
+        
+}
+span.FM_Bold {
+        font-family:     Arial;
+        font-style:      normal;
+        font-weight:     bold;
+        font-size:       9.0pt;
+        color:           #000000;
+        text-decoration: none;
+        letter-spacing:  0.00em;
+        
+}
+span.FM_wingding {
+        font-family:     Wingdings;
+        font-style:      normal;
+        font-weight:     normal;
+        font-size:       11.0pt;
+        color:           #000000;
+        text-decoration: none;
+        letter-spacing:  0.00em;
+        
+}
+span.FM_Emphasis {
+        font-style:      italic;
+        font-weight:     normal;
+        font-size:       11.0pt;
+        color:           #000000;
+        text-decoration: none;
+        letter-spacing:  0.00em;
+        
+}
+span.FM_Edit {
+        font-family:     Times New Roman;
+        font-style:      normal;
+        font-weight:     normal;
+        font-size:       11.0pt;
+        color:           #ff0000;
+        text-decoration: none;
+        letter-spacing:  0.00em;
+        
+}
+span.FM_Callout {
+        font-family:     Arial;
+        font-style:      normal;
+        font-weight:     normal;
+        font-size:       8.0pt;
+        color:           #000000;
+        letter-spacing:  0.00em;
+        
+}
+span.FM_Hyperlink {
+        font-family:     Times New Roman;
+        font-style:      normal;
+        font-weight:     normal;
+        font-size:       11.0pt;
+        color:           #0000ff;
+        text-decoration: underline;
+        letter-spacing:  0.00em;
+        
+}
+span.FM_Code {
+        font-family:     Courier New;
+        font-style:      normal;
+        font-weight:     normal;
+        font-size:       11.0pt;
+        color:           #000000;
+        text-decoration: none;
+        letter-spacing:  0.00em;
+        
+}
+span.FM_BulletSymbol {
+        font-family:     Times New Roman;
+        font-style:      normal;
+        font-weight:     bold;
+        font-size:       12.0pt;
+        color:           #000000;
+        letter-spacing:  0.00em;
+        
+}
+span.FM_ThirdParty {
+        font-family:     Arial;
+        font-style:      normal;
+        font-weight:     normal;
+        font-size:       9.0pt;
+        color:           #000000;
+        text-decoration: none;
+        letter-spacing:  0.00em;
+        
+}
+span.FM_EquationNumber {
+        font-family:     Arial;
+        font-style:      normal;
+        font-weight:     bold;
+        font-size:       8.0pt;
+        color:           #000000;
+        letter-spacing:  0.00em;
+        
+}
+span.FM_ChapterNumber {
+        font-family:     Arial;
+        font-style:      normal;
+        font-weight:     bold;
+        font-size:       10.0pt;
+        color:           #000000;
+        letter-spacing:  0.04em;
+        
+}
+span.FM_StepNumber {
+        font-family:     Arial;
+        font-style:      normal;
+        font-weight:     bold;
+        font-size:       11.0pt;
+        color:           #000000;
+        letter-spacing:  0.00em;
+        
+}

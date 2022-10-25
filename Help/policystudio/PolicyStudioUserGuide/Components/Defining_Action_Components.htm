@@ -1,0 +1,277 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ <title>Defining Action Components</title>
+
+ <meta name="generator" content="Adobe RoboHelp 9" />
+ <meta name="Originator" content="ImportMif" />
+ <meta name="OriginalFile" content="C:\CC_PSUserGuide_77\PSUserGuideFM\Components.fm" />
+ <link rel="stylesheet" href="Components.css" type="text/css" />
+
+ <link rel="stylesheet" href="..\..\RHStyleMapping.css" type="text/css" />
+
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whlang.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whtopic.js"></script>
+
+</head>
+
+<body><script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.gbWhTopic)
+{
+	var strUrl = document.location.href;
+	var bc = 0;
+	var n = strUrl.toLowerCase().indexOf("bc-");
+	if(n != -1)
+	{
+		document.location.href = strUrl.substring(0, n);
+		bc = strUrl.substring(n+3);
+	}
+
+	if (window.addTocInfo)
+	{
+	addTocInfo("Defining Components\nDefining Action Components");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	
+	document.write("<p style=\"text-align:right\"> ");
+AddMasterBreadcrumbs("../../PolicyStudioUserGuideTOC.htm", "", "&gt;", "Policy&nbsp;Studio&nbsp;", "../Welcome/Welcome_to_7_7.htm");
+document.write("<a href=\"Defining_Components.htm\">Defining Components<\/a> &gt; Defining Action Components<\/p>");
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../../PolicyStudioUserGuideTOC.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+
+//-->
+//]]></script>
+ <h1><a name="XREF_17261_Defining_an_Action"></a>Defining Action Components</h1>
+ <p class="BodyLevel1">The procedure for defining action components is quite different than for object components, since they are much more simply defined. In fact, they don’t have either properties or memberships at all, as object components do. Rather, each action component consists of a name, a description, and one or more basic actions that you can combine to meet your requirements.</p>
+ <p class="PublisherBook"><span class="FM_Emphasis">Note: </span>Actions appropriate for your configuration must be imported using the Seed Data procedure. For more information, consult the <span class="FM_Emphasis">System Administrator User’s Guide</span>.</p>
+ <p class="BodyLevel1">With the exception of DAC actions (which should not be modified), you can cre&#173;ate your own combinations of basic actions by creating new action components. To create a new action component, expand the Action Components panel to dis&#173;play a list of all currently defined action components. Then perform the follow&#173;ing steps:</p>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Click the <span class="FM_Bold">New</span>&#160;button, and type a name for the new action component. Since action components often combine more than one basic action, it is important to assign names that are as specific and descriptive as possible. </p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Click <span class="FM_Bold">OK</span> to display the action editor controls.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">In the left pane, select the basic actions that you want to combine to define the new component. A component can consist of one basic action, or several.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">When you have made your selections, click the right arrow in the center to move the basic actions into the right-hand pane. If you make a mistake or change your mind, click the left arrow to remove basic actions from the component.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">In&#160;the <span class="FM_Bold">Description</span> field, provide a description of the action. This is helpful to remind yourself or other designers of the purpose of combining these basic actions into a single component.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Click the <span class="FM_Bold">Submit</span> button.</p>
+</li>
+ </ol>
+ <h2>Basic Actions</h2>
+ <p class="BodyLevel1">The following table provides a list, grouped by different enforcer products, of the basic actions that are available (note that many actions are common across multiple enforcers). </p>
+ <p class="PublisherBook"><span class="FM_Emphasis">Note: </span>For more information about how to use these actions in policy, consult the user guide for each enforcer. </p>
+<table width="100%">
+ <tr>
+ <td>
+ <table style="border-spacing: 0; padding-left: 4.00pt; padding-top: 4.00pt; padding-right: 4.00pt; padding-bottom: 3.00pt;float: aligncenter;margin-bottom: 24.00pt; width: 360.00pt;" cellspacing="0" align="center">
+  <caption align="center">
+  </caption>
+  <tr style=" height : 16.00pt;background : #1f8c4a;">
+  <th style="width : 180.000pt; background : #1f8c4a;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Product</p>
+</th>
+  <th style="width : 180.000pt; background : #1f8c4a;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Basic Actions</p>
+</th>
+</tr>
+  <tr style=" height : 92.00pt;">
+  <td style="width : 180.000pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">Entitlement Manager for SharePoint</p>
+</td>
+  <td style="width : 180.000pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Upload</p>
+  <p class="CellBody">Download</p>
+  <p class="CellBody">Attach to Item</p>
+  <p class="CellBody">Delete</p>
+  <p class="CellBody">Export</p>
+  <p class="CellBody">Move</p>
+  <p class="CellBody">Open</p>
+  <p class="CellBody">Create/Edit</p>
+</td>
+</tr>
+  <tr style=" height : 59.00pt;">
+  <td style="width : 180.000pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">Entitlement Manager for SAP</p>
+</td>
+  <td style="width : 180.000pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Check-in</p>
+  <p class="CellBody">Check-out</p>
+  <p class="CellBody">Run</p>
+  <p class="CellBody">Delete</p>
+  <p class="CellBody">SAP Copy From</p>
+</td>
+</tr>
+  <tr style=" height : 37.00pt;">
+  <td style="width : 180.000pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">Entitlement Manager for Enovia</p>
+</td>
+  <td style="width : 180.000pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Open</p>
+  <p class="CellBody">Export</p>
+  <p class="CellBody">Delete</p>
+</td>
+</tr>
+  <tr style=" height : 81.00pt;">
+  <td style="width : 180.000pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">Entitlement Manager for Windows File Server 2003/2008</p>
+</td>
+  <td style="width : 180.000pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Open</p>
+  <p class="CellBody">Edit</p>
+  <p class="CellBody">Run</p>
+  <p class="CellBody">Delete</p>
+  <p class="CellBody">Change File Permissions</p>
+  <p class="CellBody">Change Attributes</p>
+  <p class="CellBody">Rename</p>
+</td>
+</tr>
+  <tr style=" height : 147.00pt;">
+  <td style="width : 180.000pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">Rights Management Client</p>
+</td>
+  <td style="width : 180.000pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Open</p>
+  <p class="CellBody">Copy/Paste</p>
+  <p class="CellBody">Copy/Embed</p>
+  <p class="CellBody">Send</p>
+  <p class="CellBody">Print</p>
+  <p class="CellBody">Edit</p>
+  <p class="CellBody">Copy</p>
+  <p class="CellBody">Convert</p>
+  <p class="CellBody">Classify</p>
+  <p class="CellBody">Screen Capture</p>
+  <p class="CellBody">Move</p>
+  <p class="CellBody">Decrypt</p>
+  <p class="CellBody">Email</p>
+</td>
+</tr>
+  <tr style=" height : 70.00pt;">
+  <td style="width : 180.000pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">Data Protection: Communications</p>
+</td>
+  <td style="width : 180.000pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Instant Message</p>
+  <p class="CellBody">Voice Call/Video Call</p>
+  <p class="CellBody">Invite</p>
+  <p class="CellBody">Join</p>
+  <p class="CellBody">Share</p>
+  <p class="CellBody">Question</p>
+</td>
+</tr>
+  <tr style=" height : 15.00pt;">
+  <td style="width : 180.000pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">Data Protection: Email</p>
+</td>
+  <td style="width : 180.000pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Email</p>
+</td>
+</tr>
+  <tr style=" height : 213.00pt;">
+  <td style="width : 180.000pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">Data Protection: Desktop</p>
+</td>
+  <td style="width : 180.000pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Open</p>
+  <p class="CellBody">Copy/Paste</p>
+  <p class="CellBody">Send</p>
+  <p class="CellBody">Print</p>
+  <p class="CellBody">Edit</p>
+  <p class="CellBody">Copy</p>
+  <p class="CellBody">Convert</p>
+  <p class="CellBody">Classify</p>
+  <p class="CellBody">Screen Capture</p>
+  <p class="CellBody">Upload</p>
+  <p class="CellBody">Download</p>
+  <p class="CellBody">Attach Device</p>
+  <p class="CellBody">Rename</p>
+  <p class="CellBody">Copy/Embed</p>
+  <p class="CellBody">Move</p>
+  <p class="CellBody">Delete</p>
+  <p class="CellBody">Change Attributes</p>
+  <p class="CellBody">Change File Permissions</p>
+  <p class="CellBody">Run</p>
+</td>
+</tr>
+  <tr style=" height : 48.00pt;">
+  <td style="width : 180.000pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p style="font-weight : bold; font-size  : 8.0pt;">Dynamic Access Control (DAC)</p>
+</td>
+  <td style="width : 180.000pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Open</p>
+  <p class="CellBody">Run</p>
+  <p class="CellBody">Edit</p>
+  <p class="CellBody">Delete</p>
+</td>
+</tr>
+ </table>
+</td></tr>
+</table>
+ <p class="PublisherBook"></p>
+ <script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+
+
+highlightSearch();
+//-->
+//]]></script>
+</body>
+</html>

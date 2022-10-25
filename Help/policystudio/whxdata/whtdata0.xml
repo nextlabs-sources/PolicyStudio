@@ -1,0 +1,54 @@
+﻿<?xml version='1.0' encoding='utf-8' ?>
+<tocdata>
+<item name="Welcome to 7.7" url="PolicyStudioUserGuide/Welcome/Welcome_to_7_7.htm" />
+<book name="Introduction" >
+  <item name="Introducing Policy Author" url="PolicyStudioUserGuide/IntroPA/Introducing_Policy_Author.htm" />
+  <item name="Overview" url="PolicyStudioUserGuide/IntroPA/Overview.htm" />
+  <item name="About Components" url="PolicyStudioUserGuide/IntroPA/About_Components.htm" />
+  <item name="About Policies" url="PolicyStudioUserGuide/IntroPA/About_Policies.htm" />
+</book>
+<book name="Defining Components" >
+  <item name="Defining Components" url="PolicyStudioUserGuide/Components/Defining_Components.htm" />
+  <item name="Defining New Components" url="PolicyStudioUserGuide/Components/Defining_New_Components.htm" />
+  <item name="Defining Object Components" url="PolicyStudioUserGuide/Components/Defining_Object_Components.htm" />
+  <item name="Defining Action Components" url="PolicyStudioUserGuide/Components/Defining_Action_Components.htm" />
+  <item name="Cloning Components" url="PolicyStudioUserGuide/Components/Cloning_Components.htm" />
+</book>
+<book name="Constructing Policies" >
+  <item name="Constructing Policies" url="PolicyStudioUserGuide/Policies/Constructing_Policies.htm" />
+  <item name="Creating a New Policy" url="PolicyStudioUserGuide/Policies/Creating_a_New_Policy.htm" />
+  <item name="Cloning Policies" url="PolicyStudioUserGuide/Policies/Cloning_Policies.htm" />
+  <item name="Using Obligations" url="PolicyStudioUserGuide/Policies/Using_Obligations.htm" />
+  <item name="Communication Policies" url="PolicyStudioUserGuide/Policies/Communication_Policies.htm" />
+  <item name="Dynamic Access Control Policies" url="PolicyStudioUserGuide/Policies/Dynamic_Access_Control_Policies.htm" />
+</book>
+<book name="Deploying Objects" >
+  <item name="Deploying Objects" url="PolicyStudioUserGuide/Deploying/Deploying_Objects.htm" />
+  <item name="Deploying Policies and Components" url="PolicyStudioUserGuide/Deploying/Deploying_Policies_and_Components.htm" />
+  <item name="Management Tools" url="PolicyStudioUserGuide/Deploying/Management_Tools.htm" />
+  <item name="Managing Policies and Components" url="PolicyStudioUserGuide/Deploying/Managing_Policies_and_Components.htm" />
+</book>
+<book name="Policy Manager" >
+  <item name="Introducing Policy Manager" url="PolicyStudioUserGuide/PolicyManager/Introducing_Policy_Manager.htm" />
+  <item name="Using Policy Manager" url="PolicyStudioUserGuide/PolicyManager/Using_Policy_Manager.htm" />
+  <item name="Importing and Exporting Policies" url="PolicyStudioUserGuide/PolicyManager/Importing_and_Exporting_Policies.htm" />
+  <item name="Monitoring Objects" url="PolicyStudioUserGuide/PolicyManager/Monitoring_Objects.htm" />
+</book>
+<book name="How Do I ...?" >
+  <item name="How Do I...?" url="PolicyStudioUserGuide/HowDoI/How_Do_I.htm" />
+  <item name="Working with Components" url="PolicyStudioUserGuide/HowDoI/Working_with_Components.htm" />
+  <item name="Working with Policies" url="PolicyStudioUserGuide/HowDoI/Working_with_Policies.htm" />
+</book>
+<book name="Object State Model" >
+  <item name="The Object State Model" url="PolicyStudioUserGuide/StateModel/The_Object_State_Model.htm" />
+  <item name="State Diagram" url="PolicyStudioUserGuide/StateModel/State_Diagram.htm" />
+  <item name="Object Life Cycle" url="PolicyStudioUserGuide/StateModel/Object_Life_Cycle.htm" />
+</book>
+<book name="Migrating 6.x Policies" >
+  <item name="Migrating 6.x Policies" url="PolicyStudioUserGuide/Policy_Redesign/Migrating_6_x_Policies.htm" />
+  <item name="Changes in version 7.0 and later" url="PolicyStudioUserGuide/Policy_Redesign/Changes_in_version_7_0_and_later.htm" />
+  <item name="Backward Compatibility" url="PolicyStudioUserGuide/Policy_Redesign/Backward_Compatibility.htm" />
+  <item name="Redesigning 6.x Policies" url="PolicyStudioUserGuide/Policy_Redesign/Redesigning_6_x_Policies.htm" />
+</book>
+
+</tocdata>

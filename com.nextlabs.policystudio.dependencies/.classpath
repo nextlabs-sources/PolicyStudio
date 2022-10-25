@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry exported="true" kind="lib" path="activation.jar"/>
+	<classpathentry exported="true" kind="lib" path="agent-ipc.jar"/>
+	<classpathentry exported="true" kind="lib" path="antlr.jar"/>
+	<classpathentry exported="true" kind="lib" path="app-framework.jar"/>
+	<classpathentry exported="true" kind="lib" path="axis.jar"/>
+	<classpathentry exported="true" kind="lib" path="c3p0.jar"/>
+	<classpathentry exported="true" kind="lib" path="castor.jar"/>
+	<classpathentry exported="true" kind="lib" path="cglib-full.jar"/>
+	<classpathentry exported="true" kind="lib" path="client-pf.jar"/>
+	<classpathentry exported="true" kind="lib" path="client-security-config.jar"/>
+	<classpathentry exported="true" kind="lib" path="common-domain.jar"/>
+	<classpathentry exported="true" kind="lib" path="common-domain-types.jar"/>
+	<classpathentry exported="true" kind="lib" path="common-framework.jar"/>
+	<classpathentry exported="true" kind="lib" path="common-framework-types.jar"/>
+	<classpathentry exported="true" kind="lib" path="common-pf.jar"/>
+	<classpathentry exported="true" kind="lib" path="common-res.jar"/>
+	<classpathentry exported="true" kind="lib" path="commons-cli.jar"/>
+	<classpathentry exported="true" kind="lib" path="commons-collections.jar"/>
+	<classpathentry exported="true" kind="lib" path="commons-discovery.jar"/>
+	<classpathentry exported="true" kind="lib" path="commons-logging.jar"/>
+	<classpathentry exported="true" kind="lib" path="common-version.jar"/>
+	<classpathentry exported="true" kind="lib" path="common-version-impl.jar"/>
+	<classpathentry exported="true" kind="lib" path="crypt.jar"/>
+	<classpathentry exported="true" kind="lib" path="dom4j.jar"/>
+	<classpathentry exported="true" kind="lib" path="ehcache.jar"/>
+	<classpathentry exported="true" kind="lib" path="hibernate.jar"/>
+	<classpathentry exported="true" kind="lib" path="iText.jar"/>
+	<classpathentry exported="true" kind="lib" path="jaxrpc.jar"/>
+	<classpathentry exported="true" kind="lib" path="mail.jar"/>
+	<classpathentry exported="true" kind="lib" path="odmg.jar"/>
+	<classpathentry exported="true" kind="lib" path="policy-services.jar"/>
+	<classpathentry exported="true" kind="lib" path="policy-types.jar"/>
+	<classpathentry exported="true" kind="lib" path="saaj.jar"/>
+	<classpathentry exported="true" kind="lib" path="server-shared-services.jar"/>
+	<classpathentry exported="true" kind="lib" path="server-shared-types.jar"/>
+	<classpathentry exported="true" kind="lib" path="version.jar"/>
+	<classpathentry exported="true" kind="lib" path="version-types.jar"/>
+	<classpathentry exported="true" kind="lib" path="wsdl4j.jar"/>
+	<classpathentry exported="true" kind="lib" path="xercesImpl.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/J2SE-1.5"/>
+	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

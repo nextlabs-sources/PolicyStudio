@@ -1,0 +1,319 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ <title>Configuring_the_SharePoint_Policy_Model</title>
+
+ <meta name="generator" content="Adobe RoboHelp 9" />
+ <meta name="Originator" content="ImportMif" />
+ <meta name="OriginalFile" content="C:\Documents and Settings\mlittle\Desktop\SharePoint\SharePointFM\ConfiguringSPE.fm" />
+ <link rel="stylesheet" href="../../default.css" type="text/css" />
+
+ <link rel="stylesheet" href="..\..\default.css" type="text/css" />
+
+ <script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whlang.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.gbWhTopic)
+{
+	var strUrl = document.location.href;
+	var bc = 0;
+	var n = strUrl.toLowerCase().indexOf("bc-");
+	if(n != -1)
+	{
+		document.location.href = strUrl.substring(0, n);
+		bc = strUrl.substring(n+3);
+	}
+
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Configuring the Entitlement Manager for SharePoint\nConfiguring the SharePoint Policy Model");
+addButton("show",BTN_IMG,"Show TOC and Search","","","","",0,0,"../../whd_show0.gif","../../whd_show2.gif","../../whd_show1.gif");
+addButton("hide",BTN_IMG,"Hide TOC and Search","","","","",0,0,"../../whd_hide0.gif","../../whd_hide2.gif","../../whd_hide1.gif");
+
+	}
+
+	
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../../index.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+//]]></script>
+</head>
+
+<body><script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+//]]></script>
+<table width="100%" cellspacing="0" border="1">
+	<col style="width: 100%;" />
+	<tr style="height: 78px;">
+		<td bgcolor="#003399">&#160;</td>
+	</tr>
+ </table>
+<script type="text/javascript" language="javascript">//<![CDATA[
+document.write("<p  style=\"text-align:right;font-family:Arial;font-size:12pt;font-weight: normal;font-style: normal;text-decoration: none;\">");
+AddMasterBreadcrumbs("../../index.htm", "font-family:Arial;font-size:12pt;font-weight: normal;font-style: normal;text-decoration: none;", "&gt;", "Home", "../Introducing/Welcome.htm");
+document.write("<a style=\"font-family:Arial;font-size:12pt;font-weight: normal;font-style: normal;text-decoration: none;\" href=\"Configuring_the_Entitlement_Manager_for_SharePoint.htm\">Configuring the Entitlement Manager for SharePoint<\/a> &gt; Configuring the SharePoint Policy Model<\/p>");
+//]]></script>
+ <p style="text-align: right;">&#160;</p>
+
+ <h1><a name="XREF_40389_Feature_Specific"></a>Configuring the SharePoint Policy Model</h1>
+ <p class="BodyLevel1">Before you can create policies in Policy Studio, you must configure components of the SharePoint Policy Model, including:</p>
+ 
+<p class="BodyLevel2">1<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><a href="#XREF_80665_Configuring">Configuring Special Actions</a></p>
+
+ 
+<p class="BodyLevel2">2<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><a href="#XREF_19542_Configuring">Configuring Obligations</a></p>
+
+ 
+<p class="BodyLevel2">3<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><a href="#XREF_28957_Controlling">Configuring &#160;&#160;Settings Page Components</a></p>
+
+ 
+<p class="BodyLevel2">4<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><a href="#XREF_10097_Configuring">Configuring SharePoint Site Columns for &#160;Tagging Policies</a></p>
+
+ <h2><a name="XREF_80665_Configuring"></a>Configuring Special Actions</h2>
+ <p class="BodyLevel1">The Entitlement Manager for SharePoint&#160;has two special actions, Upload and Download, that you must manually configure before you can use them in policies. These actions will not be available in Policy Studio until you add them. </p>
+ <p class="PublisherBook"><span class="Emphasis">Note: </span>For more information on which actions should be associated with dif&#173;ferent kinds of SharePoint policies, see <a href="../UsingSPE/Policy_Design_Basics.htm#XREF_43123_What_Actions_Can">What Actions Can Be Enforced?</a></p>
+ <p class="BodyLevel1">Follow these steps:</p>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Use Notepad to open the file called SPE_Actions.xml, which is supplied in the Support directory of your Compliant Enterprise installation CD.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Open the main configuration file, configuration.xml, on the Control Cen&#173;ter host. By default it is located at <span class="GreyBold">&lt;installDirector&gt;\server\config&#173;uration</span>.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Paste the two special actions from the SPE_Actions.xml into the main con&#173;figuration file. They must be placed inside the <span class="GreyBold">&lt;ActionList&gt;</span>&#160;section, which is within the <span class="GreyBold">&lt;Obligations&gt;</span> section, as shown in the figure below.</p>
+</li>
+  <p class="BodyLevel1">&#160;</p>
+  <div align="center"><img alt="ConfiguringSPE00001.jpg" style="width : 376.992pt; height : 259.992pt; " id="image6" src="ConfiguringSPE00001.jpg" />
+  </div>
+  <p class="BodyLevel1"></p>
+  <p class="TitleBook">Configuring Special Actions</p>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Save your changes in the file and restart the Control Center Service. </p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">After the system restarts, test the configuration by opening Policy Studio and creating a New action component. The two new actions should appear in the list of basic actions in the left side of the chooser.</p>
+</li>
+ </ol>
+ <h2><a name="XREF_19542_Configuring"></a>Configuring Obligations</h2>
+ <p class="BodyLevel1"><a name="XREF_10285_Configuring"></a>Entitlement Manager for SharePoint policies rely on several obligations that are not configured upon installation. Before you are ready to write policies, you configure all the obligations for the types of SharePoint policies you will be deploying (listed in the following table).</p>
+ <table width="100%">
+  <tr>
+  <td>
+ <table style="border-spacing: 0; padding-left: 4.00pt; padding-top: 4.00pt; padding-right: 4.00pt; padding-bottom: 3.00pt;float: alignright;margin-bottom: 24.00pt; width: 360.00pt;" cellspacing="0" align="right">
+  <caption align="right">
+  </caption>
+  <tr style=" height : 16.00pt;background : #0b3999;">
+  <th style="width : 120.000pt; background : #0b3999;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellHeading">Obligation name<span style="font-family:Times New Roman; font-size:7.0pt"><font size="1" style="font-size:7pt;">&nbsp;&nbsp;&nbsp;</font></span></p>
+</th>
+  <th style="width : 120.000pt; background : #0b3999;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellHeading">For use in...</p>
+</th>
+  <th style="width : 120.000pt; background : #0b3999;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellHeading">For more Information</p>
+</th>
+</tr>
+  <tr style=" height : 39.00pt;">
+  <td style="width : 120.000pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Set Column Value</p>
+</td>
+  <td style="width : 120.000pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Classification: tag on upload policies</p>
+</td>
+  <td style="width : 120.000pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">For more information on using this obligation in policy, <a href="../UsingSPE/Designing_Classification_Policies.htm#XREF_88868_Content_Aware">Example Policy: &#160;Content Aware Classification on Upload &#160;</a>.</p>
+</td>
+</tr>
+  <tr style=" height : 101.00pt;">
+  <td style="width : 120.000pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">SharePoint System-Column Tagging</p>
+</td>
+  <td style="width : 120.000pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Classification: tag on download &#160;policies for system column values</p>
+  <p class="CellBody">&nbsp;</p>
+  <p class="CellBody">There are two versions of this column: one that includes pre-defined system column values, and one that allows you to edit the obligation to determine which system columns should be applied.</p>
+</td>
+  <td style="width : 120.000pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">For more information on using this obligation in policy, <a href="../UsingSPE/Designing_Data_Protection_Policies.htm#XREF_61557_Persistent_Tag_on">Example Policy: Persistent Tag on Download &#160;</a>.</p>
+</td>
+</tr>
+  <tr style=" height : 39.00pt;">
+  <td style="width : 120.000pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">SharePoint All-Column Tagging</p>
+</td>
+  <td style="width : 120.000pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Classification: tag on download &#160;policies for all column values</p>
+</td>
+  <td style="width : 120.000pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">For more information on using this obligation in policy, see <a href="../UsingSPE/Designing_Data_Protection_Policies.htm#XREF_61557_Persistent_Tag_on">Example Policy: Persistent Tag on Download &#160;</a>.</p>
+</td>
+</tr>
+  <tr style=" height : 39.00pt;">
+  <td style="width : 120.000pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">SharePoint User Specific Tagging</p>
+</td>
+  <td style="width : 120.000pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Classification: tag on download policies with values specified in policy</p>
+</td>
+  <td style="width : 120.000pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">For more information on using this obligation in policy, see <a href="../UsingSPE/Designing_Data_Protection_Policies.htm#XREF_61557_Persistent_Tag_on">Example Policy: Persistent Tag on Download &#160;</a>.</p>
+</td>
+</tr>
+  <tr style=" height : 39.00pt;">
+  <td style="width : 120.000pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">SharePoint Specific-Column Tagging</p>
+</td>
+  <td style="width : 120.000pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Classification: tag on download &#160;policies with column values specified in policy</p>
+</td>
+  <td style="width : 120.000pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">For more information on using this obligation in policy, see <a href="../UsingSPE/Designing_Data_Protection_Policies.htm#XREF_61557_Persistent_Tag_on">Example Policy: Persistent Tag on Download &#160;</a>.</p>
+</td>
+</tr>
+  <tr style=" height : 39.00pt;">
+  <td style="width : 120.000pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Log SharePoint Activity</p>
+</td>
+  <td style="width : 120.000pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Audit: log target actions with SharePoint resources</p>
+</td>
+  <td style="width : 120.000pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">For more information on using this obligation in policy, see <a href="../UsingSPE/Designing_Audit_Policies.htm#XREF_81325_Examples_Use_Cases">Example Policy: &#160;Event Auditing </a>.</p>
+</td>
+</tr>
+  <tr style=" height : 39.00pt;">
+  <td style="width : 120.000pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Log Permission Change</p>
+</td>
+  <td style="width : 120.000pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Audit: los permission change events for SharePoint webparts </p>
+</td>
+  <td style="width : 120.000pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">For more information on using this obligation in policy, see <a href="../UsingSPE/Designing_Audit_Policies.htm#XREF_41975_Permission_Change">Example Policy: &#160;&#160;Permission Change Auditing </a>.</p>
+</td>
+</tr>
+  <tr style=" height : 39.00pt;">
+  <td style="width : 120.000pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">SharePoint Send Email</p>
+</td>
+  <td style="width : 120.000pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">Classification, Access Control, and/or Audit: Send an email to specified recipient(s) after a SharePoint event</p>
+</td>
+  <td style="width : 120.000pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="CellBody">For more information on using this obligation in policy, see <a href="../UsingSPE/Designing_Audit_Policies.htm#XREF_81325_Examples_Use_Cases">Example Policy: &#160;Event Auditing </a>.</p>
+</td>
+</tr>
+ </table>
+</td></tr>
+ </table>
+ <p class="BodyLevel1"></p>
+ <p class="BodyLevel1">To configure these obligations, perform the following steps: </p>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Open your Control Center configuration file, <span style="font-style : italic; "><i>configuration.xml</i></span>.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Open the obligation source file and locate the four download-related sec&#173;tions.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Copy these four sections from the source file to the &lt;Obligations&gt; section of your configuration file, and save the changes.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Restart your Policy Server (and Policy Studio, if it is running).</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Test the registration by creating a new policy in Policy Studio and clicking the Custom Obligations checkbox. The four new obligations should display in the list of available obligations.</p>
+</li>
+ </ol>
+ <p class="BodyLevel1">The XML code snippets for these obligations are available in a source file called <span style="font-style : italic; "><i>product.xml</i></span>, which can be obtained from NextLabs support. Two examples of these snippets (for tagging obligations) are shown in the figure below.</p>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="ConfiguringSPE00004.jpg" style="width : 490.626pt; height : 294.751pt; " id="image7" src="ConfiguringSPE00004.jpg" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook">Custom Obligation for Automatic Tagging Obligation</p>
+ <h2><a name="XREF_28957_Controlling"></a>Configuring &#160;&#160;Settings Page Components</h2>
+ <p class="BodyLevel1">The Entitlement Manager for SharePoint&#160;lets you write policies that control how users can use the setting pages and other administrative controls within SharePoint itself. This enables you to set very fine-grained policy-based permissions not only for who can access which locations on SharePoint, but also for how users with administrative permissions can and cannot use SharePoint’s administrative settings to allow access to other users.</p>
+ <p class="BodyLevel1">Of the ten pre-built settings page components we described above, only one—<span style="font-weight : bold; "><b>SharePoint Setting - Users and Permissions</b></span>—is already available by default in the Portal component bin when you install Policy Studio. The others must be imported manually from an XML source file. </p>
+ <p class="PublisherBook"><span class="Emphasis">Note: </span>For an example of how to incorporate these components into policy, see <a href="../UsingSPE/Designing_Audit_Policies.htm#XREF_41975_Permission_Change">Example Policy: &#160;&#160;Permission Change Auditing </a>.</p>
+ <p class="BodyLevel1">Follow these steps:</p>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Copy the source file, <span style="font-style : italic; "><i>SharePoint_Components.xml,</i></span>&#160;from the Support folder of the Compliant Enterprise&#160;installation CD to any location visible to your Policy Studio host.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Open Policy Studio and toggle to the Policy Manager interface.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">In the File menu, click the Import command.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Browse to the XML source file, and click the Import button.</p>
+</li>
+ </ol>
+ <h2><a name="XREF_10097_Configuring"></a>Configuring SharePoint Site Columns for &#160;Tagging Policies</h2>
+ <p class="BodyLevel1">Before you are ready to construct content aware policies for automatic tagging of SharePoint documents, you must perform two configuration steps in SharePoint: designate or create a site or library that is the target site for the policy, and add a column to the site named for the tag that you are going to create. You should not change the default settings that apply for new columns: single line of text, &quot;No&quot; selected for require the column has information and for the enforcement of unique values, etc.</p>
+ <p class="BodyLevel1">In the example in the figure below, we are going to target the “Design Documents” library in our engineering department site, and a column in this library named “IP,” where, depending on the presence of certain keywords, the column value will be set to &quot;YES&quot; or &quot;NO.&quot;</p>
+ <p class="PublisherBook"><span class="Emphasis">Note: </span>For an example policies that sets this column value, see <a href="../UsingSPE/Designing_Classification_Policies.htm#XREF_88868_Content_Aware">Example Policy: &#160;Content Aware Classification on Upload &#160;</a>.</p>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="classificationcolumn.jpg" style="width : 786.000pt; height : 217.623pt; " id="image8" src="classificationcolumn.jpg" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook">Designating a SharePoint Library and Column </p>
+ <p>&#160;</p>
+<script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+
+highlightSearch();
+//-->
+//]]></script>
+</body>
+</html>

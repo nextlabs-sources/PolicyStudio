@@ -1,0 +1,315 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ <title>Deploying Policies and Components</title>
+
+ <meta name="generator" content="Adobe RoboHelp 9" />
+ <meta name="Originator" content="ImportMif" />
+ <meta name="OriginalFile" content="C:\CC_PSUserGuide_77\PSUserGuideFM\Deploying.fm" />
+ <link rel="stylesheet" href="Deploying.css" type="text/css" />
+
+ <link rel="stylesheet" href="..\..\RHStyleMapping.css" type="text/css" />
+
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whlang.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whtopic.js"></script>
+
+</head>
+
+<body><script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.gbWhTopic)
+{
+	var strUrl = document.location.href;
+	var bc = 0;
+	var n = strUrl.toLowerCase().indexOf("bc-");
+	if(n != -1)
+	{
+		document.location.href = strUrl.substring(0, n);
+		bc = strUrl.substring(n+3);
+	}
+
+	if (window.addTocInfo)
+	{
+	addTocInfo("Deploying Objects\nDeploying Policies and Components");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	
+	document.write("<p style=\"text-align:right\"> ");
+AddMasterBreadcrumbs("../../PolicyStudioUserGuideTOC.htm", "", "&gt;", "Policy&nbsp;Studio&nbsp;", "../Welcome/Welcome_to_7_7.htm");
+document.write("<a href=\"Deploying_Objects.htm\">Deploying Objects<\/a> &gt; Deploying Policies and Components<\/p>");
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../../PolicyStudioUserGuideTOC.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+
+//-->
+//]]></script>
+ <h1><a name="XREF_64747_About_Deployment"></a>Deploying Policies and Components</h1>
+ <p class="BodyLevel1">Once a policy or policy component is created, it must be distributed to the Pol&#173;icy Enforcers on all PCs or servers where policy enforcement is desired. An orga&#173;nization may have specific requirements for controlling changes to computer systems, so one person is typically assigned to control access to policies and the distribution of policy changes to enforcement points. The process of distributing and organizing the distribution of policies and policy components is called <span class="FM_italics" style="font-style : italic; "><i>deployment</i></span>.</p>
+ <h2>The Deployment Sequence</h2>
+ <p class="BodyLevel1">The deployment process can be broken down into a sequence of several tasks:</p>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1"><span style="font-weight : bold; "><b>Checking Dependencies</b></span>: see whether deployment depends on comple&#173;tion of other components.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1"><span style="font-weight : bold; "><b>Setting Deployment Targets</b></span>: specify which machines should receive the deployment. For DAC policies, this step is required, and must be done before submitting policies. For other types of policies, this step is optional because of the default setting, Auto Deployment, in Control Center.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1"><span style="font-weight : bold; "><b>Submitting for Deployment</b></span>: place a policy or component into the list of objects awaiting deployment.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1"><span style="font-weight : bold; "><b>Scheduling Deployment</b></span>: specify when deployment should occur. </p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1"><span style="font-weight : bold; "><b>Confirming Deployment:</b></span> check to see that deployment occurred accord&#173;ing to the specified targets and schedule.</p>
+</li>
+ </ol>
+ <p class="BodyLevel1">Each of these tasks is described in more detail later in this section.</p>
+ <h2>Deploying All</h2>
+ <p class="BodyLevel1">If you have submitted several policies or components for deployment, you can use the <span class="FM_Bold">Deploy All</span>&#160;feature to deploy them all at the same time. This feature is also useful if you want to use Control Center’s default deployment targets and deployment time (immediate deployment). You can also deselect some of the components and policies if you do not want to include them in the deployment.</p>
+ <p class="BodyLevel1">To deploy some or all policies and policy components that have been submitted for deployment:</p>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Select <span class="FM_Bold">Actions</span>&#160;&gt; <span class="FM_Bold">Deploy All</span>. Control Center identifies all policies and pol&#173;icy components that have been submitted but not yet scheduled for deployment. Control Center&#160;performs a dependency check to see whether there are any supporting policy components that you must finish and sub&#173;mit first. If everything is finished and submitted, the <span class="FM_Bold">Deploy All</span>&#160;window appears with all submitted policies and components selected.</p>
+</li>
+  <p class="BodyLevel1">&#160;</p>
+  <div align="center"><img alt="DeployAll.png" style="width : 281.249pt; height : 220.875pt; " id="image0" src="DeployAll.png" />
+  </div>
+  <p class="BodyLevel1"></p>
+  <p class="TitleBook">The Deploy All window</p>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Uncheck any items that you don’t want to deploy with this batch. You can only deselect an item if no other policy object being deployed depends on it.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Click <span class="FM_Bold">OK</span>. The <span class="FM_Bold">Deploy</span>&#160;window appears, with all dependent components checked. </p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">For <span class="FM_Bold">Deployment Start Time</span>, choose one of the following:</p>
+</li>
+  
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span style="font-weight : bold; "><b>Deploy Immediately</b></span> (the default option): Deploys the policies immedi&#173;ately, in Push Deploy mode, that is, without waiting to receive a heartbeat message (see <a href="#XREF_89706_About_Push"><span class="FM_blue">About Push Deployment</span></a>).</p>
+
+  
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span style="font-weight : bold; "><b>Deploy at &lt;</b></span><span class="FM_Emphasis">date and time</span><span style="font-weight : bold; "><b>&gt;</b></span>: Starts deployment at the default date and time, as displayed. By default this is set at midnight of the current day, but you can set a different time if you wish. (This might be delayed slightly by the heartbeat mechanism, which is set to one hour by default.)</p>
+
+  
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span style="font-weight : bold; "><b>Specify </b></span>date and time<span style="font-weight : bold; "><b>&#160;</b></span>controls: Display the current time by default, but you can change them to set any specific moment you want deployment to begin.</p>
+
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Click <span class="FM_Bold">OK</span>. The policies and components are automatically deployed to all required deployment targets, as identified by Control Center. For infor&#173;mation on setting targets manually, see <a href="#XREF_20154_Setting_Deployment"><span class="FM_blue">Setting deployment targets manu&#173;ally</span></a>.</p>
+</li>
+ </ol>
+ <p class="BodyLevel1"></p>
+ <div align="center"><img alt="DeployWindow.png" style="width : 426.000pt; height : 379.374pt; " id="image1" src="DeployWindow.png" />
+ </div>
+ <p class="BodyLevel1">&nbsp;</p>
+ <p class="TitleBook">The Deploy window</p>
+ <h2><a name="XREF_60866_The_Full"></a>The Full Deployment Sequence</h2>
+ <p class="BodyLevel1">As mentioned previously, the full deployment sequence—as distinct from the quick deployment described above—comprises five steps. This section describes the steps in detail.</p>
+ <h3><a name="XREF_85608_Checking"></a>1. Checking Dependencies</h3>
+ <p class="BodyLevel1">Whenever you finish defining a component or constructing a policy and are ready to deploy it, you should check whether it depends on the completion of other components. Control Center&#160;automatically performs a dependency check when you submit an object for deployment, but you can also perform this check yourself at any time.</p>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">In the navigation pane, or using the tabs along the top of the editing pane (if you are editing multiple objects at the same time), select the policy or policy component whose dependencies you want to check. If you are edit&#173;ing a policy or component, it is already selected.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Select <span class="FM_Bold">Actions</span>&#160;&gt; <span class="FM_Bold">Check Dependencies</span>. If dependencies are found, the <span class="FM_Bold">Check Dependencies</span> dialog box appears with the results. For each depen&#173;dent component, an explanation of the dependency is shown.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Read the information in the dialog box. If it shows that you must take action, such as finish editing another component before you can deploy the current one, make a note of the required task. If the dependent com&#173;ponent is greyed out, you do not have permissions to perform the required task yourself. The dependent component can be in the states described in the following table. </p>
+<table width="100%">
+ <tr>
+ <td>
+  <table style="border-spacing: 0; padding-left: 4.00pt; padding-top: 4.00pt; padding-right: 4.00pt; padding-bottom: 3.00pt;float: aligncenter; width: 360.00pt;" cellspacing="0" align="center">
+   <tr style=" height : 16.00pt;background : #1f8c4a;">
+   <th style="width : 82.950pt; background : #1f8c4a;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+   <p class="CellBody">State</p>
+</th>
+   <th style="width : 277.050pt; background : #1f8c4a;border-top-style: solid; border-top-width: 1px; border-top-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+   <p class="CellBody">Description</p>
+</th>
+</tr>
+   <tr style=" height : 31.00pt;">
+   <td style="width : 82.950pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+   <p class="CellBody">Missing</p>
+</td>
+   <td style="width : 277.050pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+   <p class="CellBody">The component has never been submitted for deployment. If it is required by the object you are trying to deploy, you will need to submit the missing component first.</p>
+</td>
+</tr>
+   <tr style=" height : 23.00pt;">
+   <td style="width : 82.950pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+   <p class="CellBody">Required</p>
+</td>
+   <td style="width : 277.050pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+   <p class="CellBody">The component has been submitted for deployment and will automatically be deployed along with the current component.</p>
+</td>
+</tr>
+   <tr style=" height : 39.00pt;">
+   <td style="width : 82.950pt; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+   <p class="CellBody">Modified</p>
+</td>
+   <td style="width : 277.050pt; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+   <p class="CellBody">An existing version of the component has been deployed, but someone has created an edited version more recently that has not yet been deployed. The existing deployed version will be used until the modified version is deployed. </p>
+</td>
+</tr>
+  </table>
+</td></tr>
+</table>
+  <p class="BodyLevel1"></p>
+</li>
+  <p class="Title">However, if you want your new object to use the more recently modified version, you can open that object, see why it has not yet been deployed, and move the process forward if possible. For example, perhaps the modi&#173;fied component needs to be submitted for deployment; if it has been sub&#173;mitted, perhaps it has not yet been scheduled; or perhaps it has been scheduled, but its deployment time is too far in the future.</p>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">When you finish reading the information, click <span class="FM_Bold">OK</span>.</p>
+</li>
+ </ol>
+ <h3>2. <a name="XREF_24970_Setting_Deployment"></a>Setting Deployment Targets</h3>
+ <p class="BodyLevel1">Before a policy or component is submitted for deployment, you can specify which Policy Enforcers you want it deployed to. To do this, </p>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Select <span class="FM_Bold">Action</span>&#160;&gt; <span class="FM_Bold">Set Deployment Targets</span>. The Set Deployment Targets dia&#173;log box appears.</p>
+</li>
+  <p class="BodyLevel1"></p>
+  <div align="center"><img alt="SetTargets.png" style="width : 369.750pt; height : 138.999pt; " id="image2" src="SetTargets.png" />
+  </div>
+  <p class="BodyLevel1">&nbsp;</p>
+  <p class="TitleBook">Set Deployment Target dialog</p>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">In the <span class="FM_Bold">Deployment Type</span> drop-down list, choose one of the following:</p>
+</li>
+  
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span style="font-weight : bold; "><b>Auto deployment</b></span>: Control Center automatically chooses the machines—all qualified endpoints—that should receive the policies. (This is the default behavior.)</p>
+
+  
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span style="font-weight : bold; "><b>Manual</b></span>&#160;<span style="font-weight : bold; "><b>Deployment</b></span>: You can specify which hosts you want to receive the policies.</p>
+
+  <p class="BodyLevel1">If you choose Manual Deployment, the window expands as shown below. You can use the <span class="FM_Bold">File Servers</span>, <span class="FM_Bold">Desktops</span>, <span class="FM_Bold">Portals</span>, and <span class="FM_Bold">Active Directory</span> tabs in the left-hand pane to specify which enforcers of each type you want this policy deployed to. Each tab displays a list of groups of enforcer hosts or individual host names. (The <span class="FM_Bold">File Servers</span>&#160;tab will show both Windows and Linux hosts, without distinc&#173;tion.) If no deployment targets have been set up yet, this list is blank.</p>
+  <p class="BodyLevel1"></p>
+  <div align="center"><img alt="DACpolicyexample8.jpg" style="width : 624.749pt; height : 185.249pt; " id="image3" src="DACpolicyexample8.jpg" />
+  </div>
+  <p class="BodyLevel1">&nbsp;</p>
+  <p class="TitleBook"><a name="XREF_20154_Setting_Deployment"></a>Setting deployment targets manually</p>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">You build your deployment target list in the right-hand pane, by selecting an enforcer on one of the tabs, then clicking the <span class="FM_Bold">Add</span> button.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">To delete a deployment target from the list, select the desired group or machine name and click <span class="FM_Bold">Remove</span>.</p>
+</li>
+  <p class="PublisherBook"><span class="FM_Emphasis">Note: </span>You cannot select items within groups, only the group as a whole.</p>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1"><a name="XREF_36587_5_When_finished"></a>When finished, click <span class="FM_Bold">Save</span>.</p>
+</li>
+ </ol>
+ <h3><a name="XREF_21403_Submitting_for"></a>3. Submitting for Deployment</h3>
+ <p class="BodyLevel1">Submitting a policy or policy component for deployment places it in a state where it is ready to be sent to policy enforcers and take effect within your orga&#173;nization, but it is not deployed until someone schedules the actual deployment. You can select multiple objects for submission.</p>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">In Policy Author, select the policies or components you want to deploy.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Select <span class="FM_Bold">Action &gt;</span>&#160;<span class="FM_Bold">Submit</span>. Alternatively, if you are submitting a policy or component that is open, you can click the <span class="FM_Bold">Submit</span> button.</p>
+</li>
+  <p class="Title">Control Center&#160;automatically performs a dependency check to see whether any additional policy components must be finished and deployed before you can continue. If there are no dependencies, you are ready to schedule deployment.</p>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">If Control Center&#160;discovers one or more dependencies, it displays a dialog box describing which new or modified components are involved. You will not be able to proceed with deployment until these components have also been submitted; they will display as Missing.</p>
+</li>
+ </ol>
+ <h3><a name="XREF_38470_Scheduling"></a>4. Scheduling Deployment</h3>
+ <p class="BodyLevel1">After a policy or component is submitted for deployment, you can specify when deployment should occur.</p>
+ <ol start="1">
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">In the navigation pane, or using the tabs along the top of the editing pane (if you are editing multiple objects at the same time), select the policy or policy component for which you want to schedule deployment.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Click <span class="FM_Bold">Deploy</span>. Control Center&#160;performs a dependency check. If it finds that the deployment depends on the completion of other policy components, a dialog box appears to explain why the deployment could not be com&#173;pleted.</p>
+</li>
+  <p class="Title">If there are no dependent components that require attention before deployment, the Deploy dialog box appears. This dialog box shows which policies and components will be deployed: the one you are working on, plus any dependent components detected in the dependency check.</p>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">For <span class="FM_Bold">Deployment Start Time</span>, choose one of the following:</p>
+</li>
+  
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span style="font-weight : bold; "><b>Deploy Immediately</b></span>&#160;(the default) deploys the policy right away, without waiting for heartbeat messages from the enforcers. This is called <span style="font-style : italic; "><i>push deployment</i></span>; for more details see below.</p>
+
+  
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span style="font-weight : bold; "><b>Deploy at &lt;</b></span><span class="FM_Emphasis">date and time</span><span style="font-weight : bold; "><b>&gt;</b></span>: Starts deployment at the default date and time, as displayed. By default this is set to midnight of the current day, but you can change it if you wish. If you set it to deploy now, there may be a short delay due to the heartbeat mechanism, which by default is set to one hour.</p>
+
+  
+<p class="BodyLevel2"><span style="font-family:'Symbol'">&#183;</span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span style="font-weight : bold; "><b>Specify</b></span> date and time<span style="font-weight : bold; "><b>&#160;</b></span>controls: displays the current time by default, but you can use the calendar and time widgets to set any specific minute you want deployment to begin.</p>
+
+  <p class="BodyLevel1"></p>
+  <div align="center"><img alt="DeployTimes.jpg" style="width : 352.875pt; height : 223.000pt; " id="image4" src="DeployTimes.jpg" />
+  </div>
+  <p class="BodyLevel1">&nbsp;</p>
+  <p class="TitleBook">Setting Deployment Start Time</p>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">In <span class="FM_Bold">Deployment Contents</span>, look for the Modified Components category. If present, it shows policy components that are needed by the object you’re trying to deploy and that have been modified and resubmitted for deploy&#173;ment. Check the box next to any of these components that you want to schedule for deployment at the same time.</p>
+</li>
+  <li style="list-style: decimal;">
+  <p class="BodyLevel1">Click <span class="FM_Bold">OK</span>.</p>
+</li>
+ </ol>
+ <h3>5. Confirming Deployments</h3>
+ <p class="BodyLevel1">Once you finish defining and deploying a policy or a component, you may want to confirm that it has indeed been deployed in the way you intended. In addi&#173;tion, when you construct and deploy a large number of components and poli&#173;cies, it is often helpful to be able view summary of where they are deployed.</p>
+ <p class="BodyLevel1">Policy Author offers several convenient tools that allow you to monitor the sta&#173;tus of deployed policies and components; these are described later.</p>
+ <h3><a name="XREF_89706_About_Push"></a>About Push Deployment</h3>
+ <p class="BodyLevel1">As discussed previously, you can schedule a deployment to Deploy Immediately, which is called a push deployment. This feature is useful if you need to check the results of a policy right away, since it avoids the delay that might be caused by the heartbeat interval. By default that interval is set to one hour, but it may be much longer.</p>
+ <p class="BodyLevel1">Push deployments are distributed to all enforcers where this feature is enabled. In response, the enforcers’ heartbeats are all reset, which means they are syn&#173;chronized from that point on. In a production environment with tens of thou&#173;sands of enforcers, such simultaneous heartbeat traffic can cause noticeable spikes in network load. For this reason, the Push Deployment feature is recom&#173;mended for use only in test environments, or in relatively small-scale production settings—less than, say, a few thousand enforcers.</p>
+ <p class="BodyLevel1">Note also that only enforcers that have this feature enabled will receive push deployments. The feature is enabled in the enforcer profile, and is disabled by default; for details, see the <span class="FM_Emphasis">Administrator’s Guide</span>.</p>
+ <script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+
+
+highlightSearch();
+//-->
+//]]></script>
+</body>
+</html>

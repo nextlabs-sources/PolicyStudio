@@ -1,0 +1,25 @@
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Installer_CA", "Installer_CA\Installer_CA.vcproj", "{2ECC6422-848D-432E-A1BC-A73DA2E13515}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PA_CA", "PA_CA\PA_CA.vcproj", "{290A08A8-6E1D-4B9E-90B2-5B0A1E56CACB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2ECC6422-848D-432E-A1BC-A73DA2E13515}.Debug|Win32.ActiveCfg = Debug|Win32
+		{2ECC6422-848D-432E-A1BC-A73DA2E13515}.Debug|Win32.Build.0 = Debug|Win32
+		{2ECC6422-848D-432E-A1BC-A73DA2E13515}.Release|Win32.ActiveCfg = Release|Win32
+		{2ECC6422-848D-432E-A1BC-A73DA2E13515}.Release|Win32.Build.0 = Release|Win32
+		{290A08A8-6E1D-4B9E-90B2-5B0A1E56CACB}.Debug|Win32.ActiveCfg = Debug|Win32
+		{290A08A8-6E1D-4B9E-90B2-5B0A1E56CACB}.Debug|Win32.Build.0 = Debug|Win32
+		{290A08A8-6E1D-4B9E-90B2-5B0A1E56CACB}.Release|Win32.ActiveCfg = Release|Win32
+		{290A08A8-6E1D-4B9E-90B2-5B0A1E56CACB}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

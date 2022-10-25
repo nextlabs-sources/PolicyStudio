@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="com.nextlabs.policystudio.readonly">
+      <readonly
+            class="com.bluejungle.destiny.policymanager.editor.ComponentDetailsComposite"
+            context="APPLICATION">
+      </readonly>
+   </extension>
+
+</plugin>
